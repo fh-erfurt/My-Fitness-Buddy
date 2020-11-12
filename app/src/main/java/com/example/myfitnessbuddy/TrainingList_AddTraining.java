@@ -9,6 +9,6 @@ public class TrainingList_AddTraining extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_traininglist__addtraining);
+        setContentView(R.layout.activity_traininglist_addtraining);
     }
 }
