@@ -23,10 +23,6 @@
         <activity android:name=".Exercises_AddExercise" />
         <activity android:name=".TrainingList_AddTraining_AddExercise" />
         <activity android:name=".TrainingList_AddTraining" />
-        <activity android:name=".Exercises" />
-        <activity
-            android:name=".TrainingList"
-            android:label="@string/title_activity_training_list"></activity>
         <activity android:name=".MainActivity">
 
         </activity>
