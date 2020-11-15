@@ -8,11 +8,13 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="220dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="284dp"
-        android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa"
+        android:layout_width="391dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="268dp"
+        android:text="Neues Training Erstellen!!!!!!!!!!!!!!"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
