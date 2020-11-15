@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".TrainingList_AddTraining">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="220dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="284dp"
+        android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

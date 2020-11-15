@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myfitnessbuddy">
 
-
-
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,26 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFitnessBuddy">
-        <activity android:name=".TrainingList_TrainingDetails"></activity>
+        <activity
+            android:name=".Navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TrainingList_TrainingDetails" />
         <activity android:name=".Exercises_AddExercise" />
         <activity android:name=".TrainingList_AddTraining_AddExercise" />
         <activity android:name=".TrainingList_AddTraining" />
         <activity android:name=".Exercises" />
         <activity
             android:name=".TrainingList"
-            android:label="@string/title_activity_training_list">
-
-        </activity>
-
-       
-
-
+            android:label="@string/title_activity_training_list"></activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
