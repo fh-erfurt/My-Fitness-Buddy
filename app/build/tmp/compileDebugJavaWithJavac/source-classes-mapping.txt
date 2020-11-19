@@ -1,0 +1,29 @@
+com/example/myfitnessbuddy/MainActivity.java
+ com.example.myfitnessbuddy.MainActivity
+com/example/myfitnessbuddy/TrainingList_TrainingDetails.java
+ com.example.myfitnessbuddy.TrainingList_TrainingDetails
+com/example/myfitnessbuddy/ui/main/SectionsPagerAdapter.java
+ com.example.myfitnessbuddy.ui.main.SectionsPagerAdapter
+com/example/myfitnessbuddy/ui/main/Fragment_Evaluation.java
+ com.example.myfitnessbuddy.ui.main.Fragment_Evaluation
+com/example/myfitnessbuddy/ui/main/PlaceholderFragment.java
+ com.example.myfitnessbuddy.ui.main.PlaceholderFragment
+ com.example.myfitnessbuddy.ui.main.PlaceholderFragment$1
+com/example/myfitnessbuddy/ui/main/Fragment_TrainingList.java
+ com.example.myfitnessbuddy.ui.main.Fragment_TrainingList
+com/example/myfitnessbuddy/Exercises_AddExercise.java
+ com.example.myfitnessbuddy.Exercises_AddExercise
+com/example/myfitnessbuddy/BuildConfig.java
+ com.example.myfitnessbuddy.BuildConfig
+com/example/myfitnessbuddy/TrainingList_AddTraining_AddExercise.java
+ com.example.myfitnessbuddy.TrainingList_AddTraining_AddExercise
+com/example/myfitnessbuddy/ui/main/PageViewModel.java
+ com.example.myfitnessbuddy.ui.main.PageViewModel
+ com.example.myfitnessbuddy.ui.main.PageViewModel$1
+com/example/myfitnessbuddy/ui/main/Fragment_Exercises.java
+ com.example.myfitnessbuddy.ui.main.Fragment_Exercises
+com/example/myfitnessbuddy/Navigation.java
+ com.example.myfitnessbuddy.Navigation
+ com.example.myfitnessbuddy.Navigation$1
+com/example/myfitnessbuddy/TrainingList_AddTraining.java
+ com.example.myfitnessbuddy.TrainingList_AddTraining
