@@ -24,6 +24,5 @@ com/example/myfitnessbuddy/ui/main/Fragment_Exercises.java
  com.example.myfitnessbuddy.ui.main.Fragment_Exercises
 com/example/myfitnessbuddy/Navigation.java
  com.example.myfitnessbuddy.Navigation
- com.example.myfitnessbuddy.Navigation$1
 com/example/myfitnessbuddy/TrainingList_AddTraining.java
  com.example.myfitnessbuddy.TrainingList_AddTraining

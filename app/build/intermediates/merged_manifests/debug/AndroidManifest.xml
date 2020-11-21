@@ -35,6 +35,10 @@
         <activity android:name="com.example.myfitnessbuddy.TrainingList_AddTraining" />
         <activity android:name="com.example.myfitnessbuddy.MainActivity" >
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

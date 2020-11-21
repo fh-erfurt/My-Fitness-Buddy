@@ -12,10 +12,11 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="126dp"
+            android:layout_height="42dp"
             android:layout_marginStart="176dp"
             android:layout_marginTop="184dp"
+            android:fontFamily="@font/paprika"
             android:text="Exercises"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

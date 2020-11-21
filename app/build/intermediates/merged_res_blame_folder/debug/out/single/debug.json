@@ -12,6 +12,18 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\drawable\\chat.xml"
     },
     {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_concert_one.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\concert_one.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_krona_one.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\krona_one.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_black_ops_one.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\black_ops_one.xml"
+    },
+    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -40,12 +52,24 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\layout\\activity_traininglist_addtraining_addexercise.xml"
     },
     {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_permanent_marker.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\permanent_marker.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_paprika.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\paprika.xml"
+    },
+    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_exercises.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\layout\\fragment_exercises.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\spicy_rice.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -98,6 +122,10 @@
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\src\\main\\res\\font\\chelsea_market.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
