@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\bswar\\Desktop\\PME-Projekt\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+            "outputFile": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bswar\\.gradle\\caches\\transforms-2\\files-2.1\\282d5718cd43fcac5627c0bdf085c443\\wear-1.0.0\\res\\values-lt\\values-lt.xml",
