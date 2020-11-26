@@ -4,15 +4,17 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.myfitnessbuddy.Navigation;
+
 public class KeyValueStore {
 
     private static String KEY_VALUE_STORE_FILE_NAME = "contact_app_kv_store";
     private static final int DEFAULT_INT_VALUE = 0;
 
     // Ref needed to access SharedPreferences
-    private Application app;
+    private Navigation app;
 
-    public KeyValueStore(Application application) {
+    public KeyValueStore(Navigation application) {
         this.app = application;
     }
 

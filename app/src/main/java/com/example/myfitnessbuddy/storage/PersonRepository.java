@@ -31,7 +31,7 @@ public class PersonRepository {
         return INSTANCE;
     }
 
-    private PersonRepository( Context context ) {
+    public PersonRepository(Context context) {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
         this.personDao = db.personDao();
     }
