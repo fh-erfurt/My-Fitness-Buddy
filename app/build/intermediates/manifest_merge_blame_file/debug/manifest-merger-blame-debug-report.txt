@@ -11,7 +11,7 @@
 9-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:5:5-32:19
+11-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:5:5-29:19
 12        android:allowBackup="true"
 12-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -31,8 +31,8 @@
 21-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:11:9-52
 22        <activity
 22-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:12:9-20:20
-23            android:name="com.example.myfitnessbuddy.Navigation"
-23-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:13:13-39
+23            android:name="com.example.myfitnessbuddy.MainActivity"
+23-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:13:13-41
 24            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar" >
 24-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:14:13-68
 25            <intent-filter>
@@ -58,17 +58,22 @@
 34        <activity android:name="com.example.myfitnessbuddy.TrainingList_AddTraining" />
 34-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:9-62
 34-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:19-59
-35        <activity android:name="com.example.myfitnessbuddy.MainActivity" >
-35-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:25:9-27:20
-35-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:25:19-47
-36        </activity>
-37
-38        <meta-data
-38-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:29:9-31:57
-39            android:name="preloaded_fonts"
-39-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:30:13-43
-40            android:resource="@array/preloaded_fonts" />
-40-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:31:13-54
-41    </application>
-42
-43</manifest>
+35
+36        <meta-data
+36-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:26:9-28:57
+37            android:name="preloaded_fonts"
+37-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:27:13-43
+38            android:resource="@array/preloaded_fonts" />
+38-->C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:28:13-54
+39
+40        <service
+40-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+41            android:name="androidx.room.MultiInstanceInvalidationService"
+41-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+42            android:directBootAware="true"
+42-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+43            android:exported="false" />
+43-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+44    </application>
+45
+46</manifest>

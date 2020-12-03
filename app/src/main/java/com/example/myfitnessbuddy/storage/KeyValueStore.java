@@ -1,10 +1,9 @@
 package com.example.myfitnessbuddy.storage;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.myfitnessbuddy.Navigation;
+import com.example.myfitnessbuddy.MainActivity;
 
 public class KeyValueStore {
 
@@ -12,9 +11,9 @@ public class KeyValueStore {
     private static final int DEFAULT_INT_VALUE = 0;
 
     // Ref needed to access SharedPreferences
-    private Navigation app;
+    private MainActivity app;
 
-    public KeyValueStore(Navigation application) {
+    public KeyValueStore(MainActivity application) {
         this.app = application;
     }
 

@@ -20,7 +20,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.MyFitnessBuddy" >
         <activity
-            android:name="com.example.myfitnessbuddy.Navigation"
+            android:name="com.example.myfitnessbuddy.MainActivity"
             android:theme="@style/Theme.MyFitnessBuddy.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +32,15 @@
         <activity android:name="com.example.myfitnessbuddy.Exercises_AddExercise" />
         <activity android:name="com.example.myfitnessbuddy.TrainingList_AddTraining_AddExercise" />
         <activity android:name="com.example.myfitnessbuddy.TrainingList_AddTraining" />
-        <activity android:name="com.example.myfitnessbuddy.MainActivity" >
-        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
     </application>
 
 </manifest>

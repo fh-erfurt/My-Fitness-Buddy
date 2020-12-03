@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment_TrainingList">
+
+    <fragment
+        android:id="@+id/fragment_TrainingList"
+        android:name="com.example.myfitnessbuddy.ui.main.Fragment_TrainingList"
+        android:label="fragment_traininglist"
+        tools:layout="@layout/fragment_traininglist">
+        <action
+            android:id="@+id/action_fragment_TrainingList_to_fragment_Exercises"
+            app:destination="@id/fragment_Exercises" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Exercises"
+        android:name="com.example.myfitnessbuddy.ui.main.Fragment_Exercises"
+        android:label="fragment_exercises"
+        tools:layout="@layout/fragment_exercises">
+        <action
+            android:id="@+id/action_fragment_Exercises_to_fragment_TrainingList"
+            app:destination="@id/fragment_TrainingList" />
+    </fragment>
+</navigation>

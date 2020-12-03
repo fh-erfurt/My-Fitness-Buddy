@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import com.example.myfitnessbuddy.R;
 import com.example.myfitnessbuddy.TrainingList_AddTraining;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +32,8 @@ public class Fragment_TrainingList extends Fragment implements View.OnClickListe
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
 
     public Fragment_TrainingList() {
         // Required empty public constructor
@@ -65,6 +70,7 @@ public class Fragment_TrainingList extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_traininglist, container, false);
 
+
         FloatingActionButton b = (FloatingActionButton) v.findViewById(R.id.floatingActionButton);
         b.setOnClickListener(this);
         return v;
@@ -72,7 +78,10 @@ public class Fragment_TrainingList extends Fragment implements View.OnClickListe
     }
 
     public void onClick(View v) {
-        Intent i = new Intent(getActivity(), TrainingList_AddTraining.class);
-        startActivity(i);
+        Navigation.findNavController(v).navigate(R.id.action_fragment_TrainingList_to_fragment_Exercises);
+        //Intent i = new Intent(getActivity(), TrainingList_AddTraining.class);
+       // startActivity(i);
     }
+
+
 }
