@@ -3,7 +3,7 @@ package com.example.myfitnessbuddy.view;
 import android.os.Bundle;
 
 import com.example.myfitnessbuddy.R;
-import com.example.myfitnessbuddy.model.Person;
+import com.example.myfitnessbuddy.model.Person.Person;
 import com.example.myfitnessbuddy.model.Training;
 import com.example.myfitnessbuddy.storage.KeyValueStore;
 import com.example.myfitnessbuddy.storage.PersonRepository;

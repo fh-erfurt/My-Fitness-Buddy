@@ -1,4 +1,4 @@
-package com.example.myfitnessbuddy.model;
+package com.example.myfitnessbuddy.model.Person;
 
 public enum Category {
     none(0),

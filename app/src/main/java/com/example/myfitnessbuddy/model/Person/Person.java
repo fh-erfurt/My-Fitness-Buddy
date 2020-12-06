@@ -1,4 +1,4 @@
-package com.example.myfitnessbuddy.model;
+package com.example.myfitnessbuddy.model.Person;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

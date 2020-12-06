@@ -10,9 +10,10 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.myfitnessbuddy.model.Category;
-import com.example.myfitnessbuddy.model.CategoryConverter;
-import com.example.myfitnessbuddy.model.Person;
+
+import com.example.myfitnessbuddy.model.Person.Category;
+import com.example.myfitnessbuddy.model.Person.CategoryConverter;
+import com.example.myfitnessbuddy.model.Person.Person;
 import com.example.myfitnessbuddy.model.Training;
 import com.github.javafaker.Faker;
 

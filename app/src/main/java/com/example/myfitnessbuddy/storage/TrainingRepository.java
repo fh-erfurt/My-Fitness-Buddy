@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 
-import com.example.myfitnessbuddy.model.Category;
+import com.example.myfitnessbuddy.model.Person.Category;
 import com.example.myfitnessbuddy.model.Training;
 
 import java.util.ArrayList;

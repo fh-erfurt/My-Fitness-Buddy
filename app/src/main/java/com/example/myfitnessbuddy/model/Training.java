@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.example.myfitnessbuddy.model.Person.Category;
+
 @Entity
 public class Training {
     @PrimaryKey(autoGenerate = true)
