@@ -25,7 +25,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class}, version = 3 )
+@Database( entities = {Person.class, Training.class}, version = 5 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -114,6 +114,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
 
                     training.setCreated( System.currentTimeMillis() );
+                    training.setProfileImageUrl( faker.avatar().image() );
                     training.setModified( training.getCreated() );
                     training.setVersion( 1 );
                     daoTraining.insert(training);

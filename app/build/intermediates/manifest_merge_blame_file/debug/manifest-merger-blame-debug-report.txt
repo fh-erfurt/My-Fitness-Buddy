@@ -74,6 +74,15 @@
 42-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
 43            android:exported="false" />
 43-->[androidx.room:room-runtime:2.2.5] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\662ce5a80a8761629e79bfe53274f4a9\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-44    </application>
-45
-46</manifest>
+44
+45        <provider
+45-->[com.squareup.picasso:picasso:2.71828] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\3bb09f80dfe68f6852022f99795338bf\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+46            android:name="com.squareup.picasso.PicassoProvider"
+46-->[com.squareup.picasso:picasso:2.71828] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\3bb09f80dfe68f6852022f99795338bf\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+47            android:authorities="com.example.myfitnessbuddy.com.squareup.picasso"
+47-->[com.squareup.picasso:picasso:2.71828] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\3bb09f80dfe68f6852022f99795338bf\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+48            android:exported="false" />
+48-->[com.squareup.picasso:picasso:2.71828] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\3bb09f80dfe68f6852022f99795338bf\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+49    </application>
+50
+51</manifest>

@@ -4,10 +4,14 @@ import android.app.Application;
 import android.content.Context;
 
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.example.myfitnessbuddy.model.Training.Category;
 import com.example.myfitnessbuddy.model.Training.Training;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -18,6 +22,9 @@ public class TrainingRepository {
     private TrainingDao trainingDao;
 
     private static TrainingRepository INSTANCE;
+
+    private LiveData<List<Training>> allTrainings;
+
 
     public static TrainingRepository getRepository( Application application )
     {
@@ -40,6 +47,26 @@ public class TrainingRepository {
     public List<Training> getTrainings()
     {
         return this.query( () -> this.trainingDao.getTrainings() );
+    }
+
+    public LiveData<List<Training>> getTrainingsLiveData()
+    {
+        if( this.allTrainings == null )
+            this.allTrainings = this.queryLiveData(this.trainingDao::getTrainingsLiveData);
+
+        return this.allTrainings;
+    }
+
+    private LiveData<List<Training>> queryLiveData( Callable<LiveData<List<Training>>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return new MutableLiveData<>(Collections.emptyList());
     }
 
     public List<Training> getTrainingsForDesignation(String search )

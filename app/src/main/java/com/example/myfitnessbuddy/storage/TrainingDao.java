@@ -1,5 +1,6 @@
 package com.example.myfitnessbuddy.storage;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -32,6 +33,9 @@ public interface TrainingDao {
 
     @Query("SELECT * from Training")
     List<Training> getTrainings();
+
+    @Query("SELECT * from Training")
+    LiveData<List<Training>> getTrainingsLiveData();
 
     @Query("SELECT * from Training ORDER BY designation ASC")
     List<Training> getTrainingSortedByDesignation();

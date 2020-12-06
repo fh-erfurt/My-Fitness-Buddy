@@ -41,6 +41,11 @@
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
+
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.myfitnessbuddy.com.squareup.picasso"
+            android:exported="false" />
     </application>
 
 </manifest>

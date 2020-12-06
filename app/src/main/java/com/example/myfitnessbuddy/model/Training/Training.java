@@ -32,6 +32,12 @@ public class Training {
     private int version = 0;
 
 
+
+    @NonNull
+    @ColumnInfo(name = "profile_image_url")
+    private String profileImageUrl;
+
+
     public Training(@NonNull String designation, @NonNull Category category) {
         this.designation = designation;
         this.category = category;
@@ -85,5 +91,16 @@ public class Training {
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+
+
+    @NonNull
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(@NonNull String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
     }
 }

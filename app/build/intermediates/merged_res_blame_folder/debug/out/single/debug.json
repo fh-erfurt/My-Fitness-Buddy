@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_widgets.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\widgets.xml"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_traininglist_addtraining_addexercise.xml.flat",
@@ -18,6 +18,10 @@
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_error.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\icon_error.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\xml_activity_main_scene.xml.flat",
@@ -88,6 +92,10 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_profile_placeholder.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\icon_profile_placeholder.xml"
+    },
+    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
@@ -98,6 +106,10 @@
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item_training.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\list_item_training.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",

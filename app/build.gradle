@@ -56,4 +56,8 @@ dependencies {
 
     // Faker Lib for test data generation
     implementation 'com.github.javafaker:javafaker:1.0.2'
+
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

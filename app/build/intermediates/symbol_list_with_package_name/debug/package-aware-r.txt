@@ -1723,6 +1723,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon_error
+drawable icon_profile_placeholder
 drawable info
 drawable language
 drawable material_ic_calendar_black_24dp
@@ -1953,7 +1955,6 @@ id fitToContents
 id fixed
 id flip
 id floating
-id floatingActionButton
 id forever
 id fragment
 id fragment_Exercises
@@ -1993,6 +1994,9 @@ id line3
 id linear
 id listMode
 id list_item
+id list_item_training_image
+id list_item_training_name
+id list_view_contacts
 id masked
 id media_actions
 id message
@@ -2147,11 +2151,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView2
 id textView3
-id textView4
-id textView5
-id textView7
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2312,6 +2312,7 @@ layout design_text_input_start_icon
 layout fragment_evaluation
 layout fragment_exercises
 layout fragment_traininglist
+layout list_item_training
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2488,6 +2489,7 @@ string status_bar_notification_info_overflow
 string tab_text_1
 string tab_text_2
 string tab_text_3
+string text_empty_list
 string title_activity_navigation
 string title_activity_training_list
 string ws_action_drawer_content_description
