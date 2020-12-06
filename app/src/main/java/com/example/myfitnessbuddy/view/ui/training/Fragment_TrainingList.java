@@ -1,21 +1,23 @@
-package com.example.myfitnessbuddy.ui.main;
+package com.example.myfitnessbuddy.view.ui.training;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myfitnessbuddy.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Exercises#newInstance} factory method to
+ * Use the {@link Fragment_TrainingList#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Exercises extends Fragment {
+public class Fragment_TrainingList extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +28,9 @@ public class Fragment_Exercises extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_Exercises() {
+
+
+    public Fragment_TrainingList() {
         // Required empty public constructor
     }
 
@@ -34,16 +38,15 @@ public class Fragment_Exercises extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Exercises.
+
+     * @return A new instance of fragment Fragment_TrainingList.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Exercises newInstance(String param1, String param2) {
-        Fragment_Exercises fragment = new Fragment_Exercises();
+    public static Fragment_TrainingList newInstance() {
+        Fragment_TrainingList fragment = new Fragment_TrainingList();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+      //  args.putString(ARG_PARAM1, param1);
+    //    args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,7 +63,20 @@ public class Fragment_Exercises extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exercises, container, false);
+        View v = inflater.inflate(R.layout.fragment_traininglist, container, false);
+
+
+        FloatingActionButton b = (FloatingActionButton) v.findViewById(R.id.floatingActionButton);
+        b.setOnClickListener(this);
+        return v;
+
     }
+
+    public void onClick(View v) {
+        Navigation.findNavController(v).navigate(R.id.action_fragment_TrainingList_to_fragment_Exercises);
+        //Intent i = new Intent(getActivity(), TrainingList_AddTraining.class);
+       // startActivity(i);
+    }
+
+
 }

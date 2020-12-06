@@ -1,4 +1,4 @@
-package com.example.myfitnessbuddy.ui.main;
+package com.example.myfitnessbuddy.view.ui.tabs;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

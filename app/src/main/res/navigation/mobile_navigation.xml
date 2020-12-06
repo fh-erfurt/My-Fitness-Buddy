@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_TrainingList"
-        android:name="com.example.myfitnessbuddy.ui.main.Fragment_TrainingList"
+        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
         android:label="fragment_traininglist"
         tools:layout="@layout/fragment_traininglist">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_Exercises"
-        android:name="com.example.myfitnessbuddy.ui.main.Fragment_Exercises"
+        android:name="com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises"
         android:label="fragment_exercises"
         tools:layout="@layout/fragment_exercises">
         <action

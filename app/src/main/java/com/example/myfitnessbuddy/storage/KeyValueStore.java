@@ -3,7 +3,7 @@ package com.example.myfitnessbuddy.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.myfitnessbuddy.MainActivity;
+import com.example.myfitnessbuddy.view.MainActivity;
 
 public class KeyValueStore {
 

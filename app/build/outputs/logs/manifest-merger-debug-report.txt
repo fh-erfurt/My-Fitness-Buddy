@@ -97,12 +97,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\bs
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:11:9-52
-activity#com.example.myfitnessbuddy.MainActivity
+activity#com.example.myfitnessbuddy.view.MainActivity
 ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:12:9-20:20
 	android:theme
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:14:13-68
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:13:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
@@ -113,22 +113,22 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:18:27-74
-activity#com.example.myfitnessbuddy.TrainingList_TrainingDetails
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:9-66
+activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_TrainingDetails
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:9-83
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:19-63
-activity#com.example.myfitnessbuddy.Exercises_AddExercise
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:9-59
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:19-80
+activity#com.example.myfitnessbuddy.view.ui.exercise.Exercises_AddExercise
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:9-76
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:19-56
-activity#com.example.myfitnessbuddy.TrainingList_AddTraining_AddExercise
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:9-74
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:19-73
+activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining_AddExercise
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:9-91
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:19-71
-activity#com.example.myfitnessbuddy.TrainingList_AddTraining
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:9-62
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:19-88
+activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:9-79
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:19-59
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:19-76
 meta-data#preloaded_fonts
 ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:26:9-28:57
 	android:resource

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFitnessBuddy">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:theme="@style/Theme.MyFitnessBuddy.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TrainingList_TrainingDetails" />
-        <activity android:name=".Exercises_AddExercise" />
-        <activity android:name=".TrainingList_AddTraining_AddExercise" />
-        <activity android:name=".TrainingList_AddTraining" />
+        <activity android:name=".view.ui.training.TrainingList_TrainingDetails" />
+        <activity android:name=".view.ui.exercise.Exercises_AddExercise" />
+        <activity android:name=".view.ui.training.TrainingList_AddTraining_AddExercise" />
+        <activity android:name=".view.ui.training.TrainingList_AddTraining" />
 
         <meta-data
             android:name="preloaded_fonts"

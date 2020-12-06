@@ -1,7 +1,8 @@
-package com.example.myfitnessbuddy;
+package com.example.myfitnessbuddy.view;
 
 import android.os.Bundle;
 
+import com.example.myfitnessbuddy.R;
 import com.example.myfitnessbuddy.model.Person;
 import com.example.myfitnessbuddy.model.Training;
 import com.example.myfitnessbuddy.storage.KeyValueStore;
@@ -14,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 
-import com.example.myfitnessbuddy.ui.main.SectionsPagerAdapter;
+import com.example.myfitnessbuddy.view.ui.tabs.SectionsPagerAdapter;
 
 import java.util.List;
 import java.util.Random;

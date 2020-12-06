@@ -1,8 +1,10 @@
-package com.example.myfitnessbuddy;
+package com.example.myfitnessbuddy.view.ui.training;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.myfitnessbuddy.R;
 
 public class TrainingList_TrainingDetails extends AppCompatActivity {
 

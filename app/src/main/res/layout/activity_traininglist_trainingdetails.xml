@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrainingList_TrainingDetails">
+    tools:context=".view.ui.training.TrainingList_TrainingDetails">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

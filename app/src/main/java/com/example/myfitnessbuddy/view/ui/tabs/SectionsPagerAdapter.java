@@ -1,4 +1,4 @@
-package com.example.myfitnessbuddy.ui.main;
+package com.example.myfitnessbuddy.view.ui.tabs;
 
 import android.content.Context;
 
@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.myfitnessbuddy.R;
+import com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises;
+import com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList;
+import com.example.myfitnessbuddy.view.ui.evaluation.Fragment_Evaluation;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

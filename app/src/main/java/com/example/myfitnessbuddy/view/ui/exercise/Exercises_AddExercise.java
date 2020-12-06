@@ -1,8 +1,10 @@
-package com.example.myfitnessbuddy;
+package com.example.myfitnessbuddy.view.ui.exercise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.myfitnessbuddy.R;
 
 public class Exercises_AddExercise extends AppCompatActivity {
 
