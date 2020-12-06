@@ -1,19 +1,27 @@
+com/example/myfitnessbuddy/storage/TrainingDao.java
+ com.example.myfitnessbuddy.storage.TrainingDao
 com/example/myfitnessbuddy/model/Person.java
  com.example.myfitnessbuddy.model.Person
 com/example/myfitnessbuddy/MainActivity.java
  com.example.myfitnessbuddy.MainActivity
+com/example/myfitnessbuddy/model/Category.java
+ com.example.myfitnessbuddy.model.Category
 com/example/myfitnessbuddy/model/Training.java
  com.example.myfitnessbuddy.model.Training
 com/example/myfitnessbuddy/TrainingList_TrainingDetails.java
  com.example.myfitnessbuddy.TrainingList_TrainingDetails
 com/example/myfitnessbuddy/ui/main/SectionsPagerAdapter.java
  com.example.myfitnessbuddy.ui.main.SectionsPagerAdapter
+com/example/myfitnessbuddy/model/CategoryConverter.java
+ com.example.myfitnessbuddy.model.CategoryConverter
 com/example/myfitnessbuddy/ui/main/Fragment_Evaluation.java
  com.example.myfitnessbuddy.ui.main.Fragment_Evaluation
 com/example/myfitnessbuddy/storage/KeyValueStore.java
  com.example.myfitnessbuddy.storage.KeyValueStore
 com/example/myfitnessbuddy/storage/PersonRepository.java
  com.example.myfitnessbuddy.storage.PersonRepository
+com/example/myfitnessbuddy/storage/TrainingRepository.java
+ com.example.myfitnessbuddy.storage.TrainingRepository
 com/example/myfitnessbuddy/ui/main/PlaceholderFragment.java
  com.example.myfitnessbuddy.ui.main.PlaceholderFragment
  com.example.myfitnessbuddy.ui.main.PlaceholderFragment$1

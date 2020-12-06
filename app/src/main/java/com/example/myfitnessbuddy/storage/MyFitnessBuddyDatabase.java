@@ -7,9 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.myfitnessbuddy.model.Category;
+import com.example.myfitnessbuddy.model.CategoryConverter;
 import com.example.myfitnessbuddy.model.Person;
+import com.example.myfitnessbuddy.model.Training;
 import com.github.javafaker.Faker;
 
 import java.util.Collections;
@@ -18,7 +22,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class}, version = 1 )
+@Database( entities = {Person.class, Training.class}, version = 3 )
+@TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     private static final String LOG_TAG_DB = "MyFitnessBuddyDB";
@@ -27,6 +32,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
         Contact DAO reference, will be filled by Android
      */
     public abstract PersonDao personDao();
+    public abstract TrainingDao trainingDao();
 
     /*
         Executor service to perform database operations asynchronous and independent from UI thread
@@ -86,20 +92,35 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
             Log.i( LOG_TAG_DB, "onCreate() called" );
 
             execute(() -> {
-                PersonDao dao = INSTANCE.personDao();
-                dao.deleteAll();
+               PersonDao dao = INSTANCE.personDao();
+               dao.deleteAll();
+
+               TrainingDao daoTraining = INSTANCE.trainingDao();
+               daoTraining.deleteAll();
 
                 Faker faker = Faker.instance();
                 for (int i = 0; i < 25; i++)
                 {
-                    Person person = new Person(faker.dragonBall().character(), faker.date().birthday().toString(),
+
+                  Person person = new Person(faker.dragonBall().character(), faker.date().birthday().toString(),
                             faker.number().numberBetween(0,1), faker.number().randomDouble(2,1, 3),
                             faker.number().randomDouble(2,30, 300) );
+
+
+                   Training training = new Training(faker.team().sport(), Category.category1);
+
+
+                    training.setCreated( System.currentTimeMillis() );
+                    training.setModified( training.getCreated() );
+                    training.setVersion( 1 );
+                    daoTraining.insert(training);
 
                     person.setCreated( System.currentTimeMillis() );
                     person.setModified( person.getCreated() );
                     person.setVersion( 1 );
                     dao.insert(person);
+
+
                 }
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
             });

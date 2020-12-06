@@ -63,7 +63,7 @@ public class PersonRepository {
         return new ArrayList<>();
     }
 
-    public Person getLastContact() {
+    public Person getLastPerson() {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( this.personDao::getLastEntry );
         }
