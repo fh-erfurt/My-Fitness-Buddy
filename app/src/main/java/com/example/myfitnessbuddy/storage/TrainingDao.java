@@ -7,7 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.myfitnessbuddy.model.Training;
+import com.example.myfitnessbuddy.model.Training.Training;
 
 import java.util.List;
 @Dao

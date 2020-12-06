@@ -6,7 +6,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.myfitnessbuddy.model.Person.Person;
+
+import com.example.myfitnessbuddy.model.Person;
 
 import java.util.List;
 

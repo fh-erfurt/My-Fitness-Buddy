@@ -11,10 +11,12 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-import com.example.myfitnessbuddy.model.Person.Category;
-import com.example.myfitnessbuddy.model.Person.CategoryConverter;
-import com.example.myfitnessbuddy.model.Person.Person;
-import com.example.myfitnessbuddy.model.Training;
+import com.example.myfitnessbuddy.model.Person;
+import com.example.myfitnessbuddy.model.Training.Category;
+
+
+import com.example.myfitnessbuddy.model.Training.CategoryConverter;
+import com.example.myfitnessbuddy.model.Training.Training;
 import com.github.javafaker.Faker;
 
 import java.util.Collections;
