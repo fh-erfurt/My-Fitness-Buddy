@@ -1,5 +1,7 @@
 com/example/myfitnessbuddy/storage/TrainingDao.java
  com.example.myfitnessbuddy.storage.TrainingDao
+com/example/myfitnessbuddy/model/MuscleGroup.java
+ com.example.myfitnessbuddy.model.MuscleGroup
 com/example/myfitnessbuddy/view/ui/tabs/PageViewModel.java
  com.example.myfitnessbuddy.view.ui.tabs.PageViewModel
  com.example.myfitnessbuddy.view.ui.tabs.PageViewModel$1
@@ -15,6 +17,8 @@ com/example/myfitnessbuddy/storage/KeyValueStore.java
  com.example.myfitnessbuddy.storage.KeyValueStore
 com/example/myfitnessbuddy/storage/PersonRepository.java
  com.example.myfitnessbuddy.storage.PersonRepository
+com/example/myfitnessbuddy/storage/MuscleGroupDao.java
+ com.example.myfitnessbuddy.storage.MuscleGroupDao
 com/example/myfitnessbuddy/view/ui/exercise/Fragment_Exercises.java
  com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises
 com/example/myfitnessbuddy/storage/PersonDao.java
@@ -45,6 +49,8 @@ com/example/myfitnessbuddy/model/Training/CategoryConverter.java
  com.example.myfitnessbuddy.model.Training.CategoryConverter
 com/example/myfitnessbuddy/view/ui/training/Fragment_TrainingList.java
  com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList
+com/example/myfitnessbuddy/storage/MuscleGroupRepository.java
+ com.example.myfitnessbuddy.storage.MuscleGroupRepository
 com/example/myfitnessbuddy/storage/MyFitnessBuddyDatabase.java
  com.example.myfitnessbuddy.storage.MyFitnessBuddyDatabase
  com.example.myfitnessbuddy.storage.MyFitnessBuddyDatabase$1

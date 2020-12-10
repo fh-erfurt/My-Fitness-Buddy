@@ -88,12 +88,12 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\fragment_evaluation.xml"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_profile_placeholder.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\icon_profile_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",

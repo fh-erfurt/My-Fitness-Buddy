@@ -11,6 +11,7 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
+import com.example.myfitnessbuddy.model.MuscleGroup;
 import com.example.myfitnessbuddy.model.Person;
 import com.example.myfitnessbuddy.model.Training.Category;
 
@@ -25,7 +26,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class}, version = 5 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class}, version = 7 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -36,6 +37,8 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
      */
     public abstract PersonDao personDao();
     public abstract TrainingDao trainingDao();
+    public abstract MuscleGroupDao muscleGroupDao();
+
 
     /*
         Executor service to perform database operations asynchronous and independent from UI thread
@@ -100,6 +103,9 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                TrainingDao daoTraining = INSTANCE.trainingDao();
                daoTraining.deleteAll();
+
+                MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
+                daoMuscleGroup.deleteAll();
 
                 Faker faker = Faker.instance();
                 for (int i = 0; i < 25; i++)
