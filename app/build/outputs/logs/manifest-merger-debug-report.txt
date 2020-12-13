@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\e3d7830f778f31330c967610f2dc1b90\navigation-ui-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.wear:wear:1.0.0] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\282d5718cd43fcac5627c0bdf085c443\wear-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -56,25 +56,25 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\bswar\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\3e9337dfc055970a9422bc379c54bdcb\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\48eb1e8d8b8ad7006b2f3cf24b65d608\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\01339aeadc2379d14234ec1725fb1d1d\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:5:5-29:19
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:5:5-28:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\bswar\.gradle\caches\transforms-2\files-2.1\ec4dd897d4037390d3cac18fc3984d5c\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -117,28 +117,24 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:18:27-74
-activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_TrainingDetails
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:9-83
-	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:19-80
 activity#com.example.myfitnessbuddy.view.ui.exercise.Exercises_AddExercise
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:9-76
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:9-76
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:19-73
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:21:19-73
 activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining_AddExercise
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:9-91
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:9-91
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:19-88
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:22:19-88
 activity#com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:9-79
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:9-79
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:24:19-76
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:23:19-76
 meta-data#preloaded_fonts
-ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:26:9-28:57
+ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:25:9-27:57
 	android:resource
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:28:13-54
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:27:13-54
 	android:name
-		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:27:13-43
+		ADDED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml:26:13-43
 uses-sdk
 INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\bswar\Desktop\PME\app\src\main\AndroidManifest.xml

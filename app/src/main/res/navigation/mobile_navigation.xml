@@ -3,24 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/fragment_TrainingList">
-
+    app:startDestination="@id/fragment_traininglist">
     <fragment
-        android:id="@+id/fragment_TrainingList"
-        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
-        android:label="fragment_traininglist"
-        tools:layout="@layout/fragment_traininglist">
-        <action
-            android:id="@+id/action_fragment_TrainingList_to_fragment_Exercises"
-            app:destination="@id/fragment_Exercises" />
+        android:id="@+id/fragment_traininglist_trainingdetails"
+        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList_TrainingDetails"
+        android:label="fragment_traininglist_trainingdetails"
+        tools:layout="@layout/fragment_traininglist_trainingdetails" >
+        <argument
+            android:name="trainingId"
+            app:argType="long" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_Exercises"
-        android:name="com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises"
-        android:label="fragment_exercises"
-        tools:layout="@layout/fragment_exercises">
+        android:id="@+id/fragment_traininglist"
+        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
+        android:label="fragment_traininglist"
+        tools:layout="@layout/fragment_traininglist" >
         <action
-            android:id="@+id/action_fragment_Exercises_to_fragment_TrainingList"
-            app:destination="@id/fragment_TrainingList" />
+            android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails"
+            app:destination="@id/fragment_traininglist_trainingdetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails2"
+            app:destination="@id/fragment_traininglist_trainingdetails" />
     </fragment>
 </navigation>

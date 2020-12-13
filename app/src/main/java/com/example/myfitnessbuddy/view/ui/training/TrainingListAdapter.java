@@ -20,22 +20,35 @@ import java.util.List;
 public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapter.TrainingViewHolder> {
     static int counter = 0;
 
+    public interface TrainingClickListener {
+        void onClick(long contactId);
+    }
+
+
     static class TrainingViewHolder extends RecyclerView.ViewHolder {
         private final TextView trainingName;
         private final ImageView trainingImage;
+        private long currentTrainingId = -1;
 
-        private TrainingViewHolder(View itemView) {
+        private TrainingViewHolder(View itemView, TrainingClickListener trainingClickListener) {
             super(itemView);
+
             this.trainingName = itemView.findViewById(R.id.list_item_training_name);
             this.trainingImage = itemView.findViewById(R.id.list_item_training_image);
+
+            itemView.setOnClickListener( v -> {
+                trainingClickListener.onClick( this.currentTrainingId );
+            });
         }
     }
 
     private final LayoutInflater inflater;
     private List<Training> trainingList; // Cached Copy of Contacts
+    private final TrainingClickListener trainingClickListener;
 
-    public TrainingListAdapter(Context context) {
+    public TrainingListAdapter(Context context, TrainingClickListener trainingClickListener) {
         this.inflater = LayoutInflater.from(context);
+        this.trainingClickListener = trainingClickListener;
     }
 
     @NonNull
@@ -45,14 +58,16 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
 
         Log.i( "OnCreateViewHolder", "Count: " + ++TrainingListAdapter.counter);
 
-        return new TrainingViewHolder(itemView);
+        return new TrainingViewHolder(itemView, this.trainingClickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TrainingViewHolder holder, int position) {
         if (this.trainingList != null && !this.trainingList.isEmpty()) {
             Training current = this.trainingList.get(position);
-            holder.trainingName.setText(String.format("%s", current.getDesignation()));
+           holder.trainingName.setText(String.format("%s", current.getDesignation()));
+
+            holder.currentTrainingId = current.getId();
 
             Picasso p = Picasso.get();
             p.setIndicatorsEnabled(true);
@@ -63,10 +78,12 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
                     .rotate(-15.0f)
                     .centerCrop()
                     .into( holder.trainingImage);
+
+
         }
         else {
             // Covers the case of data not being ready yet.
-            holder.trainingName.setText(R.string.text_empty_list);
+           holder.trainingName.setText(R.string.text_empty_list);
         }
     }
 

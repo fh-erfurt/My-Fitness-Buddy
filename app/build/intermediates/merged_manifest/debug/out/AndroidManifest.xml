@@ -28,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.myfitnessbuddy.view.ui.training.TrainingList_TrainingDetails" />
         <activity android:name="com.example.myfitnessbuddy.view.ui.exercise.Exercises_AddExercise" />
         <activity android:name="com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining_AddExercise" />
         <activity android:name="com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining" />

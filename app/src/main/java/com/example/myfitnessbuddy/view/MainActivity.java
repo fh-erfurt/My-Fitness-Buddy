@@ -11,6 +11,10 @@ import com.example.myfitnessbuddy.storage.PersonRepository;
 import com.example.myfitnessbuddy.storage.TrainingRepository;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,12 +41,20 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
+       // ViewPager viewPager = findViewById(R.id.view_pager);
+     //   viewPager.setAdapter(sectionsPagerAdapter);
+   //     TabLayout tabs = findViewById(R.id.tabs);
+   //     tabs.setupWithViewPager(viewPager);
 
         testDatabase();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.fragment_traininglist)
+                .build();
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+      //  NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
     }
 
     /*

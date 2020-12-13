@@ -40,9 +40,12 @@ public interface TrainingDao {
     @Query("SELECT * from Training ORDER BY designation ASC")
     List<Training> getTrainingSortedByDesignation();
 
-    @Query("SELECT * from Training ORDER BY id DESC LIMIT 1")
+    @Query("SELECT * from Training ORDER BY training_id DESC LIMIT 1")
     Training getLastEntry();
 
     @Query("SELECT * FROM Training WHERE designation LIKE :search")
     List<Training> getTrainingForDesignation(String search);
+
+    @Query("SELECT * FROM Training WHERE training_id = :trainingId")
+    LiveData<Training> getTrainingById(long trainingId);
 }

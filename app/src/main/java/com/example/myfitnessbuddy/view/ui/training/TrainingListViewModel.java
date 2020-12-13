@@ -18,7 +18,7 @@ public class TrainingListViewModel extends AndroidViewModel {
         this.trainingRepository = TrainingRepository.getRepository(application);
     }
 
-    public LiveData<List<Training>> getContacts() {
+    public LiveData<List<Training>> getTrainings() {
         return this.trainingRepository.getTrainingsLiveData();
     }
 }

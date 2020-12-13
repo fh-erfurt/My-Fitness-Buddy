@@ -3,24 +3,26 @@ package com.example.myfitnessbuddy.view.ui.training;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.myfitnessbuddy.R;
 import com.example.myfitnessbuddy.view.ui.Core.BaseFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_TrainingList#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_TrainingList extends BaseFragment implements View.OnClickListener {
+public class Fragment_TrainingList extends BaseFragment  {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,27 +71,29 @@ public class Fragment_TrainingList extends BaseFragment implements View.OnClickL
         View v = inflater.inflate(R.layout.fragment_traininglist, container, false);
 
 
-   //     FloatingActionButton b = (FloatingActionButton) v.findViewById(R.id.floatingActionButton);
-     //   b.setOnClickListener(this);
+            Button b = (Button) v.findViewById(R.id.button);
+      //  b.setOnClickListener(this);
 
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
 
-        RecyclerView trainingListView = v.findViewById(R.id.list_view_contacts);
-        final TrainingListAdapter adapter = new TrainingListAdapter(this.requireActivity());
+        RecyclerView trainingListView = v.findViewById(R.id.list_view_trainings);
+        final TrainingListAdapter adapter = new TrainingListAdapter(this.requireActivity(),
+        trainingId -> {
+            Bundle args = new Bundle();
+            args.putLong("trainingId", trainingId);
+            NavController nc = NavHostFragment.findNavController( this );
+            nc.navigate( R.id.action_fragment_traininglist_to_fragment_traininglist_trainingdetails, args );
+        });
+
         trainingListView.setAdapter( adapter );
         trainingListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
 
-        trainingListViewModel.getContacts().observe(this.requireActivity(), adapter::setTrainings);
+        trainingListViewModel.getTrainings().observe(this.requireActivity(), adapter::setTrainings);
 
         return v;
 
     }
 
-    public void onClick(View v) {
-        Navigation.findNavController(v).navigate(R.id.action_fragment_TrainingList_to_fragment_Exercises);
-        //Intent i = new Intent(getActivity(), TrainingList_AddTraining.class);
-       // startActivity(i);
-    }
 
 
 }

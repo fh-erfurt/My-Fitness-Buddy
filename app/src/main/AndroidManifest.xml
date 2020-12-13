@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ui.training.TrainingList_TrainingDetails" />
         <activity android:name=".view.ui.exercise.Exercises_AddExercise" />
         <activity android:name=".view.ui.training.TrainingList_AddTraining_AddExercise" />
         <activity android:name=".view.ui.training.TrainingList_AddTraining" />

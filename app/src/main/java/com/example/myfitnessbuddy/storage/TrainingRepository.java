@@ -57,17 +57,6 @@ public class TrainingRepository {
         return this.allTrainings;
     }
 
-    private LiveData<List<Training>> queryLiveData( Callable<LiveData<List<Training>>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new MutableLiveData<>(Collections.emptyList());
-    }
 
     public List<Training> getTrainingsForDesignation(String search )
     {
@@ -133,5 +122,23 @@ public class TrainingRepository {
         }
 
         return -1;
+    }
+
+    public LiveData<Training> getTrainingByIdAsLiveData( long trainingId )
+    {
+        return this.queryLiveData(() -> this.trainingDao.getTrainingById(trainingId) );
+    }
+
+    private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Well, is this a reasonable default return value?
+        return new MutableLiveData<>();
     }
 }

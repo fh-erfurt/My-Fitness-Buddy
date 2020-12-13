@@ -1848,8 +1848,8 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
-id action_fragment_Exercises_to_fragment_TrainingList
-id action_fragment_TrainingList_to_fragment_Exercises
+id action_fragment_traininglist_to_fragment_traininglist_trainingdetails
+id action_fragment_traininglist_to_fragment_traininglist_trainingdetails2
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1880,6 +1880,7 @@ id blocking
 id bottom
 id bounce
 id butt
+id button
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1956,10 +1957,10 @@ id fixed
 id flip
 id floating
 id forever
-id fragment
-id fragment_Exercises
-id fragment_TrainingList
+id fragment_contact_details_fullname
 id fragment_container_view_tag
+id fragment_traininglist
+id fragment_traininglist_trainingdetails
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1996,7 +1997,7 @@ id listMode
 id list_item
 id list_item_training_image
 id list_item_training_name
-id list_view_contacts
+id list_view_trainings
 id masked
 id media_actions
 id message
@@ -2034,6 +2035,7 @@ id mtrl_picker_title_text
 id multiPage
 id multiply
 id nav_controller_view_tag
+id nav_host_fragment
 id nav_host_fragment_container
 id navigation_header_container
 id never
@@ -2127,11 +2129,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
-id tabItem0
-id tabItem1
-id tabItem2
 id tabMode
-id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2183,7 +2181,6 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
-id view_pager
 id visible
 id visible_removing_fragment_view_tag
 id wearable_support_confirmation_overlay_image
@@ -2292,7 +2289,6 @@ layout activity_exercises_addexercise
 layout activity_main
 layout activity_traininglist_addtraining
 layout activity_traininglist_addtraining_addexercise
-layout activity_traininglist_trainingdetails
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2312,6 +2308,7 @@ layout design_text_input_start_icon
 layout fragment_evaluation
 layout fragment_exercises
 layout fragment_traininglist
+layout fragment_traininglist_trainingdetails
 layout list_item_training
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

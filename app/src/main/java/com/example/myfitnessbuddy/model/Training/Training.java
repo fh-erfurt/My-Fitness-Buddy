@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Training {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "training_id")
     private int id;
 
     @NonNull

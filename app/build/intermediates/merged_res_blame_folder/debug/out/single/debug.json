@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_widgets.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\widgets.xml"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_traininglist_addtraining_addexercise.xml.flat",
@@ -140,12 +140,12 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_traininglist_trainingdetails.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\fragment_traininglist_trainingdetails.xml"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_traininglist_trainingdetails.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\activity_traininglist_trainingdetails.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_concert_one.xml.flat",

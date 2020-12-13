@@ -25,4 +25,11 @@
         tools:text="@tools:sample/full_names"
         />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Button" />
+
 </LinearLayout>
