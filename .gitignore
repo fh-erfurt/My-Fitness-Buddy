@@ -449,3 +449,4 @@ obj/
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,macos,java,kotlin,jetbrains+all,visualstudiocode,linux,windows,git,tortoisegit,gradle,maven
 
 
+/app/build/

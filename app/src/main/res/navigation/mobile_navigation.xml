@@ -3,7 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/fragment_traininglist">
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myfitnessbuddy.view.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/fragment_traininglist_trainingdetails"
         android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList_TrainingDetails"
@@ -13,10 +20,11 @@
             android:name="trainingId"
             app:argType="long" />
     </fragment>
+
     <fragment
         android:id="@+id/fragment_traininglist"
         android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
-        android:label="fragment_traininglist"
+        android:label="@string/tab_text_1"
         tools:layout="@layout/fragment_traininglist" >
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails"
@@ -26,5 +34,6 @@
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails2"
             app:destination="@id/fragment_traininglist_trainingdetails" />
+
     </fragment>
 </navigation>

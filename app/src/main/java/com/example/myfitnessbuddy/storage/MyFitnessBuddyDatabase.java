@@ -110,12 +110,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 Faker faker = Faker.instance();
                 for (int i = 0; i < 25; i++)
                 {
-
-                  Person person = new Person(faker.dragonBall().character(), faker.date().birthday().toString(),
-                            faker.number().numberBetween(0,1), faker.number().randomDouble(2,1, 3),
-                            faker.number().randomDouble(2,30, 300) );
-
-
                    Training training = new Training(faker.team().sport(), Category.category1);
 
 
@@ -124,12 +118,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setModified( training.getCreated() );
                     training.setVersion( 1 );
                     daoTraining.insert(training);
-
-                    person.setCreated( System.currentTimeMillis() );
-                    person.setModified( person.getCreated() );
-                    person.setVersion( 1 );
-                    dao.insert(person);
-
 
                 }
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
