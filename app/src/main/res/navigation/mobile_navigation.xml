@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/fragment_traininglist"
         android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
-        android:label="fragment_traininglist"
+        android:label="@string/tab_text_1"
         tools:layout="@layout/fragment_traininglist" >
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails"
