@@ -18,6 +18,7 @@ import com.example.myfitnessbuddy.model.Training.Category;
 
 import com.example.myfitnessbuddy.model.Training.CategoryConverter;
 import com.example.myfitnessbuddy.model.Training.Training;
+import com.example.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
 
 import java.util.Collections;
@@ -26,7 +27,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class}, version = 8 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class}, version = 8 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -38,7 +39,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
     public abstract PersonDao personDao();
     public abstract TrainingDao trainingDao();
     public abstract MuscleGroupDao muscleGroupDao();
-
+    public abstract ExerciseDao exerciseDao();
 
     /*
         Executor service to perform database operations asynchronous and independent from UI thread
@@ -106,6 +107,9 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                 MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
                 daoMuscleGroup.deleteAll();
+
+                ExerciseDao daoExercise =INSTANCE.exerciseDao();
+                daoExercise.deleteAll();
 
                 Faker faker = Faker.instance();
                 for (int i = 0; i < 25; i++)
