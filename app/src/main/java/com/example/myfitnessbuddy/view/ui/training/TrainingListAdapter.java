@@ -21,7 +21,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
     static int counter = 0;
 
     public interface TrainingClickListener {
-        void onClick(long contactId);
+        void onClick(long trainingId);
     }
 
 

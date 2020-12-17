@@ -18,6 +18,7 @@ import com.example.myfitnessbuddy.model.Training.Category;
 
 import com.example.myfitnessbuddy.model.Training.CategoryConverter;
 import com.example.myfitnessbuddy.model.Training.Training;
+import com.example.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
 
 import java.util.Collections;
@@ -26,18 +27,16 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class}, version = 8 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class,Exercise.class}, version = 8 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     private static final String LOG_TAG_DB = "MyFitnessBuddyDB";
 
-    /*
-        Contact DAO reference, will be filled by Android
-     */
     public abstract PersonDao personDao();
     public abstract TrainingDao trainingDao();
     public abstract MuscleGroupDao muscleGroupDao();
+    public abstract ExerciseDao exerciseDao();
 
 
     /*
@@ -90,33 +89,38 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
         Create DB Callback
         Used to add some initial data
      */
-    private static RoomDatabase.Callback createCallback = new RoomDatabase.Callback() {
+    private static final Callback createCallback = new Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            Log.i( LOG_TAG_DB, "onCreate() called" );
+            Log.i(LOG_TAG_DB, "onCreate() called");
 
             execute(() -> {
-               PersonDao dao = INSTANCE.personDao();
-               dao.deleteAll();
+                PersonDao dao = INSTANCE.personDao();
+                dao.deleteAll();
 
-               TrainingDao daoTraining = INSTANCE.trainingDao();
-               daoTraining.deleteAll();
+                TrainingDao daoTraining = INSTANCE.trainingDao();
+                daoTraining.deleteAll();
 
                 MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
                 daoMuscleGroup.deleteAll();
 
+
                 Faker faker = Faker.instance();
-                for (int i = 0; i < 25; i++)
-                {
-                   Training training = new Training(faker.team().sport(), Category.category1);
+                for (int i = 0; i < 25; i++) {
+                    Training training = new Training(faker.team().sport(), Category.category1);
 
+                    training.setCreated(System.currentTimeMillis());
+                    training.setModified(training.getCreated());
+                    training.setVersion(1);
+                    daoTraining.insert(training);
 
-                    training.setCreated( System.currentTimeMillis() );
-                    training.setProfileImageUrl( faker.avatar().image() );
-                    training.setModified( training.getCreated() );
-                    training.setVersion( 1 );
+                    Exercise exercise = new Exercise(faker.pokemon().name());
+
+                    exercise.setCreated(System.currentTimeMillis());
+                    exercise.setModified(training.getCreated());
+                    exercise.setVersion(1);
                     daoTraining.insert(training);
 
                 }
