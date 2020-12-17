@@ -108,8 +108,8 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
                 daoMuscleGroup.deleteAll();
 
-                ExerciseDao daoExercise =INSTANCE.exerciseDao();
-                daoExercise.deleteAll();
+               // ExerciseDao daoExercise =INSTANCE.exerciseDao();
+               // daoExercise.deleteAll();
 
                 Faker faker = Faker.instance();
                 for (int i = 0; i < 25; i++)

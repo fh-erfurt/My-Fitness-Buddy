@@ -39,10 +39,12 @@ public class ExerciseRepository {
         return INSTANCE;
     }
 
-    public ExerciseRepository(Context context) {
+  public ExerciseRepository(Context context) {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
         this.exerciseDao = db.exerciseDao();
     }
+
+
 
     public List<Exercise> getExercise()
     {
