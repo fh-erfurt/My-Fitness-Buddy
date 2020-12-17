@@ -7,12 +7,12 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.myfitnessbuddy.model.Training.Training;
 import com.example.myfitnessbuddy.model.exercise.Exercise;
 
 import java.util.List;
 @Dao
 public interface ExerciseDao {
-
 
 
     @Insert
@@ -39,6 +39,7 @@ public interface ExerciseDao {
     @Query("SELECT * from Exercise")
     LiveData<List<Exercise>> getExerciseLiveData();
 
+
     @Query("SELECT * from Exercise ORDER BY designation ASC")
     List<Exercise> getExerciseSortedByDesignation();
 
@@ -47,5 +48,8 @@ public interface ExerciseDao {
 
     @Query("SELECT * FROM Exercise WHERE designation LIKE :search")
     List<Exercise> getExerciseForDesignation(String search);
+
+    @Query("SELECT * FROM Exercise WHERE exercise_id = :exerciseId")
+    LiveData<Exercise> getExerciseById(long exerciseId);
 
 }

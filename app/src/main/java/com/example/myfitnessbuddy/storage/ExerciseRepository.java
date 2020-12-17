@@ -6,7 +6,7 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.myfitnessbuddy.model.MuscleGroup;
+import com.example.myfitnessbuddy.model.Training.Training;
 import com.example.myfitnessbuddy.model.exercise.Exercise;
 
 import java.util.ArrayList;
@@ -44,35 +44,20 @@ public class ExerciseRepository {
         this.exerciseDao = db.exerciseDao();
     }
 
-
-
     public List<Exercise> getExercise()
     {
         return this.query( () -> this.exerciseDao.getExercise() );
     }
 
-    public LiveData<List<Exercise>> getExerciseLiveData()
+    /*public LiveData<List<Exercise>> getExerciseLiveData()
     {
-        if( this.allExercise == null )
+        if( this.allExercise == null ) {
             this.allExercise = this.queryLiveData(this.exerciseDao::getExerciseLiveData);
+        }
 
         return this.allExercise;
-    }
+    }*/
 
-
-
-
-    private LiveData<List<Exercise>> queryLiveData( Callable<LiveData<List<Exercise>>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new MutableLiveData<>(Collections.emptyList());
-    }
 
     public List<Exercise> getExerciseForDesignation(String search )
     {
@@ -139,5 +124,24 @@ public class ExerciseRepository {
 
         return -1;
     }
+    public LiveData<Exercise> getExerciseByIdAsLiveData(long exerciseId )
+    {
+        return this.queryLiveData(() -> this.exerciseDao.getExerciseById(exerciseId) );
+    }
+
+    private LiveData<Exercise> queryLiveData( Callable<LiveData<Exercise>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Well, is this a reasonable default return value?
+        return new MutableLiveData<>();
+    }
+
+
 }
 

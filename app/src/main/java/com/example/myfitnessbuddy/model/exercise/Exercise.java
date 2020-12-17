@@ -23,12 +23,12 @@ public class Exercise {
     private MuscleGroup muscleGroup;
 */
     @NonNull
-    @ColumnInfo(name = "category")
-    private String name;
-
-    @NonNull
     @ColumnInfo(name = "created")
     private long created;
+
+    @NonNull
+    @ColumnInfo(name = "modified")
+    private long modified;
 
     @NonNull
     @ColumnInfo(name = "version")
@@ -66,15 +66,6 @@ public class Exercise {
         this.muscleGroup = muscleGroup;
     }
 */
-    @NonNull
-    public String getName() {
-        return name;
-    }
-
-    public void setName(@NonNull String name) {
-        this.name = name;
-    }
-
     public long getCreated() {
         return created;
     }
@@ -98,10 +89,6 @@ public class Exercise {
     public void setVersion(int version) {
         this.version = version;
     }
-
-    @NonNull
-    @ColumnInfo(name = "modified")
-    private long modified;
 
 
 
