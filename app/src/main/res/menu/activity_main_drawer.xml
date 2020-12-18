@@ -12,6 +12,10 @@
             android:id="@+id/fragment_traininglist"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/tab_text_1" />
+        <item
+            android:id="@+id/fragment_exercise"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/tab_text_2" />
 
     </group>
 </menu>
