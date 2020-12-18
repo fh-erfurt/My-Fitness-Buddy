@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.myfitnessbuddy.R;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
+import PME.myfitnessbuddy.view.ui.training.TrainingListAdapter;
+import PME.myfitnessbuddy.view.ui.training.TrainingListViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +44,25 @@ public class ExerciseFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+
+        //TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
+/*
+        RecyclerView trainingListView = root.findViewById(R.id.exercises);
+        final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
+                exerciseId -> {
+                    Bundle args = new Bundle();
+                    args.putLong("trainingId", trainingId);
+                    NavController nc = NavHostFragment.findNavController( this );
+                    //nc.navigate( R.id.action_fragment_traininglist_to_fragment_traininglist_trainingdetails, args );
+                });
+
+        trainingListView.setAdapter( adapter );
+        trainingListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
+
+        trainingListViewModel.getTrainings().observe(this.requireActivity(), adapter::setTrainings);
+*/
+
         return root;
     }
 }

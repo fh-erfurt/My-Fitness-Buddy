@@ -95,7 +95,7 @@ public class TrainingDetailsFragment extends BaseFragment {
         assert getView() != null;
 
         //ToDo Fragment
-        TextView nameView = getView().findViewById( R.id.fragment_traininglist );
+        TextView nameView = getView().findViewById( R.id.fragment_contact_details_fullname );
 
         nameView.setText(String.format("%s %s", training.getDesignation(), "  id:"+training.getId()));
 

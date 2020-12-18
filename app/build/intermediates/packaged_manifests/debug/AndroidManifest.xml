@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myfitnessbuddy"
+    package="com.myfitnessbuddy"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -20,7 +20,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.MyFitnessBuddy" >
         <activity
-            android:name="com.example.myfitnessbuddy.view.MainActivity"
+            android:name="PME.myfitnessbuddy.view.MainActivity"
             android:theme="@style/Theme.MyFitnessBuddy.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,9 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.myfitnessbuddy.view.ui.exercise.Exercises_AddExercise" />
-        <activity android:name="com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining_AddExercise" />
-        <activity android:name="com.example.myfitnessbuddy.view.ui.training.TrainingList_AddTraining" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -43,7 +40,7 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.example.myfitnessbuddy.com.squareup.picasso"
+            android:authorities="com.myfitnessbuddy.com.squareup.picasso"
             android:exported="false" />
     </application>
 

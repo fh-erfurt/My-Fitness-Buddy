@@ -81,7 +81,7 @@ public class TrainingListFragment extends BaseFragment  {
             Bundle args = new Bundle();
             args.putLong("trainingId", trainingId);
             NavController nc = NavHostFragment.findNavController( this );
-            //nc.navigate( R.id.action_fragment_traininglist_to_fragment_traininglist_trainingdetails, args );
+            nc.navigate( R.id.action_fragment_traininglist_to_fragment_trainingdetails, args );
         });
 
         trainingListView.setAdapter( adapter );
