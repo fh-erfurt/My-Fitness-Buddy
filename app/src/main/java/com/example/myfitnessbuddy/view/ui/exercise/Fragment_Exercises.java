@@ -3,19 +3,28 @@ package com.example.myfitnessbuddy.view.ui.exercise;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.myfitnessbuddy.R;
+import com.example.myfitnessbuddy.model.exercise.Exercise;
+import com.example.myfitnessbuddy.view.ui.Core.BaseFragment;
+import com.example.myfitnessbuddy.view.ui.training.TrainingListAdapter;
+import com.example.myfitnessbuddy.view.ui.training.TrainingListViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_Exercises#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Exercises extends Fragment {
+public class Fragment_Exercises extends BaseFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +35,8 @@ public class Fragment_Exercises extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
     public Fragment_Exercises() {
         // Required empty public constructor
     }
@@ -34,16 +45,15 @@ public class Fragment_Exercises extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Exercises.
+
+     * @return A new instance of fragment Fragment_TrainingList.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Exercises newInstance(String param1, String param2) {
-        Fragment_Exercises fragment = new Fragment_Exercises();
+    public static com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises newInstance() {
+        com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises fragment = new com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        //  args.putString(ARG_PARAM1, param1);
+        //    args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,7 +70,32 @@ public class Fragment_Exercises extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_exercises, container, false);
+        View vE = inflater.inflate(R.layout.fragment_exercises, container, false);
+
+
+        Button b = (Button) vE.findViewById(R.id.button);
+        //  b.setOnClickListener(this);
+
+        ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
+
+        RecyclerView trainingListView = vE.findViewById(R.id.list_view_trainings);
+        final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
+                exerciseId -> {
+                    Bundle args = new Bundle();
+                    args.putLong("exerciseId", exerciseId);
+                    NavController nc = NavHostFragment.findNavController( this );
+                    nc.navigate( R.id.Fragment_Exercises, args );
+                });
+
+        trainingListView.setAdapter( adapter );
+        trainingListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
+
+        exerciseViewModel.getExercises().observe(this.requireActivity(), adapter::setExercises);
+
+        return vE;
+
     }
+
+
+
 }

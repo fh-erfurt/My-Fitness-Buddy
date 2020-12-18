@@ -36,4 +36,9 @@
             app:destination="@id/fragment_traininglist_trainingdetails" />
 
     </fragment>
+    <fragment
+        android:id="@+id/Fragment_Exercises"
+        android:name="com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises"
+        android:label="fragment_exercises"
+        tools:layout="@layout/fragment_exercises" />
 </navigation>
