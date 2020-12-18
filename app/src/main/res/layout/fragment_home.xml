@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="7"
     android:background="#fafafa"
-    tools:context=".view.MainActivity">
+    tools:context="PME.myfitnessbuddy.view.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -7,38 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.myfitnessbuddy.view.ui.home.HomeFragment"
+        android:name="PME.myfitnessbuddy.view.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/fragment_traininglist_trainingdetails"
-        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList_TrainingDetails"
-        android:label="fragment_traininglist_trainingdetails"
-        tools:layout="@layout/fragment_traininglist_trainingdetails" >
-        <argument
-            android:name="trainingId"
-            app:argType="long" />
-    </fragment>
-
-    <fragment
         android:id="@+id/fragment_traininglist"
-        android:name="com.example.myfitnessbuddy.view.ui.training.Fragment_TrainingList"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingListFragment"
         android:label="@string/tab_text_1"
-        tools:layout="@layout/fragment_traininglist" >
-        <action
-            android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails"
-            app:destination="@id/fragment_traininglist_trainingdetails"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_enter_anim" />
-        <action
-            android:id="@+id/action_fragment_traininglist_to_fragment_traininglist_trainingdetails2"
-            app:destination="@id/fragment_traininglist_trainingdetails" />
+        tools:layout="@layout/fragment_traininglist" />
 
-    </fragment>
     <fragment
-        android:id="@+id/Fragment_Exercises"
-        android:name="com.example.myfitnessbuddy.view.ui.exercise.Fragment_Exercises"
-        android:label="fragment_exercises"
-        tools:layout="@layout/fragment_exercises" />
+        android:id="@+id/fragment_exercise"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment"
+        android:label="@string/tab_text_2"
+        tools:layout="@layout/fragment_exercise" />
 </navigation>
