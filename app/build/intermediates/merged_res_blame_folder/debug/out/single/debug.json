@@ -1,23 +1,23 @@
 [
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_widgets.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\widgets.xml"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_spicy_rice.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\spicy_rice.xml"
-    },
-    {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_chelsea_market.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\chelsea_market.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_black_ops_one.xml.flat",
@@ -36,24 +36,24 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_gallery.xml.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\ic_menu_gallery.xml"
-    },
-    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_krona_one.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\krona_one.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\drawable\\ic_menu_gallery.xml"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\font_permanent_marker.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\font\\permanent_marker.xml"
+    },
+    {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_evaluation.xml.flat",

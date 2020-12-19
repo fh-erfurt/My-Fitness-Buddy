@@ -81,7 +81,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             return 0;
     }
 
-    public void setExercises(List<Exercise> exercises){
+    public void setExercises(List<Exercise> exerciseList){
         this.exerciseList = exerciseList;
         notifyDataSetChanged();
     }

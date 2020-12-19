@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class}, version = 8 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class}, version = 11 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -105,6 +105,9 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                TrainingDao daoTraining = INSTANCE.trainingDao();
                daoTraining.deleteAll();
 
+                ExerciseDao daoExercise = INSTANCE.exerciseDao();
+                daoExercise.deleteAll();
+
                 /*MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
                 daoMuscleGroup.deleteAll();
 
@@ -122,6 +125,13 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setModified( training.getCreated() );
                     training.setVersion( 1 );
                     daoTraining.insert(training);
+
+                    Exercise exercise = new Exercise(faker.chuckNorris().fact());
+                    exercise.setCreated( System.currentTimeMillis() );
+                  //  exercise.setProfileImageUrl( faker.avatar().image() );
+                    exercise.setModified(exercise.getCreated() );
+                    exercise.setVersion( 1 );
+                    daoExercise.insert(exercise);
 
                 }
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");

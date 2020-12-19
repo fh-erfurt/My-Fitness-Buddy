@@ -58,7 +58,6 @@ PME/myfitnessbuddy/storage/MyFitnessBuddyDatabase.java
  PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase$1
 PME/myfitnessbuddy/view/ui/exercise/ExerciseFragment.java
  PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment
- PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment$1
 PME/myfitnessbuddy/view/ui/exercise/ExerciseAdapter.java
  PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter
  PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter$1
