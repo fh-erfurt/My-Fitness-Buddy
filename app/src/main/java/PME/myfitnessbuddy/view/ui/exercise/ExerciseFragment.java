@@ -51,9 +51,11 @@ public class ExerciseFragment extends BaseFragment {
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {
                     Bundle args = new Bundle();
-                    args.putLong("trainingId", trainingId);
+                    args.putLong("exerciseId", exerciseId);  /////exerciseId wird als Argument im Navgraph übergeben
+                                                                  siehe: Navgraph / fragment_trainingDetails / trainingId
+                                                                  bei Arguments auf das Plus klicken
                     NavController nc = NavHostFragment.findNavController( this );
-                    nc.navigate( R.id. action vom navgraph  , args );
+                    nc.navigate( R.id.///////////action vom navgraph//////////  , args );
                 });
             */
 
