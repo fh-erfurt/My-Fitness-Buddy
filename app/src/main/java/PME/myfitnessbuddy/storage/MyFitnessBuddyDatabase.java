@@ -126,7 +126,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setVersion( 1 );
                     daoTraining.insert(training);
 
-                    Exercise exercise = new Exercise(faker.chuckNorris().fact());
+                    Exercise exercise = new Exercise(faker.pokemon().name());
                     exercise.setCreated( System.currentTimeMillis() );
                   //  exercise.setProfileImageUrl( faker.avatar().image() );
                     exercise.setModified(exercise.getCreated() );

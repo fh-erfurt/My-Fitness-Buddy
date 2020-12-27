@@ -11,11 +11,11 @@
         <item
             android:id="@+id/fragment_traininglist"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/tab_text_1" />
+            android:title="@string/menu_training" />
         <item
             android:id="@+id/fragment_exercise"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/tab_text_2" />
+            android:title="@string/menu_excersise" />
 
     </group>
 </menu>

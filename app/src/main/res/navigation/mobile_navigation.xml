@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/fragment_exercise"
         android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment"
-        android:label="@string/tab_text_2"
+        android:label="@string/menu_excersise"
         tools:layout="@layout/fragment_exercise" />
     <fragment
         android:id="@+id/fragment_trainingdetails"

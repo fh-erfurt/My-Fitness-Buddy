@@ -16,5 +16,5 @@
     <color name="red">#fb1515</color>
     <color name="green">#59fb59</color>
 
-
+    <color name="accent_color">#FFC107</color>
 </resources>
