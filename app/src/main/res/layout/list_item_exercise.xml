@@ -4,32 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
 
     <ImageView
         android:id="@+id/list_item_exercise_image"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_weight="2"
-        tools:srcCompat="@drawable/bizeps"
-        />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/gray_dark"
+        tools:srcCompat="@drawable/bizeps" />
 
     <TextView
         android:id="@+id/list_item_exercise_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_weight="5"
-        android:padding="5dp"
-        android:textSize="22sp"
-        tools:text="@tools:sample/full_names"
-        />
+        android:background="@color/gray_dark"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textColor="@color/accent_color"
 
-    <Button
+        android:textSize="22sp"
+        tools:text="@tools:sample/full_names" />
+
+    <!--<Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:text="Button" />
-
+        android:text="Button"
+        android:background="@color/gray_dark"/>
+-->
 </LinearLayout>
