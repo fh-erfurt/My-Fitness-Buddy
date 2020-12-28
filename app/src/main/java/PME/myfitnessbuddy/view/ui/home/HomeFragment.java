@@ -1,5 +1,6 @@
 package PME.myfitnessbuddy.view.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -20,7 +22,11 @@ import androidx.navigation.Navigation;
 import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
+import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
+import PME.myfitnessbuddy.view.ui.training.TrainingListFragment;
+
+public class HomeFragment extends Fragment  implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
     CardView cardViewTraining;
@@ -63,28 +69,36 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Fragment fragment = null;
         switch (v.getId())
         {
             case R.id.cardview_home_training:
-            Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-            break;
+                fragment = new TrainingListFragment();
+                replaceFragment(fragment);
+                break;
 
             case R.id.cardview_home_exercise:
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                fragment = new ExerciseFragment();
+                replaceFragment(fragment);
                 break;
+
             case R.id.cardview_home_analyse:
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                fragment = new EvaluationFragment();
+                replaceFragment(fragment);
                 break;
             case R.id.cardview_home_settings:
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(v, "Hier muss noch das fragment hin", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 break;
 
 
         }
 
+    }
+    public void replaceFragment(Fragment someFragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
