@@ -55,17 +55,17 @@ public class MuscleGroup {
 
      */
     @NonNull
-    public String getProfileImageUrl() {
+    public int getProfileImageUrl() {
         return profileImageUrl;
     }
 
-    public void setProfileImageUrl(@NonNull String profileImageUrl) {
+    public void setProfileImageUrl(@NonNull int profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
     }
 
     @NonNull
     @ColumnInfo(name = "profile_image_url")
-    private String profileImageUrl;
+    private int profileImageUrl;
 
 
     @NonNull

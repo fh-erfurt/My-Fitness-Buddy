@@ -16,7 +16,11 @@
         android:id="@+id/fragment_exercise"
         android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment"
         android:label="@string/tab_text_2"
-        tools:layout="@layout/fragment_exercise" />
+        tools:layout="@layout/fragment_exercise" >
+        <action
+            android:id="@+id/action_fragment_exercise_to_createExerciseFragment"
+            app:destination="@id/createExerciseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_trainingdetails"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingDetailsFragment"
@@ -36,5 +40,14 @@
             app:destination="@id/fragment_trainingdetails"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/createExerciseFragment"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.createExerciseFragment"
+        android:label="fragment_create_exercise"
+        tools:layout="@layout/fragment_create_exercise" >
+        <action
+            android:id="@+id/action_createExerciseFragment_to_fragment_exercise"
+            app:destination="@id/fragment_exercise" />
     </fragment>
 </navigation>

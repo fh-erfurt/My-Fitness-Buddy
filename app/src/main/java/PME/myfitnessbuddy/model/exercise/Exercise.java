@@ -36,6 +36,19 @@ public class Exercise {
     @ColumnInfo(name = "designation")
     private String designation;
 
+    @NonNull
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(@NonNull String description) {
+        this.description = description;
+    }
+
+    @NonNull
+    @ColumnInfo(name = "description")
+    private String description;
+
     public void setMuscleGroups(List<MuscleGroup> muscleGroups) {
         this.muscleGroups = muscleGroups;
     }
@@ -56,8 +69,9 @@ public class Exercise {
     @ColumnInfo(name = "version")
     private int version = 0;
 
-    public Exercise(@NonNull String designation) {
+    public Exercise(@NonNull String designation, @NonNull String description) {
         this.designation = designation;
+        this.description = description;
         //this.muscleGroup = muscleGroup;
     }
 

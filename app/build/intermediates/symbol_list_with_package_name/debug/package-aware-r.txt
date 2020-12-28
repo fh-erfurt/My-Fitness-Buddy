@@ -75,6 +75,7 @@ array circular_progress_layout_color_scheme_colors
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
+array feedbacktypelist
 array preloaded_fonts
 attr action
 attr actionBarDivider
@@ -1810,6 +1811,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id SpinnerFeedbackType
 id TOP_END
 id TOP_START
 id accelerate
@@ -1856,7 +1858,9 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_createExerciseFragment_to_fragment_exercise
 id action_divider
+id action_fragment_exercise_to_createExerciseFragment
 id action_fragment_traininglist_to_fragment_trainingdetails
 id action_image
 id action_list
@@ -1889,6 +1893,8 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnCreateExercise
+id btnToCreateExercise
 id butt
 id button
 id buttonPanel
@@ -1918,6 +1924,9 @@ id content
 id contentPanel
 id coordinator
 id cos
+id createExerciseDescription
+id createExerciseFragment
+id createExerciseName
 id custom
 id customPanel
 id cut
@@ -2168,6 +2177,9 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
+id textView3
+id textView4
 id text_home
 id text_input_end_icon
 id text_input_start_icon
@@ -2324,6 +2336,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_create_exercise
 layout fragment_evaluation
 layout fragment_exercise
 layout fragment_home
@@ -2457,6 +2470,10 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string feedbacktype1
+string feedbacktype2
+string feedbacktype3
+string feedbacktype4
 string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior

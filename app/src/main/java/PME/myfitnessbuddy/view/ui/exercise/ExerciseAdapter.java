@@ -82,8 +82,8 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             holder.currentExerciseId = current.getExercise().getExerciseId();
 
 
-                int id = R.drawable.info;
-                holder.imageView.setImageResource(id);
+
+                holder.imageView.setImageResource(current.muscleGroups.get(0).getProfileImageUrl());
 
 
         }

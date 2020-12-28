@@ -27,6 +27,12 @@ public class MuscleGroupRepository {
 
     private static MuscleGroupRepository INSTANCE;
 
+    public long getMuscleGroupRepositoryId() {
+        return muscleGroupRepositoryId;
+    }
+
+    long muscleGroupRepositoryId;
+
     private LiveData<List<MuscleGroup>> allMuscleGroups;
 
 
@@ -133,7 +139,7 @@ public class MuscleGroupRepository {
         muscleGroup.setModified( muscleGroup.getCreated() );
         muscleGroup.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> muscleGroupDao.insertMuscleGroup( muscleGroup ) );
+        MyFitnessBuddyDatabase.execute( () -> this.muscleGroupRepositoryId = muscleGroupDao.insertMuscleGroup( muscleGroup ) );
     }
 
 /*

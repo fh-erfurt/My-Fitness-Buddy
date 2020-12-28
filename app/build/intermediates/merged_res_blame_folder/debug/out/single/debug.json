@@ -128,6 +128,10 @@
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_create_exercise.xml.flat",
+        "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\layout\\fragment_create_exercise.xml"
+    },
+    {
         "merged": "C:\\Users\\bswar\\Desktop\\PME\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\bswar\\Desktop\\PME\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },

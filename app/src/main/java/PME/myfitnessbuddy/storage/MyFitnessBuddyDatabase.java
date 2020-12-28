@@ -21,6 +21,7 @@ import PME.myfitnessbuddy.model.training.CategoryConverter;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
+import com.myfitnessbuddy.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 5 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 12 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -141,12 +142,12 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                     MuscleGroup muscleGroup = new MuscleGroup(faker.chuckNorris().fact());
                     muscleGroup.setCreated( System.currentTimeMillis() );
-                    muscleGroup.setProfileImageUrl( "/app/src/main/res/drawable/run.png" );
+                    muscleGroup.setProfileImageUrl( R.drawable.info );
                     muscleGroup.setModified( muscleGroup.getCreated() );
                     muscleGroup.setVersion( 1 );
 
 
-                    Exercise exercise = new Exercise(faker.chuckNorris().fact());
+                    Exercise exercise = new Exercise(faker.pokemon().name(),faker.pokemon().location());
                     exercise.setCreated( System.currentTimeMillis() );
                     //exercise.setProfileImageUrl( faker.avatar().image() );
                     exercise.setModified( training.getCreated() );

@@ -24,6 +24,12 @@ public class ExerciseRepository {
 
     private ExerciseDao exerciseDao;
 
+    public long getRepositoryExerciseId() {
+        return repositoryExerciseId;
+    }
+
+    private long repositoryExerciseId;
+
     private static ExerciseRepository INSTANCE;
 
     private LiveData<List<Exercise>> allExercises;
@@ -93,7 +99,7 @@ public class ExerciseRepository {
         }
 
         // Well, is this a reasonable default return value?
-        return new Exercise("");
+        return new Exercise("", "");
     }
 
     public void update(Exercise exercise) {
@@ -108,7 +114,7 @@ public class ExerciseRepository {
         exercise.setModified( exercise.getCreated() );
         exercise.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> exerciseDao.insertExercise( exercise ) );
+        MyFitnessBuddyDatabase.execute( () -> this.repositoryExerciseId = exerciseDao.insertExercise( exercise ) );
     }
 
 /*

@@ -75,5 +75,7 @@ PME/myfitnessbuddy/view/ui/exercise/ExerciseAdapter.java
  PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter$ExerciseViewHolder
 PME/myfitnessbuddy/storage/ExerciseRepository.java
  PME.myfitnessbuddy.storage.ExerciseRepository
+PME/myfitnessbuddy/view/ui/exercise/createExerciseFragment.java
+ PME.myfitnessbuddy.view.ui.exercise.createExerciseFragment
 PME/myfitnessbuddy/storage/MuscleGroupRepository.java
  PME.myfitnessbuddy.storage.MuscleGroupRepository
