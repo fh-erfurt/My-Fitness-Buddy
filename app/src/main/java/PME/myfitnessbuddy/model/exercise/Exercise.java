@@ -3,23 +3,47 @@ package PME.myfitnessbuddy.model.exercise;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import PME.myfitnessbuddy.model.MuscleGroup;
 
 @Entity
 public class Exercise {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "exercise_id")
-    private int id;
+    @ColumnInfo(name = "exerciseId")
+    private long exerciseId;
 
+    /*
+    public long getMuscleGroupId() {
+        return muscleGroupId;
+    }
+
+    public void setMuscleGroupId(long muscleGroupId) {
+        this.muscleGroupId = muscleGroupId;
+    }
+
+    @NonNull
+    @ColumnInfo(name = "muscleGroupId")
+    private long muscleGroupId;
+
+
+     */
     @NonNull
     @ColumnInfo(name = "designation")
     private String designation;
 
+    public void setMuscleGroups(List<MuscleGroup> muscleGroups) {
+        this.muscleGroups = muscleGroups;
+    }
 
-   /* @NonNull
-    @ColumnInfo(name = "muscleGroup")
-    private MuscleGroup muscleGroup;
-*/
+    @Ignore
+    private List<MuscleGroup> muscleGroups = new ArrayList<>();
+
+
     @NonNull
     @ColumnInfo(name = "created")
     private long created;
@@ -38,12 +62,12 @@ public class Exercise {
     }
 
 
-    public int getId() {
-        return id;
+    public long getExerciseId() {
+        return exerciseId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setExerciseId(long exerciseId) {
+        this.exerciseId = exerciseId;
     }
 
     @NonNull
@@ -87,6 +111,15 @@ public class Exercise {
     public void setVersion(int version) {
         this.version = version;
     }
+
+    /*
+    public List<MuscleGroup> getMuscleGroups() {
+        return muscleGroups;
+    }
+
+
+     */
+
 
 
 

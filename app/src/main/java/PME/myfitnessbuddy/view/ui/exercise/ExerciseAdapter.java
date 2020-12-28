@@ -1,18 +1,26 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
-import PME.myfitnessbuddy.model.exercise.Exercise;
 
+import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.model.MuscleGroup;
+
+import java.io.File;
 import java.util.List;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
@@ -25,12 +33,14 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     static class ExerciseViewHolder extends RecyclerView.ViewHolder {
         private final TextView exerciseName;
+        private final ImageView imageView;
         private long currentExerciseId = -1;
 
         private ExerciseViewHolder(View itemView, ExerciseClickListener exerciseClickListener) {
             super(itemView);
 
             this.exerciseName = itemView.findViewById(R.id.list_item_exercise_name);
+            this.imageView =itemView.findViewById(R.id.list_item_exercise_image);
 
             itemView.setOnClickListener( vE -> {
                 exerciseClickListener.onClick( this.currentExerciseId );
@@ -39,8 +49,12 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     }
 
     private final LayoutInflater inflater;
-    private List<Exercise> exerciseList;
+    private List<ExerciseWithMuscleGroup> exerciseList;
+
     private final ExerciseClickListener exerciseClickListener;
+  //  MuscleGroupRepository muscleGroupRepository = MuscleGroupRepository.getRepository(this.)
+    private List<MuscleGroup> muscleGroupList;
+
 
     public ExerciseAdapter(Context context, ExerciseClickListener exerciseClickListener) {
         this.inflater = LayoutInflater.from(context);
@@ -60,10 +74,16 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHolder holder, int position) {
         if (this.exerciseList != null && !this.exerciseList.isEmpty()) {
-            Exercise current = this.exerciseList.get(position);
-            holder.exerciseName.setText(String.format("%s", current.getDesignation()));
+            ExerciseWithMuscleGroup current = this.exerciseList.get(position);
+   //        LiveData<MuscleGroup> muscleGroup = muscleGroupDao.geMuscleGroupById(current.getMuscleGroups().get(0).getMuscleGroupId());
 
-            holder.currentExerciseId = current.getId();
+            holder.exerciseName.setText(String.format("%s", current.muscleGroups.get(0).getProfileImageUrl()));
+
+            holder.currentExerciseId = current.getExercise().getExerciseId();
+
+
+                int id = R.drawable.info;
+                holder.imageView.setImageResource(id);
 
 
         }
@@ -81,8 +101,13 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             return 0;
     }
 
-    public void setExercises(List<Exercise> exerciseList){
+    public void setExercises(List<ExerciseWithMuscleGroup> exerciseList){
         this.exerciseList = exerciseList;
+        notifyDataSetChanged();
+    }
+
+    public void setMuscleGroups(List<MuscleGroup> muscleGroupList){
+        this.muscleGroupList = muscleGroupList;
         notifyDataSetChanged();
     }
 

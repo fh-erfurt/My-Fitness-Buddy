@@ -3,20 +3,69 @@ package PME.myfitnessbuddy.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import PME.myfitnessbuddy.model.exercise.Exercise;
 
 
 @Entity
 public class MuscleGroup {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    private int id;
+    @ColumnInfo(name = "muscleGroupId")
+    private long muscleGroupId;
 
+    /*
+    public long getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(long exerciseId) {
+        this.exerciseId = exerciseId;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+
+
+    @NonNull
+    @ColumnInfo(name = "exerciseId")
+    private long exerciseId;
+
+
+     */
     @NonNull
     @ColumnInfo(name = "designation")
     private String designation;
+
+    /*
+    @Ignore
+    private List<Exercise> exercises = new ArrayList<>();
+
+
+     */
+    @NonNull
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(@NonNull String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
+
+    @NonNull
+    @ColumnInfo(name = "profile_image_url")
+    private String profileImageUrl;
 
 
     @NonNull
@@ -37,12 +86,12 @@ public class MuscleGroup {
         this.designation = designation;
     }
 
-    public int getId() {
-        return id;
+    public long getMuscleGroupId() {
+        return muscleGroupId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMuscleGroupId(long muscleGroupId) {
+        this.muscleGroupId = muscleGroupId;
     }
 
     @NonNull
@@ -77,4 +126,8 @@ public class MuscleGroup {
     public void setVersion(int version) {
         this.version = version;
     }
+
+
+
+
 }

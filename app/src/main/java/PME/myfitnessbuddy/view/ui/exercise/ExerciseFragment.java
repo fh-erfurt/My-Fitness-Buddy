@@ -1,9 +1,11 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -27,6 +29,7 @@ public class ExerciseFragment extends BaseFragment {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -66,6 +69,7 @@ public class ExerciseFragment extends BaseFragment {
         exerciseListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
 
         exerciseViewModel.getExercises().observe(this.requireActivity(), adapter::setExercises);
+      //  exerciseViewModel.getMuscleGroups().observe(this.requireActivity(), adapter::setMuscleGroups);
 
 
         return root;

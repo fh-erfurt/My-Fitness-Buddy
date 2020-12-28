@@ -11,6 +11,7 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
+import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.MuscleGroup;
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.training.Category;
@@ -21,13 +22,15 @@ import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class}, version = 11 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 5 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -38,8 +41,13 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
      */
     public abstract PersonDao personDao();
     public abstract TrainingDao trainingDao();
-    public abstract MuscleGroupDao muscleGroupDao();
+  //  public abstract MuscleGroupDao muscleGroupDao();
     public abstract ExerciseDao exerciseDao();
+
+    public abstract MuscleGroupDao muscleGroupDao();
+
+    public abstract ExerciseCrossRefDao exerciseMuscleGroupCrossRefDao();
+
 
     /*
         Executor service to perform database operations asynchronous and independent from UI thread
@@ -108,14 +116,19 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 ExerciseDao daoExercise = INSTANCE.exerciseDao();
                 daoExercise.deleteAll();
 
-                /*MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
+                ExerciseCrossRefDao exerciseCrossRefDao = INSTANCE.exerciseMuscleGroupCrossRefDao();
+                exerciseCrossRefDao.deleteAll();
+
+
+
+                MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
+
                 daoMuscleGroup.deleteAll();
 
-               ExerciseDao daoExercise =INSTANCE.exerciseDao();
-               daoExercise.deleteAll();*/
+
 
                 Faker faker = Faker.instance();
-                for (int i = 0; i < 25; i++)
+                for (int i = 0; i < 3; i++)
                 {
                    Training training = new Training(faker.team().sport(), Category.category1);
 
@@ -126,13 +139,34 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setVersion( 1 );
                     daoTraining.insert(training);
 
+                    MuscleGroup muscleGroup = new MuscleGroup(faker.chuckNorris().fact());
+                    muscleGroup.setCreated( System.currentTimeMillis() );
+                    muscleGroup.setProfileImageUrl( "/app/src/main/res/drawable/run.png" );
+                    muscleGroup.setModified( muscleGroup.getCreated() );
+                    muscleGroup.setVersion( 1 );
+
+
                     Exercise exercise = new Exercise(faker.chuckNorris().fact());
                     exercise.setCreated( System.currentTimeMillis() );
-                  //  exercise.setProfileImageUrl( faker.avatar().image() );
-                    exercise.setModified(exercise.getCreated() );
+                    //exercise.setProfileImageUrl( faker.avatar().image() );
+                    exercise.setModified( training.getCreated() );
                     exercise.setVersion( 1 );
-                    daoExercise.insert(exercise);
 
+                    long exerciseId = daoExercise.insertExercise(exercise);
+                    long muscleGroupId = daoMuscleGroup.insertMuscleGroup(muscleGroup);
+
+                    ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef = new ExerciseMuscleGroupCrossRef(exerciseId, muscleGroupId);
+                    exerciseMuscleGroupCrossRef.setCreated( System.currentTimeMillis() );
+                    //exercise.setProfileImageUrl( faker.avatar().image() );
+                    exerciseMuscleGroupCrossRef.setModified( training.getCreated() );
+                    exerciseMuscleGroupCrossRef.setVersion( 1 );
+                    exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
+
+
+
+
+
+                    Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
                 }
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
             });

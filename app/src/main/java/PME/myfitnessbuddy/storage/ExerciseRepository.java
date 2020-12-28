@@ -2,16 +2,21 @@ package PME.myfitnessbuddy.storage;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 
+import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 public class ExerciseRepository {
 
@@ -21,7 +26,7 @@ public class ExerciseRepository {
 
     private static ExerciseRepository INSTANCE;
 
-    private LiveData<List<Exercise>> allExercise;
+    private LiveData<List<Exercise>> allExercises;
 
 
     public static ExerciseRepository getRepository( Application application )
@@ -103,17 +108,13 @@ public class ExerciseRepository {
         exercise.setModified( exercise.getCreated() );
         exercise.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> exerciseDao.insert( exercise ) );
+        MyFitnessBuddyDatabase.execute( () -> exerciseDao.insertExercise( exercise ) );
     }
 
-
+/*
     public long insertAndWait( Exercise exercise ) {
-        exercise.setCreated( System.currentTimeMillis() );
-        exercise.setModified( exercise.getCreated() );
-        exercise.setVersion( 1 );
-
         try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insert( exercise ) );
+            return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insertExerciseWithMuscleGroups( exercise ) );
         }
         catch (ExecutionException | InterruptedException e)
         {
@@ -122,18 +123,41 @@ public class ExerciseRepository {
 
         return -1;
     }
+
+ */
     public LiveData<Exercise> getExerciseByIdAsLiveData(long exerciseId )
     {
         return this.queryLiveData(() -> this.exerciseDao.getExerciseById(exerciseId) );
     }
-
+/*
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public LiveData<List<Exercise>> getExerciseLiveData()
     {
-        if( this.allExercise == null )
-            this.allExercise = this.queryLiveData(this.exerciseDao::getExerciseLiveData);
+        if( this.allExercises == null )
+            this.allExercises = Transformations.map(
+                    this.queryLiveData(this.exerciseDao::getExercisesWithMuscleGroups),
+                    input -> input
+                            .stream()
+                            .map( ExerciseWithMuscleGroup::merge )
+                            .collect(Collectors.toList())
+            );
 
-        return this.allExercise;
+        return this.allExercises;
     }
+
+
+ */
+public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
+    try {
+        return MyFitnessBuddyDatabase.executeWithReturn( this.exerciseDao::getExercisesWithMuscleGroups );
+    }
+    catch (ExecutionException | InterruptedException e) {
+        e.printStackTrace();
+    }
+
+    // Well, is this a reasonable default return value?
+    return null;
+}
 
     private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
     {

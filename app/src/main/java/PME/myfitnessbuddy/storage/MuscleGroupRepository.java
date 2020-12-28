@@ -2,11 +2,15 @@ package PME.myfitnessbuddy.storage;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 
 import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.MuscleGroupWithExercise;
 
 
 import java.util.ArrayList;
@@ -14,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 public class MuscleGroupRepository {
     public static final String LOG_TAG = "MuscleGroupRepository";
@@ -47,19 +52,29 @@ public class MuscleGroupRepository {
     {
         return this.query( () -> this.muscleGroupDao.getMuscleGroups() );
     }
-
-    public LiveData<List<MuscleGroup>> getMuscleGroupsLiveData()
+/*
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public LiveData<List<MuscleGroup>> getMuscleGroupLiveData()
     {
         if( this.allMuscleGroups == null )
-            this.allMuscleGroups = this.queryLiveData(this.muscleGroupDao::getMuscleGroupsLiveData);
+            this.allMuscleGroups = Transformations.map(
+                    this.queryLiveData(this.muscleGroupDao::getMuscleGroupsWithExercises),
+                    input -> input
+                            .stream()
+                            .map( MuscleGroupWithExercise::merge )
+                            .collect(Collectors.toList())
+            );
+
 
         return this.allMuscleGroups;
     }
 
 
 
+ */
 
-    private LiveData<List<MuscleGroup>> queryLiveData( Callable<LiveData<List<MuscleGroup>>> query )
+
+    private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
     {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( query );
@@ -68,7 +83,8 @@ public class MuscleGroupRepository {
             e.printStackTrace();
         }
 
-        return new MutableLiveData<>(Collections.emptyList());
+        // Well, is this a reasonable default return value?
+        return new MutableLiveData<>();
     }
 
     public List<MuscleGroup> getMuscleGroupsForDesignation(String search )
@@ -117,17 +133,14 @@ public class MuscleGroupRepository {
         muscleGroup.setModified( muscleGroup.getCreated() );
         muscleGroup.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> muscleGroupDao.insert( muscleGroup ) );
+        MyFitnessBuddyDatabase.execute( () -> muscleGroupDao.insertMuscleGroup( muscleGroup ) );
     }
 
-
+/*
     public long insertAndWait( MuscleGroup muscleGroup ) {
-        muscleGroup.setCreated( System.currentTimeMillis() );
-        muscleGroup.setModified( muscleGroup.getCreated() );
-        muscleGroup.setVersion( 1 );
 
         try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> muscleGroupDao.insert( muscleGroup ) );
+            return MyFitnessBuddyDatabase.executeWithReturn( () -> muscleGroupDao.insertMuscleGroupWithExercises( muscleGroup ) );
         }
         catch (ExecutionException | InterruptedException e)
         {
@@ -136,4 +149,7 @@ public class MuscleGroupRepository {
 
         return -1;
     }
+
+
+ */
 }

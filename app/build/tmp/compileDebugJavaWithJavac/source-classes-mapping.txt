@@ -14,10 +14,14 @@ PME/myfitnessbuddy/view/ui/home/HomeViewModel.java
  PME.myfitnessbuddy.view.ui.home.HomeViewModel
 PME/myfitnessbuddy/storage/ExerciseDao.java
  PME.myfitnessbuddy.storage.ExerciseDao
+PME/myfitnessbuddy/model/ExerciseWithMuscleGroup.java
+ PME.myfitnessbuddy.model.ExerciseWithMuscleGroup
 PME/myfitnessbuddy/view/ui/training/TrainingListFragment.java
  PME.myfitnessbuddy.view.ui.training.TrainingListFragment
 PME/myfitnessbuddy/storage/PersonRepository.java
  PME.myfitnessbuddy.storage.PersonRepository
+PME/myfitnessbuddy/model/MuscleGroupWithExercise.java
+ PME.myfitnessbuddy.model.MuscleGroupWithExercise
 PME/myfitnessbuddy/view/ui/core/BaseFragment.java
  PME.myfitnessbuddy.view.ui.core.BaseFragment
 PME/myfitnessbuddy/view/ui/home/HomeFragment.java
@@ -31,6 +35,8 @@ PME/myfitnessbuddy/storage/TrainingRepository.java
  PME.myfitnessbuddy.storage.TrainingRepository
 PME/myfitnessbuddy/view/ui/training/TrainingDetailsViewModel.java
  PME.myfitnessbuddy.view.ui.training.TrainingDetailsViewModel
+PME/myfitnessbuddy/model/ExerciseMuscleGroupCrossRef.java
+ PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef
 PME/myfitnessbuddy/view/ui/training/TrainingListAdapter.java
  PME.myfitnessbuddy.view.ui.training.TrainingListAdapter
  PME.myfitnessbuddy.view.ui.training.TrainingListAdapter$1
@@ -42,6 +48,10 @@ PME/myfitnessbuddy/storage/KeyValueStore.java
  PME.myfitnessbuddy.storage.KeyValueStore
 PME/myfitnessbuddy/model/training/Category.java
  PME.myfitnessbuddy.model.training.Category
+PME/myfitnessbuddy/storage/ExerciseCrossRefDao.java
+ PME.myfitnessbuddy.storage.ExerciseCrossRefDao
+PME/myfitnessbuddy/storage/ExerciseCrossRefRepository.java
+ PME.myfitnessbuddy.storage.ExerciseCrossRefRepository
 PME/myfitnessbuddy/view/ui/training/TrainingListViewModel.java
  PME.myfitnessbuddy.view.ui.training.TrainingListViewModel
 com/myfitnessbuddy/BuildConfig.java
