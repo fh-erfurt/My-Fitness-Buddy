@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
 import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.training.Training;
+import PME.myfitnessbuddy.view.ui.training.TrainingListAdapter;
 
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         this.inflater = LayoutInflater.from(context);
         this.exerciseClickListener = exerciseClickListener;
     }
+
 
     @NonNull
     @Override
