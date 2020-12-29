@@ -78,7 +78,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
             ExerciseWithMuscleGroup current = this.exerciseList.get(position);
    //        LiveData<MuscleGroup> muscleGroup = muscleGroupDao.geMuscleGroupById(current.getMuscleGroups().get(0).getMuscleGroupId());
 
-            holder.exerciseName.setText(String.format("%s", current.muscleGroups.get(0).getProfileImageUrl()));
+            holder.exerciseName.setText(String.format("%s", current.getExercise().getDesignation()));
 
             holder.currentExerciseId = current.getExercise().getExerciseId();
 

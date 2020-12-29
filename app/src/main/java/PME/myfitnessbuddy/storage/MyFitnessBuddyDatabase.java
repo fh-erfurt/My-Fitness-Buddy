@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 11 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 15 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -148,7 +148,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                     MuscleGroup muscleGroup = new MuscleGroup(faker.chuckNorris().fact());
                     muscleGroup.setCreated( System.currentTimeMillis() );
-                    muscleGroup.setProfileImageUrl( R.drawable.info );
+                    muscleGroup.setProfileImageUrlByString( "test" );
                     muscleGroup.setModified( muscleGroup.getCreated() );
                     muscleGroup.setVersion( 1 );
 
@@ -175,6 +175,39 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                     Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
                 }
+                MuscleGroup muscleGroup2 = new MuscleGroup("Beine");
+                muscleGroup2.setCreated( System.currentTimeMillis() );
+                muscleGroup2.setProfileImageUrlByString( muscleGroup2.getDesignation() );
+                muscleGroup2.setModified( muscleGroup2.getCreated() );
+                muscleGroup2.setVersion( 1 );
+                daoMuscleGroup.insertMuscleGroup(muscleGroup2);
+
+
+                MuscleGroup muscleGroup3 = new MuscleGroup("Brust");
+                muscleGroup3.setCreated( System.currentTimeMillis() );
+                muscleGroup3.setProfileImageUrlByString( "Brust" );
+                muscleGroup3.setModified( muscleGroup3.getCreated() );
+                muscleGroup3.setVersion( 1 );
+                daoMuscleGroup.insertMuscleGroup(muscleGroup3);
+
+
+                MuscleGroup muscleGroup4 = new MuscleGroup("Rücken");
+                muscleGroup4.setCreated( System.currentTimeMillis() );
+                muscleGroup4.setProfileImageUrlByString( "Rücken" );
+                muscleGroup4.setModified( muscleGroup4.getCreated() );
+                muscleGroup4.setVersion( 1 );
+                daoMuscleGroup.insertMuscleGroup(muscleGroup4);
+
+
+                MuscleGroup muscleGroup5 = new MuscleGroup(faker.chuckNorris().fact());
+                muscleGroup5.setCreated( System.currentTimeMillis() );
+                muscleGroup5.setProfileImageUrlByString( "Bizeps" );
+                muscleGroup5.setModified( muscleGroup5.getCreated() );
+                muscleGroup5.setVersion( 1 );
+                daoMuscleGroup.insertMuscleGroup(muscleGroup5);
+
+
+
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
             });
         }

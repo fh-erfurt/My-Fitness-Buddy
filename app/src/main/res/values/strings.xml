@@ -46,8 +46,8 @@
 
 
     <!--Other string resources also defined in this file… -->
-    <string name="feedbacktype1">Praise</string>
-    <string name="feedbacktype2">Gripe</string>
-    <string name="feedbacktype3">Suggestion</string>
-    <string name="feedbacktype4">Bug</string>
+    <string name="feedbacktype1">Beine</string>
+    <string name="feedbacktype2">Brust</string>
+    <string name="feedbacktype3">Rücken</string>
+    <string name="feedbacktype4">Bizeps</string>
 </resources>

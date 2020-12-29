@@ -61,7 +61,12 @@ public class ExerciseViewModel extends AndroidViewModel {
     public LiveData<List<ExerciseWithMuscleGroup>> getExercises() {
         return this.exerciseRepository.getExerciseLiveData();
     }
-/*
+
+    public List<MuscleGroup> getMuscleGroupForDesignation(String search){
+            return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
+    }
+
+    /*
     @RequiresApi(api = Build.VERSION_CODES.N)
     public LiveData<List<MuscleGroup>> getMuscleGroups() {
         return this.muscleGroupRepository.getMuscleGroupLiveData();

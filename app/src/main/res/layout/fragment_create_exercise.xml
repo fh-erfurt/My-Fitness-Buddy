@@ -26,7 +26,7 @@
             android:layout_width="401dp"
             android:layout_height="88dp"
             android:hint="blub"
-            android:inputType="textPersonName"
+
             android:textAlignment="viewStart"></EditText>
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_width="401dp"
             android:layout_height="88dp"
             android:hint="blub"
-            android:inputType="textPersonName"
+
             android:textAlignment="viewStart"></EditText>
 
         <TextView
@@ -50,7 +50,7 @@
             android:text="Muskelgruppe" />
 
         <Spinner
-            android:id="@+id/SpinnerFeedbackType"
+            android:id="@+id/createExerciseMuscleGroup"
             android:layout_width="fill_parent"
 
             android:layout_height="wrap_content"
