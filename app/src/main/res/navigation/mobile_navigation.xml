@@ -9,7 +9,14 @@
         android:id="@+id/nav_home"
         android:name="PME.myfitnessbuddy.view.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
+            app:destination="@id/fragment_exercisedetail" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
+            app:destination="@id/fragment_trainingdetails" />
+    </fragment>
 
 
     <fragment
@@ -19,7 +26,9 @@
         tools:layout="@layout/fragment_exercise" >
         <action
             android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
-            app:destination="@id/fragment_exercisedetail" />
+            app:destination="@id/fragment_exercisedetail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/fragment_trainingdetails"

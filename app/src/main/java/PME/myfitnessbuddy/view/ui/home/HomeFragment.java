@@ -17,14 +17,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
 import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
+import PME.myfitnessbuddy.view.ui.training.TrainingListAdapter;
 import PME.myfitnessbuddy.view.ui.training.TrainingListFragment;
+import PME.myfitnessbuddy.view.ui.training.TrainingListViewModel;
 
 public class HomeFragment extends Fragment  implements View.OnClickListener {
 
@@ -58,12 +63,6 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
             }
         });
         return root;
-
-
-
-
-
-
 
     }
 
