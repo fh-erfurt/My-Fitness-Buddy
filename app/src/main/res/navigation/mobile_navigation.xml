@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/fragment_exercise"
         android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment"
-        android:label="@string/menu_excersise"
+        android:label="@string/nav_label_exercise"
         tools:layout="@layout/fragment_exercise" >
         <action
             android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/fragment_trainingdetails"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingDetailsFragment"
-        android:label="fragment_trainingdetails"
+        android:label="@string/nav_label_training_detail"
         tools:layout="@layout/fragment_trainingdetails" >
         <argument
             android:name="trainingId"
@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/fragment_traininglist"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingListFragment"
-        android:label="fragment_traininglist"
+        android:label="@string/nav_label_training"
         tools:layout="@layout/fragment_traininglist" >
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
@@ -53,7 +53,7 @@
     <fragment
         android:id="@+id/fragment_exercisedetail"
         android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseDetailsFragment"
-        android:label="fragment_exercisedetail"
+        android:label="@string/nav_label_exercise_detail"
         tools:layout="@layout/fragment_exercisedetail" >
         <argument
             android:name="exerciseId"
