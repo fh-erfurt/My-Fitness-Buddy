@@ -70,7 +70,7 @@ public class TrainingListFragment extends BaseFragment  {
         View v = inflater.inflate(R.layout.fragment_traininglist, container, false);
 
 
-        Button b = (Button) v.findViewById(R.id.button);
+        //Button b = (Button) v.findViewById(R.id.button);
         //  b.setOnClickListener(this);
 
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
