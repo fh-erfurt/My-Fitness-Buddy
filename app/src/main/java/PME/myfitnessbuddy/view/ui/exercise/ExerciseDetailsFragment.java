@@ -99,7 +99,7 @@ public class ExerciseDetailsFragment extends BaseFragment {
         //ToDo Fragment
         TextView nameView = getView().findViewById( R.id.fragment_exercise_id );
 
-        nameView.setText(String.format("%s %s", exercise.getDesignation(), "  id:"+exercise.getId()));
+        nameView.setText(String.format("%s %s", exercise.getDesignation(), "  id:"+exercise.getExerciseId()));
 
 
     }
