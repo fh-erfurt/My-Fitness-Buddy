@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 12 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 9 )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -53,7 +53,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
     /*
         Executor service to perform database operations asynchronous and independent from UI thread
      */
-    private static final int NUMBER_OF_THREADS = 4;
+    private static final int NUMBER_OF_THREADS = 1;
     private static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool( NUMBER_OF_THREADS );
 

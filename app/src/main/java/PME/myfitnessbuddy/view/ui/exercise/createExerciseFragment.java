@@ -84,7 +84,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
     @Override
     public void onClick(View v) {
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
-/*
+
 
         Faker faker = Faker.instance();
 
@@ -113,7 +113,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
         exerciseViewModel.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
 
 
- */
+
 
         Navigation.findNavController(v).navigate(R.id.action_createExerciseFragment_to_fragment_exercise);
 

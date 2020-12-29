@@ -73,6 +73,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHolder holder, int position) {
+
         if (this.exerciseList != null && !this.exerciseList.isEmpty()) {
             ExerciseWithMuscleGroup current = this.exerciseList.get(position);
    //        LiveData<MuscleGroup> muscleGroup = muscleGroupDao.geMuscleGroupById(current.getMuscleGroups().get(0).getMuscleGroupId());
