@@ -23,7 +23,6 @@ public interface ExerciseDao {
     @Insert
     List<Long> insertExercise(Exercise... exercise);
 
-
     @Update
     void update(Exercise... exercise);
 

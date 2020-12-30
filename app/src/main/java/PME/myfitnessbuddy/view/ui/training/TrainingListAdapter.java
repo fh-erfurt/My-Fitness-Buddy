@@ -75,15 +75,13 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
 
             Picasso p = Picasso.get();
             p.setIndicatorsEnabled(true);
-            p.load(current.getTraining().getProfileImageUrl())
+            /*p.load(current.getTraining().getProfileImageUrl())
                     .placeholder(R.drawable.icon_profile_placeholder)
                     .error(R.drawable.icon_error)
                     .resize(80, 80)
                     .rotate(-15.0f)
                     .centerCrop()
-                    .into( holder.trainingImage);
-
-
+                    .into( holder.trainingImage);*/
         }
         else {
             // Covers the case of data not being ready yet.

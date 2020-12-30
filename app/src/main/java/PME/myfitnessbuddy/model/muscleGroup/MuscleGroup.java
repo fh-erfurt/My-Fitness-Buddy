@@ -142,7 +142,19 @@ public class MuscleGroup {
                 id = R.drawable.chest;
                 break;
             case "Beine":
-                id = R.drawable.legs;
+                id = R.drawable.quadriceps;
+                break;
+            case "Trizeps":
+                id = R.drawable.triceps;
+                break;
+            case "Wade":
+                id = R.drawable.calves;
+                break;
+            case "Schultern":
+                id = R.drawable.shoulders;
+                break;
+            case "Bauch":
+                id = R.drawable.abs;
                 break;
             default:
                 id = R.drawable.info;
