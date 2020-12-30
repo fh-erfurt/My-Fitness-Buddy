@@ -133,7 +133,7 @@ public class MuscleGroup {
 
         switch (profileImageName) {
             case "Bizeps":
-                id = R.drawable.bizeps;
+                id = R.drawable.biceps;
                 break;
             case "Rücken":
                 id = R.drawable.upper_back;
