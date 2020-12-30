@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Training {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "training_id")
-    private int id;
+    @ColumnInfo(name = "trainingId")
+    private int trainingId;
 
     @NonNull
     @ColumnInfo(name = "designation")
@@ -43,12 +43,12 @@ public class Training {
         this.category = category;
     }
 
-    public int getId() {
-        return id;
+    public int getTrainingId() {
+        return trainingId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTrainingId(int trainingId) {
+        this.trainingId = trainingId;
     }
 
     @NonNull

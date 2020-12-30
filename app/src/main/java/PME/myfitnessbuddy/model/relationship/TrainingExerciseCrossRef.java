@@ -4,13 +4,24 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
-@Entity (primaryKeys = {"muscleGroupId", "exerciseId"})
-public class ExerciseMuscleGroupCrossRef {
+@Entity(primaryKeys = {"trainingId", "exerciseId"})
+public class TrainingExerciseCrossRef {
 
-    public ExerciseMuscleGroupCrossRef(@NonNull long exerciseId, @NonNull long muscleGroupId) {
+    public TrainingExerciseCrossRef(@NonNull long trainingId, @NonNull long exerciseId) {
+
+        this.trainingId = trainingId;
         this.exerciseId = exerciseId;
-        this.muscleGroupId = muscleGroupId;
     }
+
+    public long getTrainingId() {
+        return trainingId;
+    }
+
+    public void setTrainingId(long trainingId) {
+        this.trainingId = trainingId;
+    }
+
+    public long trainingId;
 
     public long getExerciseId() {
         return exerciseId;
@@ -20,19 +31,7 @@ public class ExerciseMuscleGroupCrossRef {
         this.exerciseId = exerciseId;
     }
 
-
     public long exerciseId;
-
-    public long getMuscleGroupId() {
-        return muscleGroupId;
-    }
-
-    public void setMuscleGroupId(long muscleGroupId) {
-        this.muscleGroupId = muscleGroupId;
-    }
-
-
-    public long muscleGroupId;
 
     public long getCreated() {
         return created;
@@ -69,4 +68,6 @@ public class ExerciseMuscleGroupCrossRef {
     @NonNull
     @ColumnInfo(name = "version")
     private int version = 0;
+
+
 }

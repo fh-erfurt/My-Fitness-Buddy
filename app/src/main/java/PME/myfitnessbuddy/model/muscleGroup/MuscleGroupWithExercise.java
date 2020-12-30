@@ -28,6 +28,8 @@ public class MuscleGroupWithExercise {
             associateBy = @Junction(ExerciseMuscleGroupCrossRef.class)
 
     )
+
+
     public List<Exercise> exercises;
 /*
     public MuscleGroup merge()

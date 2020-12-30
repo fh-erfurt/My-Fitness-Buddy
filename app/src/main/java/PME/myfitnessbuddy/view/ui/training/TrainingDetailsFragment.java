@@ -97,7 +97,7 @@ public class TrainingDetailsFragment extends BaseFragment {
         //ToDo Fragment
         TextView nameView = getView().findViewById( R.id.fragment_contact_details_fullname );
 
-        nameView.setText(String.format("%s %s", training.getDesignation(), "  id:"+training.getId()));
+        nameView.setText(String.format("%s %s", training.getDesignation(), "  id:"+training.getTrainingId()));
 
 
     }

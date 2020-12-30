@@ -10,7 +10,7 @@ import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.storage.ExerciseCrossRefRepository;
+import PME.myfitnessbuddy.storage.ExerciseMuscleGroupCrossRefRepository;
 import PME.myfitnessbuddy.storage.ExerciseRepository;
 import PME.myfitnessbuddy.storage.MuscleGroupRepository;
 
@@ -19,7 +19,7 @@ import java.util.List;
 public class ExerciseViewModel extends AndroidViewModel {
     private final ExerciseRepository exerciseRepository;
     private final MuscleGroupRepository muscleGroupRepository;
-    private final ExerciseCrossRefRepository exerciseCrossRefRepository;
+    private final ExerciseMuscleGroupCrossRefRepository exerciseMuscleGroupCrossRefRepository;
 
     private MutableLiveData<String> mText;
 
@@ -27,7 +27,7 @@ public class ExerciseViewModel extends AndroidViewModel {
         super(application);
         this.exerciseRepository = ExerciseRepository.getRepository(application);
         this.muscleGroupRepository = MuscleGroupRepository.getRepository(application);
-        this.exerciseCrossRefRepository = ExerciseCrossRefRepository.getRepository(application);
+        this.exerciseMuscleGroupCrossRefRepository = ExerciseMuscleGroupCrossRefRepository.getRepository(application);
         mText = new MutableLiveData<>();
         mText.setValue("This is exercise fragment");
     }
@@ -53,7 +53,7 @@ public class ExerciseViewModel extends AndroidViewModel {
 
     public void insertExerciseCrossRef(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
 
-        this.exerciseCrossRefRepository.insert(exerciseMuscleGroupCrossRef);
+        this.exerciseMuscleGroupCrossRefRepository.insert(exerciseMuscleGroupCrossRef);
     }
 
     public LiveData<List<ExerciseWithMuscleGroup>> getExercises() {

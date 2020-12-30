@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +96,7 @@ public class ExerciseRepository {
         }
 
         // Well, is this a reasonable default return value?
-        return new Exercise("", "");
+        return new Exercise("", "",0);
     }
 
     public void update(Exercise exercise) {

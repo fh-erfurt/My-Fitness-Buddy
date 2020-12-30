@@ -9,6 +9,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import PME.myfitnessbuddy.model.training.Category;
 import PME.myfitnessbuddy.model.training.Training;
+import PME.myfitnessbuddy.model.training.TrainingWithExercise;
+import PME.myfitnessbuddy.storage.Dao.TrainingDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +50,15 @@ public class TrainingRepository {
         return this.query( () -> this.trainingDao.getTrainings() );
     }
 
-    public LiveData<List<Training>> getTrainingsLiveData()
+    public LiveData<List<TrainingWithExercise>> getTrainingsLiveData()
     {
-        if( this.allTrainings == null )
-            this.allTrainings = this.queryLiveData(this.trainingDao::getTrainingsLiveData);
-
-        return this.allTrainings;
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( this.trainingDao::getTrainingWithExercises );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

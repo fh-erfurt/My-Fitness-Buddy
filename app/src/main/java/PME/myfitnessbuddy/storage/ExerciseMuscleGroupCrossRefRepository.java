@@ -12,23 +12,24 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 
-public class ExerciseCrossRefRepository {
+public class ExerciseMuscleGroupCrossRefRepository {
     public static final String LOG_TAG = "ExerciseCrossRefRepository";
 
     private ExerciseCrossRefDao exerciseCrossRefDao;
 
-    private static ExerciseCrossRefRepository INSTANCE;
+    private static ExerciseMuscleGroupCrossRefRepository INSTANCE;
 
     private LiveData<List<ExerciseMuscleGroupCrossRef>> allExerciseMuscleGroupCrossRefs;
 
 
-    public static ExerciseCrossRefRepository getRepository( Application application )
+    public static ExerciseMuscleGroupCrossRefRepository getRepository(Application application )
     {
         if( INSTANCE == null ) {
-            synchronized ( ExerciseCrossRefRepository.class ) {
+            synchronized ( ExerciseMuscleGroupCrossRefRepository.class ) {
                 if( INSTANCE == null ) {
-                    INSTANCE = new ExerciseCrossRefRepository( application );
+                    INSTANCE = new ExerciseMuscleGroupCrossRefRepository( application );
                 }
             }
         }
@@ -36,7 +37,7 @@ public class ExerciseCrossRefRepository {
         return INSTANCE;
     }
 
-    public ExerciseCrossRefRepository(Context context) {
+    public ExerciseMuscleGroupCrossRefRepository(Context context) {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
         this.exerciseCrossRefDao = db.exerciseMuscleGroupCrossRefDao();
     }

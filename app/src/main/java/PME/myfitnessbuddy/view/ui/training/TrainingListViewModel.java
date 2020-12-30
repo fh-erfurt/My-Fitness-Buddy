@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import PME.myfitnessbuddy.model.training.Training;
+import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.TrainingRepository;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class TrainingListViewModel extends AndroidViewModel {
         this.trainingRepository = TrainingRepository.getRepository(application);
     }
 
-    public LiveData<List<Training>> getTrainings() {
+    public LiveData<List<TrainingWithExercise>> getTrainings() {
         return this.trainingRepository.getTrainingsLiveData();
     }
 }

@@ -1,4 +1,4 @@
-package PME.myfitnessbuddy.storage;
+package PME.myfitnessbuddy.storage.Dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -14,7 +14,7 @@ import java.util.List;
 @Dao
 public interface PersonDao {
     @Insert
-    long insert(Person person);
+    long insertPerson(Person person);
 
     @Insert
     List<Long> insert(Person... persons);

@@ -5,6 +5,7 @@ import android.content.Context;
 
 
 import PME.myfitnessbuddy.model.Person;
+import PME.myfitnessbuddy.storage.Dao.PersonDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,7 +99,7 @@ public class PersonRepository {
         contact.setVersion( 1 );
 
         try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> personDao.insert( contact ) );
+            return MyFitnessBuddyDatabase.executeWithReturn( () -> personDao.insertPerson( contact ) );
         }
         catch (ExecutionException | InterruptedException e)
         {

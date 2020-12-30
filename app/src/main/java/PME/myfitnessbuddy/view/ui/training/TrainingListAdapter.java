@@ -12,7 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
+
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.training.Training;
+import PME.myfitnessbuddy.model.training.TrainingWithExercise;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -43,7 +47,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
     }
 
     private final LayoutInflater inflater;
-    private List<Training> trainingList; // Cached Copy of Contacts
+    private List<TrainingWithExercise> trainingList; // Cached Copy of Contacts
     private final TrainingClickListener trainingClickListener;
 
     public TrainingListAdapter(Context context, TrainingClickListener trainingClickListener) {
@@ -64,14 +68,14 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
     @Override
     public void onBindViewHolder(@NonNull TrainingViewHolder holder, int position) {
         if (this.trainingList != null && !this.trainingList.isEmpty()) {
-            Training current = this.trainingList.get(position);
-           holder.trainingName.setText(String.format("%s", current.getDesignation()));
+            TrainingWithExercise current = this.trainingList.get(position);
+           holder.trainingName.setText(String.format("%s", current.getTraining().getDesignation()));
 
-            holder.currentTrainingId = current.getId();
+            holder.currentTrainingId = current.getTraining().getTrainingId();
 
             Picasso p = Picasso.get();
             p.setIndicatorsEnabled(true);
-            p.load(current.getProfileImageUrl())
+            p.load(current.getTraining().getProfileImageUrl())
                     .placeholder(R.drawable.icon_profile_placeholder)
                     .error(R.drawable.icon_error)
                     .resize(80, 80)
@@ -95,9 +99,11 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
             return 0;
     }
 
-    public void setTrainings(List<Training> trainingList){
+    public void setTrainings(List<TrainingWithExercise> trainingList){
         this.trainingList = trainingList;
         notifyDataSetChanged();
     }
+
+
 
 }

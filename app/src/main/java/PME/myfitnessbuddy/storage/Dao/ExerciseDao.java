@@ -1,4 +1,4 @@
-package PME.myfitnessbuddy.storage;
+package PME.myfitnessbuddy.storage.Dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
