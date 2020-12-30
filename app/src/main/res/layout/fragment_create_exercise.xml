@@ -1,0 +1,144 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="PME.myfitnessbuddy.view.ui.exercise.ExerciseCreateFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="72dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Put form controls here-->
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Übungsname" />
+
+        <EditText
+            android:id="@+id/createExerciseName"
+            android:layout_width="401dp"
+            android:layout_height="88dp"
+            android:hint="blub"
+
+            android:textAlignment="viewStart"></EditText>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beschreibung" />
+
+        <EditText
+            android:id="@+id/createExerciseDescription"
+            android:layout_width="401dp"
+            android:layout_height="88dp"
+            android:hint="blub"
+
+            android:textAlignment="viewStart"></EditText>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Übungs Icon" />
+
+        <Spinner
+            android:id="@+id/createExerciseMuscleGroup"
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:entries="@array/feedbacktypelist"></Spinner>
+
+
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Muskelgruppen" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="106dp"
+                android:layout_height="110dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/Bizeps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Bizeps" />
+
+                <CheckBox
+                    android:id="@+id/Beine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Beine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="118dp"
+                android:layout_height="127dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/Brust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Brust" />
+
+                <CheckBox
+                    android:id="@+id/Rücken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Rücken" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="124dp"
+                android:layout_height="160dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox_meat6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NichtKlicken" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_meat3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NichtKlicken" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCreateExercise"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Erstellen"></Button>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
