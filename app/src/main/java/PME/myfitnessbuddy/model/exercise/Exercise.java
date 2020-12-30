@@ -88,9 +88,10 @@ public class Exercise {
     @ColumnInfo(name = "version")
     private int version = 0;
 
-    public Exercise(@NonNull String designation, @NonNull String description) {
+    public Exercise(@NonNull String designation, @NonNull String description, int profileImageId) {
         this.designation = designation;
         this.description = description;
+        this.profileImageId = profileImageId;
         //this.muscleGroup = muscleGroup;
     }
 

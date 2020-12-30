@@ -144,7 +144,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
 */
 
 
-        Exercise exercise = new Exercise(name,description);
+        Exercise exercise = new Exercise(name,description,0);
         exercise.setCreated( System.currentTimeMillis() );
         exercise.setProfileImageId( exercise.checkImgAndGetId(pictureName) );
         exercise.setModified( exercise.getCreated() );

@@ -111,8 +111,8 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
             Log.i( LOG_TAG_DB, "onCreate() called" );
 
             execute(() -> {
-               PersonDao dao = INSTANCE.personDao();
-               dao.deleteAll();
+               PersonDao daoPerson = INSTANCE.personDao();
+               daoPerson.deleteAll();
 
                TrainingDao daoTraining = INSTANCE.trainingDao();
                daoTraining.deleteAll();
@@ -122,8 +122,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                 ExerciseCrossRefDao exerciseCrossRefDao = INSTANCE.exerciseMuscleGroupCrossRefDao();
                 exerciseCrossRefDao.deleteAll();
-
-
 
                 MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
 
@@ -167,11 +165,18 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
 */
 
-
-
-
                     Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
                 }
+
+                // Insert Test Person -> later via first start in App
+                Person person1 = new Person("Marco","19.06.88",1,185.0,75.5);
+                person1.setCreated( System.currentTimeMillis() );
+                person1.setModified( person1.getCreated() );
+                person1.setVersion( 1 );
+                daoPerson.insertPerson(person1);
+
+
+                // muscle group standards
                 MuscleGroup muscleGroup2 = new MuscleGroup("Beine");
                 muscleGroup2.setCreated( System.currentTimeMillis() );
                 muscleGroup2.setProfileImageUrlByString( muscleGroup2.getDesignation() );
@@ -203,6 +208,56 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 muscleGroup5.setVersion( 1 );
                 daoMuscleGroup.insertMuscleGroup(muscleGroup5);
 
+                // example exercises
+                Exercise exercise1 = new Exercise("Bankdrücken","Lege dich flach auf den Rücken und bilde ein leichtes Hohlkreuz. Fasse die Stange etwas mehr als Schulterbreit und drücke sie aus der Halterung. Lass die Stange langsam nach unten bis etwa 5cm über den Brustwarzen und hebe die Stange wieder an.",1);
+                exercise1.setModified( exercise1.getCreated() );
+                exercise1.setVersion( 1 );
+                daoExercise.insertExercise(exercise1);
+
+                Exercise exercise2 = new Exercise("Latziehen","Fasse die Stange außen an und ziehe sie bis in deinen Nacken, achte beim hochgehen der Stange, dass deine Arme und Schultern nicht voll ausgestreckt sind",1);
+                exercise2.setModified( exercise2.getCreated() );
+                exercise2.setVersion( 1 );
+                daoExercise.insertExercise(exercise2);
+
+                Exercise exercise3 = new Exercise("Kniebeuge","Lege die Stange in deinen Nacken. Gehe nun soweit wie möglich in die Knie in dem du dein Gesäß raus drückst",1);
+                exercise3.setModified( exercise3.getCreated() );
+                exercise3.setVersion( 1 );
+                daoExercise.insertExercise(exercise3);
+
+                Exercise exercise4 = new Exercise("Kreuzheben","Gehe in die Knie und umfasse die Stange etwa schulterbreit. Stehe nun mit der Stange auf, in dem du dein Gesäß anspannst und deinen Rückem gerade hälst.",1);
+                exercise4.setModified( exercise4.getCreated() );
+                exercise4.setVersion( 1 );
+                daoExercise.insertExercise(exercise4);
+
+                Exercise exercise5 = new Exercise("Bizepscurls im Stehen","Führe die Hantel von einer ausgetrecken Position bis zu deiner Schulter.Achte darauf, das deine Finger nach oben zeigen und du nicht wippst",1);
+                exercise5.setModified( exercise5.getCreated() );
+                exercise5.setVersion( 1 );
+                daoExercise.insertExercise(exercise5);
+
+                Exercise exercise6 = new Exercise("Dips","Stütze dich mit durch gestreckten Armen auf die Stangen. Gehe nun nach unten bis du mit der Elle ca 90grad erreichst und drücke dich wieder hoch",1);
+                exercise6.setModified( exercise6.getCreated() );
+                exercise6.setVersion( 1 );
+                daoExercise.insertExercise(exercise6);
+
+                Exercise exercise7 = new Exercise("Aufwärmen","10min joggen oder Fahrrad fahren",1);
+                exercise7.setModified( exercise7.getCreated() );
+                exercise7.setVersion( 1 );
+                daoExercise.insertExercise(exercise7);
+
+                Exercise exercise8 = new Exercise("Schulterdrücken Kurzhantel","Halte beide Kurzhanteln neben deinem Kopf bei ca 90Grad Armbeuge. Die Handflächen sollte dabei nach vorne zeigen. Drücke die Hanten nach oben.Gehe langsam in die Ausgangsposition zurück",1);
+                exercise8.setModified( exercise8.getCreated() );
+                exercise8.setVersion( 1 );
+                daoExercise.insertExercise(exercise8);
+
+                Exercise exercise9 = new Exercise("Beinpresse","Stelle deine Füße etwa schulterbreit auf die Platte. Löse die Halterung und lass deine Beine langsam zurück. Drücke die Platte nun nach oben ohne die Beine ganz durch zustrecken",1);
+                exercise9.setModified( exercise9.getCreated() );
+                exercise9.setVersion( 1 );
+                daoExercise.insertExercise(exercise9);
+
+                Exercise exercise10 = new Exercise("Rudern","Ziehe den Griff bis zum Bauch und achte darauf, dass auch die Schultern nach hinten gehen.Lass den Rücken dabei gerade",1);
+                exercise10.setModified( exercise10.getCreated() );
+                exercise10.setVersion( 1 );
+                daoExercise.insertExercise(exercise10);
 
 
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
