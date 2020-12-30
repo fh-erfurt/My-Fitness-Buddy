@@ -2,23 +2,17 @@ package PME.myfitnessbuddy.storage;
 
 import android.app.Application;
 import android.content.Context;
-import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 
-import PME.myfitnessbuddy.model.MuscleGroup;
-import PME.myfitnessbuddy.model.MuscleGroupWithExercise;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
 
 public class MuscleGroupRepository {
     public static final String LOG_TAG = "MuscleGroupRepository";

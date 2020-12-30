@@ -9,7 +9,9 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,21 +58,19 @@ public class ExerciseFragment extends BaseFragment {
         RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
 
-         /*  Liste -> Detailansicht (siehe TrainingDetailsfragment)
+          // Liste -> Detailansicht (siehe TrainingDetailsfragment)
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {
                     Bundle args = new Bundle();
-                    args.putLong("exerciseId", exerciseId);  /////exerciseId wird als Argument im Navgraph übergeben
-                                                                  siehe: Navgraph / fragment_trainingDetails / trainingId
-                                                                  bei Arguments auf das Plus klicken
+                    args.putLong("exerciseId", exerciseId);
                     NavController nc = NavHostFragment.findNavController( this );
-                    nc.navigate( R.id.///////////action vom navgraph//////////  , args );
+                    nc.navigate( R.id.action_fragment_exercise_to_fragment_exercisedetail , args );
                 });
-            */
+
 
         //////////////////////////////////////später ersetzen (siehe oben)//////////////////////
-        final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(), null);
+      //  final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(), null);
 
         exerciseListView.setAdapter( adapter );
         exerciseListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));

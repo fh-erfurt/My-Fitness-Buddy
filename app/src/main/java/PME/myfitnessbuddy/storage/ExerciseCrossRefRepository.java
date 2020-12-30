@@ -2,22 +2,16 @@ package PME.myfitnessbuddy.storage;
 
 import android.app.Application;
 import android.content.Context;
-import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
 
-import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 
 public class ExerciseCrossRefRepository {
     public static final String LOG_TAG = "ExerciseCrossRefRepository";

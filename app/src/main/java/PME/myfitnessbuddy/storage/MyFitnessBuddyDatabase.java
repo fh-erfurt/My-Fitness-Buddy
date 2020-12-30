@@ -11,8 +11,8 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 
-import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.training.Category;
 
@@ -21,17 +21,14 @@ import PME.myfitnessbuddy.model.training.CategoryConverter;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
-import com.myfitnessbuddy.R;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 26     )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 27     )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 

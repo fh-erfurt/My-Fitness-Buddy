@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/createExerciseFragment"
-        android:name="PME.myfitnessbuddy.view.ui.exercise.createExerciseFragment"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseCreateFragment"
         android:label="fragment_create_exercise"
         tools:layout="@layout/fragment_create_exercise" >
         <action

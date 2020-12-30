@@ -1,7 +1,7 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
+
 import androidx.navigation.Navigation;
 
 import android.text.Editable;
@@ -13,21 +13,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.github.javafaker.Faker;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.myfitnessbuddy.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.storage.ExerciseCrossRefRepository;
-import PME.myfitnessbuddy.storage.ExerciseRepository;
-import PME.myfitnessbuddy.storage.MuscleGroupRepository;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 /**
@@ -35,13 +30,13 @@ import PME.myfitnessbuddy.view.ui.core.BaseFragment;
  * create an instance of this fragment.
  *
  */
-public class createExerciseFragment extends BaseFragment implements View.OnClickListener {
+public class ExerciseCreateFragment extends BaseFragment implements View.OnClickListener {
 
     View root;
 
-    EditText createExerciseName;
-    EditText createExerciseDescription;
-    Spinner createExerciseMuscleGroup;
+    EditText exerciseName;
+    EditText exerciseDescription;
+    Spinner exercisePicture;
 
     CheckBox beine;
     CheckBox brust;
@@ -52,7 +47,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
 
 
 
-    public createExerciseFragment() {
+    public ExerciseCreateFragment() {
         // Required empty public constructor
     }
 
@@ -70,9 +65,9 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
 
         root = inflater.inflate(R.layout.fragment_create_exercise, container, false);
 
-        createExerciseName = (EditText) root.findViewById(R.id.createExerciseName);
-        createExerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
-        createExerciseMuscleGroup = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
+        exerciseName = (EditText) root.findViewById(R.id.createExerciseName);
+        exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
+        exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
 
         beine = (CheckBox) root.findViewById(R.id.Beine);
         bizeps = (CheckBox) root.findViewById(R.id.Bizeps);
@@ -84,7 +79,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
         brust.setOnClickListener(this::onCheckboxClicked);
         rücken.setOnClickListener(this::onCheckboxClicked);
 
-        createExerciseName.addTextChangedListener(new TextWatcher() {
+        exerciseName.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {}
@@ -103,7 +98,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
 
 
 
-        createExerciseDescription.addTextChangedListener(new TextWatcher() {
+        exerciseDescription.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable s) {}
@@ -131,9 +126,9 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
     public void onClick(View v) {
 
 
-        String name = createExerciseName.getText().toString();
-        String description = createExerciseDescription.getText().toString();
-        String muscleGroupString = createExerciseMuscleGroup.getSelectedItem().toString();
+        String name = exerciseName.getText().toString();
+        String description = exerciseDescription.getText().toString();
+        String pictureName = exercisePicture.getSelectedItem().toString();
 
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
@@ -151,7 +146,7 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
 
         Exercise exercise = new Exercise(name,description);
         exercise.setCreated( System.currentTimeMillis() );
-        exercise.setProfileImageUrl( exercise.checkImgAndGetId(muscleGroupString) );
+        exercise.setProfileImageId( exercise.checkImgAndGetId(pictureName) );
         exercise.setModified( exercise.getCreated() );
         exercise.setVersion( 1 );
 

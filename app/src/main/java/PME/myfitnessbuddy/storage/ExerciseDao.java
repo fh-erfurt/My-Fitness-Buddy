@@ -8,8 +8,8 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 
-import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
 import java.util.List;

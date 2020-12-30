@@ -11,7 +11,7 @@ import com.myfitnessbuddy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
 @Entity
 public class Exercise {
@@ -35,21 +35,21 @@ public class Exercise {
 
      */
     @NonNull
-    public int getProfileImageUrl() {
-        return profileImageUrl;
+    public int getProfileImageId() {
+        return profileImageId;
     }
 
-    public void setProfileImageUrl(@NonNull int muscleGroup) {
-        this.profileImageUrl = muscleGroup;
+    public void setProfileImageId(@NonNull int muscleGroup) {
+        this.profileImageId = muscleGroup;
     }
 
     public void setProfileImageUrlByString(String muscleGroup) {
-        this.profileImageUrl = checkImgAndGetId(muscleGroup);
+        this.profileImageId = checkImgAndGetId(muscleGroup);
     }
 
     @NonNull
-    @ColumnInfo(name = "profile_image_url")
-    private int profileImageUrl;
+    @ColumnInfo(name = "profile_image_id")
+    private int profileImageId;
 
     @NonNull
     @ColumnInfo(name = "designation")
@@ -153,11 +153,11 @@ public class Exercise {
 
      */
 
-    public int checkImgAndGetId(String profileImageUrl) {
+    public int checkImgAndGetId(String profileImageName) {
 
         int id;
 
-        switch (profileImageUrl) {
+        switch (profileImageName) {
             case "Bizeps":
                 id = R.drawable.bizeps;
                 break;

@@ -1,9 +1,8 @@
-package PME.myfitnessbuddy.model;
+package PME.myfitnessbuddy.model.relationship;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 @Entity (primaryKeys = {"muscleGroupId", "exerciseId"})
 public class ExerciseMuscleGroupCrossRef {

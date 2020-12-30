@@ -1,10 +1,6 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
 
-import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
-import java.io.File;
 import java.util.List;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
@@ -82,10 +77,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
             holder.currentExerciseId = current.getExercise().getExerciseId();
 
-
-
-                holder.imageView.setImageResource(current.getExercise().getProfileImageUrl());
-
+            holder.imageView.setImageResource(current.getExercise().getProfileImageId());
 
         }
         else {

@@ -1,16 +1,14 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.app.Application;
-import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.MuscleGroup;
+import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.storage.ExerciseCrossRefRepository;
 import PME.myfitnessbuddy.storage.ExerciseRepository;

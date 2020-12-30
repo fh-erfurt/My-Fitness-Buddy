@@ -9,10 +9,8 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.model.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.MuscleGroup;
-import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+
 @Dao
 public interface ExerciseCrossRefDao {
     @Insert

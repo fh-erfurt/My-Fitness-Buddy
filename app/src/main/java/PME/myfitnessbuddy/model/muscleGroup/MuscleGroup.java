@@ -1,17 +1,11 @@
-package PME.myfitnessbuddy.model;
+package PME.myfitnessbuddy.model.muscleGroup;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.myfitnessbuddy.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import PME.myfitnessbuddy.model.exercise.Exercise;
 
 
 @Entity
@@ -57,21 +51,21 @@ public class MuscleGroup {
 
      */
     @NonNull
-    public int getProfileImageUrl() {
-        return profileImageUrl;
+    public int getProfileImageId() {
+        return profileImageId;
     }
 
-    public void setProfileImageUrl(@NonNull int muscleGroup) {
-        this.profileImageUrl = muscleGroup;
+    public void setProfileImageId(@NonNull int muscleGroup) {
+        this.profileImageId = muscleGroup;
     }
 
     public void setProfileImageUrlByString(String muscleGroup) {
-        this.profileImageUrl = checkImgAndGetId(muscleGroup);
+        this.profileImageId = checkImgAndGetId(muscleGroup);
     }
 
     @NonNull
-    @ColumnInfo(name = "profile_image_url")
-    private int profileImageUrl;
+    @ColumnInfo(name = "profile_image_id")
+    private int profileImageId;
 
 
     @NonNull
@@ -133,11 +127,11 @@ public class MuscleGroup {
         this.version = version;
     }
 
-    private int checkImgAndGetId(String profileImageUrl) {
+    private int checkImgAndGetId(String profileImageName) {
 
         int id;
 
-        switch (profileImageUrl) {
+        switch (profileImageName) {
             case "Bizeps":
                 id = R.drawable.bizeps;
                 break;
