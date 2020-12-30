@@ -6,6 +6,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import com.myfitnessbuddy.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,23 @@ public class Exercise {
 
 
      */
+    @NonNull
+    public int getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(@NonNull int muscleGroup) {
+        this.profileImageUrl = muscleGroup;
+    }
+
+    public void setProfileImageUrlByString(String muscleGroup) {
+        this.profileImageUrl = checkImgAndGetId(muscleGroup);
+    }
+
+    @NonNull
+    @ColumnInfo(name = "profile_image_url")
+    private int profileImageUrl;
+
     @NonNull
     @ColumnInfo(name = "designation")
     private String designation;
@@ -134,7 +153,31 @@ public class Exercise {
 
      */
 
+    public int checkImgAndGetId(String profileImageUrl) {
 
+        int id;
+
+        switch (profileImageUrl) {
+            case "Bizeps":
+                id = R.drawable.bizeps;
+                break;
+            case "Rücken":
+                id = R.drawable.upper_back;
+                break;
+            case "Brust":
+                id = R.drawable.chest;
+                break;
+            case "Beine":
+                id = R.drawable.legs;
+                break;
+            default:
+                id = R.drawable.info;
+                break;
+        }
+
+        return id;
+
+    }
 
 
 

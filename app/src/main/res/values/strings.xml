@@ -46,8 +46,8 @@
 
 
     <!--Other string resources also defined in this file… -->
-    <string name="feedbacktype1">Beine</string>
-    <string name="feedbacktype2">Brust</string>
-    <string name="feedbacktype3">Rücken</string>
-    <string name="feedbacktype4">Bizeps</string>
+    <string name="Beine">Beine</string>
+    <string name="Brust">Brust</string>
+    <string name="Rücken">Rücken</string>
+    <string name="Bizeps">Bizeps</string>
 </resources>

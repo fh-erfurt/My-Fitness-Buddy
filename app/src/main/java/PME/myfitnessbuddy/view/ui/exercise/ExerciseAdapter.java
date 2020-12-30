@@ -84,7 +84,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
 
 
-                holder.imageView.setImageResource(current.muscleGroups.get(0).getProfileImageUrl());
+                holder.imageView.setImageResource(current.getExercise().getProfileImageUrl());
 
 
         }

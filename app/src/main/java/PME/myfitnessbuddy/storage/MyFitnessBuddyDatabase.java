@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 15 )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class}, version = 25     )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -135,7 +135,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
 
                 Faker faker = Faker.instance();
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 40; i++)
                 {
                    Training training = new Training(faker.team().sport(), Category.category1);
 
@@ -145,7 +145,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setModified( training.getCreated() );
                     training.setVersion( 1 );
                     daoTraining.insert(training);
-
+/*
                     MuscleGroup muscleGroup = new MuscleGroup(faker.chuckNorris().fact());
                     muscleGroup.setCreated( System.currentTimeMillis() );
                     muscleGroup.setProfileImageUrlByString( "test" );
@@ -168,7 +168,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     exerciseMuscleGroupCrossRef.setModified( training.getCreated() );
                     exerciseMuscleGroupCrossRef.setVersion( 1 );
                     exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
-
+*/
 
 
 
@@ -199,7 +199,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 daoMuscleGroup.insertMuscleGroup(muscleGroup4);
 
 
-                MuscleGroup muscleGroup5 = new MuscleGroup(faker.chuckNorris().fact());
+                MuscleGroup muscleGroup5 = new MuscleGroup("Bizeps");
                 muscleGroup5.setCreated( System.currentTimeMillis() );
                 muscleGroup5.setProfileImageUrlByString( "Bizeps" );
                 muscleGroup5.setModified( muscleGroup5.getCreated() );

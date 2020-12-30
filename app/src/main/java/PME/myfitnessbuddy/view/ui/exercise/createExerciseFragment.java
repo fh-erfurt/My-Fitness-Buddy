@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import com.github.javafaker.Faker;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.myfitnessbuddy.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.ExerciseMuscleGroupCrossRef;
@@ -40,6 +42,13 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
     EditText createExerciseName;
     EditText createExerciseDescription;
     Spinner createExerciseMuscleGroup;
+
+    CheckBox beine;
+    CheckBox brust;
+    CheckBox rücken;
+    CheckBox bizeps;
+
+    List <String> muscleGroupList = new ArrayList();
 
 
 
@@ -65,6 +74,16 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
         createExerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         createExerciseMuscleGroup = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
 
+        beine = (CheckBox) root.findViewById(R.id.Beine);
+        bizeps = (CheckBox) root.findViewById(R.id.Bizeps);
+        brust = (CheckBox) root.findViewById(R.id.Brust);
+        rücken = (CheckBox) root.findViewById(R.id.Rücken);
+
+        beine.setOnClickListener(this::onCheckboxClicked);
+        bizeps.setOnClickListener(this::onCheckboxClicked);
+        brust.setOnClickListener(this::onCheckboxClicked);
+        rücken.setOnClickListener(this::onCheckboxClicked);
+
         createExerciseName.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -81,6 +100,8 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
 
             }
         });
+
+
 
         createExerciseDescription.addTextChangedListener(new TextWatcher() {
 
@@ -126,28 +147,100 @@ public class createExerciseFragment extends BaseFragment implements View.OnClick
         muscleGroup.setModified( muscleGroup.getCreated() );
         muscleGroup.setVersion( 1 );
 */
-        List<MuscleGroup> muscleGroups = exerciseViewModel.getMuscleGroupForDesignation(muscleGroupString);
+
 
         Exercise exercise = new Exercise(name,description);
         exercise.setCreated( System.currentTimeMillis() );
-        //exercise.setProfileImageUrl( faker.avatar().image() );
+        exercise.setProfileImageUrl( exercise.checkImgAndGetId(muscleGroupString) );
         exercise.setModified( exercise.getCreated() );
         exercise.setVersion( 1 );
 
         long exerciseId = exerciseViewModel.insertExercise(exercise);
-        long muscleGroupId = muscleGroups.get(0).getMuscleGroupId();
+        long muscleGroupId;
 
-        ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef = new ExerciseMuscleGroupCrossRef(exerciseId, muscleGroupId);
-        exerciseMuscleGroupCrossRef.setCreated( System.currentTimeMillis() );
-        //exercise.setProfileImageUrl( faker.avatar().image() );
-        exerciseMuscleGroupCrossRef.setModified( exerciseMuscleGroupCrossRef.getCreated() );
-        exerciseMuscleGroupCrossRef.setVersion( 1 );
-        exerciseViewModel.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
+        for (int i = 0; i<muscleGroupList.size(); i++){
 
+            List<MuscleGroup> muscleGroups = exerciseViewModel.getMuscleGroupForDesignation(muscleGroupList.get(i));
+            muscleGroupId = muscleGroups.get(0).getMuscleGroupId();
+
+            ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef = new ExerciseMuscleGroupCrossRef(exerciseId, muscleGroupId);
+            exerciseMuscleGroupCrossRef.setCreated( System.currentTimeMillis() );
+            //exercise.setProfileImageUrl( faker.avatar().image() );
+            exerciseMuscleGroupCrossRef.setModified( exerciseMuscleGroupCrossRef.getCreated() );
+            exerciseMuscleGroupCrossRef.setVersion( 1 );
+            exerciseViewModel.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
+
+        }
 
         Navigation.findNavController(v).navigate(R.id.action_createExerciseFragment_to_fragment_exercise);
-
     }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.Bizeps:
+                if (checked) {
+                    if (!muscleGroupList.contains("Bizeps")) {
+                        muscleGroupList.add("Bizeps");
+                    }
+                }
+
+                 else {
+                        if (muscleGroupList.contains("Bizeps")) {
+
+                            muscleGroupList.remove("Bizeps");
+                        }
+                    }
+                break;
+            case R.id.Rücken:
+                if (checked) {
+                    if (!muscleGroupList.contains("Rücken")) {
+                        muscleGroupList.add("Rücken");
+                    }
+                }
+                    else {
+                    if (muscleGroupList.contains("Rücken")) {
+
+                        muscleGroupList.remove("Rücken");
+                    }
+                }
+                break;
+            case R.id.Beine:
+                if (checked) {
+                    if (!muscleGroupList.contains("Beine")) {
+                        muscleGroupList.add("Beine");
+                    }
+                }
+
+                    else {
+                    if (muscleGroupList.contains("Beine")) {
+
+                        muscleGroupList.remove("Beine");
+                    }
+                }
+                break;
+            case R.id.Brust:
+                if (checked) {
+                    if (!muscleGroupList.contains("Brust")) {
+                        muscleGroupList.add("Brust");
+                    }
+                }
+
+                    else {
+                    if (muscleGroupList.contains("Brust")) {
+
+                        muscleGroupList.remove("Brust");
+                    }
+                }
+                break;
+
+        }
+    }
+
 
 
 }
