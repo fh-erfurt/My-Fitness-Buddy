@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="feedbacktypelist">
-        <item>@string/Bizeps</item>
-        <item>@string/Beine</item>
-        <item>@string/Rücken</item>
-        <item>@string/Brust</item>
-    </string-array>
-</resources>
