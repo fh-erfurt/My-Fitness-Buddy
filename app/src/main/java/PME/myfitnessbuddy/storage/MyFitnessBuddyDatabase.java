@@ -37,7 +37,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class}, version = 29     )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class}, version = 31     )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -136,9 +136,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                ExerciseCrossRefDao exerciseCrossRefDao = INSTANCE.exerciseMuscleGroupCrossRefDao();
                exerciseCrossRefDao.deleteAll();
 
-                MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
-
-                daoMuscleGroup.deleteAll();
                TrainingExerciseCrossRefDao trainingExerciseCrossRefDao = INSTANCE.trainingExerciseCrossRefDao();
                trainingExerciseCrossRefDao.deleteAll();
 
@@ -284,14 +281,16 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 // crossRef exercise - muscleGroup
                 ExerciseWithMuscleGroup exerciseMG1 = new ExerciseWithMuscleGroup();
 
-                //exercise1
-                Exercise exercise = new Exercise(faker.pokemon().name(),faker.pokemon().location());
-                exercise.setCreated( System.currentTimeMillis() );
-                exercise.setProfileImageUrlByString("Beine");
-                exercise.setModified( exercise.getCreated() );
-                exercise.setVersion( 1 );
 
-                long exerciseId = daoExercise.insertExercise(exercise);
+
+                //exercise
+                Exercise exercise11 = new Exercise(faker.pokemon().name(),faker.pokemon().location(), R.drawable.bizeps);
+                exercise11.setCreated( System.currentTimeMillis() );
+                exercise11.setProfileImageUrlByString("Beine");
+                exercise11.setModified( exercise1.getCreated() );
+                exercise11.setVersion( 1 );
+
+                long exerciseId = daoExercise.insertExercise(exercise11);
 
                 ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef = new ExerciseMuscleGroupCrossRef(exerciseId, 1);
                 exerciseMuscleGroupCrossRef.setCreated( System.currentTimeMillis() );
@@ -301,14 +300,14 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
 
 
-                //exercise2
-                Exercise exercise2 = new Exercise(faker.pokemon().name(),faker.pokemon().location());
-                exercise2.setCreated( System.currentTimeMillis() );
-                exercise.setProfileImageUrlByString("Rücken");
-                exercise2.setModified( exercise2.getCreated() );
-                exercise2.setVersion( 1 );
+                //exercise12
+                Exercise exercise12 = new Exercise(faker.pokemon().name(),faker.pokemon().location(),R.drawable.bizeps);
+                exercise12.setCreated( System.currentTimeMillis() );
+                exercise12.setProfileImageUrlByString("Rücken");
+                exercise12.setModified( exercise2.getCreated() );
+                exercise12.setVersion( 1 );
 
-                long exerciseId2 = daoExercise.insertExercise(exercise2);
+                long exerciseId2 = daoExercise.insertExercise(exercise12);
 
                 ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef2 = new ExerciseMuscleGroupCrossRef(exerciseId2, 2);
                 exerciseMuscleGroupCrossRef2.setCreated( System.currentTimeMillis() );
@@ -317,22 +316,29 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 exerciseMuscleGroupCrossRef2.setVersion( 1 );
                 exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef2);
 
+                ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef3 = new ExerciseMuscleGroupCrossRef(exerciseId2, 3);
+                exerciseMuscleGroupCrossRef3.setCreated( System.currentTimeMillis() );
+                //exercise.setProfileImageUrl( faker.avatar().image() );
+                exerciseMuscleGroupCrossRef3.setModified( exerciseMuscleGroupCrossRef3.getCreated() );
+                exerciseMuscleGroupCrossRef3.setVersion( 1 );
+                exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef3);
+
                 //Training
                 Training training = new Training(faker.team().sport(), Category.category1);
                 training.setCreated( System.currentTimeMillis() );
                 training.setProfileImageUrl( faker.avatar().image() );
                 training.setModified( training.getCreated() );
                 training.setVersion( 1 );
-                long traainingId = daoTraining.insert(training);
+                long trainingId = daoTraining.insert(training);
 
-                TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(traainingId, exerciseId);
+                TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
                 trainingExerciseCrossRef.setCreated( System.currentTimeMillis() );
                 //exercise.setProfileImageUrl( faker.avatar().image() );
                 trainingExerciseCrossRef.setModified( exerciseMuscleGroupCrossRef2.getCreated() );
                 trainingExerciseCrossRef.setVersion( 1 );
                 trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef(trainingExerciseCrossRef);
 
-                TrainingExerciseCrossRef trainingExerciseCrossRef2 = new TrainingExerciseCrossRef(traainingId, exerciseId2);
+                TrainingExerciseCrossRef trainingExerciseCrossRef2 = new TrainingExerciseCrossRef(trainingId, exerciseId2);
                 trainingExerciseCrossRef2.setCreated( System.currentTimeMillis() );
                 //exercise.setProfileImageUrl( faker.avatar().image() );
                 trainingExerciseCrossRef2.setModified( exerciseMuscleGroupCrossRef2.getCreated() );
