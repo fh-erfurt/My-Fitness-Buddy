@@ -92,7 +92,6 @@ public class Exercise {
         this.designation = designation;
         this.description = description;
         this.profileImageId = profileImageId;
-        //this.muscleGroup = muscleGroup;
     }
 
 

@@ -10,17 +10,17 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.training.Category;
 
-
 import PME.myfitnessbuddy.model.training.CategoryConverter;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import com.github.javafaker.Faker;
+import com.myfitnessbuddy.R;
 
 import java.util.Collections;
 import java.util.concurrent.Callable;
@@ -37,6 +37,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
     /*
         Contact DAO reference, will be filled by Android
      */
+
     public abstract PersonDao personDao();
     public abstract TrainingDao trainingDao();
   //  public abstract MuscleGroupDao muscleGroupDao();
@@ -184,7 +185,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 muscleGroup2.setVersion( 1 );
                 daoMuscleGroup.insertMuscleGroup(muscleGroup2);
 
-
                 MuscleGroup muscleGroup3 = new MuscleGroup("Brust");
                 muscleGroup3.setCreated( System.currentTimeMillis() );
                 muscleGroup3.setProfileImageUrlByString( "Brust" );
@@ -192,14 +192,12 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 muscleGroup3.setVersion( 1 );
                 daoMuscleGroup.insertMuscleGroup(muscleGroup3);
 
-
                 MuscleGroup muscleGroup4 = new MuscleGroup("Rücken");
                 muscleGroup4.setCreated( System.currentTimeMillis() );
                 muscleGroup4.setProfileImageUrlByString( "Rücken" );
                 muscleGroup4.setModified( muscleGroup4.getCreated() );
                 muscleGroup4.setVersion( 1 );
                 daoMuscleGroup.insertMuscleGroup(muscleGroup4);
-
 
                 MuscleGroup muscleGroup5 = new MuscleGroup("Bizeps");
                 muscleGroup5.setCreated( System.currentTimeMillis() );
@@ -209,56 +207,58 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 daoMuscleGroup.insertMuscleGroup(muscleGroup5);
 
                 // example exercises
-                Exercise exercise1 = new Exercise("Bankdrücken","Lege dich flach auf den Rücken und bilde ein leichtes Hohlkreuz. Fasse die Stange etwas mehr als Schulterbreit und drücke sie aus der Halterung. Lass die Stange langsam nach unten bis etwa 5cm über den Brustwarzen und hebe die Stange wieder an.",1);
+                Exercise exercise1 = new Exercise("Bankdrücken","Lege dich flach auf den Rücken und bilde ein leichtes Hohlkreuz. Fasse die Stange etwas mehr als Schulterbreit und drücke sie aus der Halterung. Lass die Stange langsam nach unten bis etwa 5cm über den Brustwarzen und hebe die Stange wieder an.", R.drawable.bizeps);
                 exercise1.setModified( exercise1.getCreated() );
                 exercise1.setVersion( 1 );
                 daoExercise.insertExercise(exercise1);
 
-                Exercise exercise2 = new Exercise("Latziehen","Fasse die Stange außen an und ziehe sie bis in deinen Nacken, achte beim hochgehen der Stange, dass deine Arme und Schultern nicht voll ausgestreckt sind",1);
+                Exercise exercise2 = new Exercise("Latziehen","Fasse die Stange außen an und ziehe sie bis in deinen Nacken, achte beim hochgehen der Stange, dass deine Arme und Schultern nicht voll ausgestreckt sind",R.drawable.bizeps);
                 exercise2.setModified( exercise2.getCreated() );
                 exercise2.setVersion( 1 );
                 daoExercise.insertExercise(exercise2);
 
-                Exercise exercise3 = new Exercise("Kniebeuge","Lege die Stange in deinen Nacken. Gehe nun soweit wie möglich in die Knie in dem du dein Gesäß raus drückst",1);
+                Exercise exercise3 = new Exercise("Kniebeuge","Lege die Stange in deinen Nacken. Gehe nun soweit wie möglich in die Knie in dem du dein Gesäß raus drückst",R.drawable.bizeps);
                 exercise3.setModified( exercise3.getCreated() );
                 exercise3.setVersion( 1 );
                 daoExercise.insertExercise(exercise3);
 
-                Exercise exercise4 = new Exercise("Kreuzheben","Gehe in die Knie und umfasse die Stange etwa schulterbreit. Stehe nun mit der Stange auf, in dem du dein Gesäß anspannst und deinen Rückem gerade hälst.",1);
+                Exercise exercise4 = new Exercise("Kreuzheben","Gehe in die Knie und umfasse die Stange etwa schulterbreit. Stehe nun mit der Stange auf, in dem du dein Gesäß anspannst und deinen Rückem gerade hälst.",R.drawable.bizeps);
                 exercise4.setModified( exercise4.getCreated() );
                 exercise4.setVersion( 1 );
                 daoExercise.insertExercise(exercise4);
 
-                Exercise exercise5 = new Exercise("Bizepscurls im Stehen","Führe die Hantel von einer ausgetrecken Position bis zu deiner Schulter.Achte darauf, das deine Finger nach oben zeigen und du nicht wippst",1);
+                Exercise exercise5 = new Exercise("Bizepscurls im Stehen","Führe die Hantel von einer ausgetrecken Position bis zu deiner Schulter.Achte darauf, das deine Finger nach oben zeigen und du nicht wippst",R.drawable.bizeps);
                 exercise5.setModified( exercise5.getCreated() );
                 exercise5.setVersion( 1 );
                 daoExercise.insertExercise(exercise5);
 
-                Exercise exercise6 = new Exercise("Dips","Stütze dich mit durch gestreckten Armen auf die Stangen. Gehe nun nach unten bis du mit der Elle ca 90grad erreichst und drücke dich wieder hoch",1);
+                Exercise exercise6 = new Exercise("Dips","Stütze dich mit durch gestreckten Armen auf die Stangen. Gehe nun nach unten bis du mit der Elle ca 90grad erreichst und drücke dich wieder hoch",R.drawable.bizeps);
                 exercise6.setModified( exercise6.getCreated() );
                 exercise6.setVersion( 1 );
                 daoExercise.insertExercise(exercise6);
 
-                Exercise exercise7 = new Exercise("Aufwärmen","10min joggen oder Fahrrad fahren",1);
+                Exercise exercise7 = new Exercise("Aufwärmen","10min joggen oder Fahrrad fahren",R.drawable.bizeps);
                 exercise7.setModified( exercise7.getCreated() );
                 exercise7.setVersion( 1 );
                 daoExercise.insertExercise(exercise7);
 
-                Exercise exercise8 = new Exercise("Schulterdrücken Kurzhantel","Halte beide Kurzhanteln neben deinem Kopf bei ca 90Grad Armbeuge. Die Handflächen sollte dabei nach vorne zeigen. Drücke die Hanten nach oben.Gehe langsam in die Ausgangsposition zurück",1);
+                Exercise exercise8 = new Exercise("Schulterdrücken Kurzhantel","Halte beide Kurzhanteln neben deinem Kopf bei ca 90Grad Armbeuge. Die Handflächen sollte dabei nach vorne zeigen. Drücke die Hanten nach oben.Gehe langsam in die Ausgangsposition zurück",R.drawable.bizeps);
                 exercise8.setModified( exercise8.getCreated() );
                 exercise8.setVersion( 1 );
                 daoExercise.insertExercise(exercise8);
 
-                Exercise exercise9 = new Exercise("Beinpresse","Stelle deine Füße etwa schulterbreit auf die Platte. Löse die Halterung und lass deine Beine langsam zurück. Drücke die Platte nun nach oben ohne die Beine ganz durch zustrecken",1);
+                Exercise exercise9 = new Exercise("Beinpresse","Stelle deine Füße etwa schulterbreit auf die Platte. Löse die Halterung und lass deine Beine langsam zurück. Drücke die Platte nun nach oben ohne die Beine ganz durch zustrecken",R.drawable.bizeps);
                 exercise9.setModified( exercise9.getCreated() );
                 exercise9.setVersion( 1 );
                 daoExercise.insertExercise(exercise9);
 
-                Exercise exercise10 = new Exercise("Rudern","Ziehe den Griff bis zum Bauch und achte darauf, dass auch die Schultern nach hinten gehen.Lass den Rücken dabei gerade",1);
+                Exercise exercise10 = new Exercise("Rudern","Ziehe den Griff bis zum Bauch und achte darauf, dass auch die Schultern nach hinten gehen.Lass den Rücken dabei gerade",R.drawable.bizeps);
                 exercise10.setModified( exercise10.getCreated() );
                 exercise10.setVersion( 1 );
                 daoExercise.insertExercise(exercise10);
 
+                // crossRef exercise - muscleGroup
+                ExerciseWithMuscleGroup exerciseMG1 = new ExerciseWithMuscleGroup();
 
                 Log.i(LOG_TAG_DB, "Inserted 10 values to DB");
             });

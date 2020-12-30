@@ -6,26 +6,10 @@ import androidx.room.Entity;
 
 @Entity (primaryKeys = {"muscleGroupId", "exerciseId"})
 public class ExerciseMuscleGroupCrossRef {
-    /*
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    private long id;
-
-
- */
 
     public ExerciseMuscleGroupCrossRef(@NonNull long exerciseId, @NonNull long muscleGroupId) {
         this.exerciseId = exerciseId;
         this.muscleGroupId = muscleGroupId;
-        //this.muscleGroup = muscleGroup;
     }
 
     public long getExerciseId() {
