@@ -18,12 +18,11 @@ import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
 public class DataForDB {
 
-
      // method for insert example data in DB
    public void generateDBData (PersonDao daoPerson, TrainingDao daoTraining,ExerciseDao daoExercise,MuscleGroupDao daoMuscleGroup,ExerciseCrossRefDao exerciseCrossRefDao,TrainingExerciseCrossRefDao trainingExerciseCrossRefDao){
 
         // Insert Test Person -> later via first start in App
-        Person person1 = new Person("Marco","19.06.88",1,185.0,75.5);
+        Person person1 = new Person("Arni","30.07.47",1,188.0,115.5);
         person1.setCreated( System.currentTimeMillis() );
         person1.setModified( person1.getCreated() );
         person1.setVersion( 1 );
@@ -278,13 +277,7 @@ public class DataForDB {
         trainingExerciseCrossRef10.setVersion( 1 );
         trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef(trainingExerciseCrossRef10);
 
-
-
-
     };
-
-
-
 
 
 }
