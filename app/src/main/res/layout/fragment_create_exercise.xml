@@ -9,7 +9,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/backround4"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,114 +18,135 @@
         <!--Put form controls here-->
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/exerciseName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Übungsname" />
+            android:text="@string/create_exercise_name"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"/>
 
         <EditText
             android:id="@+id/createExerciseName"
             android:layout_width="401dp"
             android:layout_height="88dp"
-            android:hint="blub"
-
+            android:hint=""
             android:textAlignment="viewStart"></EditText>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/exerciseDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beschreibung" />
+            android:text="@string/create_exercise_description"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"/>
 
         <EditText
             android:id="@+id/createExerciseDescription"
             android:layout_width="401dp"
             android:layout_height="88dp"
-            android:hint="blub"
-
+            android:hint=""
             android:textAlignment="viewStart"></EditText>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="31dp"
-            android:text="Übungs Icon" />
+            android:text="@string/create_exercise_group_icon"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"/>
 
         <Spinner
             android:id="@+id/createExerciseMuscleGroup"
             android:layout_width="fill_parent"
-
             android:layout_height="wrap_content"
-            android:entries="@array/feedbacktypelist"></Spinner>
+            android:background="@color/primary_navbar"
 
-
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+            android:entries="@array/feedbacktypelist"
+            android:textColor="@color/white"></Spinner>
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Muskelgruppen" />
+            android:layout_marginTop="20dp"
+            android:text="@string/create_exercise_group_musclegroups"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/primary_navbar"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="106dp"
-                android:layout_height="110dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/Bizeps"
+                    android:id="@+id/checkboxBizeps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Bizeps" />
+                    android:text="@string/create_exercise_group_biceps"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <CheckBox
-                    android:id="@+id/Beine"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/checkboxLegs"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Beine" />
+                    android:text="@string/create_exercise_group_legs"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="118dp"
-                android:layout_height="127dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/Brust"
+                    android:id="@+id/checkboxChest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Brust" />
+                    android:text="@string/create_exercise_group_chest"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <CheckBox
-                    android:id="@+id/Rücken"
+                    android:id="@+id/checkboxBack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Rücken" />
+                    android:text="@string/create_exercise_group_back"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="124dp"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <CheckBox
                     android:id="@+id/checkbox_meat6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NichtKlicken" />
+                    android:text="Frei"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <CheckBox
                     android:id="@+id/checkbox_meat3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NichtKlicken" />
+                    android:text="Frei"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -133,8 +155,9 @@
             android:id="@+id/btnCreateExercise"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-
-            android:text="Erstellen"></Button>
+            android:layout_marginTop="20dp"
+            android:background="@color/accent_color"
+            android:text="@string/create_exercise_group_createButton"></Button>
 
 
     </LinearLayout>

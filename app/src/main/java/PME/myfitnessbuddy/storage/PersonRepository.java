@@ -99,7 +99,7 @@ public class PersonRepository {
         contact.setVersion( 1 );
 
         try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> personDao.insert( contact ) );
+            return MyFitnessBuddyDatabase.executeWithReturn( () -> personDao.insertPerson( contact ) );
         }
         catch (ExecutionException | InterruptedException e)
         {

@@ -14,7 +14,7 @@ import java.util.List;
 @Dao
 public interface PersonDao {
     @Insert
-    long insert(Person person);
+    long insertPerson(Person person);
 
     @Insert
     List<Long> insert(Person... persons);
