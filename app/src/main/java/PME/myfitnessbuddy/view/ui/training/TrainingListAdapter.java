@@ -84,7 +84,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
                     .into( holder.trainingImage);*/
         }
         else {
-            // Covers the case of data not being ready yet.
+            // Covers the case of DataForDB not being ready yet.
            holder.trainingName.setText(R.string.text_empty_list);
         }
     }

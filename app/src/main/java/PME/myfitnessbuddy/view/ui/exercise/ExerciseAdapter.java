@@ -81,7 +81,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
         }
         else {
-            // Covers the case of data not being ready yet.
+            // Covers the case of DataForDB not being ready yet.
             holder.exerciseName.setText(R.string.text_empty_list);
         }
     }

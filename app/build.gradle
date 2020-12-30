@@ -54,7 +54,7 @@ dependencies {
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
 
-    // Faker Lib for test data generation
+    // Faker Lib for test DataForDB generation
     implementation 'com.github.javafaker:javafaker:1.0.2'
 
 
