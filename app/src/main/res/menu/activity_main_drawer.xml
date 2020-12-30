@@ -17,8 +17,9 @@
             android:icon="@drawable/exercises"
             android:title="@string/menu_excersise" />
 
+        <!-- ToDo settings -->
         <item
-            android:id="@+id/fragment_exerciseDetail"
+            android:id="@+id/fragment_exercisedetail"
             android:icon="@drawable/analyse"
             android:title="Übungsdetails" />
     </group>

@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/background"
         android:foregroundTint="@color/secondary_navbar"
-        app:layoutDescription="@xml/activity_main_scene"
      >
 
 
