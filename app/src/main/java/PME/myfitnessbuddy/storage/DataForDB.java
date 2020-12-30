@@ -1,7 +1,5 @@
 package PME.myfitnessbuddy.storage;
 
-import android.util.Log;
-
 import com.myfitnessbuddy.R;
 
 import PME.myfitnessbuddy.model.Person;
@@ -20,6 +18,8 @@ import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
 public class DataForDB {
 
+
+     // method for insert example data in DB
    public void generateDBData (PersonDao daoPerson, TrainingDao daoTraining,ExerciseDao daoExercise,MuscleGroupDao daoMuscleGroup,ExerciseCrossRefDao exerciseCrossRefDao,TrainingExerciseCrossRefDao trainingExerciseCrossRefDao){
 
         // Insert Test Person -> later via first start in App

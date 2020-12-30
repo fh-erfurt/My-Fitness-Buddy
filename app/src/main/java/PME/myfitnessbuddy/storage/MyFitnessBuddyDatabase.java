@@ -137,6 +137,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 TrainingExerciseCrossRefDao trainingExerciseCrossRefDao = INSTANCE.trainingExerciseCrossRefDao();
                 trainingExerciseCrossRefDao.deleteAll();
 
+                //Insert example data in the database
                 DataForDB DBDataForDB = new DataForDB();
                 DBDataForDB.generateDBData(daoPerson,daoTraining,daoExercise,daoMuscleGroup,exerciseCrossRefDao,trainingExerciseCrossRefDao);
 
