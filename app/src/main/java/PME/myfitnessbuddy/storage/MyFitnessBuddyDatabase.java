@@ -143,7 +143,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                     training.setVersion( 1 );
                     daoTraining.insert(training);
 /*
-                    MuscleGroup muscleGroup = new MuscleGroup(faker.chuckNorris().fact());
+                    MuscleGroup muscleGroup = new MuscleGroup("Brust");
                     muscleGroup.setCreated( System.currentTimeMillis() );
                     muscleGroup.setProfileImageUrlByString( "test" );
                     muscleGroup.setModified( muscleGroup.getCreated() );

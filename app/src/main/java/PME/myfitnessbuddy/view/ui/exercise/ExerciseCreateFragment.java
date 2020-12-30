@@ -69,10 +69,10 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
 
-        beine = (CheckBox) root.findViewById(R.id.Beine);
-        bizeps = (CheckBox) root.findViewById(R.id.Bizeps);
-        brust = (CheckBox) root.findViewById(R.id.Brust);
-        rücken = (CheckBox) root.findViewById(R.id.Rücken);
+        beine = (CheckBox) root.findViewById(R.id.checkboxLegs);
+        bizeps = (CheckBox) root.findViewById(R.id.checkboxBizeps);
+        brust = (CheckBox) root.findViewById(R.id.checkboxChest);
+        rücken = (CheckBox) root.findViewById(R.id.checkboxBack);
 
         beine.setOnClickListener(this::onCheckboxClicked);
         bizeps.setOnClickListener(this::onCheckboxClicked);
@@ -177,7 +177,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
 
         // Check which checkbox was clicked
         switch(view.getId()) {
-            case R.id.Bizeps:
+            case R.id.checkboxBizeps:
                 if (checked) {
                     if (!muscleGroupList.contains("Bizeps")) {
                         muscleGroupList.add("Bizeps");
@@ -191,7 +191,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
                         }
                     }
                 break;
-            case R.id.Rücken:
+            case R.id.checkboxBack:
                 if (checked) {
                     if (!muscleGroupList.contains("Rücken")) {
                         muscleGroupList.add("Rücken");
@@ -204,7 +204,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
                     }
                 }
                 break;
-            case R.id.Beine:
+            case R.id.checkboxLegs:
                 if (checked) {
                     if (!muscleGroupList.contains("Beine")) {
                         muscleGroupList.add("Beine");
@@ -218,7 +218,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
                     }
                 }
                 break;
-            case R.id.Brust:
+            case R.id.checkboxChest:
                 if (checked) {
                     if (!muscleGroupList.contains("Brust")) {
                         muscleGroupList.add("Brust");
