@@ -2,35 +2,25 @@ package PME.myfitnessbuddy.view.ui.training;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.github.javafaker.Faker;
 import com.myfitnessbuddy.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
+import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 /**
 
  */
-public class TrainingCreateFragment extends Fragment {
-/*
+public class TrainingCreateFragment1 extends BaseFragment {
+
     View root;
 
     EditText exerciseName;
@@ -46,7 +36,7 @@ public class TrainingCreateFragment extends Fragment {
 
 
 
-    public TrainingCreateFragment() {
+    public TrainingCreateFragment1() {
         // Required empty public constructor
     }
 
@@ -62,8 +52,8 @@ public class TrainingCreateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        root = inflater.inflate(R.layout.fragment_create_exercise, container, false);
-
+        root = inflater.inflate(R.layout.fragment_training_create1, container, false);
+/*
         exerciseName = (EditText) root.findViewById(R.id.createExerciseName);
         exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
@@ -117,10 +107,12 @@ public class TrainingCreateFragment extends Fragment {
         Button button = (Button) root.findViewById(R.id.btnCreateExercise);
         button.setOnClickListener(this::onClick);
         // Inflate the layout for this fragment
+
+ */
         return root;
     }
 
-
+/*
     @Override
     public void onClick(View v) {
 

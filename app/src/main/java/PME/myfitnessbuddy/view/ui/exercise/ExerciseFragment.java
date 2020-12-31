@@ -4,11 +4,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -18,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.myfitnessbuddy.R;
@@ -41,7 +36,7 @@ public class ExerciseFragment extends BaseFragment {
        ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
         View root = inflater.inflate(R.layout.fragment_exercise, container, false);
 
-        FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnToCreateExercise);
+        FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnToExerciseCreate);
 
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.createExerciseFragment, null));
 

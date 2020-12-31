@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="394dp"
+        android:layout_height="669dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/backround4"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Put form controls here-->
+
+
+        <TextView
+            android:id="@+id/TextViewTrainingDesignation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Trainingstitel"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/createExerciseDescription"
+            android:layout_width="401dp"
+            android:layout_height="88dp"
+            android:hint=""
+            android:textAlignment="viewStart"></EditText>
+
+        <TextView
+            android:id="@+id/textViewTrainingType"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_marginTop="20dp"
+            android:text="Trainingstyp"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/createTrainingType"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_navbar"
+
+            android:entries="@array/feedbacktypelist"
+            android:textColor="@color/white"></Spinner>
+
+
+        <Button
+            android:id="@+id/btnCreateTrainingNext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/accent_color"
+            android:text="Weiter"></Button>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

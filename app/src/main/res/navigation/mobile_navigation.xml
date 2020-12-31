@@ -46,12 +46,15 @@
         android:id="@+id/fragment_traininglist"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingListFragment"
         android:label="@string/nav_label_training"
-        tools:layout="@layout/fragment_traininglist" >
+        tools:layout="@layout/fragment_traininglist">
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
             app:destination="@id/fragment_trainingdetails"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_trainingCreateFragment"
+            app:destination="@id/trainingCreateFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment_exercisedetail"
@@ -71,4 +74,9 @@
             android:id="@+id/action_createExerciseFragment_to_fragment_exercise"
             app:destination="@id/fragment_exercise" />
     </fragment>
+    <fragment
+        android:id="@+id/trainingCreateFragment"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1"
+        android:label="fragment_training_create"
+        tools:layout="@layout/fragment_training_create1" />
 </navigation>

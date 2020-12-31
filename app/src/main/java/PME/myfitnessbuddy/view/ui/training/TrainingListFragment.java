@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.myfitnessbuddy.R;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
@@ -70,8 +72,8 @@ public class TrainingListFragment extends BaseFragment  {
         View v = inflater.inflate(R.layout.fragment_traininglist, container, false);
 
 
-        //Button b = (Button) v.findViewById(R.id.button);
-        //  b.setOnClickListener(this);
+        FloatingActionButton button = (FloatingActionButton) v.findViewById(R.id.btnToTrainingCreate);
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragment_traininglist_to_trainingCreateFragment, null));
 
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
 

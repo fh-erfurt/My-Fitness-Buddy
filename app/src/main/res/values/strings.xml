@@ -45,7 +45,6 @@
     <string name="nav_header_desc">Navigation header</string>
 
 
-
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
@@ -61,9 +60,8 @@
     <string name="title_activity_exercise_detail_nav">ExerciseDetailNav</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
