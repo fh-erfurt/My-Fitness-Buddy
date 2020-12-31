@@ -2,18 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/list_item_exercise_image"
+    <LinearLayout
         android:layout_width="100dp"
-        android:layout_height="59dp"
-        android:layout_weight="2"
-        android:background="@color/gray_dark"
-        app:srcCompat="@drawable/run" />
+        android:layout_height="100dp"
+        android:background="@color/gray_dark">
+
+
+        <ImageView
+            android:id="@+id/list_item_exercise_image"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/gray_dark"
+            android:padding="5dp"
+            app:srcCompat="@drawable/run" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/list_item_exercise_name"
@@ -21,7 +31,7 @@
         android:layout_height="match_parent"
         android:layout_weight="5"
         android:background="@color/gray_dark"
-        android:gravity="center"
+        android:gravity="left|center_vertical"
         android:padding="5dp"
         android:textColor="@color/accent_color"
         android:textSize="22sp"

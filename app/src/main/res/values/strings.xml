@@ -19,6 +19,9 @@
     <string name="nav_label_training_detail">Trainingsdetails</string>
     <string name="nav_label_exercise">Übungen</string>
     <string name="nav_label_exercise_detail">Übungsdetails</string>
+    <string name="nav_label_exercise_create">Übung erstellen</string>
+    <string name="nav_label_training_create">Training erstellen</string>
+
 
     <!--toolbarmenü-->
     <string name="action_settings">Settings</string>

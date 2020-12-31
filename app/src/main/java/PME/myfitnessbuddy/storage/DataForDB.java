@@ -86,12 +86,12 @@ public class DataForDB {
         daoMuscleGroup.insertMuscleGroup(muscleGroup8);
 
         // example exercises
-        Exercise exercise1 = new Exercise("Bankdrücken","Lege dich flach auf den Rücken und bilde ein leichtes Hohlkreuz. Fasse die Stange etwas mehr als Schulterbreit und drücke sie aus der Halterung. Lass die Stange langsam nach unten bis etwa 5cm über den Brustwarzen und hebe die Stange wieder an.", R.drawable.bench_press);
+        Exercise exercise1 = new Exercise("Bankdrücken","Lege dich flach auf den Rücken und bilde ein leichtes Hohlkreuz. Fasse die Stange etwas mehr als Schulterbreit und drücke sie aus der Halterung. Lass die Stange langsam nach unten bis etwa 5cm über den Brustwarzen und hebe die Stange wieder an.", R.drawable.bench_barbell);
         exercise1.setModified( exercise1.getCreated() );
         exercise1.setVersion( 1 );
         daoExercise.insertExercise(exercise1);
 
-        Exercise exercise2 = new Exercise("Latziehen","Fasse die Stange außen an und ziehe sie bis in deinen Nacken, achte beim hochgehen der Stange, dass deine Arme und Schultern nicht voll ausgestreckt sind",R.drawable.pullups);
+        Exercise exercise2 = new Exercise("Latziehen","Fasse die Stange außen an und ziehe sie bis in deinen Nacken, achte beim hochgehen der Stange, dass deine Arme und Schultern nicht voll ausgestreckt sind",R.drawable.pulldown);
         exercise2.setModified( exercise2.getCreated() );
         exercise2.setVersion( 1 );
         daoExercise.insertExercise(exercise2);
@@ -106,7 +106,7 @@ public class DataForDB {
         exercise4.setVersion( 1 );
         daoExercise.insertExercise(exercise4);
 
-        Exercise exercise5 = new Exercise("Bizepscurls im Stehen","Führe die Hantel von einer ausgetrecken Position bis zu deiner Schulter.Achte darauf, das deine Finger nach oben zeigen und du nicht wippst",R.drawable.curls_with_dumbell);
+        Exercise exercise5 = new Exercise("Bizepscurls im Stehen","Führe die Hantel von einer ausgetrecken Position bis zu deiner Schulter.Achte darauf, das deine Finger nach oben zeigen und du nicht wippst",R.drawable.biceps_curl);
         exercise5.setModified( exercise5.getCreated() );
         exercise5.setVersion( 1 );
         daoExercise.insertExercise(exercise5);
@@ -121,17 +121,17 @@ public class DataForDB {
         exercise7.setVersion( 1 );
         daoExercise.insertExercise(exercise7);
 
-        Exercise exercise8 = new Exercise("Schulterdrücken Kurzhantel","Halte beide Kurzhanteln neben deinem Kopf bei ca 90Grad Armbeuge. Die Handflächen sollte dabei nach vorne zeigen. Drücke die Hanten nach oben.Gehe langsam in die Ausgangsposition zurück",R.drawable.weightlifting);
+        Exercise exercise8 = new Exercise("Schulterdrücken Kurzhantel","Halte beide Kurzhanteln neben deinem Kopf bei ca 90Grad Armbeuge. Die Handflächen sollte dabei nach vorne zeigen. Drücke die Hanten nach oben.Gehe langsam in die Ausgangsposition zurück",R.drawable.seated_dumbbell_press);
         exercise8.setModified( exercise8.getCreated() );
         exercise8.setVersion( 1 );
         daoExercise.insertExercise(exercise8);
 
-        Exercise exercise9 = new Exercise("Beinpresse","Stelle deine Füße etwa schulterbreit auf die Platte. Löse die Halterung und lass deine Beine langsam zurück. Drücke die Platte nun nach oben ohne die Beine ganz durch zustrecken",R.drawable.run);
+        Exercise exercise9 = new Exercise("Beinpresse","Stelle deine Füße etwa schulterbreit auf die Platte. Löse die Halterung und lass deine Beine langsam zurück. Drücke die Platte nun nach oben ohne die Beine ganz durch zustrecken",R.drawable.legpress);
         exercise9.setModified( exercise9.getCreated() );
         exercise9.setVersion( 1 );
         daoExercise.insertExercise(exercise9);
 
-        Exercise exercise10 = new Exercise("Rudern","Ziehe den Griff bis zum Bauch und achte darauf, dass auch die Schultern nach hinten gehen.Lass den Rücken dabei gerade",R.drawable.run);
+        Exercise exercise10 = new Exercise("Rudern mit Kurzhanteln","Ziehe die Hanteln bis zum Bauch und achte darauf, dass auch die Schultern nach hinten gehen.Lass den Rücken dabei gerade",R.drawable.row_dumbbell);
         exercise10.setModified( exercise10.getCreated() );
         exercise10.setVersion( 1 );
         daoExercise.insertExercise(exercise10);

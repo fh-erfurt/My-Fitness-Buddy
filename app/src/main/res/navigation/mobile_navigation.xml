@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/createExerciseFragment"
         android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseCreateFragment"
-        android:label="fragment_create_exercise"
+        android:label="@string/nav_label_exercise_create"
         tools:layout="@layout/fragment_create_exercise" >
         <action
             android:id="@+id/action_createExerciseFragment_to_fragment_exercise"
@@ -77,6 +77,6 @@
     <fragment
         android:id="@+id/trainingCreateFragment"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1"
-        android:label="fragment_training_create"
+        android:label="@string/nav_label_training_create"
         tools:layout="@layout/fragment_training_create1" />
 </navigation>
