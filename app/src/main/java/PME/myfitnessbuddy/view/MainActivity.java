@@ -1,25 +1,32 @@
 package PME.myfitnessbuddy.view;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.content.Context;
 
-import androidx.annotation.NonNull;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.Menu;
+
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import com.myfitnessbuddy.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+
+
+import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
+import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
 
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
@@ -27,15 +34,15 @@ public class MainActivity extends AppCompatActivity  {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private NavController navController;
+public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        database= Room.databaseBuilder(getApplicationContext(),MyFitnessBuddyDatabase.class,"user").allowMainThreadQueries();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
@@ -48,8 +55,8 @@ public class MainActivity extends AppCompatActivity  {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-    }
 
+    }
 
 
     @Override

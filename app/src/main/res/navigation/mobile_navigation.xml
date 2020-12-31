@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
             app:destination="@id/fragment_trainingdetails" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_trainingCreateFragment"
+            app:destination="@id/trainingCreateFragment" />
     </fragment>
 
 
