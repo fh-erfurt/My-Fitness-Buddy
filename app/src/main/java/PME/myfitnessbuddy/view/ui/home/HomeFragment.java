@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,10 +35,12 @@ import PME.myfitnessbuddy.view.ui.training.TrainingListViewModel;
 public class HomeFragment extends Fragment  implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
+
     CardView cardViewTraining;
     CardView cardViewExercise;
     CardView cardViewAnalyse;
     CardView cardViewSettings;
+    NavHostFragment navHostFragment;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -45,6 +48,8 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         cardViewExercise=(CardView) root.findViewById(R.id.cardview_home_exercise);
         cardViewExercise.setOnClickListener(this);
+
+
 
         cardViewTraining=(CardView) root.findViewById(R.id.cardview_home_training);
         cardViewTraining.setOnClickListener(this);
