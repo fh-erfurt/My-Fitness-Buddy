@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
+import PME.myfitnessbuddy.view.MainActivity;
 import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
 import PME.myfitnessbuddy.view.ui.training.TrainingListAdapter;

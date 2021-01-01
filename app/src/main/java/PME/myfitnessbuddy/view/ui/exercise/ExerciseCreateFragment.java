@@ -58,6 +58,9 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         if (getArguments() != null) {
 
         }
+
+
+
     }
 
     @Override
@@ -69,6 +72,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exerciseName = (EditText) root.findViewById(R.id.createExerciseName);
         exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
+
 
         beine = (CheckBox) root.findViewById(R.id.checkboxLegs);
         bizeps = (CheckBox) root.findViewById(R.id.checkboxBizeps);

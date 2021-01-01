@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity  {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private NavController navController;
+
 public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
 
     @Override
@@ -45,6 +46,7 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
