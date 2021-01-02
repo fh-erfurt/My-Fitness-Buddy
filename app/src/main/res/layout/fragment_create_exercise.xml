@@ -63,8 +63,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/primary_navbar"
-
-            android:entries="@array/feedbacktypelist"
+            android:entries="@array/spinner_items"
             android:textColor="@color/white"></Spinner>
 
         <TextView

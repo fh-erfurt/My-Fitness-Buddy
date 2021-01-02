@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -57,6 +58,9 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         if (getArguments() != null) {
 
         }
+
+
+
     }
 
     @Override
@@ -68,6 +72,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exerciseName = (EditText) root.findViewById(R.id.createExerciseName);
         exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
+
 
         beine = (CheckBox) root.findViewById(R.id.checkboxLegs);
         bizeps = (CheckBox) root.findViewById(R.id.checkboxBizeps);

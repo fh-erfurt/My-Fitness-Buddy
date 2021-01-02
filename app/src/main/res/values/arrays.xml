@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="feedbacktypelist">
+    <string-array name="spinner_items">
         <item>@string/create_exercise_group_biceps</item>
         <item>@string/create_exercise_group_legs</item>
         <item>@string/create_exercise_group_back</item>
