@@ -18,7 +18,7 @@
             app:destination="@id/fragment_trainingdetails" />
         <action
             android:id="@+id/action_fragment_traininglist_to_trainingCreateFragment"
-            app:destination="@id/trainingCreateFragment" />
+            app:destination="@id/trainingCreateFragment1" />
         <action
             android:id="@+id/action_nav_home_to_fragment_exercise"
             app:destination="@id/fragment_exercise" />
