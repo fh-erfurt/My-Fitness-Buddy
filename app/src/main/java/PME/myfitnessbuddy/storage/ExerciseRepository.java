@@ -70,12 +70,30 @@ public class ExerciseRepository {
         return this.query( () -> this.exerciseDao.getExerciseForDesignation( search ) );
     }
 
+
+    public List<ExerciseWithMuscleGroup> allExercises()
+    {
+        return this.query2( () -> this.exerciseDao.getAllExercises( ) );
+    }
+
     public List<Exercise> getExerciseSortedByDesignation()
     {
         return this.query( () -> this.exerciseDao.getExerciseSortedByDesignation() );
     }
 
     private List<Exercise> query( Callable<List<Exercise>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
+    }
+
+    private List<ExerciseWithMuscleGroup> query2( Callable<List<ExerciseWithMuscleGroup>> query )
     {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( query );

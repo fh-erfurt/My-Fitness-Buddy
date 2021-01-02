@@ -20,6 +20,12 @@ import java.util.concurrent.ExecutionException;
 public class TrainingRepository {
     public static final String LOG_TAG = "TrainingRepository";
 
+    public long getRepositoryTrainingId() {
+        return repositoryTrainingId;
+    }
+
+    private long repositoryTrainingId;
+
     private TrainingDao trainingDao;
 
     private static TrainingRepository INSTANCE;
@@ -93,7 +99,7 @@ public class TrainingRepository {
         }
 
         // Well, is this a reasonable default return value?
-        return new Training("", Category.none);
+        return new Training("", "none");
     }
 
     public void update(Training training) {
@@ -108,7 +114,7 @@ public class TrainingRepository {
         training.setModified( training.getCreated() );
         training.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> trainingDao.insert( training ) );
+        MyFitnessBuddyDatabase.execute( () -> this.repositoryTrainingId = trainingDao.insert( training ) );
     }
 
 

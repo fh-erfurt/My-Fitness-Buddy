@@ -17,7 +17,7 @@ public class Training {
 
     @NonNull
     @ColumnInfo(name = "category")
-    private Category category;
+    private String category;
 
     @NonNull
     @ColumnInfo(name = "created")
@@ -37,7 +37,7 @@ public class Training {
     private String profileImageUrl;
     */
 
-    public Training(@NonNull String designation, @NonNull Category category) {
+    public Training(@NonNull String designation, @NonNull String category) {
         this.designation = designation;
         this.category = category;
     }
@@ -60,11 +60,11 @@ public class Training {
     }
 
     @NonNull
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(@NonNull Category category) {
+    public void setCategory(@NonNull String category) {
         this.category = category;
     }
 

@@ -122,6 +122,9 @@ public interface ExerciseDao {
     @Query("SELECT * FROM Exercise")
     LiveData< List<ExerciseWithMuscleGroup>> getExercisesWithMuscleGroups();
 
+    @Transaction
+    @Query("SELECT * FROM Exercise")
+    List<ExerciseWithMuscleGroup> getAllExercises();
 
     @Update
     void updateMuscleGroups( List<MuscleGroup> muscleGroups );

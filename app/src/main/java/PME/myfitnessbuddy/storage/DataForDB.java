@@ -198,19 +198,19 @@ public class DataForDB {
         exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef10);
 
         //example Training
-        Training back = new Training("Brust", Category.category1);
+        Training back = new Training("Brust", "push");
         back.setCreated( System.currentTimeMillis() );
         back.setModified( back.getCreated() );
         back.setVersion( 1 );
         daoTraining.insert(back);
 
-        Training chest = new Training("Rücken", Category.category1);
+        Training chest = new Training("Rücken", "pull");
         chest.setCreated( System.currentTimeMillis() );
         chest.setModified( chest.getCreated() );
         chest.setVersion( 1 );
         daoTraining.insert(chest);
 
-        Training legs = new Training("Beine", Category.category1);
+        Training legs = new Training("Beine", "beine");
         legs.setCreated( System.currentTimeMillis() );
         legs.setModified( legs.getCreated() );
         legs.setVersion( 1 );

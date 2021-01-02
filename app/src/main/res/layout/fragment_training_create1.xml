@@ -29,7 +29,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/createExerciseDescription"
+            android:id="@+id/createTrainingDesignation"
             android:layout_width="401dp"
             android:layout_height="88dp"
             android:hint=""

@@ -34,6 +34,17 @@ public class Exercise {
 
 
      */
+    @Ignore
+    private boolean isSelected = false;
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
     @NonNull
     public int getProfileImageId() {
         return profileImageId;

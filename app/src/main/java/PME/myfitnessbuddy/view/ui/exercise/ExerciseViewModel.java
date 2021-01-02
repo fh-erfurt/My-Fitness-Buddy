@@ -60,6 +60,14 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.getExerciseLiveData();
     }
 
+    public List<ExerciseWithMuscleGroup> getAllExercises() {
+        return this.exerciseRepository.allExercises();
+    }
+
+    public List<Exercise> getdgdsgfdgs() {
+        return this.exerciseRepository.getExercises();
+    }
+
     public List<MuscleGroup> getMuscleGroupForDesignation(String search){
             return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
     }

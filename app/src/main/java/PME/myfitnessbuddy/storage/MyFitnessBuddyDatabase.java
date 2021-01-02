@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class}, version = 32     )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class}, version = 2     )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
