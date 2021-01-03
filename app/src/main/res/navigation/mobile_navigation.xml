@@ -89,7 +89,7 @@
     <fragment
         android:id="@+id/trainingCreateFragment1"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1"
-        android:label="fragment_training_create"
+        android:label="@string/create_training_create_title"
         tools:layout="@layout/fragment_training_create1">
         <action
             android:id="@+id/action_trainingCreateFragment_to_trainingCreateFragment2"
@@ -98,7 +98,7 @@
     <fragment
         android:id="@+id/trainingCreateFragment2"
         android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment2"
-        android:label="fragment_training_create2"
+        android:label="@string/create_training_create_title"
         tools:layout="@layout/fragment_training_create2" >
         <action
             android:id="@+id/action_trainingCreateFragment2_to_fragment_traininglist"

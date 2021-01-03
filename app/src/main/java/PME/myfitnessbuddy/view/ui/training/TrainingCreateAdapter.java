@@ -13,15 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
-import PME.myfitnessbuddy.model.training.TrainingWithExercise;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 
 public class TrainingCreateAdapter extends RecyclerView.Adapter<TrainingCreateAdapter.ExerciseViewHolder>{
 
@@ -75,11 +72,11 @@ public class TrainingCreateAdapter extends RecyclerView.Adapter<TrainingCreateAd
         private ExerciseViewHolder(View itemView, TrainingCreateAdapter.ExerciseClickListener exerciseClickListener) {
             super(itemView);
 
-            mCheckedTextView = itemView.findViewById(R.id.list_item_exercisewithcheckbox_image);
+            mCheckedTextView = itemView.findViewById(R.id.list_item_exercise_with_checkbox_image);
             itemView.setOnClickListener(this);
 
-            this.exerciseName = itemView.findViewById(R.id.list_item_exercisewithcheckbox_name);
-            this.imageView =itemView.findViewById(R.id.list_item_exercisewithcheckbox_image);
+            this.exerciseName = itemView.findViewById(R.id.list_item_exercise_with_checkbox_name);
+            this.imageView =itemView.findViewById(R.id.list_item_exercise_with_checkbox_image);
 
             itemView.setOnClickListener( vE -> {
                 int adapterPosition = getAdapterPosition();
@@ -115,7 +112,7 @@ public class TrainingCreateAdapter extends RecyclerView.Adapter<TrainingCreateAd
     @NonNull
     @Override
     public TrainingCreateAdapter.ExerciseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = this.inflater.inflate(R.layout.list_item_exercisewithcheckbox, parent, false);
+        View itemView = this.inflater.inflate(R.layout.list_item_exercise_with_checkbox, parent, false);
 
         Log.i( "OnCreateViewHolder", "Count: " + ++TrainingCreateAdapter.counter);
 
