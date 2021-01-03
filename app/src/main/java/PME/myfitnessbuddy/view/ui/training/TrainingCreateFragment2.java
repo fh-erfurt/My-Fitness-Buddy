@@ -84,11 +84,12 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString("trainingName");
-            Log.println(Log.INFO,"Test","Teeeeesssst111111111");
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            mParam1 = bundle.getString("trainingName");
+            Log.println(Log.INFO,"Test","arguments vorhanden");
         }
-        Log.println(Log.INFO,"Test","Teeeeesssst");
+        Log.println(Log.INFO,"Test","keine arguments");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -109,7 +110,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         List<MuscleGroup> muscleGroups = exerciseViewModel.getMuscleGroupForDesignation("Beine");
 
-        Bundle bundle = getArguments();
 
         if (mParam1 != null) {
             designation = mParam1;
@@ -118,21 +118,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
             designation = "test";
         }
 
-       // exerciseViewModel.getdgdsgfdgs().observe(this.requireActivity(), adapter::setExercises);
-
-/*
-        RecyclerView exerciseListView = root.findViewById(R.id.exercisesWithCheckbox);
-
-        final TrainingCreateAdapter adapter = new TrainingCreateAdapter(this.requireActivity(),
-                exerciseId -> {
-                    Bundle args = new Bundle();
-                    args.putLong("exerciseId", exerciseId);
-     //               NavController nc = NavHostFragment.findNavController( this );
-     //               nc.navigate( R.id.action_fragment_exercise_to_fragment_exercisedetail , args );
-                });
-
-
- */
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         viewModel.getText().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
             @Override
@@ -140,23 +125,7 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
             }
         });
-/*
-        exerciseListView.setAdapter( adapter );
-        exerciseListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
 
-       trainingCreateViewModel.getExercises().observe(this.requireActivity(), adapter::setExercises);
-        // Inflate the layout for this fragment
-
-        for (int x = 0; x <= 100; x++) {
-            Model model = new Model();
-            model.setPosition(x+1);
-
-            items.add(model);
-        }
-
-        adapter.loadItems(items);
-
- */
 
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnCreateTraining);
         button.setOnClickListener(this::onClick);
@@ -182,7 +151,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         String category = viewModel.getText().getValue().toString();
 
-
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
 
         Training training = new Training(designation,category);
@@ -199,7 +167,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
             TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
             trainingExerciseCrossRef.setCreated( System.currentTimeMillis() );
-            //exercise.setProfileImageUrl( faker.avatar().image() );
             trainingExerciseCrossRef.setModified( trainingExerciseCrossRef.getCreated() );
             trainingExerciseCrossRef.setVersion( 1 );
             trainingListViewModel.insertExerciseCrossRef(trainingExerciseCrossRef);

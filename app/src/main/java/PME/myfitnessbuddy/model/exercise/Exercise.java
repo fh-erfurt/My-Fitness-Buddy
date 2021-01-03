@@ -156,13 +156,7 @@ public class Exercise {
         this.version = version;
     }
 
-    /*
-    public List<MuscleGroup> getMuscleGroups() {
-        return muscleGroups;
-    }
 
-
-     */
 
     public int checkImgAndGetId(String profileImageName) {
 
