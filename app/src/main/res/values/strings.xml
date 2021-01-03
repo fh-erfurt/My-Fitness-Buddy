@@ -39,6 +39,12 @@
     <string name="create_exercise_group_musclegroups">Beteiligte Muskelgruppen</string>
     <string name="create_exercise_group_createButton">Erstellen</string>
 
+
+    <!--Training erstellen-->
+
+    <string name="create_training_create_title">Training erstellen</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

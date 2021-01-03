@@ -33,7 +33,8 @@
             android:layout_width="401dp"
             android:layout_height="88dp"
             android:hint=""
-            android:textAlignment="viewStart"></EditText>
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"></EditText>
 
         <TextView
             android:id="@+id/textViewTrainingType"

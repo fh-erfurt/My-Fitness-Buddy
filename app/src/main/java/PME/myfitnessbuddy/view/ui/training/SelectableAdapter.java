@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
 public class SelectableAdapter extends RecyclerView.Adapter implements SelectableViewHolder.OnItemSelectedListener {
 
@@ -41,7 +40,7 @@ public class SelectableAdapter extends RecyclerView.Adapter implements Selectabl
     @Override
     public SelectableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_exercisewithcheckbox, parent, false);
+                .inflate(R.layout.list_item_exercise_with_checkbox, parent, false);
 
         return new SelectableViewHolder(itemView, this);
     }

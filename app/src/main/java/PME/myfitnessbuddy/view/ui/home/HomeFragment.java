@@ -79,11 +79,13 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         {
             case R.id.cardview_home_training:
                 fragment = new TrainingListFragment();
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_fragment_traininglist);
                 replaceFragment(fragment);
                 break;
 
             case R.id.cardview_home_exercise:
                 fragment = new ExerciseFragment();
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_fragment_exercise);
                 replaceFragment(fragment);
                 break;
 

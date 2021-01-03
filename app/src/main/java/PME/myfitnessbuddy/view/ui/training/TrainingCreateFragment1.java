@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
+import PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment2;
 
 /**
 
@@ -34,7 +36,6 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
     View root;
 
     private SharedViewModel viewModel;
-    private EditText editText;
 
     EditText trainingDesignation;
     Spinner trainingType;
@@ -45,8 +46,6 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
     CheckBox bizeps;
 
     List<String> muscleGroupList = new ArrayList();
-
-
 
     public TrainingCreateFragment1() {
         // Required empty public constructor
@@ -82,7 +81,6 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
         });
 
 
-
         final TrainingCreateAdapter adapter = new TrainingCreateAdapter(this.requireActivity(),
                 trainingId -> {
                     Bundle args = new Bundle();
@@ -116,13 +114,9 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
             }
         });
 
-
-
-
         Button button = (Button) root.findViewById(R.id.btnCreateTrainingNext);
         button.setOnClickListener(this::onClick);
         // Inflate the layout for this fragment
-
 
         return root;
     }
@@ -131,10 +125,10 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
     @Override
     public void onClick(View v) {
 
-        viewModel.setText(trainingDesignation.getText());
+        String trainingName = trainingDesignation.getText().toString();
+        TrainingCreateFragment2.newInstance(trainingName);
 
         viewModel.setType(trainingType.getSelectedItem().toString());
-
 
         Navigation.findNavController(v).navigate(R.id.action_trainingCreateFragment_to_trainingCreateFragment2);
     }
