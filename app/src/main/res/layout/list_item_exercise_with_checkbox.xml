@@ -2,48 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:orientation="horizontal">
 
-    <CheckedTextView
-        android:id="@+id/checked_text_item"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-        android:checked="false"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="Übungsname"
-        android:textAlignment="viewStart"
-        android:textAppearance="?android:textAppearanceLarge" />
 
     <LinearLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/gray_dark">
-    <ImageView
-        android:id="@+id/list_item_exercise_with_checkbox_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:background="@color/gray_dark"
-        app:srcCompat="@drawable/run" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/list_item_exercise_with_checkbox_image"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/primary_navbar"
+            app:srcCompat="@drawable/run" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/list_item_exercise_with_checkbox_name"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="308dp"
         android:layout_height="match_parent"
-        android:layout_weight="5"
-        android:background="@color/gray_dark"
-        android:gravity="center"
-        android:padding="5dp"
-        android:textColor="@color/accent_color"
-        android:textSize="22sp"
+        android:background="@color/primary_navbar">
 
+        <CheckedTextView
+            android:id="@+id/checked_text_item"
+            android:layout_width="277dp"
+            android:layout_height="match_parent"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Übungsname"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary_navbar"/>
+    </LinearLayout>
 
-        />
 
     <!--<Button
         android:id="@+id/button"

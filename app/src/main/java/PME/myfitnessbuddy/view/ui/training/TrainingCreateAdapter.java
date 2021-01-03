@@ -75,7 +75,7 @@ public class TrainingCreateAdapter extends RecyclerView.Adapter<TrainingCreateAd
             mCheckedTextView = itemView.findViewById(R.id.list_item_exercise_with_checkbox_image);
             itemView.setOnClickListener(this);
 
-            this.exerciseName = itemView.findViewById(R.id.list_item_exercise_with_checkbox_name);
+            this.exerciseName = itemView.findViewById(R.id.checked_text_item);
             this.imageView =itemView.findViewById(R.id.list_item_exercise_with_checkbox_image);
 
             itemView.setOnClickListener( vE -> {
