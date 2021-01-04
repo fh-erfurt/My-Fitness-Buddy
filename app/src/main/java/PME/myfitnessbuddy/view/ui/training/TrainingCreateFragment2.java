@@ -31,6 +31,7 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 public class TrainingCreateFragment2 extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 
     private SharedViewModel viewModel;
+    // counter for training without name
     static int counter = 1;
 
     private   SelectableAdapter   adapter;
@@ -123,6 +124,7 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
     public void onClick(View v) {
 
         category = viewModel.getCategory().getValue().toString();
+        // if no name type in edittext we use a standard word
         if(!viewModel.getTrainingsName().getValue().toString().equals("")) {
             designation = viewModel.getTrainingsName().getValue().toString();
         }
@@ -131,7 +133,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
             counter++;
         }
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
-
         Training training = new Training(designation,category);
         training.setCreated( System.currentTimeMillis() );
         training.setModified( training.getCreated() );
@@ -141,7 +142,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         for (int i = 0; i<selectedItems.size(); i++){
 
-
            long exerciseId = selectedItems.get(i).getExerciseId();
 
             TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
@@ -149,7 +149,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
             trainingExerciseCrossRef.setModified( trainingExerciseCrossRef.getCreated() );
             trainingExerciseCrossRef.setVersion( 1 );
             trainingListViewModel.insertExerciseCrossRef(trainingExerciseCrossRef);
-
         }
 
         Navigation.findNavController(v).navigate(R.id.action_trainingCreateFragment2_to_fragment_traininglist);

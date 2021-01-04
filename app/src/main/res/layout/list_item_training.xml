@@ -28,6 +28,19 @@
         tools:text="@tools:sample/full_names"
         android:textColor="@color/accent_color"
         />
+
+    <TextView
+        android:id="@+id/list_item_counted_exercises"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="5"
+        android:padding="5dp"
+        android:textSize="22sp"
+        android:background="@color/gray_dark"
+        tools:text="@tools:sample/full_names"
+        android:textColor="@color/accent_color"
+        />
     <!--<Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
