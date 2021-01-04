@@ -73,14 +73,15 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
             }
         });
 
-        viewModel.getType().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
+        /*viewModel.getType().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
             @Override
             public void onChanged(@Nullable CharSequence charSequence) {
 
             }
-        });
+        });*/
 
 
+        /*
         final TrainingCreateAdapter adapter = new TrainingCreateAdapter(this.requireActivity(),
                 trainingId -> {
                     Bundle args = new Bundle();
@@ -88,7 +89,7 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
                     NavController nc = NavHostFragment.findNavController( this );
                     nc.navigate( R.id.action_fragment_traininglist_to_fragment_trainingdetails, args );
                 });
-
+*/
 
         trainingDesignation = (EditText) root.findViewById(R.id.createTrainingDesignation);
         trainingType = (Spinner) root.findViewById(R.id.createTrainingType);
@@ -125,11 +126,9 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
     @Override
     public void onClick(View v) {
 
-        String trainingName = trainingDesignation.getText().toString();
-        TrainingCreateFragment2.newInstance(trainingName);
 
-        viewModel.setText(trainingType.getSelectedItem().toString());
-
+        viewModel.setCategroy(trainingType.getSelectedItem().toString());
+        viewModel.setTrainingsName(trainingDesignation.getText().toString());
         Navigation.findNavController(v).navigate(R.id.action_trainingCreateFragment_to_trainingCreateFragment2);
     }
 

@@ -31,6 +31,7 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 public class TrainingCreateFragment2 extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 
     private SharedViewModel viewModel;
+    static int counter = 1;
 
     private   SelectableAdapter   adapter;
 
@@ -38,11 +39,11 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
     ExerciseViewModel exerciseViewModel;
 
-    String designation;
+    String designation,category;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "trainingName";
+    private static final String ARG_PARAM1 = "param1";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -72,10 +73,8 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            mParam1 = bundle.getString("trainingName");
-            Log.println(Log.INFO,"Test","arguments vorhanden");
+            mParam1 = bundle.getString("param1");
         }
-        Log.println(Log.INFO,"Test","keine arguments");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -92,12 +91,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 
-        if (mParam1 != null) {
-            designation = mParam1;
-        }
-        else {
-            designation = "test";
-        }
 
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         viewModel.getText().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
@@ -129,8 +122,14 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
     @Override
     public void onClick(View v) {
 
-        String category = viewModel.getText().getValue().toString();
-
+        category = viewModel.getCategory().getValue().toString();
+        if(!viewModel.getTrainingsName().getValue().toString().equals("")) {
+            designation = viewModel.getTrainingsName().getValue().toString();
+        }
+        else {
+            designation = "Training "+counter;
+            counter++;
+        }
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
 
         Training training = new Training(designation,category);
