@@ -5,14 +5,9 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,26 +15,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
-
-import static PME.myfitnessbuddy.view.ui.training.TrainingCreateAdapter.items;
 
 
 public class TrainingCreateFragment2 extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
@@ -101,15 +87,10 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         RecyclerView recyclerView =  root.findViewById(R.id.selection_list);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(root.getContext());
-        List<Exercise> selectableItems = generateItems();
-        List<Exercise> selectableItecsacsms = exerciseViewModel.getdgdsgfdgs();
-        adapter = new SelectableAdapter(this.requireActivity(), this,selectableItems,false);
+        List<Exercise> selectableExercises = generateListFromAllExercises();
+        adapter = new SelectableAdapter(this.requireActivity(), this,selectableExercises,false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
-
-        List<MuscleGroup> muscleGroups = exerciseViewModel.getMuscleGroupForDesignation("Beine");
-
 
         if (mParam1 != null) {
             designation = mParam1;
@@ -126,7 +107,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
             }
         });
 
-
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnCreateTraining);
         button.setOnClickListener(this::onClick);
 
@@ -140,10 +120,10 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
     }
 
-    public List<Exercise> generateItems(){
+    public List<Exercise> generateListFromAllExercises(){
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
-        return exerciseViewModel.getdgdsgfdgs();
+        return exerciseViewModel.getExercisesFromRepo();
     }
 
     @Override
