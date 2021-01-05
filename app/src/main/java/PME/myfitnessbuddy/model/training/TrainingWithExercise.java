@@ -13,7 +13,6 @@ import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
 public class TrainingWithExercise {
 
-
     public Training getTraining() {
         return training;
     }
@@ -32,4 +31,5 @@ public class TrainingWithExercise {
     )
 
     public List<Exercise> exercises;
+
 }

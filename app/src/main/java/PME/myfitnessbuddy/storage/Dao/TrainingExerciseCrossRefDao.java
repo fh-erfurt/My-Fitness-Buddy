@@ -31,6 +31,9 @@ public interface TrainingExerciseCrossRefDao {
     @Query("SELECT count(*) FROM TrainingExerciseCrossRef")
     int count();
 
+    @Query("SELECT count(trainingId) FROM TrainingExerciseCrossRef WHERE trainingId = :trainingId")
+    int countedExercises(long trainingId);
+
     @Query("SELECT * from TrainingExerciseCrossRef")
     List<TrainingExerciseCrossRef> getTrainings();
 
@@ -38,10 +41,10 @@ public interface TrainingExerciseCrossRefDao {
     LiveData<List<TrainingExerciseCrossRef>> getTrainingLiveData();
 
 
-
-
     @Query("SELECT * from ExerciseMuscleGroupCrossRef ORDER BY exerciseId DESC LIMIT 1")
     ExerciseMuscleGroupCrossRef getLastEntry();
+
+
 
 
 

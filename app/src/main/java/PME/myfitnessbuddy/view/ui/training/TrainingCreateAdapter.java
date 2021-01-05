@@ -131,6 +131,7 @@ public class TrainingCreateAdapter extends RecyclerView.Adapter<TrainingCreateAd
             holder.currentExerciseId = current.getExercise().getExerciseId();
 
             holder.imageView.setImageResource(current.getExercise().getProfileImageId());
+            String Bla = String.valueOf(current.getExercise().getProfileImageId());
 
             holder.bind(position);
 

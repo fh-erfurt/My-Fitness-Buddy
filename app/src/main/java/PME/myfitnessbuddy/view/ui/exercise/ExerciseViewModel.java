@@ -64,7 +64,7 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.allExercises();
     }
 
-    public List<Exercise> getdgdsgfdgs() {
+    public List<Exercise> getExercisesFromRepo() {
         return this.exerciseRepository.getExercises();
     }
 

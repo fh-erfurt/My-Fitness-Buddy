@@ -32,6 +32,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
     static class TrainingViewHolder extends RecyclerView.ViewHolder {
         private final TextView trainingName;
         private final ImageView trainingImage;
+        private final TextView countedExercises;
         private long currentTrainingId = -1;
 
         private TrainingViewHolder(View itemView, TrainingClickListener trainingClickListener) {
@@ -39,6 +40,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
 
             this.trainingName = itemView.findViewById(R.id.list_item_training_name);
             this.trainingImage = itemView.findViewById(R.id.list_item_training_image);
+            this.countedExercises =itemView.findViewById(R.id.list_item_counted_exercises);
 
             itemView.setOnClickListener( v -> {
                 trainingClickListener.onClick( this.currentTrainingId );
@@ -70,18 +72,12 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
         if (this.trainingList != null && !this.trainingList.isEmpty()) {
             TrainingWithExercise current = this.trainingList.get(position);
            holder.trainingName.setText(String.format("%s", current.getTraining().getDesignation()));
+           holder.currentTrainingId = current.getTraining().getTrainingId();
 
-            holder.currentTrainingId = current.getTraining().getTrainingId();
 
-            Picasso p = Picasso.get();
-            p.setIndicatorsEnabled(true);
-            /*p.load(current.getTraining().getProfileImageUrl())
-                    .placeholder(R.drawable.icon_profile_placeholder)
-                    .error(R.drawable.icon_error)
-                    .resize(80, 80)
-                    .rotate(-15.0f)
-                    .centerCrop()
-                    .into( holder.trainingImage);*/
+           //Picasso p = Picasso.get();
+           //p.setIndicatorsEnabled(true);
+
         }
         else {
             // Covers the case of DataForDB not being ready yet.

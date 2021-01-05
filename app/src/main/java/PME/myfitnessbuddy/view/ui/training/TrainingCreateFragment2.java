@@ -5,14 +5,9 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,31 +15,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
-
-import static PME.myfitnessbuddy.view.ui.training.TrainingCreateAdapter.items;
 
 
 public class TrainingCreateFragment2 extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 
     private SharedViewModel viewModel;
+    // counter for training without name
+    static int counter = 1;
 
     private   SelectableAdapter   adapter;
 
@@ -52,11 +40,11 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
     ExerciseViewModel exerciseViewModel;
 
-    String designation;
+    String designation,category;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "trainingName";
+    private static final String ARG_PARAM1 = "param1";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -86,10 +74,8 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            mParam1 = bundle.getString("trainingName");
-            Log.println(Log.INFO,"Test","arguments vorhanden");
+            mParam1 = bundle.getString("param1");
         }
-        Log.println(Log.INFO,"Test","keine arguments");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -101,22 +87,11 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         RecyclerView recyclerView =  root.findViewById(R.id.selection_list);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(root.getContext());
-        List<Exercise> selectableItems = generateItems();
-        List<Exercise> selectableItecsacsms = exerciseViewModel.getdgdsgfdgs();
-        adapter = new SelectableAdapter(this.requireActivity(), this,selectableItems,false);
+        List<Exercise> selectableExercises = generateListFromAllExercises();
+        adapter = new SelectableAdapter(this.requireActivity(), this,selectableExercises,false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 
-        List<MuscleGroup> muscleGroups = exerciseViewModel.getMuscleGroupForDesignation("Beine");
-
-
-        if (mParam1 != null) {
-            designation = mParam1;
-        }
-        else {
-            designation = "test";
-        }
 
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         viewModel.getText().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
@@ -125,7 +100,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
             }
         });
-
 
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnCreateTraining);
         button.setOnClickListener(this::onClick);
@@ -140,19 +114,25 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
     }
 
-    public List<Exercise> generateItems(){
+    public List<Exercise> generateListFromAllExercises(){
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
-        return exerciseViewModel.getdgdsgfdgs();
+        return exerciseViewModel.getExercisesFromRepo();
     }
 
     @Override
     public void onClick(View v) {
 
-        String category = viewModel.getText().getValue().toString();
-
+        category = viewModel.getCategory().getValue().toString();
+        // if no name type in edittext we use a standard word
+        if(!viewModel.getTrainingsName().getValue().toString().equals("")) {
+            designation = viewModel.getTrainingsName().getValue().toString();
+        }
+        else {
+            designation = "Training "+counter;
+            counter++;
+        }
         TrainingListViewModel trainingListViewModel = this.getViewModel(TrainingListViewModel.class);
-
         Training training = new Training(designation,category);
         training.setCreated( System.currentTimeMillis() );
         training.setModified( training.getCreated() );
@@ -162,7 +142,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         for (int i = 0; i<selectedItems.size(); i++){
 
-
            long exerciseId = selectedItems.get(i).getExerciseId();
 
             TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
@@ -170,7 +149,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
             trainingExerciseCrossRef.setModified( trainingExerciseCrossRef.getCreated() );
             trainingExerciseCrossRef.setVersion( 1 );
             trainingListViewModel.insertExerciseCrossRef(trainingExerciseCrossRef);
-
         }
 
         Navigation.findNavController(v).navigate(R.id.action_trainingCreateFragment2_to_fragment_traininglist);
