@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
+    android:background="@color/gray_dark"
    >
 
     <TextView
@@ -34,14 +35,16 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="center_vertical"
         android:layout_weight="5"
+
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="46dp"
-            android:layout_height="65dp"
+            android:layout_height="22dp"
             android:layout_gravity="bottom|center"
             android:layout_weight="5"
             android:background="@color/gray_dark"
@@ -51,10 +54,10 @@
         <TextView
             android:id="@+id/list_item_counted_exercises"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_weight="5"
             android:background="@color/gray_dark"
-            android:gravity="center|top"
+            android:gravity="bottom|center"
             android:textColor="@color/accent_color"
             android:textSize="14sp"
             tools:text="@tools:sample/full_names" />
