@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,10 +38,10 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
     EditText exerciseDescription;
     Spinner exercisePicture;
 
-    CheckBox beine;
-    CheckBox brust;
-    CheckBox rücken;
-    CheckBox bizeps;
+    CheckBox legs;
+    CheckBox chest;
+    CheckBox back;
+    CheckBox biceps;
 
     List <String> muscleGroupList = new ArrayList();
 
@@ -72,15 +71,15 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
 
 
-        beine = (CheckBox) root.findViewById(R.id.checkboxLegs);
-        bizeps = (CheckBox) root.findViewById(R.id.checkboxBizeps);
-        brust = (CheckBox) root.findViewById(R.id.checkboxChest);
-        rücken = (CheckBox) root.findViewById(R.id.checkboxBack);
+        legs = (CheckBox) root.findViewById(R.id.checkboxLegs);
+        biceps = (CheckBox) root.findViewById(R.id.checkboxBizeps);
+        chest = (CheckBox) root.findViewById(R.id.checkboxChest);
+        back = (CheckBox) root.findViewById(R.id.checkboxBack);
 
-        beine.setOnClickListener(this::onCheckboxClicked);
-        bizeps.setOnClickListener(this::onCheckboxClicked);
-        brust.setOnClickListener(this::onCheckboxClicked);
-        rücken.setOnClickListener(this::onCheckboxClicked);
+        legs.setOnClickListener(this::onCheckboxClicked);
+        biceps.setOnClickListener(this::onCheckboxClicked);
+        chest.setOnClickListener(this::onCheckboxClicked);
+        back.setOnClickListener(this::onCheckboxClicked);
 
         exerciseName.addTextChangedListener(new TextWatcher() {
 

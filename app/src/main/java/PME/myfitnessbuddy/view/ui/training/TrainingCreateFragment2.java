@@ -145,6 +145,7 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         training.setModified( training.getCreated() );
         training.setVersion( 1 );
 
+
         long trainingId = trainingListViewModel.insertTraining(training);
 
         if(selectedExercises != null) {

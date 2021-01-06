@@ -71,7 +71,7 @@ public class TrainingListAdapter extends RecyclerView.Adapter<TrainingListAdapte
             TrainingWithExercise current = this.trainingList.get(position);
             holder.trainingName.setText(String.format("%s", current.getTraining().getDesignation()));
             holder.trainingCategory.setText(String.format("%s", current.getTraining().getCategory()));
-            holder.countedExercises.setText(String.format("%s","Übungen: " + current.exercises.size()));
+            holder.countedExercises.setText(String.format("%s" ,current.exercises.size()));
             holder.currentTrainingId = current.getTraining().getTrainingId();
 
         }
