@@ -15,20 +15,13 @@ public class SharedViewModel extends ViewModel {
         trainingsName.setValue(input);
     }
 
-
-    public LiveData<CharSequence> getTrainingsName() {
-
-        return trainingsName;
-    }
+    public LiveData<CharSequence> getTrainingsName() { return trainingsName; }
 
     public void setCategroy(CharSequence input) {
         trainingsCategory.setValue(input);
     }
 
-    public LiveData<CharSequence> getCategory() {
-
-        return trainingsCategory;
-    }
+    public LiveData<CharSequence> getCategory() { return trainingsCategory; }
 
 
 }

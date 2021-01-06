@@ -145,17 +145,20 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         training.setModified( training.getCreated() );
         training.setVersion( 1 );
 
+
         long trainingId = trainingListViewModel.insertTraining(training);
 
-        for (int i = 0; i< selectedExercises.size(); i++){
+        if(selectedExercises != null) {
+            for (int i = 0; i < selectedExercises.size(); i++) {
 
-           long exerciseId = selectedExercises.get(i).getExerciseId();
+                long exerciseId = selectedExercises.get(i).getExerciseId();
 
-            TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
-            trainingExerciseCrossRef.setCreated( System.currentTimeMillis() );
-            trainingExerciseCrossRef.setModified( trainingExerciseCrossRef.getCreated() );
-            trainingExerciseCrossRef.setVersion( 1 );
-            trainingListViewModel.insertExerciseCrossRef(trainingExerciseCrossRef);
+                TrainingExerciseCrossRef trainingExerciseCrossRef = new TrainingExerciseCrossRef(trainingId, exerciseId);
+                trainingExerciseCrossRef.setCreated(System.currentTimeMillis());
+                trainingExerciseCrossRef.setModified(trainingExerciseCrossRef.getCreated());
+                trainingExerciseCrossRef.setVersion(1);
+                trainingListViewModel.insertExerciseCrossRef(trainingExerciseCrossRef);
+            }
         }
 
         Navigation.findNavController(v).navigate(R.id.action_trainingCreateFragment2_to_fragment_traininglist);
