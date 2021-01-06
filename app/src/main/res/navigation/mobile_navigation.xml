@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="PME.myfitnessbuddy.view.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
+            app:destination="@id/fragment_exercisedetail" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
+            app:destination="@id/fragment_trainingdetails" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_trainingCreateFragment"
+            app:destination="@id/trainingCreateFragment1" />
+        <action
+            android:id="@+id/action_nav_home_to_fragment_exercise"
+            app:destination="@id/fragment_exercise" />
+        <action
+            android:id="@+id/action_nav_home_to_fragment_traininglist"
+            app:destination="@id/fragment_traininglist" />
+        <action
+            android:id="@+id/action_fragment_exercise_to_createExerciseFragment"
+            app:destination="@id/createExerciseFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment_exercise"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment"
+        android:label="@string/nav_label_exercise"
+        tools:layout="@layout/fragment_exercise">
+        <action
+            android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
+            app:destination="@id/fragment_exercisedetail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_fragment_exercise_to_createExerciseFragment"
+            app:destination="@id/createExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_trainingdetails"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingDetailsFragment"
+        android:label="@string/nav_label_training_detail"
+        tools:layout="@layout/fragment_trainingdetails" >
+        <argument
+            android:name="trainingId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_traininglist"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingListFragment"
+        android:label="@string/nav_label_training"
+        tools:layout="@layout/fragment_traininglist">
+        <action
+            android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
+            app:destination="@id/fragment_trainingdetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_fragment_traininglist_to_trainingCreateFragment"
+            app:destination="@id/trainingCreateFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_exercisedetail"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseDetailsFragment"
+        android:label="@string/nav_label_exercise_detail"
+        tools:layout="@layout/fragment_exercisedetail" >
+        <argument
+            android:name="exerciseId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/createExerciseFragment"
+        android:name="PME.myfitnessbuddy.view.ui.exercise.ExerciseCreateFragment"
+        android:label="@string/nav_label_exercise_create"
+        tools:layout="@layout/fragment_create_exercise" >
+        <action
+            android:id="@+id/action_createExerciseFragment_to_fragment_exercise"
+            app:destination="@id/fragment_exercise" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingCreateFragment1"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1"
+        android:label="@string/create_training_create_title"
+        tools:layout="@layout/fragment_training_create1">
+        <action
+            android:id="@+id/action_trainingCreateFragment_to_trainingCreateFragment2"
+            app:destination="@id/trainingCreateFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingCreateFragment2"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment2"
+        android:label="@string/create_training_create_title"
+        tools:layout="@layout/fragment_training_create2" >
+        <action
+            android:id="@+id/action_trainingCreateFragment2_to_fragment_traininglist"
+            app:destination="@id/fragment_traininglist" />
+    </fragment>
+</navigation>
