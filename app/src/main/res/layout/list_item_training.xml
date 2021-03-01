@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:background="@color/gray_dark"
+    android:background="@color/primary_navbar"
    >
 
     <TextView
@@ -14,22 +14,23 @@
         android:layout_width="192dp"
         android:layout_height="129dp"
         android:layout_weight="5"
-        android:background="@color/gray_dark"
+        android:background="@color/primary_navbar"
         android:gravity="center"
         android:padding="5dp"
         android:textColor="@color/accent_color"
         android:textSize="22sp"
-        tools:text="@tools:sample/full_names" />
+        android:text="Training"
+         />
 
     <TextView
         android:id="@+id/list_item_training_category"
         android:layout_width="172dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@color/gray_dark"
+        android:background="@color/primary_navbar"
         android:gravity="center"
         android:padding="5dp"
-        android:text="TextView"
+        android:text="Kategorie"
         android:textColor="@color/accent_color"
         android:textSize="22sp" />
 
@@ -47,7 +48,7 @@
             android:layout_height="22dp"
             android:layout_gravity="bottom|center"
             android:layout_weight="5"
-            android:background="@color/gray_dark"
+            android:background="@color/primary_navbar"
             android:paddingRight="10dp"
             app:srcCompat="@drawable/dumbell" />
 
@@ -56,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:background="@color/gray_dark"
+            android:background="@color/primary_navbar"
             android:gravity="bottom|center"
             android:textColor="@color/accent_color"
             android:textSize="14sp"
