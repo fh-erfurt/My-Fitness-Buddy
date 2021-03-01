@@ -3,13 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="primary_navbar">#333333</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="secondary_navbar">#FFC107</color>
     <color name="accent_color">#FFC107</color>
-    <color name="gray_dark">#737272</color>
-
-
-
-
-
 
 </resources>

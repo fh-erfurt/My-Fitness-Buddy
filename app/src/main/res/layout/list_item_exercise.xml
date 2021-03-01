@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@color/gray_dark">
+        android:background="@color/primary_navbar">
 
 
         <ImageView
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/gray_dark"
+            android:background="@color/primary_navbar"
             android:padding="5dp"
             app:srcCompat="@drawable/run" />
 
@@ -30,12 +30,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@color/gray_dark"
+        android:background="@color/primary_navbar"
         android:gravity="left|center_vertical"
         android:padding="5dp"
         android:textColor="@color/accent_color"
         android:textSize="22sp"
-        tools:text="@tools:sample/full_names"
+        android:text="Übungsname"
 
         />
 
