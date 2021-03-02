@@ -10,6 +10,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.Person;
@@ -25,6 +26,7 @@ import PME.myfitnessbuddy.storage.Dao.MuscleGroupDao;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
+import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 
 import java.util.Collections;
 import java.util.concurrent.Callable;
@@ -32,7 +34,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class}, version = 6     )
+@Database( entities = {Person.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class, TrainingsLog.class}, version = 6     )
 @TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
@@ -52,6 +54,9 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
     public abstract ExerciseCrossRefDao exerciseMuscleGroupCrossRefDao();
 
     public abstract TrainingExerciseCrossRefDao trainingExerciseCrossRefDao();
+
+    public abstract TrainingsLogDao trainingsLogDao();
+
 
 
 
@@ -136,6 +141,9 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                 TrainingExerciseCrossRefDao trainingExerciseCrossRefDao = INSTANCE.trainingExerciseCrossRefDao();
                 trainingExerciseCrossRefDao.deleteAll();
+
+                TrainingsLogDao trainingsLogDao = INSTANCE.trainingsLogDao();
+                trainingsLogDao.deleteAll();
 
                 //Insert example data in the database
                 DataForDB DBDataForDB = new DataForDB();
