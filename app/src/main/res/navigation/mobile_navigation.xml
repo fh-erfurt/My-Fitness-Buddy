@@ -11,9 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_fragment_exercise_to_fragment_exercisedetail"
-            app:destination="@id/fragment_exercisedetail" />
-        <action
             android:id="@+id/action_fragment_traininglist_to_fragment_trainingdetails"
             app:destination="@id/fragment_trainingdetails" />
         <action

@@ -19,8 +19,8 @@
 
         <!-- ToDo settings -->
         <item
-            android:id="@+id/fragment_exercisedetail"
-            android:icon="@drawable/analyse"
-            android:title="Übungsdetails" />
+            android:id="@+id/fragment_profile"
+            android:icon="@drawable/icon_profile_placeholder"
+            android:title="@string/home_profile" />
     </group>
 </menu>
