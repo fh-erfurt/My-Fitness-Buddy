@@ -40,20 +40,7 @@ public class ExerciseFragment extends BaseFragment {
 
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.createExerciseFragment, null));
 
-     //   final TextView textView = root.findViewById(R.id.text_exercise);
-/*
-        exerciseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-*/
-
-        RecyclerView exerciseListView = root.findViewById(R.id.exercises);
-
-
-          // Liste -> Detailansicht (siehe TrainingDetailsfragment)
+             RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {

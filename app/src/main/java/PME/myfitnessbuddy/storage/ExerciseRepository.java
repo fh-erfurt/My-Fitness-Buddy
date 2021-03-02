@@ -6,6 +6,7 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
@@ -193,6 +194,10 @@ public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
         return new MutableLiveData<>();
     }
 
+    public LiveData<List<ExerciseWithMuscleGroup>> getExerciseFromTraining(Integer trainingId )
+    {
+        return this.exerciseDao.getAllExercisesFromTraining( trainingId ) ;
+    }
 
 }
 

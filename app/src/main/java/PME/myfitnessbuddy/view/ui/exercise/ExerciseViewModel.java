@@ -13,6 +13,7 @@ import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.storage.ExerciseMuscleGroupCrossRefRepository;
 import PME.myfitnessbuddy.storage.ExerciseRepository;
 import PME.myfitnessbuddy.storage.MuscleGroupRepository;
+import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
 
 import java.util.List;
 
@@ -31,19 +32,17 @@ public class ExerciseViewModel extends AndroidViewModel {
         mText = new MutableLiveData<>();
         mText.setValue("This is exercise fragment");
     }
-/*
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public LiveData<List<Exercise>> getExercises() {
-        return this.exerciseRepository.getExerciseLiveData();
-    }
-
-
- */
-        public long insertExercise(Exercise exercise) {
-
-            this.exerciseRepository.insert(exercise);
-            return  exerciseRepository.getRepositoryExerciseId();
+    /*
+        @RequiresApi(api = Build.VERSION_CODES.N)
+        public LiveData<List<Exercise>> getExercises() {
+            return this.exerciseRepository.getExerciseLiveData();
         }
+     */
+    public long insertExercise(Exercise exercise) {
+
+        this.exerciseRepository.insert(exercise);
+        return  exerciseRepository.getRepositoryExerciseId();
+    }
 
     public long insertMuscleGroup(MuscleGroup muscleGroup) {
 
@@ -64,12 +63,17 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.allExercises();
     }
 
+    public LiveData<List<ExerciseWithMuscleGroup>> getExercisesFromTraining(Integer trainingId){
+        return this.exerciseRepository.getExerciseFromTraining(trainingId);
+    }
+
+
     public List<Exercise> getExercisesFromRepo() {
         return this.exerciseRepository.getExercises();
     }
 
     public List<MuscleGroup> getMuscleGroupForDesignation(String search){
-            return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
+        return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
     }
 
     /*
@@ -77,11 +81,8 @@ public class ExerciseViewModel extends AndroidViewModel {
     public LiveData<List<MuscleGroup>> getMuscleGroups() {
         return this.muscleGroupRepository.getMuscleGroupLiveData();
     }
-
-
  */
     public LiveData<String> getText() {
         return mText;
     }
 }
-

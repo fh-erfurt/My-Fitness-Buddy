@@ -53,70 +53,11 @@ public interface ExerciseDao {
 
     @Query("SELECT * FROM Exercise WHERE exerciseId = :exerciseId")
     LiveData<Exercise> getExerciseById(long exerciseId);
-/*
-    @Insert
-    List<Long> insertMuscleGroups(List<MuscleGroup> muscleGroups);
 
-    default long insertExerciseWithMuscleGroups( Exercise exercise )
-    {
-        // Prepare Contact for saving
-       // contact.setProfileImageUrl( Helper.generateProfileImageUrl() );
-
-        exercise.setCreated( System.currentTimeMillis() );
-        exercise.setModified( exercise.getCreated() );
-        exercise.setVersion( exercise.getVersion() + 1 );
-
-        // Save Contact
-        long exerciseId = this.insertExercise( exercise );
-
-        // Prepare Addresses
-        for(MuscleGroup muscleGroup : exercise.getMuscleGroups() )
-        {
-            muscleGroup.setExerciseId( exerciseId );
-
-            muscleGroup.setCreated( exercise.getCreated() );
-            muscleGroup.setModified( exercise.getCreated() );
-            muscleGroup.setVersion( muscleGroup.getVersion() + 1 );
-        }
-
-        // Insert Addresses
-        this.insertMuscleGroups( exercise.getMuscleGroups() );
-
-        // Return new contact id
-        return exerciseId;
-    }
-
-    default long updateExerciseWithMuscleGroup( Exercise exercise )
-    {
-        long exerciseId = exercise.getExerciseId();
-        exercise.setCreated( System.currentTimeMillis() );
-        exercise.setModified( exercise.getCreated() );
-        exercise.setVersion( exercise.getVersion() + 1 );
-
-        for( MuscleGroup muscleGroup : exercise.getMuscleGroups() )
-        {
-            muscleGroup.setExerciseId( exerciseId );
-
-            muscleGroup.setCreated( exercise.getCreated() );
-            muscleGroup.setModified( exercise.getCreated() );
-            muscleGroup.setVersion( muscleGroup.getVersion() + 1 );
-        }
-
-        this.updateMuscleGroups( exercise.getMuscleGroups() );
-        this.update( exercise );
-
-        return exerciseId;
-    }
-
-
- */
-/*
     @Transaction
-    @Query("SELECT * from Exercise")
-    LiveData<List<ExerciseWithMuscleGroup>> getExercisesWithMuscleGroups();
+    @Query("SELECT * FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE t.trainingId LIKE :trainingId")
+    LiveData< List<ExerciseWithMuscleGroup>> getAllExercisesFromTraining(Integer trainingId);
 
-
- */
 
     @Transaction
     @Query("SELECT * FROM Exercise")
