@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_fragment_exercise_to_createExerciseFragment"
             app:destination="@id/createExerciseFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_fragment_profile"
+            app:destination="@id/fragment_profile" />
     </fragment>
 
 
@@ -101,4 +104,11 @@
             android:id="@+id/action_trainingCreateFragment2_to_fragment_traininglist"
             app:destination="@id/fragment_traininglist" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="PME.myfitnessbuddy.view.ui.person.PersonFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
 </navigation>
