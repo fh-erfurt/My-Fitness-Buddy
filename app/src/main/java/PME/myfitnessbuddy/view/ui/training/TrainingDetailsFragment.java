@@ -92,7 +92,7 @@ public class TrainingDetailsFragment extends BaseFragment {
                     Bundle args = new Bundle();
                     args.putLong("exerciseId", exerciseId);
                     NavController nc = NavHostFragment.findNavController( this );
-                    nc.navigate( R.id.action_fragment_exercise_to_fragment_exercisedetail , args );
+                    nc.navigate( R.id.action_fragment_trainingdetails_to_fragment_exercisedetail , args );
                 });
 
 
