@@ -9,16 +9,19 @@
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/backround4">
 
         <TextView
             android:id="@+id/fragment_training_details_trainingname"
-            android:layout_width="243dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="56dp"
-            android:text="TextView"
-            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/primary_navbar"
+            android:text="Trainingsname"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
