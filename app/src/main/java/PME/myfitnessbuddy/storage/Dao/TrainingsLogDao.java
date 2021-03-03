@@ -1,6 +1,7 @@
 package PME.myfitnessbuddy.storage.Dao;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -14,6 +15,7 @@ import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 
+@Dao
 public interface TrainingsLogDao {
     @Insert
     long insertTrainingsLog(TrainingsLog trainingsLog);
@@ -45,5 +47,25 @@ public interface TrainingsLogDao {
     @Transaction
     @Query("SELECT * FROM Exercise")
     LiveData< List<ExerciseWithTrainingsLog>> getExerciseWithTrainingsLog();
+
+    /*
+    @Transaction
+    @Query("SELECT * FROM ...")
+    /// Die letzten 3 Einträge des letzten Trainingstages
+
+
+
+ abfrage = query("SELECT * FROM TABELE where date = (SELECT top 1 date FROM  TABELE where date < DATE('now') )
+ ORDER BY _date_ DESC LIMIT 3);
+
+     */
+
+        /*
+    @Transaction
+    @Query("SELECT * FROM ...")
+    /// Die letzten 3 Einträge des aktuellen Trainingstages
+
+    abfrage = query("SELECT * FROM TABELE where date = DATE('now') ORDER BY date DESC LIMIT 3);
+     */
 
 }

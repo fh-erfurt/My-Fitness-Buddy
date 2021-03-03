@@ -22,7 +22,7 @@ import PME.myfitnessbuddy.view.ui.core.BaseFragment;
  * Use the {@link ExerciseDetailsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ExerciseDetailsFragment extends BaseFragment {
+public class ExerciseDetailsFragment extends BaseFragment implements View.OnClickListener{
 
     public static final String ARG_EXERCISE_ID = "exerciseId";
     private ExerciseDetailsViewModel viewModel;
@@ -112,5 +112,30 @@ public class ExerciseDetailsFragment extends BaseFragment {
 
         Log.i("EventCallbacks", "Stopped observing Detail Contact");
     }
+
+
+    //////////////Benjamin///////////////
+    @Override
+    public void onClick(View v) {
+        //Todo
+    }
+
+    public void createTrainingLog(){
+        ///////////TODO
+    }
+
+    public void setTextViewsAfterEndTrainingSet(){
+        ///////////TODO
+    }
+
+    public void setRecordToday(){
+        ////////Todo
+    }
+
+    public void setLastRecord(){
+        ////TODO
+    }
+
+    ///////////////////////////////////////////////
 
 }

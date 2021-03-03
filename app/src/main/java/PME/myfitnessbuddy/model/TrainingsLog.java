@@ -105,4 +105,12 @@ public class TrainingsLog {
     public void setAlternativeText(@NonNull String alternativeText) {
         this.alternativeText = alternativeText;
     }
+
+    public long getTrainingId() {
+        return trainingId;
+    }
+
+    public void setTrainingId(long trainingId) {
+        this.trainingId = trainingId;
+    }
 }

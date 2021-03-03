@@ -69,6 +69,18 @@ public class TrainingsLogRepository {
 
 
 
+        /*
+    /// Die letzten 3 Einträge des letzten trainingstages
+     */
+
+
+
+        /*
+    /// Die letzten 3 Einträge des aktuellen trainingstages
+     */
+
+
+
 
     private List<TrainingsLog> query( Callable<List<TrainingsLog>> query )
     {
@@ -81,26 +93,14 @@ public class TrainingsLogRepository {
 
         return new ArrayList<>();
     }
-    //////////////////letzten 3
-/*
-    public Training getLastTraining() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.trainingsLogDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        // Well, is this a reasonable default return value?
-        return new Training("", "none");
-    }
-*/
     public void update(TrainingsLog trainingsLog) {
         trainingsLog.setModified( System.currentTimeMillis() );
         trainingsLog.setVersion( trainingsLog.getVersion() + 1 );
 
         MyFitnessBuddyDatabase.execute( () -> trainingsLogDao.update( trainingsLog) );
     }
+
 
     public void insert(TrainingsLog trainingsLog) {
         trainingsLog.setCreated( System.currentTimeMillis() );
