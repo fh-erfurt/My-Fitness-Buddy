@@ -9,7 +9,8 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
+import PME.myfitnessbuddy.model.Person;
+import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
 @Dao
@@ -41,8 +42,6 @@ public interface TrainingExerciseCrossRefDao {
     LiveData<List<TrainingExerciseCrossRef>> getTrainingLiveData();
 
 
-    @Query("SELECT * from ExerciseMuscleGroupCrossRef ORDER BY exerciseId DESC LIMIT 1")
-    ExerciseMuscleGroupCrossRef getLastEntry();
 
 
 

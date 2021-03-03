@@ -11,7 +11,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
+import PME.myfitnessbuddy.model.Person;
+import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
+import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
 public class TrainingExerciseCrossRefRepository {
@@ -101,40 +104,8 @@ public class TrainingExerciseCrossRefRepository {
         MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef( trainingExerciseCrossRef ) );
     }
 
-    /*
-        public long insertAndWait( Exercise exercise ) {
-            try {
-                return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insertExerciseWithMuscleGroups( exercise ) );
-            }
-            catch (ExecutionException | InterruptedException e)
-            {
-                e.printStackTrace();
-            }
 
-            return -1;
-        }
-        public LiveData<Exercise> getExerciseByIdAsLiveData(long exerciseId )
-        {
-            return this.queryLiveData(() -> this.exerciseDao.getExerciseById(exerciseId) );
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.N)
-        public LiveData<List<Exercise>> getExerciseLiveData()
-        {
-            if( this.allExerciseMuscleGroupCrossRefs == null )
-                this.allExerciseMuscleGroupCrossRefs = Transformations.map(
-                        this.queryLiveData(this.exerciseCrossRefDao::getExercisesWithMuscleGroups),
-                        input -> input
-                                .stream()
-                                .map( ExerciseWithMuscleGroup::merge )
-                                .collect(Collectors.toList())
-                );
-
-
-            return this.allExercises;
-        }
-    */
-    private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
+       private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn(query);
         } catch (ExecutionException | InterruptedException e) {
