@@ -99,7 +99,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         //ToDo Fragment
         TextView nameView = getView().findViewById( R.id.fragment_exercise_id );
 
-        nameView.setText(String.format("%s %s", exercise.getDesignation(), "  id:"+exercise.getExerciseId()));
+        nameView.setText(String.format("%s %s", exercise.getDesignation(), "  "));
 
 
     }

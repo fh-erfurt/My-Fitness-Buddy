@@ -58,7 +58,6 @@ public interface ExerciseDao {
     @Query("SELECT * FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE t.trainingId LIKE :trainingId")
     LiveData< List<ExerciseWithMuscleGroup>> getAllExercisesFromTraining(Integer trainingId);
 
-
     @Transaction
     @Query("SELECT * FROM Exercise")
     LiveData< List<ExerciseWithMuscleGroup>> getExercisesWithMuscleGroups();

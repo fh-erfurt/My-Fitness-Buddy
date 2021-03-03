@@ -46,7 +46,6 @@ public class TrainingsLog {
         this.alternativeText = alternativeText;
     }
 
-
     public long getTrainingsLogId() {
         return trainingsLogId;
     }
