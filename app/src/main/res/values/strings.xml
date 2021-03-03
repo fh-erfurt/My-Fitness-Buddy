@@ -1,0 +1,82 @@
+<resources>
+
+    <!--Appname-->
+    <string name="app_name">My Fitness Buddy</string>
+    <!--Seitenmenü-->
+    <string name="home_training">Trainingspläne</string>
+    <string name="home_excersise">Übungen</string>
+    <string name="home_analytics">Analyse</string>
+    <string name="home_settings">Einstellungen</string>
+    <string name="home_profile">Profil</string>
+
+    <!--Cardview-->
+    <string name="menu_home">Home</string>
+    <string name="menu_training">Training</string>
+    <string name="menu_excersise">Übungen</string>
+    <string name="menu_analytics">Auswertung</string>
+
+    <!--Navgraph-->
+    <string name="nav_label_training">Training</string>
+    <string name="nav_label_training_detail">Trainingsdetails</string>
+    <string name="nav_label_exercise">Übungen</string>
+    <string name="nav_label_exercise_detail">Übungsdetails</string>
+    <string name="nav_label_exercise_create">Übung erstellen</string>
+    <string name="nav_label_training_create">Training erstellen</string>
+
+
+    <!--toolbarmenü-->
+    <string name="action_settings">Settings</string>
+    <string name="action_profil">Profil</string>
+    <string name="title_activity_training_list">trainingList</string>
+
+    <!--Übung erstellen-->
+    <string name="create_exercise_name">Übungsname</string>
+    <string name="create_exercise_description">Beschreibung</string>
+    <string name="create_exercise_group_legs">Beine</string>
+    <string name="create_exercise_group_chest">Brust</string>
+    <string name="create_exercise_group_back">Rücken</string>
+    <string name="create_exercise_group_biceps">Bizeps</string>
+    <string name="create_exercise_group_icon">Hauptmuskelgruppe für Iconwahl</string>
+    <string name="create_exercise_group_musclegroups">Beteiligte Muskelgruppen</string>
+    <string name="create_exercise_group_createButton">Erstellen</string>
+
+
+    <!--Training erstellen-->
+
+    <string name="create_training_create_title">Training erstellen</string>
+
+    <string name="create_training_category_pull">Pull</string>
+    <string name="create_training_category_push">Push</string>
+    <string name="create_training_category_legs">Beine</string>
+    <string name="create_training_category_none">-</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_world">Hello Square World!</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="text_empty_list">#No Content#</string>
+    <string name="title_activity_exercise_detail_nav">ExerciseDetailNav</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
