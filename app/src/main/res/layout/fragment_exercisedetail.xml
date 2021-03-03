@@ -23,7 +23,7 @@
             android:background="@color/primary_navbar"
             android:gravity="center"
             android:text="Übungsname"
-            android:textColor="@color/white"
+            android:textColor="@color/accent_color"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
