@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import androidx.fragment.app.Fragment;
+
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
@@ -26,7 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 
 
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
-import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
+
 import PME.myfitnessbuddy.view.ui.person.PersonFragment;
 
 public class MainActivity extends AppCompatActivity  {
