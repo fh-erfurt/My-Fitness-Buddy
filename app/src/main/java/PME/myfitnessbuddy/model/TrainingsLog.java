@@ -50,7 +50,6 @@ public class TrainingsLog implements Comparable<TrainingsLog> {
         this.alternativeText = alternativeText;
     }
 
-
     public long getTrainingsLogId() {
         return trainingsLogId;
     }

@@ -82,9 +82,9 @@ public class TrainingDetailsFragment extends BaseFragment {
         trainingDetailsViewModel = this.getViewModel( TrainingDetailsViewModel.class );
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
-        FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnToExerciseCreate);
+        FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnAddExercise);
 
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.createExerciseFragment, null));
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.trainingCreateFragment2, null));
         RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
@@ -127,10 +127,9 @@ public class TrainingDetailsFragment extends BaseFragment {
 
         //ToDo Fragment
         TextView nameView = getView().findViewById( R.id.fragment_training_details_trainingname );
-        nameView.setText(String.format("%s %s", training.getDesignation(), "  id:"+training.getTrainingId()));
+        nameView.setText(String.format("%s %s", training.getDesignation(), " "));
 
     }
-
 
     @Override
     public void onPause() {
@@ -140,5 +139,7 @@ public class TrainingDetailsFragment extends BaseFragment {
 
         Log.i("EventCallbacks", "Stopped observing Detail Contact");
     }
+
+
 
 }
