@@ -56,6 +56,9 @@
         <action
             android:id="@+id/action_fragment_trainingdetails_to_fragment_exercisedetail"
             app:destination="@id/fragment_exercisedetail" />
+        <action
+            android:id="@+id/action_fragment_trainingdetails_to_trainingUpdateFragment"
+            app:destination="@id/trainingUpdateFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment_traininglist"
@@ -107,11 +110,25 @@
             android:id="@+id/action_trainingCreateFragment2_to_fragment_traininglist"
             app:destination="@id/fragment_traininglist" />
     </fragment>
-
+    <fragment
+        android:id="@+id/trainingUpdateFragment"
+        android:name="PME.myfitnessbuddy.view.ui.training.TrainingUpdateFragment"
+        android:label="@string/create_training_create_title"
+        tools:layout="@layout/fragment_training_create2" >
+        <action
+            android:id="@+id/action_trainingUpdateFragment_to_fragment_trainingdetails"
+            app:destination="@id/fragment_trainingdetails" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_profile"
         android:name="PME.myfitnessbuddy.view.ui.person.PersonFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="PME.myfitnessbuddy.view.ui.settings.SettingsFragment"
+        android:label="Einstellungen"
+        tools:layout="@layout/fragment_settings"/>
 </navigation>

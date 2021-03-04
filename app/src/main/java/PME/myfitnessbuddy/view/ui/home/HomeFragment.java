@@ -1,37 +1,38 @@
 package PME.myfitnessbuddy.view.ui.home;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
+
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
+
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.google.android.material.snackbar.Snackbar;
 import com.myfitnessbuddy.R;
 
-import PME.myfitnessbuddy.view.MainActivity;
+
 import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
-import PME.myfitnessbuddy.view.ui.training.TrainingListAdapter;
+
 import PME.myfitnessbuddy.view.ui.training.TrainingListFragment;
-import PME.myfitnessbuddy.view.ui.training.TrainingListViewModel;
+
+
+
 
 public class HomeFragment extends Fragment  implements View.OnClickListener {
 
@@ -103,9 +104,13 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
 
     }
     public void replaceFragment(Fragment someFragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setReorderingAllowed(true);
         transaction.replace(R.id.nav_host_fragment, someFragment);
         transaction.addToBackStack(null);
         transaction.commit();
+
+
     }
 }

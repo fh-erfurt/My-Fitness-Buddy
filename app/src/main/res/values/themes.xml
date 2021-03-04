@@ -14,8 +14,9 @@
     </style>
 
     <style name="Theme.MyFitnessBuddy.NoActionBar">
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
     </style>
 
     <style name="Theme.MyFitnessBuddy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

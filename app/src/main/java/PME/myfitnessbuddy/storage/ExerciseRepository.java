@@ -57,6 +57,12 @@ public class ExerciseRepository {
         return this.query( () -> this.exerciseDao.getExercises() );
     }
 
+    public List<Exercise> getExercisesWhichAreNotInTraining(Integer trainingId)
+    {
+        return this.query( () -> this.exerciseDao.getAllExercisesWhichAreNotTraining(trainingId) );
+    }
+
+
     /*public LiveData<List<Exercise>> getExerciseLiveData()
     {
         if( this.allExercise == null ) {

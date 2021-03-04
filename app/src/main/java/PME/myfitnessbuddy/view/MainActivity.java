@@ -1,19 +1,18 @@
 package PME.myfitnessbuddy.view;
 
-import android.content.Context;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
-
+import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,7 +26,9 @@ import com.google.android.material.navigation.NavigationView;
 
 
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
-import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
+
+import PME.myfitnessbuddy.view.ui.person.PersonFragment;
+import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
@@ -59,14 +60,36 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.setReorderingAllowed(true);
+
+        switch (item.getItemId()) {
+            case R.id.action_profil:
+                transaction.replace(R.id.nav_host_fragment, PersonFragment.class, null);
+                transaction.commit();
+                return (true);
+            case R.id.action_settings:
+                transaction.replace(R.id.nav_host_fragment, SettingsFragment.class, null);
+                transaction.commit();
+                Toast.makeText(MainActivity.this,
+                        "Settings", Toast.LENGTH_LONG).show();
+
+        }
+        return(super.onOptionsItemSelected(item));
     }
 
     @Override
