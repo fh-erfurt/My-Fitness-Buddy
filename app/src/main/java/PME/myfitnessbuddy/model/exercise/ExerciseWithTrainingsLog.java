@@ -26,6 +26,7 @@ public class ExerciseWithTrainingsLog {
 
     public void sortTrainingsLog() {
         Collections.sort(this.trainingsLog);
+        Collections.reverse(this.trainingsLog);
     }
 
     public List<TrainingsLog> getTrainingsLog() {

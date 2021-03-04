@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.myfitnessbuddy.R;
@@ -37,6 +39,21 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     public static final String ARG_EXERCISE_ID = "exerciseId";
     private ExerciseDetailsViewModel viewModel;
     private LiveData<Exercise> exerciseLiveData;
+
+    private List<TrainingsLog> sortedTrainingsLogs;
+    private String oldDate1 = "";
+    private String oldDate2 = "";
+    private String oldDate3 = "";
+
+    private TextView textViewOldDay1;
+    private TextView textViewOldDay2;
+    private TextView textViewOldDay3;
+
+
+
+    private String actualDate;
+    private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, hh:mm", Locale.GERMANY);
+    private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,16 +102,22 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
+        this.textViewOldDay1 = (TextView) root.findViewById(R.id.textView6);
+
+
         /////////////Baustelle Start/////////////////
 
         List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(1);
-      //  String x = DateFormat.getInstance().format(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated(),"dd");
+
         exerciseWithTrainingsLogs.get(0).sortTrainingsLog();
 
-        SimpleDateFormat df = new SimpleDateFormat("hh:mm dd.MM.yyyy", Locale.GERMANY);
+        sortedTrainingsLogs = exerciseWithTrainingsLogs.get(0).getTrainingsLog();
 
-        String time = df.format(new Date(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated()));
-        time.replaceAll(" ", "Uhr"); //geht nicht :(
+        Date dateObject = new Date();
+        this.actualDate = dateFormatDDMMYYYY.format(dateObject);
+
+        set3LogEntrysFromTheLastDays();
+        setTextFieldLastTrainingDates();
 
         Button buttonEndTrainingSet = (Button) root.findViewById(R.id.button5);
         buttonEndTrainingSet.setOnClickListener(this::onClick);
@@ -144,8 +167,8 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     //////////////Benjamin///////////////
     @Override
     public void onClick(View v) {
-     List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(1);
-     String x = DateFormat.getInstance().format(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated());
+
+
 
     }
 
@@ -161,24 +184,38 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         ////////Todo
     }
 
-    public void setLastRecord(List <TrainingsLog> trainingsLogs){
+    public void set3LogEntrysFromTheLastDays(){
 
-       String oldDate1;
-       String oldDate2;
-       String oldDate3;
-       String actualDate;
+        for(int i = 0; i< this.sortedTrainingsLogs.size(); i++){ /////rückwärts!!!!!!!!!!!
 
-        for(int i = 0; i< trainingsLogs.size(); i++){ /////rückwärts!!!!!!!!!!!
-         /*
-            if(trainingsLogs.get(i).getCreated() != actualDate){
-                oldDate1 = trainingsLogs.get(i).getCreated();
-                oldDate2 = trainingsLogs.get(i+1).getCreated();
-                oldDate3 = trainingsLogs.get(i+2).getCreated();
+            String logEntryDate = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
 
+            if(!this.actualDate.equals(logEntryDate)){
+                this.oldDate1 = this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr";
+
+
+                if(i+1 >= this.sortedTrainingsLogs.size()){
+                    break;
+                }
+                this.oldDate2 = this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i+1).getCreated()) + " Uhr";
+
+
+                if(i+2 >= this.sortedTrainingsLogs.size()){
+                    break;
+                }
+                this.oldDate3 = dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i+2).getCreated()) + " Uhr";
+                break;
             }
+        }
 
-          */
+    }
 
+    public void setTextFieldLastTrainingDates(){
+
+        if (!oldDate1.equals("")){
+            this.textViewOldDay1.setText(this.oldDate1 + "\n" +
+                    this.oldDate2 + "\n" +
+                    this.oldDate3);
         }
 
     }
