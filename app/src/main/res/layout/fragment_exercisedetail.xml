@@ -40,17 +40,17 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/exercisedetail_reps_decrease_button"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:backgroundTint="@color/accent_color"
                 android:text="+"
                 android:textColor="@color/primary_navbar"
-                app:layout_constraintStart_toEndOf="@+id/editTextReps"
-                app:layout_constraintTop_toBottomOf="@+id/repsTextview" />
+                app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
             <Button
-                android:id="@+id/btnEndTrainingSet"
+                android:id="@+id/exercisedetail_finish_set_button"
                 android:layout_width="263dp"
                 android:layout_height="47dp"
                 android:layout_marginStart="76dp"
@@ -60,10 +60,10 @@
                 android:textColor="@color/primary_navbar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextReps" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
 
             <EditText
-                android:id="@+id/editTextReps"
+                android:id="@+id/exercisedetail_reps_input"
                 android:layout_width="55dp"
                 android:layout_height="45dp"
                 android:backgroundTint="@color/white"
@@ -71,11 +71,11 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:textColor="@color/accent_color"
-                app:layout_constraintStart_toEndOf="@+id/button2"
-                app:layout_constraintTop_toBottomOf="@+id/repsTextview" />
+                app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_increase_button"
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
             <EditText
-                android:id="@+id/editTextReps2"
+                android:id="@+id/exercisedetail_weight_input"
                 android:layout_width="55dp"
                 android:layout_height="45dp"
                 android:backgroundTint="@color/white"
@@ -83,11 +83,11 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:textColor="@color/accent_color"
-                app:layout_constraintEnd_toStartOf="@+id/button4"
-                app:layout_constraintTop_toBottomOf="@+id/repsTextview2" />
+                app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/exercisedetail_weight_increase_button"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="44dp"
@@ -95,20 +95,20 @@
                 android:text="+"
                 android:textColor="@color/primary_navbar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/repsTextview2" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/exercisedetail_weight_decrease_button"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:backgroundTint="@color/accent_color"
                 android:text="-"
                 android:textColor="@color/primary_navbar"
-                app:layout_constraintEnd_toStartOf="@+id/editTextReps2"
-                app:layout_constraintTop_toBottomOf="@+id/repsTextview2" />
+                app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
             <TextView
-                android:id="@+id/repsTextview"
+                android:id="@+id/exercisedetail_reps_textview"
                 android:layout_width="59dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="88dp"
@@ -121,7 +121,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/repsTextview2"
+                android:id="@+id/exercisedetail_weight_textview"
                 android:layout_width="88dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="12dp"
@@ -134,7 +134,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/exercisedetail_reps_increase_button"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="44dp"
@@ -158,7 +158,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/exercisedetail_today_log_label_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -176,10 +176,10 @@
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/exercisedetail_today_log_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="59dp"
@@ -191,7 +191,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -205,7 +205,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/exercisedetail_last_log_label_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -223,10 +223,10 @@
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
 
             <TextView
-                android:id="@+id/textFieldLastEntry"
+                android:id="@+id/exercisedetail_last_log_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="59dp"
@@ -238,7 +238,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,7 +97,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
-        this.textViewOldDay1 = (TextView) root.findViewById(R.id.textFieldLastEntry);
+        this.textViewOldDay1 = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
 
 
         /////////////Baustelle Start/////////////////
@@ -114,7 +114,8 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         set3LogEntrysFromTheLastDay();
         this.textViewOldDay1.setText(this.oldDate1);
 
-        Button buttonEndTrainingSet = (Button) root.findViewById(R.id.btnEndTrainingSet);
+        Button buttonEndTrainingSet = (Button) root.findViewById(R.id.exercisedetail_finish_set_button);
+
         buttonEndTrainingSet.setOnClickListener(this::onClick);
 
         /////////////Baustelle Ende/////////////////
