@@ -114,4 +114,10 @@
         android:name="PME.myfitnessbuddy.view.ui.person.PersonFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="PME.myfitnessbuddy.view.ui.settings.SettingsFragment"
+        android:label="Einstellungen"
+        tools:layout="@layout/fragment_settings"/>
 </navigation>

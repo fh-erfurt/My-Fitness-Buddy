@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
 
 import PME.myfitnessbuddy.view.ui.person.PersonFragment;
+import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
@@ -59,6 +60,7 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
+
     }
 
 
@@ -81,6 +83,8 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
                 transaction.commit();
                 return (true);
             case R.id.action_settings:
+                transaction.replace(R.id.nav_host_fragment, SettingsFragment.class, null);
+                transaction.commit();
                 Toast.makeText(MainActivity.this,
                         "Settings", Toast.LENGTH_LONG).show();
 
