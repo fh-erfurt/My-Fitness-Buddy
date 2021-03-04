@@ -43,6 +43,9 @@ public interface ExerciseDao {
     LiveData<List<Exercise>> getExerciseLiveData();
 
 
+    @Query("SELECT * FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE NOT t.trainingId=:trainingId")
+    List<Exercise> getAllExercisesWhichAreNotTraining(Integer trainingId);
+
     @Query("SELECT * from Exercise ORDER BY designation ASC")
     List<Exercise> getExerciseSortedByDesignation();
 
@@ -58,6 +61,7 @@ public interface ExerciseDao {
     @Transaction
     @Query("SELECT * FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE t.trainingId LIKE :trainingId")
     LiveData< List<ExerciseWithMuscleGroup>> getAllExercisesFromTraining(Integer trainingId);
+
 
     @Transaction
     @Query("SELECT * FROM Exercise")

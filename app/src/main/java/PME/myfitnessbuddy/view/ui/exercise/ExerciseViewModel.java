@@ -82,6 +82,11 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.getExercises();
     }
 
+    public List<Exercise> getExercisesWhichAreNotInTrainingFromRepo(Integer trainingId) {
+        return this.exerciseRepository.getExercisesWhichAreNotInTraining(trainingId);
+    }
+
+
     public List<MuscleGroup> getMuscleGroupForDesignation(String search){
         return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
     }

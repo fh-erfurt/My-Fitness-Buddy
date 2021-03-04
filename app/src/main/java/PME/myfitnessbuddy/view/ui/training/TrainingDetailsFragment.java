@@ -31,103 +31,76 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 public class TrainingDetailsFragment extends BaseFragment {
 
     public static final String ARG_TRAINING_ID = "trainingId";
+    public static final String ARG_UPDATED_TRAINING_ID="updatedTrainingId";
+    public long updateTrainingId;
     private TrainingDetailsViewModel trainingDetailsViewModel;
     private LiveData<Training> trainingLiveData;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TrainingDetailsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TrainingList_TrainingDetails.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TrainingDetailsFragment newInstance(String param1, String param2) {
-        TrainingDetailsFragment fragment = new TrainingDetailsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        assert getArguments() != null;
+        long trainingId = getArguments().getLong(ARG_TRAINING_ID);
+        if(trainingId == 0){
+            trainingId = getArguments().getLong(ARG_UPDATED_TRAINING_ID);
+        }
         View root = inflater.inflate(R.layout.fragment_trainingdetails, container, false);
         trainingDetailsViewModel = this.getViewModel( TrainingDetailsViewModel.class );
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnAddExercise);
-
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.trainingCreateFragment2, null));
+        Bundle args = new Bundle();
+        args.putLong("trainingId", trainingId);
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.trainingUpdateFragment, args));
         RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {
-                    Bundle args = new Bundle();
-                    args.putLong("exerciseId", exerciseId);
+                    Bundle args1 = new Bundle();
+                    args1.putLong("exerciseId", exerciseId);
                     NavController nc = NavHostFragment.findNavController( this );
-                    nc.navigate( R.id.action_fragment_trainingdetails_to_fragment_exercisedetail , args );
+                    nc.navigate( R.id.action_fragment_trainingdetails_to_fragment_exercisedetail , args1 );
                 });
 
 
-        assert getArguments() != null;
-        final int trainingId = (int) getArguments().getLong(ARG_TRAINING_ID);
-        
         exerciseListView.setAdapter( adapter );
         exerciseListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
-        exerciseViewModel.getExercisesFromTraining(trainingId).observe(this.requireActivity(), adapter::setExercises);
+        exerciseViewModel.getExercisesFromTraining((int) trainingId).observe(this.requireActivity(), adapter::setExercises);
 
         return root;
     }
 
     @Override
     public void onResume() {
-        super.onResume();
 
+        super.onResume();
         assert getArguments() != null;
         final long trainingId = getArguments().getLong(ARG_TRAINING_ID);
         this.trainingLiveData = this.trainingDetailsViewModel.getTraining( trainingId );
         this.trainingLiveData.observe( requireActivity(), this::updateView);
 
-        Log.i("EventCallbacks", "Observing Detail Contact");
-
     }
 
-    private void updateView(Training training) {
-
-        Log.i("EventCallbacks", "Update Detail View with Training: " + training);
+   private void updateView(Training training) {
 
         assert getView() != null;
-
-        //ToDo Fragment
+        assert getArguments() != null;
+        final long trainingId = getArguments().getLong(ARG_UPDATED_TRAINING_ID);
         TextView nameView = getView().findViewById( R.id.fragment_training_details_trainingname );
-        nameView.setText(String.format("%s %s", training.getDesignation(), " "));
+        if(this.trainingDetailsViewModel.getTraining(trainingId).getValue() != null){
+           Log.i("tag","TEST"+this.trainingDetailsViewModel.getTraining(trainingId).getValue().getDesignation());
+        }
+
+        if (training != null) {
+            nameView.setText(String.format("%s %s", training.getDesignation(), " "));
+        }else{
+
+            LiveData<Training> training2 = this.trainingDetailsViewModel.getTraining(trainingId);
+            Log.i("tag","TESTUpdate"+training2.getValue().getTrainingId());
+            nameView.setText(String.format("%s %s", this.trainingDetailsViewModel.getTraining(trainingId).getValue().getDesignation(), " "));
+        }
 
     }
 
