@@ -297,6 +297,24 @@ public class DataForDB {
         trainingsLog2.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog2);
 
+        TrainingsLog trainingsLog3 = new TrainingsLog(1,"15", "84", "bla");
+        trainingsLog3.setCreated( 1514819538896l );
+        trainingsLog3.setModified( powercircle.getCreated() );
+        trainingsLog3.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog3);
+
+        TrainingsLog trainingsLog4 = new TrainingsLog(1,"11", "82", "bla");
+        trainingsLog4.setCreated( 1514818538896l );
+        trainingsLog4.setModified( powercircle.getCreated() );
+        trainingsLog4.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog4);
+
+        TrainingsLog trainingsLog5  = new TrainingsLog(1,"10", "85", "bla");
+        trainingsLog5.setCreated( 1514817547896l );
+        trainingsLog5.setModified( powercircle.getCreated() );
+        trainingsLog5.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog5);
+
     };
 
 
