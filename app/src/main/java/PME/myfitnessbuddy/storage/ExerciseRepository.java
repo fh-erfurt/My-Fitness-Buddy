@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
 
 import java.util.ArrayList;
@@ -95,6 +96,18 @@ public class ExerciseRepository {
     }
 
     private List<ExerciseWithMuscleGroup> query2( Callable<List<ExerciseWithMuscleGroup>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
+    }
+
+    private List<ExerciseWithTrainingsLog> query3( Callable<List<ExerciseWithTrainingsLog>> query )
     {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( query );
@@ -197,6 +210,11 @@ public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
     public LiveData<List<ExerciseWithMuscleGroup>> getExerciseFromTraining(Integer trainingId )
     {
         return this.exerciseDao.getAllExercisesFromTraining( trainingId ) ;
+    }
+
+    public List<ExerciseWithTrainingsLog> getExerciseWithTrainingsLogLiveDataByExerciseId(long exerciseId)
+    {
+        return this.query3(() -> this.exerciseDao.getExercisesWithTrainingsLogById(exerciseId) );
     }
 
 }

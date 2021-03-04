@@ -9,6 +9,7 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
@@ -64,11 +65,16 @@ public interface ExerciseDao {
     LiveData< List<ExerciseWithMuscleGroup>> getExercisesWithMuscleGroups();
 
     @Transaction
+    @Query("SELECT * FROM Exercise WHERE exerciseId LIKE :id")
+    List <ExerciseWithTrainingsLog> getExercisesWithTrainingsLogById(long id);
+
+    @Transaction
     @Query("SELECT * FROM Exercise")
     List<ExerciseWithMuscleGroup> getAllExercises();
 
     @Update
     void updateMuscleGroups( List<MuscleGroup> muscleGroups );
+
 
 
 }

@@ -4,6 +4,7 @@ import androidx.room.Embedded;
 import androidx.room.Junction;
 import androidx.room.Relation;
 
+import java.util.Collections;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.TrainingsLog;
@@ -23,9 +24,17 @@ public class ExerciseWithTrainingsLog {
     @Embedded
     public Exercise exercise;
 
+    public void sortTrainingsLog() {
+        Collections.sort(this.trainingsLog);
+    }
+
+    public List<TrainingsLog> getTrainingsLog() {
+        return trainingsLog;
+    }
+
     @Relation(
             parentColumn = "exerciseId",
-            entityColumn = "trainingsLogId"
+            entityColumn = "exerciseCreatorId"
 
     )
     public List<TrainingsLog> trainingsLog;

@@ -3,6 +3,7 @@ package PME.myfitnessbuddy.storage;
 import com.myfitnessbuddy.R;
 
 import PME.myfitnessbuddy.model.Person;
+import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
@@ -15,11 +16,12 @@ import PME.myfitnessbuddy.storage.Dao.MuscleGroupDao;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
+import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 
 public class DataForDB {
 
      // method for insert example data in DB
-   public void generateDBData (PersonDao daoPerson, TrainingDao daoTraining,ExerciseDao daoExercise,MuscleGroupDao daoMuscleGroup,ExerciseCrossRefDao exerciseCrossRefDao,TrainingExerciseCrossRefDao trainingExerciseCrossRefDao){
+   public void generateDBData (PersonDao daoPerson, TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
 
         // Insert Test Person -> later via first start in App
         Person person1 = new Person("Arni","30.07.47",1,188.0,115.5);
@@ -276,6 +278,24 @@ public class DataForDB {
         trainingExerciseCrossRef10.setModified( trainingExerciseCrossRef10.getCreated() );
         trainingExerciseCrossRef10.setVersion( 1 );
         trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef(trainingExerciseCrossRef10);
+
+        TrainingsLog trainingsLog = new TrainingsLog(1,"12", "80", "bla");
+        trainingsLog.setCreated( 1014116148898l);
+        trainingsLog.setModified( powercircle.getCreated() );
+        trainingsLog.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog);
+
+        TrainingsLog trainingsLog1 = new TrainingsLog(1,"13", "81", "bla");
+        trainingsLog1.setCreated( 1614816548896l);
+        trainingsLog1.setModified( powercircle.getCreated() );
+        trainingsLog1.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog1);
+
+        TrainingsLog trainingsLog2 = new TrainingsLog(1,"14", "82", "bla");
+        trainingsLog2.setCreated( 1011216448903l );
+        trainingsLog2.setModified( powercircle.getCreated() );
+        trainingsLog2.setVersion( 1 );
+        daoTrainingsLog.insertTrainingsLog(trainingsLog2);
 
     };
 

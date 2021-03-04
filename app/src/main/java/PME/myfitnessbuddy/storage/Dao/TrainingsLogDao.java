@@ -48,6 +48,10 @@ public interface TrainingsLogDao {
     @Query("SELECT * FROM Exercise")
     LiveData< List<ExerciseWithTrainingsLog>> getExerciseWithTrainingsLog();
 
+    @Transaction
+    @Query("SELECT * FROM Exercise")
+    LiveData< List<ExerciseWithTrainingsLog>> getExerciseWithTrainingsLogById();
+
     /*
     @Transaction
     @Query("SELECT * FROM ...")
@@ -59,10 +63,14 @@ public interface TrainingsLogDao {
  ORDER BY _date_ DESC LIMIT 3);
 
      */
+/*
 
-        /*
     @Transaction
-    @Query("SELECT * FROM ...")
+    @Query("SELECT * FROM  TrainingsLog where DATE(created) = DATE('now') and  ORDER BY created DESC LIMIT 3")
+    LiveData< List<TrainingsLog>> actualTrainingsDayLast3Entries();
+
+ */
+     /*
     /// Die letzten 3 Einträge des aktuellen Trainingstages
 
     abfrage = query("SELECT * FROM TABELE where date = DATE('now') ORDER BY date DESC LIMIT 3);

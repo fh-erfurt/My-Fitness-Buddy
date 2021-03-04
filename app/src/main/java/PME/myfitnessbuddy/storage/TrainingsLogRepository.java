@@ -73,6 +73,20 @@ public class TrainingsLogRepository {
     /// Die letzten 3 Einträge des letzten trainingstages
      */
 
+    /*
+        public LiveData<List<TrainingsLog>> actualTrainingsDayLast3Entries()
+        {
+            try {
+                return MyFitnessBuddyDatabase.executeWithReturn( this.trainingsLogDao::actualTrainingsDayLast3Entries);
+            }
+            catch (ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+     */
+
 
 
         /*

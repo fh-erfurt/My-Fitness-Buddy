@@ -9,11 +9,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.myfitnessbuddy.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
@@ -74,6 +84,23 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
+
+        /////////////Baustelle Start/////////////////
+
+        List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(1);
+      //  String x = DateFormat.getInstance().format(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated(),"dd");
+        exerciseWithTrainingsLogs.get(0).sortTrainingsLog();
+
+        SimpleDateFormat df = new SimpleDateFormat("hh:mm dd.MM.yyyy", Locale.GERMANY);
+
+        String time = df.format(new Date(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated()));
+        time.replaceAll(" ", "Uhr"); //geht nicht :(
+
+        Button buttonEndTrainingSet = (Button) root.findViewById(R.id.button5);
+        buttonEndTrainingSet.setOnClickListener(this::onClick);
+
+        /////////////Baustelle Ende/////////////////
+
         return root;
     }
 
@@ -117,7 +144,9 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     //////////////Benjamin///////////////
     @Override
     public void onClick(View v) {
-        //Todo
+     List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(1);
+     String x = DateFormat.getInstance().format(exerciseWithTrainingsLogs.get(0).trainingsLog.get(0).getCreated());
+
     }
 
     public void createTrainingLog(){
@@ -132,8 +161,26 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         ////////Todo
     }
 
-    public void setLastRecord(){
-        ////TODO
+    public void setLastRecord(List <TrainingsLog> trainingsLogs){
+
+       String oldDate1;
+       String oldDate2;
+       String oldDate3;
+       String actualDate;
+
+        for(int i = 0; i< trainingsLogs.size(); i++){ /////rückwärts!!!!!!!!!!!
+         /*
+            if(trainingsLogs.get(i).getCreated() != actualDate){
+                oldDate1 = trainingsLogs.get(i).getCreated();
+                oldDate2 = trainingsLogs.get(i+1).getCreated();
+                oldDate3 = trainingsLogs.get(i+2).getCreated();
+
+            }
+
+          */
+
+        }
+
     }
 
     ///////////////////////////////////////////////

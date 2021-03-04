@@ -6,11 +6,14 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class TrainingsLog {
+public class TrainingsLog implements Comparable<TrainingsLog> {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "trainingsLogId")
     private long trainingsLogId;
+
+
+    private long exerciseCreatorId;
 
     @NonNull
     @ColumnInfo(name = "created")
@@ -40,7 +43,8 @@ public class TrainingsLog {
     @ColumnInfo(name = "trainingId")
     private long trainingId;
 
-    public TrainingsLog(@NonNull String repetitions, @NonNull String weight, @NonNull String alternativeText) {
+    public TrainingsLog(long exerciseCreatorId, @NonNull String repetitions, @NonNull String weight, @NonNull String alternativeText) {
+        this.exerciseCreatorId = exerciseCreatorId;
         this.repetitions = repetitions;
         this.weight = weight;
         this.alternativeText = alternativeText;
@@ -112,5 +116,20 @@ public class TrainingsLog {
 
     public void setTrainingId(long trainingId) {
         this.trainingId = trainingId;
+    }
+
+    public long getExerciseCreatorId() {
+        return exerciseCreatorId;
+    }
+
+    public void setExerciseCreatorId(long exerciseCreatorId) {
+        this.exerciseCreatorId = exerciseCreatorId;
+    }
+
+    @Override
+    public int compareTo(TrainingsLog o) {
+
+        return Long.compare(this.created, o.created);
+
     }
 }
