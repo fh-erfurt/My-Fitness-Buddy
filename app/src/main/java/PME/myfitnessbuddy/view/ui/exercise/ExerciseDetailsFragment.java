@@ -5,13 +5,17 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.github.javafaker.Faker;
 import com.myfitnessbuddy.R;
 
 import java.text.SimpleDateFormat;
@@ -37,11 +41,13 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
     private List<TrainingsLog> sortedTrainingsLogs;
     private String lastLog = "";
+    private String actualLog = "";
 
     private TextView textViewLastLog;
+    private TextView textViewActualLog;
 
-
-
+    EditText editTextRepetitions;
+    EditText editTextWeight;
 
     private String actualDate;
     private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, hh:mm", Locale.GERMANY);
@@ -95,11 +101,18 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
         this.textViewLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
+        this.textViewActualLog = (TextView) root.findViewById(R.id.exercisedetail_today_log_textview);
+
+        this.editTextRepetitions = (EditText) root.findViewById(R.id.exercisedetail_reps_input);
+        this.editTextWeight = (EditText) root.findViewById(R.id.exercisedetail_weight_input);
 
 
         /////////////Baustelle Start/////////////////
 
-        List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(1);
+        assert getArguments() != null;
+        long exerciseId = getArguments().getLong(ARG_EXERCISE_ID);
+
+        List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(exerciseId);
 
         exerciseWithTrainingsLogs.get(0).sortTrainingsLog();
 
@@ -110,10 +123,47 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
         setLogEntrysFromTheLastDay();
         this.textViewLastLog.setText(this.lastLog);
+        this.textViewActualLog.setText(this.actualLog);
+
+
 
         Button buttonEndTrainingSet = (Button) root.findViewById(R.id.exercisedetail_finish_set_button);
 
         buttonEndTrainingSet.setOnClickListener(this::onClick);
+
+        editTextRepetitions.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+            }
+        });
+
+        editTextWeight.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+
+            }
+        });
 
         /////////////Baustelle Ende/////////////////
 
@@ -161,7 +211,30 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     @Override
     public void onClick(View v) {
 
+        String repetition = this.editTextRepetitions.getText().toString();
+        String weight = this.editTextWeight.getText().toString();
+        String alternativeText = ""; //////////////TODO/////////////
 
+        assert getArguments() != null;
+        long exerciseId = getArguments().getLong(ARG_EXERCISE_ID);
+
+        TrainingsLog trainingsLog = new TrainingsLog(exerciseId,repetition,weight,alternativeText);
+        trainingsLog.setCreated( System.currentTimeMillis() );
+        trainingsLog.setModified( trainingsLog.getCreated() );
+        trainingsLog.setVersion( 1 );
+
+        ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
+
+        exerciseViewModel.insertTrainingsLog(trainingsLog);
+
+        List  <ExerciseWithTrainingsLog> exerciseWithTrainingsLogs = viewModel.getExerciseWithTrainingsLogLiveDataByExerciseId(exerciseId);
+
+        exerciseWithTrainingsLogs.get(0).sortTrainingsLog();
+
+        sortedTrainingsLogs = exerciseWithTrainingsLogs.get(0).getTrainingsLog();
+
+        this.actualLog = addLog("", 0)+"\n\n"+ actualLog;
+        this.textViewActualLog.setText(actualLog);
 
     }
 
@@ -180,17 +253,21 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     public void setLogEntrysFromTheLastDay(){
 
         int maxNumberOfEntrys = 5;
+        String firstRound = "";
 
         for(int i = 0; i< this.sortedTrainingsLogs.size(); i++){
 
             String logEntryDate = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
-            String firstRound = "";
 
             if(this.actualDate.equals(logEntryDate)){
+               this.actualLog += addLog(firstRound, i);
+                firstRound = "\n\n";
                 continue;
             }
 
+            firstRound = "";
             for(int j = 0; j< maxNumberOfEntrys; j++, i++){
+
 
                 if(i >= this.sortedTrainingsLogs.size()){
                     break;
@@ -202,16 +279,18 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
                     break;
                 }
 
-                this.lastLog += firstRound+this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr"
-                        + "\nrepetitions: "+this.sortedTrainingsLogs.get(i).getRepetitions()
-                        +", weight: "+this.sortedTrainingsLogs.get(i).getWeight()+", text:"+this.sortedTrainingsLogs.get(i).getAlternativeText();
+                this.lastLog += addLog(firstRound, i);
                 firstRound = "\n\n";
             }
-
                 break;
-
         }
 
+    }
+
+    public String addLog(String firstRound, int i){
+        return firstRound+this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr"
+                + "\nrepetitions: "+this.sortedTrainingsLogs.get(i).getRepetitions()
+                +", weight: "+this.sortedTrainingsLogs.get(i).getWeight()+", text:"+this.sortedTrainingsLogs.get(i).getAlternativeText();
     }
 
 

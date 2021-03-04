@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
@@ -14,6 +15,7 @@ import PME.myfitnessbuddy.storage.ExerciseMuscleGroupCrossRefRepository;
 import PME.myfitnessbuddy.storage.ExerciseRepository;
 import PME.myfitnessbuddy.storage.MuscleGroupRepository;
 import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
+import PME.myfitnessbuddy.storage.TrainingsLogRepository;
 
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class ExerciseViewModel extends AndroidViewModel {
     private final ExerciseRepository exerciseRepository;
     private final MuscleGroupRepository muscleGroupRepository;
     private final ExerciseMuscleGroupCrossRefRepository exerciseMuscleGroupCrossRefRepository;
+    private final TrainingsLogRepository trainingsLogRepository;
 
     private MutableLiveData<String> mText;
 
@@ -29,6 +32,7 @@ public class ExerciseViewModel extends AndroidViewModel {
         this.exerciseRepository = ExerciseRepository.getRepository(application);
         this.muscleGroupRepository = MuscleGroupRepository.getRepository(application);
         this.exerciseMuscleGroupCrossRefRepository = ExerciseMuscleGroupCrossRefRepository.getRepository(application);
+        this.trainingsLogRepository = TrainingsLogRepository.getRepository(application);
         mText = new MutableLiveData<>();
         mText.setValue("This is exercise fragment");
     }
@@ -53,6 +57,12 @@ public class ExerciseViewModel extends AndroidViewModel {
     public void insertExerciseCrossRef(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
 
         this.exerciseMuscleGroupCrossRefRepository.insert(exerciseMuscleGroupCrossRef);
+    }
+
+    public void insertTrainingsLog(TrainingsLog trainingsLog) {
+
+        this.trainingsLogRepository.insert(trainingsLog);
+
     }
 
     public LiveData<List<ExerciseWithMuscleGroup>> getExercises() {
