@@ -11,7 +11,7 @@
         android:theme="@style/Theme.MyFitnessBuddy"
         android:hardwareAccelerated="true">
         <activity
-            android:name="PME.myfitnessbuddy.view.MainActivity"
+            android:name="PME.myfitnessbuddy.view.LoadingActivity"
             android:theme="@style/Theme.MyFitnessBuddy.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="PME.myfitnessbuddy.view.MainActivity"
+            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
