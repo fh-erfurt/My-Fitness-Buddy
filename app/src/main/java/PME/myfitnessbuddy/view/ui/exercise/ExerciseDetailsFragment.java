@@ -36,13 +36,10 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     private LiveData<Exercise> exerciseLiveData;
 
     private List<TrainingsLog> sortedTrainingsLogs;
-    private String oldDate1 = "";
-    private String oldDate2 = "";
-    private String oldDate3 = "";
+    private String lastLog = "";
 
-    private TextView textViewOldDay1;
-    private TextView textViewOldDay2;
-    private TextView textViewOldDay3;
+    private TextView textViewLastLog;
+
 
 
 
@@ -97,7 +94,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
-        this.textViewOldDay1 = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
+        this.textViewLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
 
 
         /////////////Baustelle Start/////////////////
@@ -111,8 +108,8 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         Date dateObject = new Date();
         this.actualDate = dateFormatDDMMYYYY.format(dateObject);
 
-        set3LogEntrysFromTheLastDay();
-        this.textViewOldDay1.setText(this.oldDate1);
+        setLogEntrysFromTheLastDay();
+        this.textViewLastLog.setText(this.lastLog);
 
         Button buttonEndTrainingSet = (Button) root.findViewById(R.id.exercisedetail_finish_set_button);
 
@@ -180,42 +177,11 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         ////////Todo
     }
 
-    public void set3LogEntrysFromTheLastDay(){
+    public void setLogEntrysFromTheLastDay(){
 
         int maxNumberOfEntrys = 5;
-/*
-        for(int i = 0; i< this.sortedTrainingsLogs.size(); i++){
-
-            String logEntryDate = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
-
-            if(!this.actualDate.equals(logEntryDate)){
-
-                this.oldDate1 = this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr";
-
-
-                String logEntryDate2 = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i+1).getCreated());
-                if(i+1 >= this.sortedTrainingsLogs.size() || !logEntryDate2.equals(logEntryDate)){
-                    break;
-                }
-                this.oldDate2 = this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i+1).getCreated()) + " Uhr";
-
-
-                String logEntryDate3 = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i+2).getCreated());
-                if(i+2 >= this.sortedTrainingsLogs.size() || !logEntryDate3.equals(logEntryDate)){
-                    break;
-                }
-                this.oldDate3 = dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i+2).getCreated()) + " Uhr";
-
-                break;
-            }
-        }
-
-
- */
-
 
         for(int i = 0; i< this.sortedTrainingsLogs.size(); i++){
-
 
             String logEntryDate = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
             String firstRound = "";
@@ -236,7 +202,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
                     break;
                 }
 
-                this.oldDate1   += firstRound+this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr"
+                this.lastLog += firstRound+this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(i).getCreated()) + " Uhr"
                         + "\nrepetitions: "+this.sortedTrainingsLogs.get(i).getRepetitions()
                         +", weight: "+this.sortedTrainingsLogs.get(i).getWeight()+", text:"+this.sortedTrainingsLogs.get(i).getAlternativeText();
                 firstRound = "\n\n";
@@ -248,15 +214,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
     }
 
-    public void setTextFieldLastTrainingDates(){
-
-        if (!oldDate1.equals("")){
-            this.textViewOldDay1.setText(this.oldDate1 + "\n" +
-                    this.oldDate2 + "\n" +
-                    this.oldDate3);
-        }
-
-    }
 
     ///////////////////////////////////////////////
 
