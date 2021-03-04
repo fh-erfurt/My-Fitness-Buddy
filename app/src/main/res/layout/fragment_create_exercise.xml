@@ -69,7 +69,7 @@
             android:textColor="@color/white"></Spinner>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/exercisedetail_last_log_label_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

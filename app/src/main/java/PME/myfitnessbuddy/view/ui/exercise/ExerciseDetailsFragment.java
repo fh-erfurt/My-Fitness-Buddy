@@ -10,15 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.myfitnessbuddy.R;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -26,7 +22,6 @@ import java.util.Locale;
 import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
-import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 /**
@@ -102,7 +97,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
-        this.textViewOldDay1 = (TextView) root.findViewById(R.id.textView6);
+        this.textViewOldDay1 = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
 
 
         /////////////Baustelle Start/////////////////
@@ -119,7 +114,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         set3LogEntrysFromTheLastDays();
         setTextFieldLastTrainingDates();
 
-        Button buttonEndTrainingSet = (Button) root.findViewById(R.id.button5);
+        Button buttonEndTrainingSet = (Button) root.findViewById(R.id.exercisedetail_finish_set_button);
         buttonEndTrainingSet.setOnClickListener(this::onClick);
 
         /////////////Baustelle Ende/////////////////
