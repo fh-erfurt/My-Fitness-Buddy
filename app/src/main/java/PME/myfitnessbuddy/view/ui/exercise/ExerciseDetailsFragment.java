@@ -50,7 +50,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     EditText editTextWeight;
 
     private String actualDate;
-    private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, hh:mm", Locale.GERMANY);
+    private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, k:mm ", Locale.GERMAN);
     private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
     // TODO: Rename parameter arguments, choose names that match
