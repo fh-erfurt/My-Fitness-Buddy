@@ -27,11 +27,11 @@
                 android:layout_width="410dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="48dp"
-                android:background="@color/primary_navbar"
+                android:background="@color/primary"
                 android:gravity="center"
                 android:text="Übungsname"
                 android:textAlignment="center"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/accent"
                 android:textSize="36sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary_navbar"
+                android:background="@color/primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,9 @@
                     android:id="@+id/exercisedetail_reps_decrease_button"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/accent_color"
+                    android:backgroundTint="@color/accent"
                     android:text="+"
-                    android:textColor="@color/primary_navbar"
+                    android:textColor="@color/primary"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
@@ -63,9 +63,9 @@
                     android:layout_height="47dp"
                     android:layout_marginStart="76dp"
                     android:layout_marginEnd="72dp"
-                    android:backgroundTint="@color/accent_color"
+                    android:backgroundTint="@color/accent"
                     android:text="Satz beenden"
-                    android:textColor="@color/primary_navbar"
+                    android:textColor="@color/primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
@@ -78,7 +78,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/accent"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_increase_button"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
@@ -90,7 +90,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/accent"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -99,9 +99,9 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="44dp"
-                    android:backgroundTint="@color/accent_color"
+                    android:backgroundTint="@color/accent"
                     android:text="+"
-                    android:textColor="@color/primary_navbar"
+                    android:textColor="@color/primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -109,9 +109,9 @@
                     android:id="@+id/exercisedetail_weight_decrease_button"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/accent_color"
+                    android:backgroundTint="@color/accent"
                     android:text="-"
-                    android:textColor="@color/primary_navbar"
+                    android:textColor="@color/primary"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -147,9 +147,9 @@
                     android:layout_height="45dp"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="42dp"
-                    android:backgroundTint="@color/accent_color"
+                    android:backgroundTint="@color/accent"
                     android:text="-"
-                    android:textColor="@color/primary_navbar"
+                    android:textColor="@color/primary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,7 +160,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary_navbar"
+                android:background="@color/primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -230,7 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary_navbar"
+                android:background="@color/primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

@@ -24,7 +24,7 @@
         android:layout_marginTop="31dp"
         android:text="Dein Partner rund um's Training"
         android:textAlignment="center"
-        android:textColor="@color/accent_color"
+        android:textColor="@color/accent"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_loading_logo" />

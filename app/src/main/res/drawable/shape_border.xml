@@ -4,13 +4,13 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/primary_navbar" >
+        android:color="@color/primary" >
     </solid>
 
     <!-- View border color and width -->
     <stroke
         android:width="2dp"
-        android:color="@color/accent_color" >
+        android:color="@color/accent" >
     </stroke>
 
     <!-- The radius makes the corners rounded -->
