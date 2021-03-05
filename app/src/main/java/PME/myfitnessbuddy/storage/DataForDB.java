@@ -280,37 +280,37 @@ public class DataForDB {
         trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef(trainingExerciseCrossRef10);
 
         TrainingsLog trainingsLog = new TrainingsLog(1,"12", "80", "bla");
-        trainingsLog.setCreated( 1014116148898l);
+        trainingsLog.setCreated( 1014116448898l);
         trainingsLog.setModified( powercircle.getCreated() );
         trainingsLog.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog);
 
         TrainingsLog trainingsLog1 = new TrainingsLog(1,"13", "81", "bla");
-        trainingsLog1.setCreated( 1614816548896l);
+        trainingsLog1.setCreated( 1014116148798l);
         trainingsLog1.setModified( powercircle.getCreated() );
         trainingsLog1.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog1);
 
         TrainingsLog trainingsLog2 = new TrainingsLog(1,"14", "82", "bla");
-        trainingsLog2.setCreated( 1011216448903l );
+        trainingsLog2.setCreated( 1014116143898l );
         trainingsLog2.setModified( powercircle.getCreated() );
         trainingsLog2.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog2);
 
         TrainingsLog trainingsLog3 = new TrainingsLog(1,"15", "84", "bla");
-        trainingsLog3.setCreated( 1514819538896l );
+        trainingsLog3.setCreated( 1011116148898l );
         trainingsLog3.setModified( powercircle.getCreated() );
         trainingsLog3.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog3);
 
         TrainingsLog trainingsLog4 = new TrainingsLog(1,"11", "82", "bla");
-        trainingsLog4.setCreated( 1514818538896l );
+        trainingsLog4.setCreated( 1014116128898l );
         trainingsLog4.setModified( powercircle.getCreated() );
         trainingsLog4.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog4);
 
         TrainingsLog trainingsLog5  = new TrainingsLog(1,"10", "85", "bla");
-        trainingsLog5.setCreated( 1514817547896l );
+        trainingsLog5.setCreated( 1014116148598l );
         trainingsLog5.setModified( powercircle.getCreated() );
         trainingsLog5.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog5);
