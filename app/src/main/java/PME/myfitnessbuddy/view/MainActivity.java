@@ -1,5 +1,6 @@
 package PME.myfitnessbuddy.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -83,10 +84,9 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
                 transaction.commit();
                 return (true);
             case R.id.action_settings:
-                transaction.replace(R.id.nav_host_fragment, SettingsFragment.class, null);
-                transaction.commit();
-                Toast.makeText(MainActivity.this,
-                        "Settings", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
 
         }
         return(super.onOptionsItemSelected(item));
