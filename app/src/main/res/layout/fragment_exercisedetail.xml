@@ -37,6 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
                 android:layout_marginTop="8dp"
@@ -155,18 +156,19 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exercisedetail_constraintLayout_actualLog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="152dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/primary_navbar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
                 <TextView
                     android:id="@+id/exercisedetail_today_log_label_textview"
-                    android:layout_width="match_parent"
+                    android:layout_width="411dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
@@ -203,14 +205,15 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exercisedetail_constraintLayout_lastLog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="248dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/primary_navbar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
+                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_constraintLayout_actualLog">
 
                 <TextView
                     android:id="@+id/exercisedetail_last_log_label_textview"
