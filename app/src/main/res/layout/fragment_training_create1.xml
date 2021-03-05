@@ -49,7 +49,7 @@
             android:id="@+id/createTrainingType"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary_navbar"
+            android:background="@color/primary"
 
             android:entries="@array/spinner_create_training_items"
             android:textColor="@color/white"></Spinner>
@@ -60,7 +60,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/accent_color"
+            android:background="@color/accent"
             android:text="Weiter"></Button>
 
 

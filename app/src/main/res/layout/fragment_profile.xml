@@ -59,7 +59,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="244dp"
         android:layout_marginEnd="81dp"
-        android:background="@color/accent_color"
+        android:background="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +101,7 @@
         android:hint="KG"
         android:inputType="number"
         android:textAlignment="center"
-        android:textColor="@color/accent_color"
+        android:textColor="@color/accent"
         android:textColorHint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -112,9 +112,9 @@
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="90dp"
-        android:backgroundTint="@color/accent_color"
+        android:backgroundTint="@color/accent"
         android:text="bestätigen"
-        android:textColor="@color/primary_navbar"
+        android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
@@ -125,7 +125,7 @@
         android:layout_marginStart="81dp"
         android:layout_marginTop="348dp"
         android:layout_marginEnd="80dp"
-        android:background="@color/accent_color"
+        android:background="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -165,7 +165,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="81dp"
-        android:background="@color/accent_color"
+        android:background="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />

@@ -5,9 +5,9 @@
     <PreferenceCategory app:title="User Interface" />
 
     <SwitchPreferenceCompat
-        app:key="light_mode"
         app:icon="@drawable/info"
-        app:title="Enable Light Mode"/>
+        app:key="light_mode"
+        app:title="Enable Dark Mode" />
 
     <PreferenceCategory app:title="Miscellaneous" />
 

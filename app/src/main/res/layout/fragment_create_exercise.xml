@@ -64,7 +64,7 @@
             android:id="@+id/createExerciseMuscleGroup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary_navbar"
+            android:background="@color/primary"
             android:entries="@array/spinner_create_exercise_items"
             android:textColor="@color/white"></Spinner>
 
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/primary_navbar"
+            android:background="@color/primary"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -157,7 +157,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/accent_color"
+            android:background="@color/accent"
             android:text="@string/create_exercise_group_createButton"></Button>
 
 
