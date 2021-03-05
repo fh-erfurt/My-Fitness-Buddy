@@ -102,7 +102,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/home_training"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/primaryDark" />
 
                 </LinearLayout>
 
@@ -139,7 +140,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/home_excersise"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/primaryDark" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -181,7 +183,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/home_analytics"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/primaryDark" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -214,7 +217,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/home_settings"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/primaryDark" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
