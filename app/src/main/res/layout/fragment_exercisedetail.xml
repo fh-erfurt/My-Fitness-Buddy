@@ -10,238 +10,246 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/fragment_exercise_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:background="@color/primary_navbar"
-            android:gravity="center"
-            android:text="Übungsname"
-            android:textColor="@color/accent_color"
-            android:textSize="36sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
-            android:layout_height="136dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/primary_navbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
-
-            <Button
-                android:id="@+id/exercisedetail_reps_decrease_button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/accent_color"
-                android:text="+"
-                android:textColor="@color/primary_navbar"
-                app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
-
-            <Button
-                android:id="@+id/exercisedetail_finish_set_button"
-                android:layout_width="263dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginEnd="72dp"
-                android:backgroundTint="@color/accent_color"
-                android:text="Satz beenden"
-                android:textColor="@color/primary_navbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
-
-            <EditText
-                android:id="@+id/exercisedetail_reps_input"
-                android:layout_width="55dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="number"
-                android:textColor="@color/accent_color"
-                app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_increase_button"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
-
-            <EditText
-                android:id="@+id/exercisedetail_weight_input"
-                android:layout_width="55dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="number"
-                android:textColor="@color/accent_color"
-                app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
-
-            <Button
-                android:id="@+id/exercisedetail_weight_increase_button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginEnd="44dp"
-                android:backgroundTint="@color/accent_color"
-                android:text="+"
-                android:textColor="@color/primary_navbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
-
-            <Button
-                android:id="@+id/exercisedetail_weight_decrease_button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="@color/accent_color"
-                android:text="-"
-                android:textColor="@color/primary_navbar"
-                app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/exercisedetail_reps_textview"
-                android:layout_width="59dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="88dp"
-                android:layout_marginTop="12dp"
-                android:text="Wdh."
+                android:id="@+id/fragment_exercise_id"
+                android:layout_width="410dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="48dp"
+                android:background="@color/primary_navbar"
+                android:gravity="center"
+                android:text="Übungsname"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22dp"
+                android:textColor="@color/accent_color"
+                android:textSize="36sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/exercisedetail_weight_textview"
-                android:layout_width="88dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="72dp"
-                android:text="Gewicht"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="22dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/primary_navbar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/exercisedetail_reps_increase_button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="42dp"
-                android:backgroundTint="@color/accent_color"
-                android:text="-"
-                android:textColor="@color/primary_navbar"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
+
+                <Button
+                    android:id="@+id/exercisedetail_reps_decrease_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/accent_color"
+                    android:text="+"
+                    android:textColor="@color/primary_navbar"
+                    app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
+
+                <Button
+                    android:id="@+id/exercisedetail_finish_set_button"
+                    android:layout_width="263dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginEnd="72dp"
+                    android:backgroundTint="@color/accent_color"
+                    android:text="Satz beenden"
+                    android:textColor="@color/primary_navbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
+
+                <EditText
+                    android:id="@+id/exercisedetail_reps_input"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/white"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/accent_color"
+                    app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_increase_button"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
+
+                <EditText
+                    android:id="@+id/exercisedetail_weight_input"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/white"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/accent_color"
+                    app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
+
+                <Button
+                    android:id="@+id/exercisedetail_weight_increase_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="44dp"
+                    android:backgroundTint="@color/accent_color"
+                    android:text="+"
+                    android:textColor="@color/primary_navbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
+
+                <Button
+                    android:id="@+id/exercisedetail_weight_decrease_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/accent_color"
+                    android:text="-"
+                    android:textColor="@color/primary_navbar"
+                    app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
+
+                <TextView
+                    android:id="@+id/exercisedetail_reps_textview"
+                    android:layout_width="59dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Wdh."
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/exercisedetail_weight_textview"
+                    android:layout_width="88dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="72dp"
+                    android:text="Gewicht"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/exercisedetail_reps_increase_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="42dp"
+                    android:backgroundTint="@color/accent_color"
+                    android:text="-"
+                    android:textColor="@color/primary_navbar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="152dp"
+                android:background="@color/primary_navbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
+
+                <TextView
+                    android:id="@+id/exercisedetail_today_log_label_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Aufzeichnung Heute"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
+
+                <TextView
+                    android:id="@+id/exercisedetail_today_log_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="59dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Du hast heute noch keine Sätze aufgezeichnet"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="248dp"
+                android:background="@color/primary_navbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
+
+                <TextView
+                    android:id="@+id/exercisedetail_last_log_label_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Letzte Aufzeichnung"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
+
+                <TextView
+                    android:id="@+id/exercisedetail_last_log_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="59dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Es wurden noch keine Sätze Aufgezeichnet"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="152dp"
-            android:background="@color/primary_navbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
-
-            <TextView
-                android:id="@+id/exercisedetail_today_log_label_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Aufzeichnung Heute"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="3dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
-
-            <TextView
-                android:id="@+id/exercisedetail_today_log_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="60dp"
-                android:layout_marginBottom="16dp"
-                android:text="Du hast heute noch keine Sätze aufgezeichnet"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="248dp"
-            android:background="@color/primary_navbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_exercise_id">
-
-            <TextView
-                android:id="@+id/exercisedetail_last_log_label_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Letzte Aufzeichnung"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="3dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
-
-            <TextView
-                android:id="@+id/exercisedetail_last_log_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="60dp"
-                android:layout_marginBottom="16dp"
-                android:text="Es wurden noch keine Sätze Aufgezeichnet"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exercisedetail_last_log_label_textview" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
