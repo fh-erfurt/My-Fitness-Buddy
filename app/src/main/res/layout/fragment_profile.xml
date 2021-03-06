@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backround4">
+
+        <ImageView
+            android:id="@+id/fragment_profile_image"
+            android:layout_width="166dp"
+            android:layout_height="216dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="125dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dumbell"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="81dp"
+            android:background="@color/accent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_profilename_textview" />
+
+        <TextView
+            android:id="@+id/fragment_profile_profilename_textview"
+            android:layout_width="204dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="103dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="104dp"
+            android:text="Profilname"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_image" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6">
+
+            <TextView
+                android:id="@+id/fragment_profile_label_age_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/primary"
+                android:text="Alter"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_profile_label_gender_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
+                android:text="Geschlecht"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_age_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_age_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="45dp"
+                android:text="Hier alter aus db"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_profile_gender_textview"
+                android:layout_width="124dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="45dp"
+                android:text="Geschlecht aus DB"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_age_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_bodyweight_textview"
+                android:layout_width="148dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="45dp"
+                android:text="Gewicht aus DB"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_height_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_height_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="45dp"
+                android:text="Größe aus DB"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_gender_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_label_height_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
+                android:text="Größe"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_gender_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_label_bodyweight_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="9dp"
+                android:text="Gewicht"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_height_textview" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_bodyweight_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <TextView
+                android:id="@+id/fragment_profile_label_update_bodyweight_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="89dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="89dp"
+                android:text="Gewicht aktuallisieren"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="81dp"
+                android:background="@color/accent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_update_bodyweight_textview" />
+
+            <EditText
+                android:id="@+id/fragment_profile_update_bodyweight_input_number"
+                android:layout_width="55dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="KG"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+            <Button
+                android:id="@+id/fragment_profile_update_bodyweight_button"
+                android:layout_width="138dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="45dp"
+                android:backgroundTint="@color/accent"
+                android:text="bestätigen"
+                android:textColor="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="7dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_update_bodyweight_input_number" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <TextView
+                android:id="@+id/fragment_profile_label_bodymetric_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="159dp"
+                android:layout_marginEnd="165dp"
+                android:text="Statistik"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="81dp"
+                android:layout_marginEnd="80dp"
+                android:background="@color/accent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_bodymetric_textview" />
+
+            <TextView
+                android:id="@+id/fragment_profile_bmi_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="45dp"
+                android:text="errechneter BMI"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+            <TextView
+                android:id="@+id/fragment_profile_label_bmi_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="12dp"
+                android:text="BMI"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

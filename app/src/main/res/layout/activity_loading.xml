@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backround4">
+
+    <ImageView
+        android:id="@+id/activity_loading_logo"
+        android:layout_width="238dp"
+        android:layout_height="294dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="73dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/activity_loading_textview"
+        android:layout_width="359dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="31dp"
+        android:text="Dein Partner rund um's Training"
+        android:textAlignment="center"
+        android:textColor="@color/accent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_loading_logo" />
+
+    <ProgressBar
+        android:id="@+id/activity_loading_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="293dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="31dp"
+        android:max="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_loading_textview" />
+</androidx.constraintlayout.widget.ConstraintLayout>
