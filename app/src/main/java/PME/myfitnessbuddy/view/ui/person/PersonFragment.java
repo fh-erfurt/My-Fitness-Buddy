@@ -66,15 +66,42 @@ public class PersonFragment extends BaseFragment {
         assert person != null;
         if(!person.isEmpty()) {
             TextView age = getView().findViewById(R.id.fragment_profile_age_textview);
-            age.setText("" + getAge(person.get(0).getBirthday()));
+            age.setText(Integer.toString(getAge(person.get(0).getBirthday())));
+
+            TextView nickname=getView().findViewById(R.id.fragment_profile_profilename_textview);
+            nickname.setText(person.get(0).getNickname());
+            TextView height=getView().findViewById(R.id.fragment_profile_height_textview);
+            height.setText(Integer.toString((int) person.get(0).getHeight()) + " cm" );
+            TextView bodyweight=getView().findViewById(R.id.fragment_profile_bodyweight_textview);
+            bodyweight.setText(Integer.toString((int)person.get(0).getWeight())+ " KG" );
+            TextView gender=getView().findViewById(R.id.fragment_profile_gender_textview);
+
+            if(person.get(0).getGender()==1)
+            {
+                gender.setText("Male");
+            }else
+            {
+                gender.setText("Female");
+            }
+
+
         }
 
+
+
+
+
+
     }
 
+
     public int getAge(String birthday) {
-        DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yyyy"));
+        DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yy"));
         return new DateTime().year().get() - birth.year().get();
     }
+
+
+
 
 
 }
