@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -35,6 +36,7 @@ public class TrainingDetailsFragment extends BaseFragment {
     public long updateTrainingId;
     private TrainingDetailsViewModel trainingDetailsViewModel;
     private LiveData<Training> trainingLiveData;
+
 
 
     @Override
@@ -77,7 +79,10 @@ public class TrainingDetailsFragment extends BaseFragment {
 
         super.onResume();
         assert getArguments() != null;
-        final long trainingId = getArguments().getLong(ARG_TRAINING_ID);
+        long trainingId = getArguments().getLong(ARG_TRAINING_ID);
+        if(trainingId == 0){
+            trainingId = getArguments().getLong(ARG_UPDATED_TRAINING_ID);
+        }
         this.trainingLiveData = this.trainingDetailsViewModel.getTraining( trainingId );
         this.trainingLiveData.observe( requireActivity(), this::updateView);
 
@@ -86,21 +91,8 @@ public class TrainingDetailsFragment extends BaseFragment {
    private void updateView(Training training) {
 
         assert getView() != null;
-        assert getArguments() != null;
-        final long trainingId = getArguments().getLong(ARG_UPDATED_TRAINING_ID);
         TextView nameView = getView().findViewById( R.id.fragment_training_details_trainingname );
-        if(this.trainingDetailsViewModel.getTraining(trainingId).getValue() != null){
-           Log.i("tag","TEST"+this.trainingDetailsViewModel.getTraining(trainingId).getValue().getDesignation());
-        }
-
-        if (training != null) {
-            nameView.setText(String.format("%s %s", training.getDesignation(), " "));
-        }else{
-
-            LiveData<Training> training2 = this.trainingDetailsViewModel.getTraining(trainingId);
-            Log.i("tag","TESTUpdate"+training2.getValue().getTrainingId());
-            nameView.setText(String.format("%s %s", this.trainingDetailsViewModel.getTraining(trainingId).getValue().getDesignation(), " "));
-        }
+        nameView.setText(String.format("%s %s", training.getDesignation(), " "));
 
     }
 

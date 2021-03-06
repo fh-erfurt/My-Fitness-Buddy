@@ -7,7 +7,6 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import PME.myfitnessbuddy.model.training.Category;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
@@ -138,6 +137,7 @@ public class TrainingRepository {
     {
         return this.queryLiveData(() -> this.trainingDao.getTrainingById(trainingId) );
     }
+
 
     private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
     {

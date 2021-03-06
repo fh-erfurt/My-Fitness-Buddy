@@ -9,6 +9,7 @@ import androidx.room.Transaction;
 import androidx.room.Update;
 
 
+import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
@@ -55,4 +56,5 @@ public interface TrainingDao {
 
     @Query("SELECT * FROM Training WHERE trainingId = :trainingId")
     LiveData<Training> getTrainingById(long trainingId);
+
 }

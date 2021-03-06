@@ -19,4 +19,5 @@ public class TrainingDetailsViewModel extends AndroidViewModel {
     public LiveData<Training> getTraining(long trainingId ) {
         return this.trainingRepository.getTrainingByIdAsLiveData( trainingId );
     }
-}
+
+    }
