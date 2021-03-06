@@ -42,8 +42,7 @@ public interface ExerciseDao {
     @Query("SELECT * from Exercise")
     LiveData<List<Exercise>> getExerciseLiveData();
 
-
-    @Query("SELECT * FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE NOT t.trainingId=:trainingId")
+    @Query("SELECT * FROM Exercise WHERE designation not in (SELECT designation FROM Exercise e JOIN TrainingExerciseCrossRef t ON e.exerciseId =t.exerciseId WHERE t.trainingId=:trainingId)")
     List<Exercise> getAllExercisesWhichAreNotTraining(Integer trainingId);
 
     @Query("SELECT * from Exercise ORDER BY designation ASC")

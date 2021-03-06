@@ -107,8 +107,6 @@ public class TrainingUpdateFragment extends BaseFragment implements SelectableVi
 
     }
 
-
-
     public List<Exercise> generateListFromAllExercises(){
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
