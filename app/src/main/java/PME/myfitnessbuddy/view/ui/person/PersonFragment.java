@@ -85,7 +85,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     public void onPause() {
         super.onPause();
         this.personLiveData.removeObservers(requireActivity());
-        this.personweightLiveData.removeObservers(requireActivity());//stürzt ab
+        this.personweightLiveData.removeObservers(requireActivity());
+
     }
 
 
