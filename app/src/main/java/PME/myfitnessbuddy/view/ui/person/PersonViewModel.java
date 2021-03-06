@@ -40,4 +40,5 @@ public class PersonViewModel extends AndroidViewModel {
     public LiveData<List<Person>> getAllUsers() {
         return allUsers;
     }
+
 }

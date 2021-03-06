@@ -35,11 +35,11 @@ public class PersonFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         personViewModel = this.getViewModel(PersonViewModel.class);
 
+
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-
-
               return view;
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -56,14 +56,12 @@ public class PersonFragment extends BaseFragment {
     }
 
 
-
     private void updateView(List<Person> person) {
         assert getView() != null;
         assert person != null;
         if(!person.isEmpty()) {
             TextView age = getView().findViewById(R.id.fragment_profile_age_textview);
             age.setText(Integer.toString(getAge(person.get(0).getBirthday())));
-
             TextView nickname=getView().findViewById(R.id.fragment_profile_profilename_textview);
             nickname.setText(person.get(0).getNickname());
             TextView height=getView().findViewById(R.id.fragment_profile_height_textview);
