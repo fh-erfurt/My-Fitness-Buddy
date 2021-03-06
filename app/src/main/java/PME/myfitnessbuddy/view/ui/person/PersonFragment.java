@@ -65,7 +65,7 @@ public class PersonFragment extends BaseFragment {
         assert getView() != null;
         assert person != null;
         if(!person.isEmpty()) {
-            TextView age = getView().findViewById(R.id.textView13);
+            TextView age = getView().findViewById(R.id.fragment_profile_age_textview);
             age.setText("" + getAge(person.get(0).getBirthday()));
         }
 
