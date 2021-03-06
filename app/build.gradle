@@ -47,6 +47,8 @@ dependencies {
 
     compileOnly 'com.google.android.wearable:wearable:2.8.1'
 
+    compile 'joda-time:joda-time:2.9.6'
+
 
     // Room Dependencies
     def room_version = "2.2.5"

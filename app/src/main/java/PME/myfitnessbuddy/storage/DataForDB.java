@@ -24,7 +24,7 @@ public class DataForDB {
    public void generateDBData (PersonDao daoPerson, TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
 
         // Insert Test Person -> later via first start in App
-        Person person1 = new Person("Arni","30.07.47",1,188.0,115.5);
+        Person person1 = new Person("Arni","30.07.1990",1,188.0,115.5);
         person1.setCreated( System.currentTimeMillis() );
         person1.setModified( person1.getCreated() );
         person1.setVersion( 1 );

@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
 
@@ -38,9 +41,9 @@ public class PersonRepository {
         this.personDao = db.personDao();
     }
 
-    public List<Person> getPersons()
+    public LiveData<List<Person>> getPersons()
     {
-        return this.query( () -> this.personDao.getPersons() );
+        return this.queryLiveData( () -> this.personDao.getPersons() );
     }
 
     public List<Person> getPersonsForNickname(String search )
@@ -63,6 +66,19 @@ public class PersonRepository {
         }
 
         return new ArrayList<>();
+    }
+
+    private <T> LiveData<T> queryLiveData(Callable<LiveData<T>> query )
+    {
+        try {
+            return MyFitnessBuddyDatabase.executeWithReturn( query );
+        }
+        catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Well, is this a reasonable default return value?
+        return new MutableLiveData<>();
     }
 
     public Person getLastPerson() {

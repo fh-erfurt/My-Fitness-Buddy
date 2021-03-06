@@ -9,15 +9,16 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.Person;
+import PME.myfitnessbuddy.storage.PersonRepository;
 
 public class PersonViewModel extends AndroidViewModel {
-    private PersonViewModel personRepository;
+    private PersonRepository personRepository;
     public LiveData<List<Person>> allUsers;
 
     public PersonViewModel(@NonNull Application application) {
         super(application);
-        personRepository = new PersonViewModel(application);
-        allUsers = personRepository.getAllUsers();
+        personRepository = PersonRepository.getRepository(application);
+        allUsers = personRepository.getPersons();
     }
 
     public void insert(Person person) {
@@ -29,11 +30,11 @@ public class PersonViewModel extends AndroidViewModel {
     }
 
     public void delete(Person person) {
-        personRepository.delete(person);
+      //  personRepository.delete(person);
     }
 
     public void deleteAllUsers() {
-        personRepository.deleteAllUsers();
+      //  personRepository.deleteAllUsers();
     }
 
     public LiveData<List<Person>> getAllUsers() {
