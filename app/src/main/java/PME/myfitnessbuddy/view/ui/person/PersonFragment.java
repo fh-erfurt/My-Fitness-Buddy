@@ -1,9 +1,11 @@
 package PME.myfitnessbuddy.view.ui.person;
 
+import android.media.MediaSync;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.lifecycle.LiveData;
@@ -36,13 +38,7 @@ public class PersonFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
 
-
-    //    Person person1 = person.getValue().get(0);
-
-     //   TextView age = (TextView) view.findViewById(R.id.textView13);
-
-
-        return view;
+              return view;
     }
     @Override
     public void onResume() {
@@ -85,7 +81,11 @@ public class PersonFragment extends BaseFragment {
             }
 
 
+
+
         }
+
+
 
 
 
@@ -99,6 +99,9 @@ public class PersonFragment extends BaseFragment {
         DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yy"));
         return new DateTime().year().get() - birth.year().get();
     }
+
+
+
 
 
 
