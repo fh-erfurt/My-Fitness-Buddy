@@ -90,7 +90,6 @@ public class TrainingDetailsFragment extends BaseFragment {
 
    private void updateView(Training training) {
 
-
         assert getView() != null;
         TextView nameView = getView().findViewById( R.id.fragment_training_details_trainingname );
         nameView.setText(String.format("%s %s", training.getDesignation(), " "));

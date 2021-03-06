@@ -97,10 +97,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
-
-
-
     }
 
     @Override
@@ -134,8 +130,19 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
 
         Button buttonEndTrainingSet = (Button) root.findViewById(R.id.exercisedetail_finish_set_button);
-
         buttonEndTrainingSet.setOnClickListener(this::onClick);
+
+        Button buttonRepsDecrease = (Button) root.findViewById(R.id.exercisedetail_reps_increase_button);
+        buttonRepsDecrease.setOnClickListener(this::onClick);
+
+        Button buttonRepsIncrease = (Button) root.findViewById(R.id.exercisedetail_reps_decrease_button);
+        buttonRepsIncrease.setOnClickListener(this::onClick);
+
+        Button buttonWeightIncrease = (Button) root.findViewById(R.id.exercisedetail_weight_increase_button);
+        buttonWeightIncrease.setOnClickListener(this::onClick);
+
+        Button buttonWeightDecrease = (Button) root.findViewById(R.id.exercisedetail_weight_decrease_button);
+        buttonWeightDecrease.setOnClickListener(this::onClick);
 
         editTextRepetitions.addTextChangedListener(new TextWatcher() {
 
@@ -200,8 +207,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         TextView nameView = getView().findViewById( R.id.fragment_exercise_id );
 
         nameView.setText(String.format("%s %s", exercise.getDesignation(), "  "));
-
-
     }
 
     @Override
@@ -213,11 +218,48 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         Log.i("EventCallbacks", "Stopped observing Detail Contact");
     }
 
-
     //////////////Benjamin///////////////
     @Override
     public void onClick(View v) {
 
+        EditText repsText = (EditText) getView().findViewById(R.id.exercisedetail_reps_input);
+        EditText weightText = (EditText) getView().findViewById(R.id.exercisedetail_weight_input);
+
+        switch (v.getId())
+        {
+            case R.id.exercisedetail_reps_decrease_button:
+
+                int repsDecrease = Integer.parseInt( repsText.getText().toString() );
+                if(repsDecrease >=1) {
+                    repsDecrease = repsDecrease - 1;
+                }
+                repsText.setText(String.valueOf(repsDecrease));
+                break;
+
+            case R.id.exercisedetail_reps_increase_button:
+                int repsIncrease = Integer.parseInt( repsText.getText().toString() );
+                if(repsIncrease <=99) {
+                    repsIncrease = repsIncrease +1;
+                }
+                repsText.setText(String.valueOf(repsIncrease));
+                break;
+            case R.id.exercisedetail_weight_decrease_button:
+                double weightDecrease = Double.parseDouble( weightText.getText().toString() );
+                if(weightDecrease >=1.25) {
+                    weightDecrease = weightDecrease -1.25;
+                }
+                weightText.setText(String.valueOf(weightDecrease));
+                break;
+            case R.id.exercisedetail_weight_increase_button:
+                double weightIncrease = Double.parseDouble( weightText.getText().toString() );
+                if(weightIncrease <=998.75) {
+                    weightIncrease = weightIncrease +1.25;
+                }
+                weightText.setText(String.valueOf(weightIncrease));
+                break;
+
+
+        case R.id.exercisedetail_finish_set_button:
         String repetition = this.editTextRepetitions.getText().toString();
         String weight = this.editTextWeight.getText().toString();
         String alternativeText = ""; //////////////TODO/////////////
@@ -229,7 +271,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         trainingsLog.setCreated( System.currentTimeMillis() );
         trainingsLog.setModified( trainingsLog.getCreated() );
         trainingsLog.setVersion( 1 );
-
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
         exerciseViewModel.insertTrainingsLog(trainingsLog);
@@ -243,7 +284,11 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         this.actualLog += addLog(newLine(this.actualLog), trainingsLog, this.actualLogNumberOfSets+1);
         this.actualLogNumberOfSets++;
         this.textViewActualLog.setText(actualLog);
+        break;
 
+            default:
+                break;
+        }
     }
 
     public void createTrainingLog(){
@@ -260,43 +305,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
 
 
-/***************AM ENDE LÖSCHEN **********************
-        this.actualLogNumberOfSets = 0;
-        int maxNumberOfEntrys = 5;
-        String firstRound = "";
-
-
-        for(int i = 0; i< this.sortedTrainingsLogs.size(); i++){
-
-            String logEntryDate = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
-
-            if(this.actualDate.equals(logEntryDate)){
-               this.actualLog += addLog(firstRound, i, i);
-                firstRound = "\n\n";
-                continue;
-            }
-
-            firstRound = "";
-            for(int j = 1; j< maxNumberOfEntrys+1; j++, i++){
-
-
-                if(i >= this.sortedTrainingsLogs.size()){
-                    break;
-                }
-
-               String logEntryDate2 = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(i).getCreated());
-
-                if(!logEntryDate2.equals(logEntryDate)){
-                    break;
-                }
-
-                this.lastLog += addLog(firstRound, i, j);
-                firstRound = "\n\n";
-            }
-                break;
-        }
-
- */
 
 
     private void setLogEntrys(View root){
