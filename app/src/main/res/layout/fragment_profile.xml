@@ -31,7 +31,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="81dp"
-            android:background="@color/accent"
+            style="@style/AccentText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_profilename_textview" />
@@ -45,7 +45,7 @@
             android:layout_marginEnd="104dp"
             android:text="Profilname"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            style="@style/WhiteText"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:background="@color/primary"
+            style="@style/TransparentPrimaryBackround"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,9 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="15dp"
-                android:background="@color/primary"
                 android:text="Alter"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,7 +81,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="9dp"
                 android:text="Geschlecht"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_age_textview" />
@@ -95,7 +94,7 @@
                 android:layout_marginEnd="45dp"
                 android:text="Hier alter aus db"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -108,7 +107,7 @@
                 android:layout_marginEnd="45dp"
                 android:text="Geschlecht aus DB"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_age_textview" />
@@ -121,7 +120,7 @@
                 android:layout_marginEnd="45dp"
                 android:text="Gewicht aus DB"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_height_textview" />
@@ -134,7 +133,7 @@
                 android:layout_marginEnd="45dp"
                 android:text="Größe aus DB"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_gender_textview" />
@@ -146,7 +145,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="9dp"
                 android:text="Größe"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_gender_textview" />
@@ -158,7 +157,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="9dp"
                 android:text="Gewicht"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_height_textview" />
@@ -178,7 +177,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
+            style="@style/TransparentPrimaryBackround"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +191,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="89dp"
                 android:text="Gewicht aktuallisieren"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -220,8 +219,7 @@
                 android:hint="KG"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
-                android:textColor="@color/accent"
-                android:textColorHint="@color/white"
+                style="@style/defaultEditText"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
@@ -232,9 +230,8 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="45dp"
-                android:backgroundTint="@color/accent"
+                style="@style/defaultButton"
                 android:text="bestätigen"
-                android:textColor="@color/primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
 
@@ -252,7 +249,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
+            style="@style/TransparentPrimaryBackround"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -265,7 +262,7 @@
                 android:layout_marginStart="159dp"
                 android:layout_marginEnd="165dp"
                 android:text="Statistik"
-                android:textColor="@color/white"
+                style="@style/WhiteText"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -284,24 +281,24 @@
 
             <TextView
                 android:id="@+id/fragment_profile_bmi_textview"
+                style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="45dp"
                 android:text="errechneter BMI"
-                android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view9" />
 
             <TextView
                 android:id="@+id/fragment_profile_label_bmi_textview"
+                style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:text="BMI"
-                android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view9" />
