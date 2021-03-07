@@ -86,6 +86,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
             bodyweight=view.findViewById(R.id.fragment_profile_bodyweight_textview);
             bodyweight.setText(Integer.toString((int)personweights.get(personweights.size()-1).getWeight())+ " KG" );
+
+
+            TextView bmi=view.findViewById(R.id.fragment_profile_bmi_textview);
+            bmi.setText(calculateBmi(person.getWeight(),person.getHeight()));
         }
 
 
@@ -113,8 +117,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             TextView gender=getView().findViewById(R.id.fragment_profile_gender_textview);
             gender.setText((person.getGender()==1) ? "männlich" : "weiblich");
 
-            TextView bmi=getView().findViewById(R.id.fragment_profile_bmi_textview);
-            bmi.setText(calculateBmi(person.getWeight(),person.getHeight()));
+
 
     }
 
@@ -130,7 +133,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         }
 
     }
-
+*/
     private String calculateBmi(double bodyweight, double height)
     {
         double heightInMeter= height/100;
@@ -143,7 +146,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     }
 
 
- */
+
 
     public int getAge(String birthday) {
 
