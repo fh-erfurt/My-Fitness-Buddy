@@ -15,6 +15,7 @@ import com.myfitnessbuddy.R;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.Person;
@@ -112,6 +113,9 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             TextView gender=getView().findViewById(R.id.fragment_profile_gender_textview);
             gender.setText((person.getGender()==1) ? "männlich" : "weiblich");
 
+            TextView bmi=getView().findViewById(R.id.fragment_profile_bmi_textview);
+            bmi.setText(calculateBmi(person.getWeight(),person.getHeight()));
+
     }
 
     private void updateViewPersonWeights(List<PersonWeight> personWeights) {
@@ -121,9 +125,21 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         if(!personWeights.isEmpty()) {
 
             TextView bodyweight=getView().findViewById(R.id.fragment_profile_bodyweight_textview);
-            bodyweight.setText(Integer.toString((int)personWeights.get(personWeights.size()-1).getWeight())+ " KG" );
+            bodyweight.setText(Double.toString((double)personWeights.get(personWeights.size()-1).getWeight())+ " KG" );
 
         }
+
+    }
+
+    private String calculateBmi(double bodyweight, double height)
+    {
+        double heightInMeter= height/100;
+        double bmi= bodyweight/(Math.pow(heightInMeter,2));
+
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        return nf.format(bmi);
     }
 
 
@@ -159,4 +175,5 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         bodyweight.setText(personweight.getWeight()+ " KG" );
 
     }
+
 }
