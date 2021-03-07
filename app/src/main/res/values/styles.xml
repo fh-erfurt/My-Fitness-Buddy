@@ -20,7 +20,7 @@
 
     <style name="defaultButton" parent="TextAppearance.AppCompat">
         <item name="android:backgroundTint">@color/accent</item>
-        <item name="android:textColor">@color/primary</item>
+        <item name="android:textColor">@color/primaryDark</item>
 
     </style>
 
