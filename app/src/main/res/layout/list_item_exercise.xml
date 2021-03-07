@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:background="@color/primary"
+    style="@style/TransparentPrimaryBackround"
     android:gravity="center"
     android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/primary">
+        android:layout_height="100dp">
 
 
         <ImageView
@@ -20,7 +19,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/primary"
             android:padding="5dp"
             app:srcCompat="@drawable/dumbell" />
 
@@ -31,11 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@color/primary"
         android:gravity="left|center_vertical"
         android:padding="5dp"
         android:text="Übungsname"
-        android:textColor="@color/accent"
+        style="@style/AccentText"
         android:textSize="22sp"
 
         />
