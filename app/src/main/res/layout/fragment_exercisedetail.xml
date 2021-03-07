@@ -77,7 +77,7 @@
                     android:backgroundTint="@color/white"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:text="0"
                     android:textColor="@color/accent"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_decrease_button"

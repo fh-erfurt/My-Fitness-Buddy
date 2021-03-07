@@ -119,7 +119,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         if(!personWeights.isEmpty()) {
 
             TextView bodyweight=getView().findViewById(R.id.fragment_profile_bodyweight_textview);
-            bodyweight.setText(Integer.toString((int)personWeights.get(personWeights.size()-1).getWeight())+ " KG" );
+            bodyweight.setText(Double.toString((double)personWeights.get(personWeights.size()-1).getWeight())+ " KG" );
 
         }
     }

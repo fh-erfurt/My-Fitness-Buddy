@@ -13,249 +13,191 @@
 
         <ImageView
             android:id="@+id/fragment_profile_image"
-            android:layout_width="166dp"
-            android:layout_height="216dp"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="125dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="149dp"
+            android:layout_height="144dp"
             app:srcCompat="@drawable/dumbell"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="16dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <View
             android:id="@+id/view6"
             android:layout_width="250dp"
             android:layout_height="1dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="81dp"
             android:background="@color/accent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_profilename_textview" />
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="218dp" />
 
         <TextView
             android:id="@+id/fragment_profile_profilename_textview"
             android:layout_width="204dp"
             android:layout_height="47dp"
-            android:layout_marginStart="103dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="104dp"
             android:text="Profilname"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_image" />
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="172dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
+            android:layout_width="363dp"
+            android:layout_height="201dp"
             android:background="@color/primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view6">
+            tools:layout_editor_absoluteX="257dp"
+            tools:layout_editor_absoluteY="16dp">
 
             <TextView
                 android:id="@+id/fragment_profile_label_age_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="15dp"
                 android:background="@color/primary"
                 android:text="Alter"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_label_gender_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
                 android:text="Geschlecht"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_age_textview" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="56dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_age_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="45dp"
                 android:text="Hier alter aus db"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteX="152dp"
+                tools:layout_editor_absoluteY="16dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_gender_textview"
                 android:layout_width="124dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="45dp"
                 android:text="Geschlecht aus DB"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_age_textview" />
+                tools:layout_editor_absoluteX="202dp"
+                tools:layout_editor_absoluteY="56dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_bodyweight_textview"
-                android:layout_width="148dp"
-                android:layout_height="31dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Gewicht aus DB"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_height_textview" />
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="133dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_height_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="45dp"
                 android:text="Größe aus DB"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_gender_textview" />
+                tools:layout_editor_absoluteX="180dp"
+                tools:layout_editor_absoluteY="101dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_label_height_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
                 android:text="Größe"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_gender_textview" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="101dp" />
 
             <TextView
                 android:id="@+id/fragment_profile_label_bodyweight_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="9dp"
                 android:text="Gewicht"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_height_textview" />
-
-            <View
-                android:id="@+id/view7"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_bodyweight_textview" />
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="141dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="244dp">
 
             <TextView
                 android:id="@+id/fragment_profile_label_update_bodyweight_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="89dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="89dp"
                 android:text="Gewicht aktuallisieren"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteX="80dp"
+                tools:layout_editor_absoluteY="2dp" />
 
             <View
                 android:id="@+id/view8"
                 android:layout_width="250dp"
                 android:layout_height="1dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginEnd="81dp"
                 android:background="@color/accent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_update_bodyweight_textview" />
+                tools:layout_editor_absoluteX="80dp"
+                tools:layout_editor_absoluteY="34dp" />
 
             <EditText
                 android:id="@+id/fragment_profile_update_bodyweight_input_number"
                 android:layout_width="55dp"
                 android:layout_height="44dp"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:hint="KG"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:textColor="@color/accent"
                 android:textColorHint="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view8" />
+                tools:layout_editor_absoluteX="45dp"
+                tools:layout_editor_absoluteY="30dp" />
 
             <Button
                 android:id="@+id/fragment_profile_update_bodyweight_button"
                 android:layout_width="138dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="45dp"
                 android:backgroundTint="@color/accent"
                 android:text="bestätigen"
                 android:textColor="@color/primary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view8" />
+                tools:layout_editor_absoluteX="268dp"
+                tools:layout_editor_absoluteY="38dp" />
 
             <View
                 android:id="@+id/view10"
-                android:layout_width="match_parent"
+                android:layout_width="359dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="7dp"
                 android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_update_bodyweight_input_number" />
+                tools:layout_editor_absoluteY="62dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="350dp">
 
             <TextView
                 android:id="@+id/fragment_profile_label_bodymetric_textview"
