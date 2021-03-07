@@ -1,5 +1,7 @@
 package PME.myfitnessbuddy.view.ui.person;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.myfitnessbuddy.R;
 
@@ -154,6 +158,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         return new DateTime().year().get() - birth.year().get();
 
     }
+
 
 
     @Override

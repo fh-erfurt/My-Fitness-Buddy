@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AccentText" parent="TextAppearance.AppCompat">
+            <item name="android:textColor">@color/accent</item>
+        </style>
+
+    <style name="WhiteText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="PrimaryText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="TransparentPrimaryBackround" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/primaryTransparent</item>
+    </style>
+
+
+    <style name="defaultButton" parent="TextAppearance.AppCompat">
+        <item name="android:backgroundTint">@color/accent</item>
+        <item name="android:textColor">@color/primary</item>
+
+    </style>
+
+    <style name="defaultEditText" parent="TextAppearance.AppCompat">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/accent</item>
+
+    </style>
+
+
+
+</resources>
