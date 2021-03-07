@@ -41,9 +41,9 @@ public class PersonWeightRepository {
         this.personWeightDao = db.personWeightDao();
     }
 
-    public LiveData<List<PersonWeight>> getPersonWeights()
+    public List<PersonWeight> getPersonWeights()
     {
-        return this.queryLiveData( () -> this.personWeightDao.getPersonWeights() );
+        return this.query( () -> this.personWeightDao.getPersonWeights() );
     }
 
 

@@ -41,27 +41,14 @@ public class PersonRepository {
         this.personDao = db.personDao();
     }
 
-    public LiveData<List<Person>> getPersons()
+
+    public Person getLastPerson()
     {
-        return this.queryLiveData( () -> this.personDao.getPersons() );
+        return this.query( () -> this.personDao.getLastEntry().get(0) );
     }
 
-    public LiveData<Person> getLastPerson()
-    {
-        return this.queryLiveData( () -> this.personDao.getLastEntry() );
-    }
 
-    public List<Person> getPersonsForNickname(String search )
-    {
-        return this.query( () -> this.personDao.getPersonForNickname( search ) );
-    }
-
-    public List<Person> getPersonsSortedByNickname()
-    {
-        return this.query( () -> this.personDao.getPersonSortedByNickname() );
-    }
-
-    private List<Person> query( Callable<List<Person>> query )
+    private Person query( Callable<Person> query )
     {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( query );
@@ -70,7 +57,7 @@ public class PersonRepository {
             e.printStackTrace();
         }
 
-        return new ArrayList<>();
+        return null;
     }
 
     private <T> LiveData<T> queryLiveData(Callable<LiveData<T>> query )

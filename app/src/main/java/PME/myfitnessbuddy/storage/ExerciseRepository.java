@@ -152,7 +152,13 @@ public class ExerciseRepository {
         MyFitnessBuddyDatabase.execute( () -> this.repositoryExerciseId = exerciseDao.insertExercise( exercise ) );
     }
 
-/*
+    public void delete( List<Exercise> exercises )
+    {
+        MyFitnessBuddyDatabase.execute( () -> exerciseDao.delete( exercises ) );
+    }
+
+
+    /*
     public long insertAndWait( Exercise exercise ) {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insertExerciseWithMuscleGroups( exercise ) );

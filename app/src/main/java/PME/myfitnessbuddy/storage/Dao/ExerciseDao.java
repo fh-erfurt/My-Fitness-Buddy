@@ -28,7 +28,7 @@ public interface ExerciseDao {
     void update(Exercise... exercise);
 
     @Delete
-    void delete(Exercise... exercise);
+    void delete(List<Exercise> exercises);
 
    @Query("DELETE FROM Exercise")
     void deleteAll();

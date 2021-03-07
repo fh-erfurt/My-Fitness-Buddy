@@ -33,7 +33,7 @@ public interface PersonWeightDao {
     int count();
 
     @Query("SELECT * from PersonWeight ORDER BY id")
-    LiveData<List<PersonWeight>> getPersonWeights();
+    List<PersonWeight> getPersonWeights();
 
 
     @Query("SELECT * from PersonWeight ORDER BY id DESC LIMIT 1")

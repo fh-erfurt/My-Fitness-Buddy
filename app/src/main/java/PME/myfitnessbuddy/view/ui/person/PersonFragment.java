@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.lifecycle.LiveData;
-
 import com.myfitnessbuddy.R;
 
 import org.joda.time.DateTime;
@@ -27,10 +25,11 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     private PersonViewModel personViewModel;
 
-    private LiveData<Person> personLiveData;
-    private LiveData<List<PersonWeight>> personweightLiveData;
+    private Person person = null;
+    private List<PersonWeight> personweights = null;
 
     EditText editTextNewBodyweight;
+    TextView bodyweight;
     Button buttonUpdateActualBodyweight;
 
     @Override
@@ -42,7 +41,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        personViewModel = this.getViewModel(PersonViewModel.class);
+
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         editTextNewBodyweight= (EditText)view.findViewById(R.id.fragment_profile_update_bodyweight_input_number);
@@ -66,33 +65,36 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         buttonUpdateActualBodyweight = (Button) view.findViewById(R.id.fragment_profile_update_bodyweight_button);
         buttonUpdateActualBodyweight.setOnClickListener(this::onClick);
 
+        personViewModel = this.getViewModel(PersonViewModel.class);
+        person = this.personViewModel.getPerson();
+        personweights = this.personViewModel.getAllPersonWeights();
+
+        if(person!=null && personweights!=null){
+
+            TextView age = view.findViewById(R.id.fragment_profile_age_textview);
+            age.setText(Integer.toString(getAge(person.getBirthday())));
+
+            TextView nickname=view.findViewById(R.id.fragment_profile_profilename_textview);
+            nickname.setText(person.getNickname());
+
+            TextView height=view.findViewById(R.id.fragment_profile_height_textview);
+            height.setText(Integer.toString((int) person.getHeight()) + " cm" );
+
+            TextView gender=view.findViewById(R.id.fragment_profile_gender_textview);
+            gender.setText((person.getGender()==1) ? "männlich" : "weiblich");
+
+            bodyweight=view.findViewById(R.id.fragment_profile_bodyweight_textview);
+            bodyweight.setText(Integer.toString((int)personweights.get(personweights.size()-1).getWeight())+ " KG" );
+        }
+
+
+
         return view;
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
 
-        this.personLiveData = personViewModel.getPerson();
-        this.personLiveData.observe(requireActivity(), this::updateViewPerson);
-
-        this.personweightLiveData = personViewModel.getAllPersonWeights();
-        this.personweightLiveData.observe(requireActivity(), this::updateViewPersonWeights);
-
-    }
-
-
-    @Override
-    public void onPause() {
-
-        super.onPause();
-        this.personLiveData.removeObservers(requireActivity());
-        this.personweightLiveData.removeObservers(requireActivity());
-
-    }
-
-
+/*
     private void updateViewPerson(Person person) {
 
         assert getView() != null;
@@ -125,6 +127,8 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     }
 
 
+ */
+
     public int getAge(String birthday) {
 
         DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yy"));
@@ -149,8 +153,10 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             weight = 0;
         }
 
-        PersonWeight personWeight = new PersonWeight(weight);
-        personViewModel.insert(personWeight);
+        PersonWeight personweight = new PersonWeight(weight);
+        personViewModel.insert(personweight);
+
+        bodyweight.setText(personweight.getWeight()+ " KG" );
 
     }
 }

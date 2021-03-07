@@ -29,8 +29,11 @@ import com.myfitnessbuddy.R;
 import com.google.android.material.navigation.NavigationView;
 
 
+import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
 
+import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase_Impl;
+import PME.myfitnessbuddy.storage.PersonRepository;
 import PME.myfitnessbuddy.view.ui.core.Constants;
 import PME.myfitnessbuddy.view.ui.person.PersonFragment;
 import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
@@ -49,6 +52,8 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         database= Room.databaseBuilder(getApplicationContext(),MyFitnessBuddyDatabase.class,"user").allowMainThreadQueries();
+        PersonRepository personRepository = PersonRepository.getRepository(getApplication());
+        personRepository.getLastPerson();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -68,9 +73,6 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         AppCompatDelegate.setDefaultNightMode(
                 darkModeEnabled?AppCompatDelegate.MODE_NIGHT_YES:AppCompatDelegate.MODE_NIGHT_NO
         );
-
-
-
 
 
     }

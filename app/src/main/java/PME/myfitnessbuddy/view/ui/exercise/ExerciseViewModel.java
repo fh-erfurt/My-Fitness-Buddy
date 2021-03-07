@@ -97,7 +97,16 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.muscleGroupRepository.getMuscleGroupLiveData();
     }
  */
+
+
+    ////////////NEU//////////////
     public LiveData<String> getText() {
         return mText;
     }
+
+    public void deleteExercises( List<Exercise> exercises )
+    {
+        this.exerciseRepository.delete( exercises );
+    }
+
 }

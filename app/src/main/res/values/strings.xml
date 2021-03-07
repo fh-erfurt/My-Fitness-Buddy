@@ -50,6 +50,10 @@
     <string name="create_training_category_legs">Beine</string>
     <string name="create_training_category_none">-</string>
 
+    <!--Übung löschen-->
+
+    <string name="action_menu_title_delete">Übungen löschen</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
 

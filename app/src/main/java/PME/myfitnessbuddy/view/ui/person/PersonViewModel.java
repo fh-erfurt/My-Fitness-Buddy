@@ -18,8 +18,8 @@ public class PersonViewModel extends AndroidViewModel {
     private PersonRepository personRepository;
     private PersonWeightRepository personWeightRepository;
 
-    private LiveData<List<PersonWeight>> allPersonWeights;
-    public LiveData<Person> person;
+    private List<PersonWeight> allPersonWeights;
+    public Person person;
 
     public PersonViewModel(@NonNull Application application) {
         super(application);
@@ -58,9 +58,9 @@ public class PersonViewModel extends AndroidViewModel {
       //  personRepository.deleteAllUsers();
     }
 
-    public LiveData<Person> getPerson() {
+    public Person getPerson() {
         return person;
     }
 
-    public LiveData<List<PersonWeight>> getAllPersonWeights() { return allPersonWeights; }
+    public List<PersonWeight> getAllPersonWeights() { return allPersonWeights; }
 }
