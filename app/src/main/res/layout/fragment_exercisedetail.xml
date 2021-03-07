@@ -27,11 +27,11 @@
                 android:layout_width="410dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="48dp"
-                android:background="@color/primary"
+                android:background="@color/primaryTransparent"
                 android:gravity="center"
                 android:text="Übungsname"
                 android:textAlignment="center"
-                android:textColor="@color/accent"
+                style="@style/AccentText"
                 android:textSize="36sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary"
+                style="@style/TransparentPrimaryBackround"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,8 @@
                     android:id="@+id/exercisedetail_reps_increase_button"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/accent"
                     android:text="+"
-                    android:textColor="@color/primary"
+                    style="@style/defaultButton"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
@@ -63,9 +62,8 @@
                     android:layout_height="47dp"
                     android:layout_marginStart="76dp"
                     android:layout_marginEnd="72dp"
-                    android:backgroundTint="@color/accent"
+                    style="@style/defaultButton"
                     android:text="Satz beenden"
-                    android:textColor="@color/primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
@@ -74,12 +72,11 @@
                     android:id="@+id/exercisedetail_reps_input"
                     android:layout_width="55dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/white"
+                    style="@style/defaultEditText"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal"
                     android:text="0"
-                    android:textColor="@color/accent"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_decrease_button"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
@@ -87,12 +84,11 @@
                     android:id="@+id/exercisedetail_weight_input"
                     android:layout_width="55dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/white"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal"
                     android:text="0"
-                    android:textColor="@color/accent"
+                    style="@style/defaultEditText"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -101,9 +97,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="44dp"
-                    android:backgroundTint="@color/accent"
                     android:text="+"
-                    android:textColor="@color/primary"
+                    style="@style/defaultButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -111,9 +106,8 @@
                     android:id="@+id/exercisedetail_weight_decrease_button"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/accent"
+                    style="@style/defaultButton"
                     android:text="-"
-                    android:textColor="@color/primary"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
@@ -125,7 +119,7 @@
                     android:layout_marginTop="12dp"
                     android:text="Wdh."
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="22dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -138,7 +132,7 @@
                     android:layout_marginEnd="72dp"
                     android:text="Gewicht"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="22dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -149,9 +143,8 @@
                     android:layout_height="45dp"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="42dp"
-                    android:backgroundTint="@color/accent"
                     android:text="-"
-                    android:textColor="@color/primary"
+                    style="@style/defaultButton"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary"
+                style="@style/TransparentPrimaryBackround"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +169,7 @@
                     android:gravity="center"
                     android:text="Aufzeichnung Heute"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -219,7 +212,7 @@
                     android:layout_marginBottom="16dp"
                     android:text="Du hast heute noch keine Sätze aufgezeichnet"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -232,7 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@color/primary"
+                style="@style/TransparentPrimaryBackround"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -245,7 +238,7 @@
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="Letzte Aufzeichnung"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -267,7 +260,7 @@
                     android:layout_marginBottom="16dp"
                     android:text="Es wurden noch keine Sätze Aufgezeichnet"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    style="@style/WhiteText"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
