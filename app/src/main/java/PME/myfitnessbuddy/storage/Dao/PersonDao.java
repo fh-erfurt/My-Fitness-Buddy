@@ -39,7 +39,7 @@ public interface PersonDao {
     List<Person> getPersonSortedByNickname();
 
     @Query("SELECT * from Person ORDER BY id DESC LIMIT 1")
-    Person getLastEntry();
+    LiveData <Person> getLastEntry();
 
     @Query("SELECT * FROM Person WHERE nickname LIKE :search")
     List<Person> getPersonForNickname(String search);

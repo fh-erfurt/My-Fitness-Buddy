@@ -46,6 +46,11 @@ public class PersonRepository {
         return this.queryLiveData( () -> this.personDao.getPersons() );
     }
 
+    public LiveData<Person> getLastPerson()
+    {
+        return this.queryLiveData( () -> this.personDao.getLastEntry() );
+    }
+
     public List<Person> getPersonsForNickname(String search )
     {
         return this.query( () -> this.personDao.getPersonForNickname( search ) );
@@ -81,17 +86,6 @@ public class PersonRepository {
         return new MutableLiveData<>();
     }
 
-    public Person getLastPerson() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.personDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new Person("", "",0,0,0);
-    }
 
     public void update(Person person) {
         person.setModified( System.currentTimeMillis() );

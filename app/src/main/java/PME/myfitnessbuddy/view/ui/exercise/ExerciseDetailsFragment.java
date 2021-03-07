@@ -351,9 +351,9 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
  */
 
     private String addLog(String newLine, TrainingsLog trainingsLog, int numberOfSet){
-        return newLine+numberOfSet+". Satz: "+this.dateFormatDDMMYYYY_HHMM.format(trainingsLog.getCreated()) + " Uhr"
-                + "\nrepetitions: "+trainingsLog.getRepetitions()
-                +", weight: "+trainingsLog.getWeight()+", text:"+trainingsLog.getTrainingsLogId();
+        return newLine+numberOfSet+". Satz, "/*+this.dateFormatDDMMYYYY_HHMM.format(trainingsLog.getCreated()) + " Uhr"*/
+                + "Wiederholungen: "+trainingsLog.getRepetitions()
+                +"\nGewicht: "+trainingsLog.getWeight()+"Kg"/*+", text:"+trainingsLog.getTrainingsLogId()*/;
     }
 
     private String createLog(List<TrainingsLog> trainingsLogList) {

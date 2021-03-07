@@ -14,19 +14,17 @@ import PME.myfitnessbuddy.storage.PersonRepository;
 import PME.myfitnessbuddy.storage.PersonWeightRepository;
 
 public class PersonViewModel extends AndroidViewModel {
+
     private PersonRepository personRepository;
     private PersonWeightRepository personWeightRepository;
 
-
-
-
     private LiveData<List<PersonWeight>> allPersonWeights;
-    public LiveData<List<Person>> allUsers;
+    public LiveData<Person> person;
 
     public PersonViewModel(@NonNull Application application) {
         super(application);
         personRepository = PersonRepository.getRepository(application);
-        allUsers = personRepository.getPersons();
+        person = personRepository.getLastPerson();
 
         personWeightRepository = PersonWeightRepository.getRepository(application);
         allPersonWeights = personWeightRepository.getPersonWeights();
@@ -60,8 +58,8 @@ public class PersonViewModel extends AndroidViewModel {
       //  personRepository.deleteAllUsers();
     }
 
-    public LiveData<List<Person>> getAllUsers() {
-        return allUsers;
+    public LiveData<Person> getPerson() {
+        return person;
     }
 
     public LiveData<List<PersonWeight>> getAllPersonWeights() { return allPersonWeights; }
