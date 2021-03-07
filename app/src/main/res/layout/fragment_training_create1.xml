@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Trainingstitel"
-            android:textColor="@color/white"
+            style="@style/WhiteText"
             android:textSize="24sp" />
 
         <EditText
@@ -34,7 +34,8 @@
             android:layout_height="88dp"
             android:hint=""
             android:textAlignment="viewStart"
-            android:textColor="@color/white"></EditText>
+            style="@style/WhiteText">
+        </EditText>
 
         <TextView
             android:id="@+id/textViewTrainingType"
@@ -42,17 +43,15 @@
             android:layout_height="31dp"
             android:layout_marginTop="20dp"
             android:text="Trainingstyp"
-            android:textColor="@color/white"
+            style="@style/WhiteText"
             android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/createTrainingType"
+            style="@style/defaultSpinner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
-
-            android:entries="@array/spinner_create_training_items"
-            android:textColor="@color/white"></Spinner>
+            android:entries="@array/spinner_create_training_items"></Spinner>
 
 
         <Button
@@ -60,7 +59,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/accent"
+            style="@style/defaultButton"
             android:text="Weiter"></Button>
 
 
