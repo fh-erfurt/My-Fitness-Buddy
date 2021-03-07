@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
+    android:background="@color/primaryDarkTransparent"
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -16,12 +17,12 @@
 
         <ImageView
             android:id="@+id/list_item_exercise_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/primary"
             android:padding="5dp"
-            app:srcCompat="@drawable/run" />
+            app:srcCompat="@drawable/dumbell" />
 
     </LinearLayout>
 
@@ -33,17 +34,11 @@
         android:background="@color/primary"
         android:gravity="left|center_vertical"
         android:padding="5dp"
+        android:text="Übungsname"
         android:textColor="@color/accent"
         android:textSize="22sp"
-        android:text="Übungsname"
 
         />
 
-    <!--<Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="Button" />
--->
+
 </LinearLayout>

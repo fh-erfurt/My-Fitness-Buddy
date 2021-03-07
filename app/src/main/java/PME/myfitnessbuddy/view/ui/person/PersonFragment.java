@@ -89,7 +89,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
 
             TextView bmi=view.findViewById(R.id.fragment_profile_bmi_textview);
-            bmi.setText(calculateBmi(person.getWeight(),person.getHeight()));
+            bmi.setText(calculateBmi(personweights.get(personweights.size()-1).getWeight(),person.getHeight()));
         }
 
 
@@ -176,6 +176,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         personViewModel.insert(personweight);
 
         bodyweight.setText(personweight.getWeight()+ " KG" );
+
 
     }
 
