@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    style="@style/TransparentPrimaryBackround">
 
 
 
@@ -13,7 +14,7 @@
     <LinearLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@color/primary">
+        style="@style/TransparentPrimaryBackround">
 
 
         <ImageView
@@ -21,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/primary"
             android:padding="5dp"
             app:srcCompat="@drawable/run" />
 
@@ -30,29 +30,21 @@
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+    style="@style/TransparentPrimaryBackround">
 
     <CheckedTextView
         android:id="@+id/checked_text_item"
         android:layout_width="309dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@color/primary"
-        android:backgroundTint="@color/primary"
+        style="@style/defaultCheckedTextView"
         android:gravity="left|center_vertical"
         android:padding="5dp"
-        android:textColor="@color/accent"
         android:textSize="22sp"
         android:text="Übungsname"
 
         />
 </LinearLayout>
 
-    <!--<Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="Button" />
--->
+
 </LinearLayout>

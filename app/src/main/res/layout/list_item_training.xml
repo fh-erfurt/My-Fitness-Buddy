@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:background="@color/primary"
+    style="@style/TransparentPrimaryBackround"
    >
 
     <TextView
@@ -14,10 +14,9 @@
         android:layout_width="192dp"
         android:layout_height="129dp"
         android:layout_weight="5"
-        android:background="@color/primary"
         android:gravity="center"
         android:padding="5dp"
-        android:textColor="@color/accent"
+        style="@style/AccentText"
         android:textSize="22sp"
         android:text="Training"
          />
@@ -27,11 +26,10 @@
         android:layout_width="172dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@color/primary"
         android:gravity="center"
         android:padding="5dp"
         android:text="Kategorie"
-        android:textColor="@color/accent"
+        style="@style/AccentText"
         android:textSize="22sp" />
 
     <LinearLayout
@@ -48,7 +46,6 @@
             android:layout_height="22dp"
             android:layout_gravity="bottom|center"
             android:layout_weight="5"
-            android:background="@color/primary"
             android:paddingRight="10dp"
             app:srcCompat="@drawable/dumbell" />
 
@@ -57,22 +54,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:background="@color/primary"
             android:gravity="bottom|center"
-            android:textColor="@color/accent"
+            style="@style/AccentText"
             android:textSize="14sp"
-            tools:text="@tools:sample/full_names" />
+            tools:text="Anzahl" />
 
     </LinearLayout>
 
-    <!--<Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="Button"
-        android:background="@color/gray_dark"/>
--->
+
 
 
 </LinearLayout>

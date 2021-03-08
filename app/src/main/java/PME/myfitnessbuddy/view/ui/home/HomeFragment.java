@@ -29,6 +29,8 @@ import com.myfitnessbuddy.R;
 import PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
 
+import PME.myfitnessbuddy.view.ui.person.PersonFragment;
+import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 import PME.myfitnessbuddy.view.ui.training.TrainingListFragment;
 
 
@@ -95,8 +97,9 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
                 replaceFragment(fragment);
                 break;
             case R.id.cardview_home_settings:
-                Snackbar.make(v, "Hier muss noch das fragment hin", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                fragment = new SettingsFragment();
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_fragment_settings);
+                replaceFragment(fragment);
                 break;
 
 

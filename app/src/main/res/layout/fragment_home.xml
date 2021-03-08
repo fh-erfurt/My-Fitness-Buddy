@@ -28,7 +28,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="14dp"
             android:textAlignment="center"
-            android:textColor="@color/accent"
+            style="@style/AccentText"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/home_training"
                         android:textAlignment="center"
-                        android:textColor="@color/primaryDark" />
+                        style="@style/PrimaryText" />
 
                 </LinearLayout>
 
@@ -141,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/home_excersise"
                         android:textAlignment="center"
-                        android:textColor="@color/primaryDark" />
+                        style="@style/PrimaryText"  />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -184,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/home_analytics"
                         android:textAlignment="center"
-                        android:textColor="@color/primaryDark" />
+                        style="@style/PrimaryText"  />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -218,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/home_settings"
                         android:textAlignment="center"
-                        android:textColor="@color/primaryDark" />
+                        style="@style/PrimaryText"  />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

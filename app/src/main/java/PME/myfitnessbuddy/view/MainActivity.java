@@ -29,6 +29,8 @@ import com.myfitnessbuddy.R;
 import com.google.android.material.navigation.NavigationView;
 
 
+import java.util.zip.Inflater;
+
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
 
@@ -87,15 +89,8 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.setReorderingAllowed(true);
 
         switch (item.getItemId()) {
-            case R.id.action_profil:
-                transaction.replace(R.id.nav_host_fragment, PersonFragment.class, null);
-                transaction.commit();
-                return (true);
             case R.id.action_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
