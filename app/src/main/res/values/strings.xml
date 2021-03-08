@@ -65,6 +65,9 @@
     <string name="create_training_trainingname_label">Trainingstitel</string>
     <string name="create_training_trainingstype_label">Trainingstyp</string>
     <string name="create_training_next_button">weiter</string>
+    <!--Training aktualisieren-->
+
+    <string name="trainingdetails_training_label">Trainingsname</string>
 
     <!--Profile-->
     <string name="profile_username_label">Profilname</string>
