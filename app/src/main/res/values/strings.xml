@@ -86,7 +86,7 @@
     <!--Analyse/Evaluation-->
     <string name="evaluation_label">Dein Gewichtsverlauf im Überblick</string>
     <string name="evaluation_textview_default">aus DB</string>
-
+    <string name="evaluation_fragment_label">Analyse</string>
 
     <!--Übung löschen-->
 
