@@ -87,14 +87,15 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
 
         holder.currentExerciseId = current.getExerciseId();
         holder.exerciseName.setText(String.format("%s", current.getExercise().getDesignation()));
+        holder.imageView.setImageResource(current.getExercise().getProfileImageId());
 
         // Check if the item is selected - if so mark it
         if( !selectionTracker.isSelected( (long)position ) ){
-            holder.imageView.setImageResource(current.getExercise().getProfileImageId());
+           // holder.imageView.setImageResource(current.getExercise().getProfileImageId());
 
         }
         else{
-            holder.imageView.setImageResource( R.drawable.ic_baseline_check_24 );
+          //  holder.imageView.setImageResource( R.drawable.ic_baseline_check_24 );
         }
 
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml

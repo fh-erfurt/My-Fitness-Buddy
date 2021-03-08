@@ -5,4 +5,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="accent">#FFC107</color>
     <color name="primaryTransparent">#99333333</color>
+
+
+
+    <color name="primaryLightColor">#84A5D5</color>
+    <color name="primaryColor">#01579b</color>
+
+
 </resources>

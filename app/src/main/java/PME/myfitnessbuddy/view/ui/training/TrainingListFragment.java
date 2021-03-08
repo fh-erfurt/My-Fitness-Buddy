@@ -21,7 +21,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.myfitnessbuddy.R;
@@ -29,14 +28,8 @@ import com.myfitnessbuddy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseItemDetailsLookup;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,13 +73,18 @@ public class TrainingListFragment extends BaseFragment  {
                 )
                 .build();
 
-        tracker.addObserver( new TrainingListFragment.TrainingSelectionObserver(tracker, adapter) );
+        tracker.addObserver( new TrainingSelectionObserver(tracker, adapter) );
         adapter.setSelectionTracker( tracker );
 
 
         trainingListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
 
-        trainingListViewModel.getTrainings().observe(this.requireActivity(), adapter::setTrainings);
+        //trainingListViewModel.getTrainings().observe(this.requireActivity(), adapter::setTrainings);
+
+        trainingListViewModel.getTrainings().observe(this.requireActivity(), trainings -> {
+
+            adapter.submitList( trainings );
+        });
 
         return v;
 
@@ -121,7 +119,7 @@ public class TrainingListFragment extends BaseFragment  {
                 public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 
                     if (item.getItemId() == R.id.list_action_delete) {
-                        trainingListViewModel.deleteTrainings( getSelectedExercises() );
+                        trainingListViewModel.deleteTrainings( getSelectedTrainings() );
                         tracker.clearSelection();
                         return true;
                     }
@@ -146,7 +144,7 @@ public class TrainingListFragment extends BaseFragment  {
             mode = null;
         }
 
-        private List<TrainingWithExercise> getSelectedExercises() {
+        private List<TrainingWithExercise> getSelectedTrainings() {
             List<TrainingWithExercise> selectedContacts = new ArrayList<>(tracker.getSelection().size());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

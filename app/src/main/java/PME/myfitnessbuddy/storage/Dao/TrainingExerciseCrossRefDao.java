@@ -29,6 +29,12 @@ public interface TrainingExerciseCrossRefDao {
     @Query("DELETE FROM TrainingExerciseCrossRef")
     void deleteAll();
 
+    @Query("DELETE FROM TrainingExerciseCrossRef WHERE trainingId = :trainingId")
+    void deleteByTrainingsId(long trainingId);
+
+    @Query("DELETE FROM TrainingExerciseCrossRef WHERE trainingId = :trainingId and exerciseId = :exerciseId")
+    void deleteByTrainingsIdAndExerciseId(long trainingId, long exerciseId);
+
     @Query("SELECT count(*) FROM TrainingExerciseCrossRef")
     int count();
 
@@ -37,6 +43,7 @@ public interface TrainingExerciseCrossRefDao {
 
     @Query("SELECT * from TrainingExerciseCrossRef")
     List<TrainingExerciseCrossRef> getTrainings();
+
 
     @Query("SELECT * from TrainingExerciseCrossRef")
     LiveData<List<TrainingExerciseCrossRef>> getTrainingLiveData();

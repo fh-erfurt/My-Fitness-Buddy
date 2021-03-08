@@ -7,6 +7,7 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
@@ -114,6 +115,11 @@ public class TrainingRepository {
         training.setVersion( 1 );
 
         MyFitnessBuddyDatabase.execute( () -> this.repositoryTrainingId = trainingDao.insert( training ) );
+    }
+
+    public void delete2( Training training )
+    {
+        MyFitnessBuddyDatabase.execute( () -> trainingDao.delete2( training ) );
     }
 
 

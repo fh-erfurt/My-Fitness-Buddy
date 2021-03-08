@@ -29,6 +29,9 @@ public interface TrainingDao {
     @Delete
     void delete(Training... trainings);
 
+    @Delete
+    void delete2(Training training);
+
     @Query("DELETE FROM Training")
     void deleteAll();
 

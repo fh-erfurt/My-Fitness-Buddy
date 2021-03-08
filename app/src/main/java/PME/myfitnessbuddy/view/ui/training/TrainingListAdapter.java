@@ -89,44 +89,36 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
     public TrainingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = this.inflater.inflate(R.layout.list_item_training, parent, false);
 
-        Log.i( "OnCreateViewHolder", "Count: " + ++TrainingListAdapter.counter);
-
         return new TrainingViewHolder(itemView, this.trainingClickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TrainingViewHolder holder, int position) {
 
+        TrainingWithExercise current = this.getItem(position);
 
+        holder.currentTrainingId = current.getTrainingId();
 
-            TrainingWithExercise current = this.trainingList.get(position);
+           // TrainingWithExercise current = this.trainingList.get(position);
             holder.trainingName.setText(String.format("%s", current.getTraining().getDesignation()));
             holder.trainingCategory.setText(String.format("%s", current.getTraining().getCategory()));
             holder.countedExercises.setText(String.format("%s" ,current.exercises.size()));
-            holder.currentTrainingId = current.getTraining().getTrainingId();
+            //holder.currentTrainingId = current.getTraining().getTrainingId();
 
 
 
         // Check if the item is selected - if so mark it
         if( !selectionTracker.isSelected( (long)position ) ){
-            holder.trainingListIcon.setImageResource(R.drawable.dumbell);
+            //holder.trainingListIcon.setImageResource(R.drawable.dumbell);
 
         }
         else{
-            holder.trainingListIcon.setImageResource( R.drawable.ic_baseline_check_24 );
+           // holder.trainingListIcon.setImageResource( R.drawable.ic_baseline_check_24 );
         }
 
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml
         holder.itemView.setActivated( selectionTracker.isSelected( (long)position ) );
 
-    }
-
-    @Override
-    public int getItemCount() {
-        if( this.trainingList != null && !this.trainingList.isEmpty() )
-            return this.trainingList.size();
-        else
-            return 0;
     }
 
     public long getItemId(int position) {

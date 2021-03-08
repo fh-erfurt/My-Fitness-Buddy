@@ -138,7 +138,7 @@ public class TrainingDetailsFragment extends BaseFragment {
                 public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 
                     if (item.getItemId() == R.id.list_action_delete) {
-                       // trainingDetailsViewModel.deleteExercises( getSelectedExercises() );
+                       trainingDetailsViewModel.deleteTrainingExerciseCrossRefs(getArguments().getLong(ARG_TRAINING_ID) ,getSelectedExercises() );
                         tracker.clearSelection();
                         return true;
                     }

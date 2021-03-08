@@ -32,4 +32,8 @@ public class TrainingWithExercise {
 
     public List<Exercise> exercises;
 
+    public long getTrainingId(){
+       return this.training.getTrainingId();
+    }
+
 }

@@ -14,6 +14,7 @@ import java.util.concurrent.ExecutionException;
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
+import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
@@ -62,7 +63,15 @@ public class TrainingExerciseCrossRefRepository {
     }
 
 
+    public void deleteByTrainingId( long id )
+    {
+        MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.deleteByTrainingsId( id ) );
+    }
 
+    public void deleteByTrainingIdAndExerciseId( long trainingId, long exerciseId )
+    {
+        MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.deleteByTrainingsIdAndExerciseId( trainingId, exerciseId) );
+    }
 
 
     private List<TrainingExerciseCrossRef> query( Callable<List<TrainingExerciseCrossRef>> query )
