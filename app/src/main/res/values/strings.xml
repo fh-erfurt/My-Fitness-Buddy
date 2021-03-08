@@ -81,6 +81,13 @@
     <string name="profile_bmi_label">Dein aktueller BMI</string>
     <string name="profile_actual_bmi_label">BMI</string>
     <string name="profile_calculate_bmi_default">berechneter BMI</string>
+
+
+    <!--Analyse/Evaluation-->
+    <string name="evaluation_label">Dein Gewichtsverlauf im Überblick</string>
+    <string name="evaluation_textview_default">aus DB</string>
+
+
     <!--Übung löschen-->
 
     <string name="action_menu_title_delete">Übungen löschen</string>
