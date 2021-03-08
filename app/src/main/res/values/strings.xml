@@ -63,11 +63,18 @@
     <string name="create_training_category_legs">Beine</string>
     <string name="create_training_category_none">-</string>
 
-
-
-
-
-
+    <!--Profile-->
+    <string name="profile_username_label">Profilname</string>
+    <string name="profile_age_label">Alter</string>
+    <string name="profile_gender_label">Geschlecht</string>
+    <string name="profile_bodyweight_label">Körpergewicht</string>
+    <string name="profile_height_label">Größe</string>
+    <string name="profile_default_textview">aus DB</string>
+    <string name="profile_update_bodyweight_label">Körpergewicht aktualisieren</string>
+    <string name="profile_update_bodyweight_button">aktualisieren</string>
+    <string name="profile_bmi_label">Dein aktueller BMI</string>
+    <string name="profile_actual_bmi_label">BMI</string>
+    <string name="profile_calculate_bmi_default">berechneter BMI</string>
     <!--Übung löschen-->
 
     <string name="action_menu_title_delete">Übungen löschen</string>
