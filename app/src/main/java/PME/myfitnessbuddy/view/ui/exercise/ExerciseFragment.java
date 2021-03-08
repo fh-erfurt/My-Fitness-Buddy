@@ -48,14 +48,14 @@ public class ExerciseFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-       exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
+        exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
         View root = inflater.inflate(R.layout.fragment_exercise, container, false);
 
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnToExerciseCreate);
 
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.createExerciseFragment, null));
 
-             RecyclerView exerciseListView = root.findViewById(R.id.exercises);
+        RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {
@@ -80,10 +80,8 @@ public class ExerciseFragment extends BaseFragment {
                         SelectionPredicates.createSelectAnything()
                 )
                 .build();
-
         tracker.addObserver( new ExerciseSelectionObserver(tracker, adapter) );
         adapter.setSelectionTracker( tracker );
-
          */
 
         /////////////////////////////////////7
@@ -97,22 +95,17 @@ public class ExerciseFragment extends BaseFragment {
     }
 /*
     private class ExerciseSelectionObserver extends SelectionTracker.SelectionObserver<Long> {
-
         private final SelectionTracker<Long> tracker;
         private final ExerciseAdapter adapter;
         ActionMode mode;
-
         public ExerciseSelectionObserver(SelectionTracker<Long> tracker, ExerciseAdapter adapter) {
             this.tracker = tracker;
             this.adapter = adapter;
         }
-
         @Override
         public void onSelectionChanged() {
             super.onSelectionChanged();
-
             if (mode != null) return;
-
             mode = requireActivity().startActionMode(new ActionMode.Callback() {
                 @Override
                 public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -120,48 +113,38 @@ public class ExerciseFragment extends BaseFragment {
                     inflater.inflate(R.menu.list_action_mode_menu, menu);
                     return true;
                 }
-
                 @Override
                 public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-
                     if (item.getItemId() == R.id.list_action_delete) {
                         exerciseViewModel.deleteExercises( getSelectedExercises() );
                         tracker.clearSelection();
                         return true;
                     }
-
                     return false;
                 }
-
                 @Override
                 public void onDestroyActionMode(ActionMode mode) {
                 }
-
                 @Override
                 public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
                     return false;
                 }
             });
         }
-
         @Override
         protected void onSelectionCleared() {
             if (mode != null) mode.finish();
             mode = null;
         }
-
         @RequiresApi(api = Build.VERSION_CODES.N)
         private List<Exercise> getSelectedExercises() {
             List<Exercise> selectedContacts = new ArrayList<>(tracker.getSelection().size());
-
             tracker.getSelection().iterator().forEachRemaining(aLong -> {
                 selectedContacts.add(adapter.getContact(aLong.intValue()));
             });
-
             return selectedContacts;
         }
     }
-
  */
 
 }

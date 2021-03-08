@@ -38,4 +38,8 @@ public class ExerciseWithMuscleGroup {
     )
     public List<MuscleGroup> muscleGroups;
 
+    public long getExerciseId(){
+        return this.exercise.getExerciseId();
+    }
+
 }

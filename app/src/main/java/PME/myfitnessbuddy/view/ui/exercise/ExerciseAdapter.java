@@ -47,7 +47,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     private List<ExerciseWithMuscleGroup> exerciseList;
 
     private final ExerciseClickListener exerciseClickListener;
-  //  MuscleGroupRepository muscleGroupRepository = MuscleGroupRepository.getRepository(this.)
+    //  MuscleGroupRepository muscleGroupRepository = MuscleGroupRepository.getRepository(this.)
     private List<MuscleGroup> muscleGroupList;
 
 
@@ -71,7 +71,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
         if (this.exerciseList != null && !this.exerciseList.isEmpty()) {
             ExerciseWithMuscleGroup current = this.exerciseList.get(position);
-   //        LiveData<MuscleGroup> muscleGroup = muscleGroupDao.geMuscleGroupById(current.getMuscleGroups().get(0).getMuscleGroupId());
+            //        LiveData<MuscleGroup> muscleGroup = muscleGroupDao.geMuscleGroupById(current.getMuscleGroups().get(0).getMuscleGroupId());
 
             holder.exerciseName.setText(String.format("%s", current.getExercise().getDesignation()));
 
