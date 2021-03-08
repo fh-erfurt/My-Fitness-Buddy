@@ -5,14 +5,17 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 
 import com.myfitnessbuddy.R;
 
@@ -35,6 +38,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     EditText editTextNewBodyweight;
     TextView bodyweight;
+    TextView bmi;
     Button buttonUpdateActualBodyweight;
 
     @Override
@@ -92,7 +96,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             bodyweight.setText(Integer.toString((int)personweights.get(personweights.size()-1).getWeight())+ " KG" );
 
 
-            TextView bmi=view.findViewById(R.id.fragment_profile_bmi_textview);
+            bmi=view.findViewById(R.id.fragment_profile_bmi_textview);
             bmi.setText(calculateBmi(personweights.get(personweights.size()-1).getWeight(),person.getHeight()));
         }
 
@@ -168,7 +172,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     private void updateActualBodyweight(){
 
-        double weight;
+                double weight;
         try {
             weight = Double.parseDouble(editTextNewBodyweight.getText().toString());
         }
@@ -181,8 +185,12 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         personViewModel.insert(personweight);
 
         bodyweight.setText(personweight.getWeight()+ " KG" );
+        double newWeight = personweight.getWeight();
+        String newBMI =calculateBmi(newWeight,person.getHeight());
 
-
+        bmi.setText(newBMI);
     }
+
+
 
 }
