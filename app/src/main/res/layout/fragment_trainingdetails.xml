@@ -16,11 +16,11 @@
 
         <TextView
             android:id="@+id/fragment_training_details_trainingname"
+            style="@style/TransparentPrimaryBackround"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="50dp"
-            style="@style/TransparentPrimaryBackround"
-            android:text="Trainingsname"
+            android:text="@string/trainingdetails_training_label"
             android:textAlignment="center"
             android:textColor="@color/accent"
             android:textSize="36sp"

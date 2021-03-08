@@ -26,14 +26,14 @@
 
             <TextView
                 android:id="@+id/fragment_exercise_id"
+                style="@style/AccentText"
                 android:layout_width="410dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="48dp"
                 android:background="@color/primaryTransparent"
                 android:gravity="center"
-                android:text="Übungsname"
+                android:text="@string/exercisedetail_exercise_name"
                 android:textAlignment="center"
-                style="@style/AccentText"
                 android:textSize="36sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -51,102 +51,104 @@
 
                 <Button
                     android:id="@+id/exercisedetail_reps_increase_button"
+                    style="@style/defaultButton"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:text="+"
-                    style="@style/defaultButton"
+                    android:text="@string/exercisedetail_increase_button"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
 
                 <Button
                     android:id="@+id/exercisedetail_finish_set_button"
+                    style="@style/defaultButton"
                     android:layout_width="263dp"
                     android:layout_height="47dp"
                     android:layout_marginStart="76dp"
                     android:layout_marginEnd="72dp"
-                    style="@style/defaultButton"
-                    android:text="Satz beenden"
+                    android:text="@string/exercisedetail_finish_set_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_input" />
 
                 <EditText
                     android:id="@+id/exercisedetail_reps_input"
+                    style="@style/defaultEditText"
                     android:layout_width="55dp"
                     android:layout_height="45dp"
-                    style="@style/defaultEditText"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="0"
+                    android:text="@string/exercisedetail_input_default"
                     app:layout_constraintStart_toEndOf="@+id/exercisedetail_reps_decrease_button"
-                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview" />
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_reps_textview"
+                    android:importantForAutofill="no"/>
 
                 <EditText
                     android:id="@+id/exercisedetail_weight_input"
+                    style="@style/defaultEditText"
                     android:layout_width="55dp"
                     android:layout_height="45dp"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="0"
-                    style="@style/defaultEditText"
+                    android:text="@string/exercisedetail_input_default"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_increase_button"
-                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
+                    app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview"
+                    android:importantForAutofill="no"/>
 
                 <Button
                     android:id="@+id/exercisedetail_weight_increase_button"
+                    style="@style/defaultButton"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginEnd="44dp"
-                    android:text="+"
-                    style="@style/defaultButton"
+                    android:text="@string/exercisedetail_increase_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
                 <Button
                     android:id="@+id/exercisedetail_weight_decrease_button"
+                    style="@style/defaultButton"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    style="@style/defaultButton"
-                    android:text="-"
+                    android:text="@string/exercisedetail_decrease_button"
                     app:layout_constraintEnd_toStartOf="@+id/exercisedetail_weight_input"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_weight_textview" />
 
                 <TextView
                     android:id="@+id/exercisedetail_reps_textview"
+                    style="@style/WhiteText"
                     android:layout_width="59dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="88dp"
                     android:layout_marginTop="12dp"
-                    android:text="Wdh."
+                    android:text="@string/exercisedetail_reps_label"
                     android:textAlignment="center"
-                    style="@style/WhiteText"
                     android:textSize="22dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/exercisedetail_weight_textview"
+                    style="@style/WhiteText"
                     android:layout_width="88dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="72dp"
-                    android:text="Gewicht"
+                    android:text="@string/exercisedetail_weight_label"
                     android:textAlignment="center"
-                    style="@style/WhiteText"
                     android:textSize="22dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/exercisedetail_reps_decrease_button"
+                    style="@style/defaultButton"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="42dp"
-                    android:text="-"
-                    style="@style/defaultButton"
+                    android:text="@string/exercisedetail_decrease_button"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -165,13 +167,13 @@
 
                 <TextView
                     android:id="@+id/exercisedetail_today_log_label_textview"
+                    style="@style/WhiteText"
                     android:layout_width="411dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="Aufzeichnung Heute"
+                    android:text="@string/exercisedetail_actual_log_label"
                     android:textAlignment="center"
-                    style="@style/WhiteText"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -185,36 +187,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/exercisedetail_today_log_label_textview" />
 
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </TableLayout>
-
                 <TextView
                     android:id="@+id/exercisedetail_today_log_textview"
+                    style="@style/WhiteText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Du hast heute noch keine Sätze aufgezeichnet"
+                    android:text="@string/exercisedetail_actual_log_default"
                     android:textAlignment="center"
-                    style="@style/WhiteText"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -235,12 +216,12 @@
 
                 <TextView
                     android:id="@+id/exercisedetail_last_log_label_textview"
+                    style="@style/WhiteText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="Letzte Aufzeichnung"
-                    style="@style/WhiteText"
+                    android:text="@string/exercisedetail_last_log_label"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -256,13 +237,13 @@
 
                 <TextView
                     android:id="@+id/exercisedetail_last_log_textview"
+                    style="@style/WhiteText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Es wurden noch keine Sätze Aufgezeichnet"
+                    android:text="@string/exercisedetail_last_log_default"
                     android:textAlignment="center"
-                    style="@style/WhiteText"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

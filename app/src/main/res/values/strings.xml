@@ -41,6 +41,19 @@
     <string name="create_exercise_group_createButton">Erstellen</string>
 
 
+    <!--Übungsdetails -->
+    <string name="exercisedetail_exercise_name">Übungsname</string>
+    <string name="exercisedetail_reps_label">Wdh.</string>
+    <string name="exercisedetail_weight_label">Gewicht</string>
+    <string name="exercisedetail_decrease_button">-</string>
+    <string name="exercisedetail_increase_button">+</string>
+    <string name="exercisedetail_finish_set_button">Satz beenden</string>
+    <string name="exercisedetail_actual_log_label">Aufzeichnung Heute</string>
+    <string name="exercisedetail_last_log_label">Letzte Aufzeichnung</string>
+    <string name="exercisedetail_actual_log_default">Du hast heute noch keine Sätze aufgezeichnet</string>
+    <string name="exercisedetail_last_log_default">Es wurden noch keine Sätze Aufgezeichnet</string>
+    <string name="exercisedetail_input_default">0</string>
+
     <!--Training erstellen-->
 
     <string name="create_training_create_title">Training erstellen</string>
@@ -49,6 +62,31 @@
     <string name="create_training_category_push">Push</string>
     <string name="create_training_category_legs">Beine</string>
     <string name="create_training_category_none">-</string>
+    <string name="create_training_trainingname_label">Trainingstitel</string>
+    <string name="create_training_trainingstype_label">Trainingstyp</string>
+    <string name="create_training_next_button">weiter</string>
+    <!--Training aktualisieren-->
+
+    <string name="trainingdetails_training_label">Trainingsname</string>
+
+    <!--Profile-->
+    <string name="profile_username_label">Profilname</string>
+    <string name="profile_age_label">Alter</string>
+    <string name="profile_gender_label">Geschlecht</string>
+    <string name="profile_bodyweight_label">Körpergewicht</string>
+    <string name="profile_height_label">Größe</string>
+    <string name="profile_default_textview">aus DB</string>
+    <string name="profile_update_bodyweight_label">Körpergewicht aktualisieren</string>
+    <string name="profile_update_bodyweight_button">aktualisieren</string>
+    <string name="profile_bmi_label">Dein aktueller BMI</string>
+    <string name="profile_actual_bmi_label">BMI</string>
+    <string name="profile_calculate_bmi_default">berechneter BMI</string>
+
+
+    <!--Analyse/Evaluation-->
+    <string name="evaluation_label">Dein Gewichtsverlauf im Überblick</string>
+    <string name="evaluation_textview_default">aus DB</string>
+    <string name="evaluation_fragment_label">Analyse</string>
 
     <!--Übung löschen-->
 

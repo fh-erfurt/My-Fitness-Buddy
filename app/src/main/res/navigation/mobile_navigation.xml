@@ -134,4 +134,10 @@
         android:name="PME.myfitnessbuddy.view.ui.settings.SettingsFragment"
         android:label="Einstellungen"
         tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/fragment_evaluation"
+        android:name="PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment"
+        android:label="Analyse"
+        tools:layout="@layout/fragment_evaluation"/>
 </navigation>
