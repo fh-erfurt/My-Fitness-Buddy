@@ -62,6 +62,9 @@
     <string name="create_training_category_push">Push</string>
     <string name="create_training_category_legs">Beine</string>
     <string name="create_training_category_none">-</string>
+    <string name="create_training_trainingname_label">Trainingstitel</string>
+    <string name="create_training_trainingstype_label">Trainingstyp</string>
+    <string name="create_training_next_button">weiter</string>
 
     <!--Profile-->
     <string name="profile_username_label">Profilname</string>

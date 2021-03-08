@@ -21,11 +21,11 @@
 
         <TextView
             android:id="@+id/TextViewTrainingDesignation"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Trainingstitel"
-            style="@style/WhiteText"
+            android:text="@string/create_training_trainingname_label"
             android:textSize="24sp" />
 
         <EditText
@@ -39,11 +39,11 @@
 
         <TextView
             android:id="@+id/textViewTrainingType"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginTop="20dp"
-            android:text="Trainingstyp"
-            style="@style/WhiteText"
+            android:text="@string/create_training_trainingstype_label"
             android:textSize="18sp" />
 
         <Spinner
@@ -56,11 +56,11 @@
 
         <Button
             android:id="@+id/btnCreateTrainingNext"
+            style="@style/defaultButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            style="@style/defaultButton"
-            android:text="Weiter"></Button>
+            android:text="@string/create_training_next_button"></Button>
 
 
     </LinearLayout>
