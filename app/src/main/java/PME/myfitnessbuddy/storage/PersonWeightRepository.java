@@ -46,6 +46,10 @@ public class PersonWeightRepository {
         return this.query( () -> this.personWeightDao.getPersonWeights() );
     }
 
+    public List<PersonWeight> getLastPersonWeights()
+    {
+        return this.query( () -> this.personWeightDao.getLastPersonWeights() );
+    }
 
     private List<PersonWeight> query( Callable<List<PersonWeight>> query )
     {
