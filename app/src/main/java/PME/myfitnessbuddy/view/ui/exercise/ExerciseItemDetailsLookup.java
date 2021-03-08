@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
-public class ExerciseItemDetailsLookup /*extends ItemDetailsLookup<Long>*/{
+public class ExerciseItemDetailsLookup extends ItemDetailsLookup<Long>{
 
     private final RecyclerView recyclerView;
 
     public ExerciseItemDetailsLookup(RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
     }
-/*
+
     @Nullable
     @Override
     public ItemDetails<Long> getItemDetails(@NonNull MotionEvent event) {
@@ -33,9 +33,5 @@ public class ExerciseItemDetailsLookup /*extends ItemDetailsLookup<Long>*/{
         return null;
     }
 
-
-
-
- */
 
 }

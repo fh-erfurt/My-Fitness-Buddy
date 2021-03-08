@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="PME.myfitnessbuddy.view.ui.training.TrainingDetailsFragment">
+    tools:context="PME.myfitnessbuddy.view.ui.training.TrainingDetailsFragment"
+    android:clickable="true"
+    android:focusable="true">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout

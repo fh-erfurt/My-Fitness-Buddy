@@ -157,6 +157,10 @@ public class ExerciseRepository {
         MyFitnessBuddyDatabase.execute( () -> exerciseDao.delete( exercises ) );
     }
 
+    public void delete2( Exercise exercise )
+    {
+        MyFitnessBuddyDatabase.execute( () -> exerciseDao.delete2( exercise ) );
+    }
 
     /*
     public long insertAndWait( Exercise exercise ) {

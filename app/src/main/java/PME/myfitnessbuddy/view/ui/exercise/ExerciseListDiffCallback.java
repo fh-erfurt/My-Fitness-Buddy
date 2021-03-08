@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
-class ListDiffCallback extends DiffUtil.ItemCallback<ExerciseWithMuscleGroup> {
+class ExerciseListDiffCallback extends DiffUtil.ItemCallback<ExerciseWithMuscleGroup> {
 
     @Override
     public boolean areItemsTheSame(@NonNull ExerciseWithMuscleGroup oldItem, @NonNull ExerciseWithMuscleGroup newItem) {

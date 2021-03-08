@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/backround4"
     android:orientation="vertical"
-    tools:context="PME.myfitnessbuddy.view.ui.exercise.ExerciseDetailsFragment">
+    tools:context="PME.myfitnessbuddy.view.ui.exercise.ExerciseDetailsFragment"
+    android:clickable="true"
+    android:focusable="true">
 
     <!-- TODO: Update blank fragment layout -->
 

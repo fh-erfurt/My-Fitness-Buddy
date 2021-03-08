@@ -106,7 +106,10 @@ public class ExerciseViewModel extends AndroidViewModel {
 
     public void deleteExercises( List<ExerciseWithMuscleGroup> exercises )
     {
-        //this.exerciseRepository.delete( exercises );
+        for (int i=0; i < exercises.size(); i++){
+            this.exerciseRepository.delete2( exercises.get(i).getExercise() );
+        }
+
     }
 
 }

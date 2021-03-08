@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
+import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
@@ -44,6 +45,13 @@ public class TrainingListViewModel extends AndroidViewModel {
     public void insertExerciseCrossRef(TrainingExerciseCrossRef trainingExerciseCrossRef) {
 
         this.trainingExerciseCrossRefRepository.insert(trainingExerciseCrossRef);
+    }
+
+    ////////////NEU//////////////
+
+    public void deleteTrainings( List<TrainingWithExercise> trainings )
+    {
+        //this.exerciseRepository.delete( exercises );
     }
 
 }

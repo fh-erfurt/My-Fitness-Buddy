@@ -30,6 +30,9 @@ public interface ExerciseDao {
     @Delete
     void delete(List<Exercise> exercises);
 
+    @Delete
+    void delete2(Exercise exercise);
+
    @Query("DELETE FROM Exercise")
     void deleteAll();
 
