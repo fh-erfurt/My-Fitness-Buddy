@@ -41,6 +41,19 @@
     <string name="create_exercise_group_createButton">Erstellen</string>
 
 
+    <!--Übungsdetails -->
+    <string name="exercisedetail_exercise_name">Übungsname</string>
+    <string name="exercisedetail_reps_label">Wdh.</string>
+    <string name="exercisedetail_weight_label">Gewicht</string>
+    <string name="exercisedetail_decrease_button">-</string>
+    <string name="exercisedetail_increase_button">+</string>
+    <string name="exercisedetail_finish_set_button">Satz beenden</string>
+    <string name="exercisedetail_actual_log_label">Aufzeichnung Heute</string>
+    <string name="exercisedetail_last_log_label">Letzte Aufzeichnung</string>
+    <string name="exercisedetail_actual_log_default">Du hast heute noch keine Sätze aufgezeichnet</string>
+    <string name="exercisedetail_last_log_default">Es wurden noch keine Sätze Aufgezeichnet</string>
+    <string name="exercisedetail_input_default">0</string>
+
     <!--Training erstellen-->
 
     <string name="create_training_create_title">Training erstellen</string>
@@ -49,6 +62,11 @@
     <string name="create_training_category_push">Push</string>
     <string name="create_training_category_legs">Beine</string>
     <string name="create_training_category_none">-</string>
+
+
+
+
+
 
     <!--Übung löschen-->
 
