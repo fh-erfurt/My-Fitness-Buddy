@@ -11,6 +11,7 @@
 
             <item android:state_activated="true">
                 <color android:color="@color/primaryColor" />
+
             </item>
 
             <item>
