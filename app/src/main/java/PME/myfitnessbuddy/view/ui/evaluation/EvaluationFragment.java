@@ -80,7 +80,7 @@ public class EvaluationFragment extends BaseFragment {
     }
 
     private String addWeightLog(String newLine, PersonWeight personWeight, int counter){
-        return newLine+counter+". "+this.dateFormatDDMMYYYY.format(personWeight.getCreated())
+        return newLine+counter+". "+this.dateFormatDDMMYYYY.format(personWeight.getCreated()) + " | "
                 +" Gewicht: "+personWeight.getWeight()+"Kg";
     }
 

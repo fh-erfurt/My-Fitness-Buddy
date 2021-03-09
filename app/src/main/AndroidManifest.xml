@@ -25,12 +25,13 @@
 
         <activity android:name="PME.myfitnessbuddy.view.SettingsActivity"
             android:label="Settings"
+
+
             android:parentActivityName="PME.myfitnessbuddy.view.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PME.myfitnessbuddy.view.MainActivity"/>
         </activity>
-
 
 
         <meta-data

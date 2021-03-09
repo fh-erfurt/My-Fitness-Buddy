@@ -1,0 +1,66 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="PME.myfitnessbuddy.view.ui.training.TrainingCreateFragment1">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/backround4"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Put form controls here-->
+
+
+        <TextView
+            android:id="@+id/TextViewTrainingDesignation"
+            style="@style/WhiteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_training_trainingname_label"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/createTrainingDesignation"
+            style="@style/WhiteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:textAlignment="viewStart"></EditText>
+
+        <TextView
+            android:id="@+id/textViewTrainingType"
+            style="@style/WhiteText"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_training_trainingstype_label"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/createTrainingType"
+            style="@style/defaultSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinner_create_training_items"></Spinner>
+
+
+        <Button
+            android:id="@+id/btnCreateTrainingNext"
+            style="@style/defaultButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_training_next_button"></Button>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
