@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:orientation="horizontal"
-    style="@style/TransparentPrimaryBackround">
-
-
-
+    android:background="@drawable/list_item_background"
+    style="@style/TransparentPrimaryBackround"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="100dp"
@@ -17,32 +16,27 @@
 
 
         <ImageView
-            android:id="@+id/list_item_exercise_with_checkbox_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/list_item_exercise_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
             app:srcCompat="@drawable/dumbell" />
 
     </LinearLayout>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
-
-    <CheckedTextView
-        android:id="@+id/checked_text_item"
-        style="@style/defaultCheckedTextView"
-        android:layout_width="309dp"
+    <TextView
+        android:id="@+id/list_item_exercise_name"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="5"
         android:gravity="left|center_vertical"
         android:padding="5dp"
-        android:text="@string/create_exercise_name"
+        android:text="Übungsname"
+        style="@style/AccentText"
         android:textSize="22sp"
 
         />
-</LinearLayout>
 
 
 </LinearLayout>

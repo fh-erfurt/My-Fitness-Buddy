@@ -10,10 +10,10 @@
     <TextView
         android:id="@+id/evaluation_fragment_label"
         style="@style/AccentText"
-        android:layout_width="384dp"
-        android:layout_height="46dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="14dp"
         android:text="@string/evaluation_fragment_label"
@@ -21,7 +21,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,22 +29,25 @@
         android:id="@+id/imageView5"
         android:layout_width="237dp"
         android:layout_height="230dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="126dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="476dp"
         android:src="@drawable/evaluation_icon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/TransparentPrimaryBackround"
-        android:layout_width="411dp"
-        android:layout_height="361dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="410dp"
+        android:layout_height="328dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/evaluation_bodyweight_label"
@@ -74,16 +77,14 @@
             android:id="@+id/evaluation_bodyweight_textview"
             style="@style/WhiteText"
             android:layout_width="match_parent"
-            android:layout_height="282dp"
-            android:layout_marginTop="14dp"
+            android:layout_height="254dp"
             android:layout_marginBottom="16dp"
             android:text="@string/evaluation_textview_default"
             android:textAlignment="center"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

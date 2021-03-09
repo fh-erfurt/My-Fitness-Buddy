@@ -53,6 +53,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+
         editTextNewBodyweight= (EditText)view.findViewById(R.id.fragment_profile_update_bodyweight_input_number);
         editTextNewBodyweight.addTextChangedListener(new TextWatcher() {
 
