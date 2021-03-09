@@ -48,8 +48,16 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
     CardView cardViewAnalyse;
     CardView cardViewSettings;
     NavHostFragment navHostFragment;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+
+
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);

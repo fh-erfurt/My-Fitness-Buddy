@@ -12,7 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="271dp"
+        android:layout_height="175dp"
         android:layout_weight="1"
 
         android:padding="12dp">
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="92dp"
             android:layout_marginEnd="10dp"
             android:text="Fragmentname"
             android:textAlignment="center"
@@ -31,18 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="123dp"
-            android:layout_height="93dp"
-            android:layout_marginStart="145dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="145dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_home"
-            app:srcCompat="@drawable/logo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -52,14 +40,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="621dp"
+        android:layout_height="wrap_content"
         android:layout_weight="6"
         android:padding="16dp"
         android:weightSum="2">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="179dp"
             android:layout_weight="1"
             android:padding="16dp"
             android:weightSum="2">
@@ -143,7 +131,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="179dp"
             android:layout_weight="1"
             android:padding="16dp"
             android:weightSum="2">

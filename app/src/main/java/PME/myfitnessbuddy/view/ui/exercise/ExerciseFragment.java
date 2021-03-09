@@ -1,5 +1,6 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 
