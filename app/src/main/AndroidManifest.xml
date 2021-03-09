@@ -21,8 +21,7 @@
         </activity>
 
         <activity android:name="PME.myfitnessbuddy.view.MainActivity"
-            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
+            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar" />
 
         <activity android:name="PME.myfitnessbuddy.view.SettingsActivity"
             android:label="Settings"
