@@ -17,13 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.view.ui.ItemTouchHelperAdapter;
 
 public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, ExerciseAdapter.ExerciseViewHolder> {
     public interface ExerciseClickListener {
