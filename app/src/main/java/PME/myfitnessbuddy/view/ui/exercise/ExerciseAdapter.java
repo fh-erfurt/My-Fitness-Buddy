@@ -17,9 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
+import PME.myfitnessbuddy.view.ui.ItemTouchHelperAdapter;
 
 public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, ExerciseAdapter.ExerciseViewHolder> {
     public interface ExerciseClickListener {
@@ -91,11 +95,11 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
 
         // Check if the item is selected - if so mark it
         if( !selectionTracker.isSelected( (long)position ) ){
-           // holder.imageView.setImageResource(current.getExercise().getProfileImageId());
+            // holder.imageView.setImageResource(current.getExercise().getProfileImageId());
 
         }
         else{
-          //  holder.imageView.setImageResource( R.drawable.ic_baseline_check_24 );
+            //  holder.imageView.setImageResource( R.drawable.ic_baseline_check_24 );
         }
 
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml
