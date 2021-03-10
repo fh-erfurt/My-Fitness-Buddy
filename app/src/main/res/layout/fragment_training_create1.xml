@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_training_trainingname_label"
             android:textSize="24sp" />
 
@@ -34,7 +35,7 @@
             android:layout_height="88dp"
             android:hint=""
             android:textAlignment="viewStart"
-            style="@style/WhiteText">
+            style="@style/defaultEditText">
         </EditText>
 
         <TextView
@@ -43,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_training_trainingstype_label"
             android:textSize="18sp" />
 
@@ -51,7 +53,7 @@
             style="@style/defaultSpinner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/spinner_create_training_items"></Spinner>
+            android:entries="@array/spinner_create_training_items"     ></Spinner>
 
 
         <Button

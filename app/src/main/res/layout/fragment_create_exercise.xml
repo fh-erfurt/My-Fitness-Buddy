@@ -19,12 +19,13 @@
 
         <TextView
             android:id="@+id/exerciseName"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_name"
-            style="@style/WhiteText"
-            android:textSize="24sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/createExerciseName"
@@ -32,16 +33,17 @@
             android:layout_height="88dp"
             android:hint=""
             android:textAlignment="viewStart"
-            android:textColor="@color/white"></EditText>
+            style="@style/defaultEditText"></EditText>
 
         <TextView
             android:id="@+id/exerciseDescription"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_description"
-            style="@style/WhiteText"
-            android:textSize="24sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/createExerciseDescription"
@@ -49,18 +51,19 @@
             android:layout_height="88dp"
             android:hint=""
             android:textAlignment="viewStart"
-            style="@style/WhiteText">
+            style="@style/defaultEditText">
 
         </EditText>
 
         <TextView
             android:id="@+id/textView2"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_group_icon"
-            style="@style/WhiteText"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/createExerciseMuscleGroup"
@@ -68,15 +71,16 @@
             android:layout_height="wrap_content"
             android:background="@color/primaryTransparent"
             android:entries="@array/spinner_create_exercise_items"
-            style="@style/WhiteText"></Spinner>
+            style="@style/defaultSpinner"></Spinner>
 
         <TextView
             android:id="@+id/exercisedetail_last_log_label_textview"
+            style="@style/WhiteText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_group_musclegroups"
-            style="@style/WhiteText"
             android:textSize="18sp" />
 
         <LinearLayout

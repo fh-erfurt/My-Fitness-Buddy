@@ -25,12 +25,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_training_trainingname_label"
             android:textSize="24sp" />
 
         <EditText
             android:id="@+id/createTrainingDesignation"
-            style="@style/WhiteText"
+            style="@style/defaultEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint=""
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_marginTop="20dp"
+            android:background="@color/primaryTransparent"
             android:text="@string/create_training_trainingstype_label"
             android:textSize="18sp" />
 
