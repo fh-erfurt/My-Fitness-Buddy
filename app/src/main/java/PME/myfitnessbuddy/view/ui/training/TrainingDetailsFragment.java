@@ -141,6 +141,9 @@ public class TrainingDetailsFragment extends BaseFragment {
                        trainingDetailsViewModel.deleteTrainingExerciseCrossRefs(getArguments().getLong(ARG_TRAINING_ID) ,getSelectedExercises() );
                         tracker.clearSelection();
                         return true;
+                    }else if (item.getItemId() == R.id.list_action_cancel) {
+                        tracker.clearSelection();
+                        return true;
                     }
 
                     return false;

@@ -34,7 +34,7 @@
         <item name="android:background">@color/primaryTransparent</item>
         <item name="android:backgroundTint">@color/primaryTransparent</item>
         <item name="android:textColor">@color/white</item>
-
+z
     </style>
     <style name="defaultCheckedTextView" parent="TextAppearance.AppCompat">
     <item name="android:background">@color/primaryTransparent</item>

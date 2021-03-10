@@ -90,7 +90,9 @@
 
     <!--Übung löschen-->
 
-    <string name="action_menu_title_delete">Übungen löschen</string>
+    <string name="action_menu_title_delete">Element löschen</string>
+    <string name="action_menu_title_clear">Löschen abbrecen</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

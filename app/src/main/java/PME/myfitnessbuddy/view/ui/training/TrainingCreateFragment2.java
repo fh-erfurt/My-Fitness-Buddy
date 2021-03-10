@@ -91,7 +91,6 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 
-
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
         viewModel.getTrainingsName().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
             @Override

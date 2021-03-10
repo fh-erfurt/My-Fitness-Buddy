@@ -122,6 +122,9 @@ public class TrainingListFragment extends BaseFragment  {
                         trainingListViewModel.deleteTrainings( getSelectedTrainings() );
                         tracker.clearSelection();
                         return true;
+                    }else if (item.getItemId() == R.id.list_action_cancel) {
+                        tracker.clearSelection();
+                        return true;
                     }
 
                     return false;

@@ -108,7 +108,4 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
                 || super.onSupportNavigateUp();
     }
 
-
-
-
 }
