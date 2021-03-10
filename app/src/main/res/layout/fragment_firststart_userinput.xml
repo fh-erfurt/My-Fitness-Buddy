@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/firststart_age_input"
                 android:layout_width="219dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="16dp"
@@ -95,7 +95,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/firststart_gender_input"
                 android:layout_width="198dp"
                 android:layout_height="31dp"
                 android:layout_marginTop="7dp"
@@ -106,10 +106,10 @@
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_age_input" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal"
+                android:id="@+id/firststart_height_input"
                 android:layout_width="221dp"
                 android:layout_height="33dp"
                 android:layout_marginTop="9dp"
@@ -122,7 +122,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/firststart_label_gender_textview" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal2"
+                android:id="@+id/firststart_bodyweight_input"
                 android:layout_width="170dp"
                 android:layout_height="31dp"
                 android:layout_marginTop="9dp"
@@ -132,7 +132,7 @@
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_height_input" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
