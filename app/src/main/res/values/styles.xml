@@ -12,7 +12,9 @@
     <style name="PrimaryText" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/primaryDark</item>
     </style>
-
+    <style name="WhiteView" parent="TextAppearance.AppCompat">
+        <item name="background">@color/white</item>
+    </style>
     <style name="TransparentPrimaryBackround" parent="TextAppearance.AppCompat">
         <item name="android:background">@color/primaryTransparent</item>
     </style>
