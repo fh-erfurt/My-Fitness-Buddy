@@ -24,13 +24,13 @@
             android:layout_height="wrap_content"
             android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_name"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/createExerciseName"
             style="@style/defaultEditText"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:hint=""
             android:textAlignment="viewStart"></EditText>
 
@@ -42,13 +42,13 @@
             android:layout_marginTop="5dp"
             android:background="@color/primaryTransparent"
             android:text="@string/create_exercise_description"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/createExerciseDescription"
             style="@style/defaultEditText"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:hint=""
             android:textAlignment="viewStart">
 
@@ -84,7 +84,7 @@
         <LinearLayout
             style="@style/TransparentPrimaryBackround"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="69dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -96,7 +96,7 @@
                     android:id="@+id/checkboxBizeps"
                     style="@style/WhiteText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:text="@string/create_exercise_group_biceps"
                     android:textSize="18sp" />
 
@@ -118,7 +118,7 @@
                     android:id="@+id/checkboxChest"
                     style="@style/WhiteText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:text="@string/create_exercise_group_chest"
                     android:textSize="18sp" />
 
@@ -140,7 +140,7 @@
                     android:id="@+id/checkbox_meat6"
                     style="@style/WhiteText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:text="Frei"
                     android:textSize="18sp" />
 
@@ -159,7 +159,7 @@
             android:id="@+id/btnCreateExercise"
             style="@style/defaultButton"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/create_exercise_group_createButton"></Button>
 
 
