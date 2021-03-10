@@ -9,7 +9,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backround4">
+        android:background="@drawable/backround4"
+        tools:layout_editor_absoluteX="-345dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/fragment_profile_image"
@@ -19,7 +21,7 @@
             android:layout_marginTop="90dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/dumbell"/>
+            app:srcCompat="@drawable/dumbell" />
 
         <View
             android:id="@+id/view6"
@@ -32,13 +34,13 @@
 
         <TextView
             android:id="@+id/fragment_profile_profilename_textview"
+            style="@style/WhiteText"
             android:layout_width="204dp"
             android:layout_height="47dp"
             android:layout_marginStart="68dp"
             android:layout_marginTop="16dp"
             android:text="Profilname"
             android:textAlignment="center"
-            style="@style/WhiteText"
             android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_image" />
@@ -47,10 +49,13 @@
             android:id="@+id/constraintLayout"
             style="@style/TransparentPrimaryBackround"
             android:layout_width="437dp"
-            android:layout_height="197dp"
+            android:layout_height="141dp"
             android:layout_marginStart="122dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fragment_profile_image"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -59,9 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="Alter"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +78,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Geschlecht"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_age_textview" />
 
@@ -82,24 +87,24 @@
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="28dp"
                 android:text="Hier alter aus db"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/fragment_profile_gender_textview"
                 style="@style/WhiteText"
-                android:layout_width="124dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="28dp"
                 android:text="Geschlecht aus DB"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_age_textview" />
 
@@ -112,7 +117,7 @@
                 android:layout_marginEnd="28dp"
                 android:text="Gewicht aus DB"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_height_textview" />
 
@@ -125,7 +130,7 @@
                 android:layout_marginEnd="28dp"
                 android:text="Größe aus DB"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_gender_textview" />
 
@@ -137,7 +142,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Größe"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_gender_textview" />
 
@@ -149,7 +154,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Gewicht"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_height_textview" />
 
@@ -170,9 +175,10 @@
             android:layout_width="437dp"
             android:layout_height="99dp"
             android:layout_marginStart="97dp"
-            android:layout_marginEnd="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fragment_profile_profilename_textview"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <TextView
@@ -181,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:layout_marginEnd="77dp"
+                android:layout_marginEnd="100dp"
                 android:text="Gewicht aktuallisieren"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -235,14 +241,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
             style="@style/TransparentPrimaryBackround"
             android:layout_width="437dp"
             android:layout_height="97dp"
-            android:layout_marginStart="74dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/view6"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
             <TextView
@@ -278,8 +285,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="errechneter BMI"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view9" />
 
@@ -290,8 +299,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
                 android:text="BMI"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view9" />
 
