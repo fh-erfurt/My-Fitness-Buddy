@@ -118,16 +118,33 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         }
 
     }
+    private void replaceFragment(Fragment newFragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        if(!newFragment.isAdded()) {
+            fragmentManager.beginTransaction();
+            transaction.replace(R.id.nav_host_fragment, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+
+            } else {
+            transaction.show(newFragment);
+            }
+        }
+
+    /*
     public void replaceFragment(Fragment someFragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.setReorderingAllowed(true);
-        transaction.replace(R.id.nav_host_fragment, someFragment);
+        transaction.add(R.id.nav_host_fragment, someFragment);
         transaction.addToBackStack(null);
         transaction.commit();
 
 
     }
+    */
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {

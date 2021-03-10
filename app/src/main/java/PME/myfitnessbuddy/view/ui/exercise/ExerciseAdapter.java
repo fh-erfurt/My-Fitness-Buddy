@@ -101,7 +101,6 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml
         holder.itemView.setActivated( selectionTracker.isSelected( (long)position ) );
 
-
     }
 
     @Override

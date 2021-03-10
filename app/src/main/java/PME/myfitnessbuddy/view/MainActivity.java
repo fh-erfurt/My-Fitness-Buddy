@@ -65,7 +65,7 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.fragment_traininglist,R.id.fragment_exercise,R.id.fragment_profile)
+                R.id.nav_home, R.id.fragment_traininglist,R.id.fragment_exercise,R.id.fragment_profile, R.id.fragment_userinput)
                 .setDrawerLayout(drawerLayout)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);

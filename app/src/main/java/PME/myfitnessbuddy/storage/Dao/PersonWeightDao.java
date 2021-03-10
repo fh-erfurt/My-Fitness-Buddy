@@ -41,5 +41,4 @@ public interface PersonWeightDao {
     @Query("SELECT * from PersonWeight ORDER BY id DESC LIMIT 1")
     PersonWeight getLastEntry();
 
-
 }

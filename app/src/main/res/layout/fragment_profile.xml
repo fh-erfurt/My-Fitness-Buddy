@@ -63,7 +63,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view6">
 
             <TextView
-                android:id="@+id/fragment_profile_label_age_textview"
+                android:id="@+id/firststart_label_age_textview"
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/fragment_profile_label_gender_textview"
+                android:id="@+id/firststart_label_gender_textview"
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:text="@string/profile_gender_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_age_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_age_textview" />
 
             <TextView
                 android:id="@+id/fragment_profile_age_textview"
@@ -139,7 +139,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/fragment_profile_gender_textview" />
 
             <TextView
-                android:id="@+id/fragment_profile_label_height_textview"
+                android:id="@+id/firststart_label_height_textview"
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,10 +148,10 @@
                 android:text="@string/profile_height_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_gender_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_gender_textview" />
 
             <TextView
-                android:id="@+id/fragment_profile_label_bodyweight_textview"
+                android:id="@+id/firststart_label_bodyweight_textview"
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                 android:text="@string/profile_bodyweight_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_height_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview" />
 
             <View
                 android:id="@+id/view7"
@@ -169,7 +169,7 @@
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_profile_label_bodyweight_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_bodyweight_textview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
