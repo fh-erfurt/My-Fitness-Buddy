@@ -16,7 +16,7 @@
             style="@style/defaultButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="4dp"
             android:text="@string/create_training_next_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -26,9 +26,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             style="@style/TransparentPrimaryBackround"
-            android:layout_width="395dp"
-            android:layout_height="244dp"
-            android:layout_marginTop="54dp"
+            android:layout_width="392dp"
+            android:layout_height="385dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +40,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/profile_age_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_age_textview2" />
 
             <TextView
                 android:id="@+id/firststart_label_age_textview2"
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/profile_username_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="40dp"
                 android:text="@string/profile_gender_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +76,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="36dp"
                 android:text="@string/profile_height_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_label_gender_textview" />
+
 
             <TextView
                 android:id="@+id/firststart_label_bodyweight_textview"
@@ -88,75 +89,87 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="49dp"
                 android:text="@string/profile_bodyweight_label"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview"
+                app:layout_constraintVertical_bias="1.0" />
 
             <EditText
                 android:id="@+id/firststart_age_input"
                 android:layout_width="188dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="2dp"
                 android:ems="10"
                 android:inputType="number"
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_height_input"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_username_input" />
 
             <EditText
                 android:id="@+id/firststart_username_input"
                 android:layout_width="188dp"
-                android:layout_height="33dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="1dp"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="text"
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_age_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/firststart_gender_input"
                 android:layout_width="190dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_bodyweight_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_height_input" />
 
             <EditText
                 android:id="@+id/firststart_height_input"
                 android:layout_width="189dp"
-                android:layout_height="32dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_gender_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_age_input" />
 
             <EditText
                 android:id="@+id/firststart_bodyweight_input"
                 android:layout_width="135dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="11dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="42dp"
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:textAlignment="textEnd"
                 android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_gender_input" />
 
@@ -164,8 +177,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="196dp"
-            android:layout_height="203dp"
+            android:layout_width="160dp"
+            android:layout_height="124dp"
             android:layout_marginStart="98dp"
             android:layout_marginTop="64dp"
             android:layout_marginEnd="99dp"
@@ -176,10 +189,10 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="324dp"
-            android:layout_height="92dp"
+            android:layout_width="297dp"
+            android:layout_height="94dp"
             android:layout_marginStart="34dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="34dp"
             android:text="Bevor du starten kannst, benötigen wir noch kurz ein paar Infos über dich"
             android:textAlignment="center"

@@ -33,7 +33,7 @@
             app:destination="@id/fragment_settings" />
         <action
             android:id="@+id/action_nav_home_to_firstAppStartFragment"
-            app:destination="@id/firstAppStartFragment" />
+            app:destination="@id/fragment_userinput" />
     </fragment>
 
 
@@ -144,7 +144,7 @@
         android:label="Analyse"
         tools:layout="@layout/fragment_evaluation"/>
     <fragment
-        android:id="@+id/firstAppStartFragment"
+        android:id="@+id/fragment_userinput"
         android:name="PME.myfitnessbuddy.view.ui.person.FirstAppStartFragment"
         android:label="FirstAppStartFragment" />
 </navigation>
