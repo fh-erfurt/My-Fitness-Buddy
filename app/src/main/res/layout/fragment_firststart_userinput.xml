@@ -26,8 +26,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             style="@style/TransparentPrimaryBackround"
-            android:layout_width="392dp"
-            android:layout_height="385dp"
+            android:layout_width="396dp"
+            android:layout_height="361dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -89,14 +89,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="49dp"
+                android:layout_marginTop="43dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/profile_bodyweight_label"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview" />
 
             <EditText
                 android:id="@+id/firststart_age_input"
@@ -108,6 +107,7 @@
                 android:ems="10"
                 android:inputType="number"
                 android:textAlignment="textEnd"
+                android:textColor="@color/accent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/firststart_height_input"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -121,27 +121,13 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="1dp"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="textPersonName"
                 android:textAlignment="textEnd"
+                android:textColor="@color/accent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/firststart_age_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/firststart_gender_input"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="8dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/firststart_bodyweight_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firststart_height_input" />
 
             <EditText
                 android:id="@+id/firststart_height_input"
@@ -149,12 +135,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:textAlignment="textEnd"
+                android:textColor="@color/accent"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/firststart_gender_input"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_bodyweight_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firststart_gender_input" />
+
+            <EditText
+                android:id="@+id/firststart_gender_input"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="4dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textAlignment="textEnd"
+                android:textColor="@color/accent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/firststart_height_input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_age_input" />
 
@@ -164,14 +167,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="42dp"
+                android:layout_marginBottom="11dp"
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:textAlignment="textEnd"
+                android:textColor="@color/accent"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firststart_gender_input" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_height_input" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -180,7 +184,7 @@
             android:layout_width="160dp"
             android:layout_height="124dp"
             android:layout_marginStart="98dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="36dp"
             android:layout_marginEnd="99dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
