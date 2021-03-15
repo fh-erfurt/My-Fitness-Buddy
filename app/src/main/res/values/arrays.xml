@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinner_create_exercise_items">
-        <item>@string/create_exercise_group_biceps</item>
+
+    <string-array name="spinner_create_exercise_items"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:color="#ffff0000">@string/create_exercise_group_biceps</item>
         <item>@string/create_exercise_group_legs</item>
         <item>@string/create_exercise_group_back</item>
         <item>@string/create_exercise_group_chest</item>

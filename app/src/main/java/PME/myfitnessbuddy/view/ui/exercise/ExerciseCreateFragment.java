@@ -69,8 +69,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exerciseName = (EditText) root.findViewById(R.id.createExerciseName);
         exerciseDescription = (EditText) root.findViewById(R.id.createExerciseDescription);
         exercisePicture = (Spinner) root.findViewById(R.id.createExerciseMuscleGroup);
-
-
+        
         legs = (CheckBox) root.findViewById(R.id.checkboxLegs);
         biceps = (CheckBox) root.findViewById(R.id.checkboxBizeps);
         chest = (CheckBox) root.findViewById(R.id.checkboxChest);
@@ -131,6 +130,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         String name = exerciseName.getText().toString();
         String description = exerciseDescription.getText().toString();
         String pictureName = exercisePicture.getSelectedItem().toString();
+
 
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
