@@ -34,13 +34,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
+
             <TextView
                 android:id="@+id/firststart_label_age_textview"
                 style="@style/WhiteText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="36dp"
                 android:text="@string/profile_age_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="40dp"
                 android:text="@string/profile_username_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/profile_gender_label"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +83,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firststart_label_gender_textview" />
 
-
             <TextView
                 android:id="@+id/firststart_label_bodyweight_textview"
                 style="@style/WhiteText"
@@ -95,7 +95,8 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/firststart_label_height_textview"
+                app:layout_constraintVertical_bias="0.0" />
 
             <EditText
                 android:id="@+id/firststart_age_input"

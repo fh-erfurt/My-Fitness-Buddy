@@ -210,6 +210,7 @@
 
             <EditText
                 android:id="@+id/fragment_profile_update_bodyweight_input_number"
+                style="@style/defaultEditText"
                 android:layout_width="55dp"
                 android:layout_height="44dp"
                 android:layout_marginStart="45dp"
@@ -219,7 +220,7 @@
                 android:hint="KG"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
-                style="@style/defaultEditText"
+                android:textColorHint="@color/accent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
@@ -232,6 +233,7 @@
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="45dp"
                 android:text="@string/profile_update_bodyweight_button"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
 
