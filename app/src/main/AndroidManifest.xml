@@ -32,14 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PME.myfitnessbuddy.view.MainActivity"/>
         </activity>
-        <activity android:name="PME.myfitnessbuddy.view.FirstStartActivity"
-            android:label="FirstStart"
 
+        <activity android:name="PME.myfitnessbuddy.view.FirstStartActivity"
+            android:label="Einrichtung"
 
             android:parentActivityName="PME.myfitnessbuddy.view.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="PME.myfitnessbuddy.view.MainActivity"/>
+                android:value="PME.myfitnessbuddy.view.MainActivity" />
         </activity>
 
         <meta-data
