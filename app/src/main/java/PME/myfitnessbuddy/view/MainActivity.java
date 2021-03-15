@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -54,6 +55,13 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences prefs=getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart=prefs.getBoolean("firstStart",true);
+        if (firstStart){
+            showFirstAppStartFragment();
+        }
+
+
         database= Room.databaseBuilder(getApplicationContext(),MyFitnessBuddyDatabase.class,"user").allowMainThreadQueries();
         PersonRepository personRepository = PersonRepository.getRepository(getApplication());
         personRepository.getLastPerson();
@@ -65,7 +73,7 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.fragment_traininglist,R.id.fragment_exercise,R.id.fragment_profile, R.id.fragment_userinput)
+                R.id.nav_home, R.id.fragment_traininglist,R.id.fragment_exercise,R.id.fragment_profile, R.id.firstStartActivity)
                 .setDrawerLayout(drawerLayout)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -106,6 +114,15 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void showFirstAppStartFragment(){
+        Intent intent = new Intent(this, FirstStartActivity.class);
+        startActivity(intent);
+        SharedPreferences prefs=getSharedPreferences("prefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor=prefs.edit();
+        editor.putBoolean("firstStart",false);
+        editor.apply();
     }
 
 }

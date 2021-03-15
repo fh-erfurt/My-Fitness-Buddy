@@ -32,7 +32,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PME.myfitnessbuddy.view.MainActivity"/>
         </activity>
+        <activity android:name="PME.myfitnessbuddy.view.FirstStartActivity"
+            android:label="FirstStart"
 
+
+            android:parentActivityName="PME.myfitnessbuddy.view.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="PME.myfitnessbuddy.view.MainActivity"/>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
