@@ -47,6 +47,11 @@ public class PersonRepository {
         return this.query( () -> this.personDao.getLastEntry().get(0) );
     }
 
+    public Person getPersonFromNickname(String name)
+    {
+        return this.query( () -> this.personDao.getPersonForNickname(name).get(0));
+    }
+
 
     private Person query( Callable<Person> query )
     {
