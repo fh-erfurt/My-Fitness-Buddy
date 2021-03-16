@@ -34,8 +34,7 @@
         </activity>
 
         <activity android:name="PME.myfitnessbuddy.view.FirstStartActivity"
-            android:label="Einrichtung"
-
+            android:theme="@style/Theme.MyFitnessBuddy.NoActionBar"
             android:parentActivityName="PME.myfitnessbuddy.view.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
