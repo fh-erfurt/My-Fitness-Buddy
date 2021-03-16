@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.Objects;
 
 public class BaseFragment extends Fragment {
+
     /*
        Getting a ViewModel as well as a specific AndroidViewModel that has
        access to the context requires some effort. This method hides all the
@@ -40,4 +41,5 @@ public class BaseFragment extends Fragment {
                 ((AppCompatActivity) requireActivity()).getSupportActionBar()
         ).setDisplayHomeAsUpEnabled(false);
     }
+
 }

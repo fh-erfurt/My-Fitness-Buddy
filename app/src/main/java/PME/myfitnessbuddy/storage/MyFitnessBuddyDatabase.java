@@ -47,9 +47,11 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
      */
 
     public abstract PersonDao personDao();
+
     public abstract PersonWeightDao personWeightDao();
+
     public abstract TrainingDao trainingDao();
-  //  public abstract MuscleGroupDao muscleGroupDao();
+
     public abstract ExerciseDao exerciseDao();
 
     public abstract MuscleGroupDao muscleGroupDao();
@@ -60,18 +62,15 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     public abstract TrainingsLogDao trainingsLogDao();
 
-
-
-
     /*
-        Executor service to perform database operations asynchronous and independent from UI thread
+     *  Executor service to perform database operations asynchronous and independent from UI thread
      */
     private static final int NUMBER_OF_THREADS = 4;
     private static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool( NUMBER_OF_THREADS );
 
     /*
-        Singleton Instance
+     *   Singleton Instance
      */
     private static volatile MyFitnessBuddyDatabase INSTANCE;
 

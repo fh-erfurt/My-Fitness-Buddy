@@ -24,6 +24,9 @@ public class ExerciseWithTrainingsLog {
     @Embedded
     public Exercise exercise;
 
+    /**
+     * sorted by creation date, from the youngest to the oldest log entry
+     */
     public void sortTrainingsLog() {
         Collections.sort(this.trainingsLog);
         Collections.reverse(this.trainingsLog);

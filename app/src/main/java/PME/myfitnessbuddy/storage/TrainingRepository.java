@@ -67,7 +67,6 @@ public class TrainingRepository {
         return null;
     }
 
-
     public List<Training> getTrainingsForDesignation(String search )
     {
         return this.query( () -> this.trainingDao.getTrainingForDesignation( search ) );

@@ -18,6 +18,7 @@ import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 
 public class TrainingsLogRepository {
+
     public static final String LOG_TAG = "TrainingsLogRepository";
 
     public long getRepositoryTrainingsLogId() {
@@ -67,35 +68,6 @@ public class TrainingsLogRepository {
         return null;
     }
 
-
-
-        /*
-    /// Die letzten 3 Einträge des letzten trainingstages
-     */
-
-    /*
-        public LiveData<List<TrainingsLog>> actualTrainingsDayLast3Entries()
-        {
-            try {
-                return MyFitnessBuddyDatabase.executeWithReturn( this.trainingsLogDao::actualTrainingsDayLast3Entries);
-            }
-            catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-     */
-
-
-
-        /*
-    /// Die letzten 3 Einträge des aktuellen trainingstages
-     */
-
-
-
-
     private List<TrainingsLog> query( Callable<List<TrainingsLog>> query )
     {
         try {
@@ -114,7 +86,6 @@ public class TrainingsLogRepository {
 
         MyFitnessBuddyDatabase.execute( () -> trainingsLogDao.update( trainingsLog) );
     }
-
 
     public void insert(TrainingsLog trainingsLog) {
         trainingsLog.setCreated( System.currentTimeMillis() );
@@ -154,4 +125,5 @@ public class TrainingsLogRepository {
         // Well, is this a reasonable default return value?
         return new MutableLiveData<>();
     }
+
 }

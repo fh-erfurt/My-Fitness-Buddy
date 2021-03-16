@@ -62,32 +62,11 @@ public class ExerciseRepository {
         return this.query( () -> this.exerciseDao.getAllExercisesWhichAreNotTraining(trainingId) );
     }
 
-
-    /*public LiveData<List<Exercise>> getExerciseLiveData()
-    {
-        if( this.allExercise == null ) {
-            this.allExercise = this.queryLiveData(this.exerciseDao::getExerciseLiveData);
-        }
-
-        return this.allExercise;
-    }*/
-
-
-    public List<Exercise> getExerciseForDesignation(String search )
-    {
-        return this.query( () -> this.exerciseDao.getExerciseForDesignation( search ) );
-    }
-
-
     public List<ExerciseWithMuscleGroup> allExercises()
     {
         return this.query2( () -> this.exerciseDao.getAllExercises( ) );
     }
 
-    public List<Exercise> getExerciseSortedByDesignation()
-    {
-        return this.query( () -> this.exerciseDao.getExerciseSortedByDesignation() );
-    }
 
     private List<Exercise> query( Callable<List<Exercise>> query )
     {
@@ -162,42 +141,11 @@ public class ExerciseRepository {
         MyFitnessBuddyDatabase.execute( () -> exerciseDao.delete2( exercise ) );
     }
 
-    /*
-    public long insertAndWait( Exercise exercise ) {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insertExerciseWithMuscleGroups( exercise ) );
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
-
- */
     public LiveData<Exercise> getExerciseByIdAsLiveData(long exerciseId )
     {
         return this.queryLiveData(() -> this.exerciseDao.getExerciseById(exerciseId) );
     }
-/*
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public LiveData<List<Exercise>> getExerciseLiveData()
-    {
-        if( this.allExercises == null )
-            this.allExercises = Transformations.map(
-                    this.queryLiveData(this.exerciseDao::getExercisesWithMuscleGroups),
-                    input -> input
-                            .stream()
-                            .map( ExerciseWithMuscleGroup::merge )
-                            .collect(Collectors.toList())
-            );
 
-        return this.allExercises;
-    }
-
-
- */
 public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
     try {
         return MyFitnessBuddyDatabase.executeWithReturn( this.exerciseDao::getExercisesWithMuscleGroups );

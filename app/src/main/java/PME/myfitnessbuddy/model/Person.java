@@ -32,7 +32,6 @@ public class Person {
     @ColumnInfo(name = "weight")
     private double weight;
 
-
     @NonNull
     @ColumnInfo(name = "created")
     private long created;

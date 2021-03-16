@@ -103,20 +103,4 @@ public class PersonWeightRepository {
         MyFitnessBuddyDatabase.execute( () -> personWeightDao.insert( personWeight ) );
     }
 
-
-    public long insertAndWait( PersonWeight personWeight ) {
-        personWeight.setCreated( System.currentTimeMillis() );
-        personWeight.setModified( personWeight.getCreated() );
-        personWeight.setVersion( 1 );
-
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> personWeightDao.insertPersonWeight( personWeight ) );
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
 }

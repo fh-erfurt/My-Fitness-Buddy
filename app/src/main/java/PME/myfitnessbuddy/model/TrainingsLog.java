@@ -12,7 +12,6 @@ public class TrainingsLog implements Comparable<TrainingsLog> {
     @ColumnInfo(name = "trainingsLogId")
     private long trainingsLogId;
 
-
     private long exerciseCreatorId;
 
     @NonNull
@@ -125,10 +124,15 @@ public class TrainingsLog implements Comparable<TrainingsLog> {
         this.exerciseCreatorId = exerciseCreatorId;
     }
 
+    /**
+     *
+     * in a container, the log entries are sorted according to the creation date o
+     */
     @Override
     public int compareTo(TrainingsLog o) {
 
         return Long.compare(this.created, o.created);
 
     }
+
 }

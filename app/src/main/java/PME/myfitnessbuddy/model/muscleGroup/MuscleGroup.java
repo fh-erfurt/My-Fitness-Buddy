@@ -15,41 +15,10 @@ public class MuscleGroup {
     @ColumnInfo(name = "muscleGroupId")
     private long muscleGroupId;
 
-    /*
-    public long getExerciseId() {
-        return exerciseId;
-    }
-
-    public void setExerciseId(long exerciseId) {
-        this.exerciseId = exerciseId;
-    }
-
-    public List<Exercise> getExercises() {
-        return exercises;
-    }
-
-    public void setExercises(List<Exercise> exercises) {
-        this.exercises = exercises;
-    }
-
-
-
-    @NonNull
-    @ColumnInfo(name = "exerciseId")
-    private long exerciseId;
-
-
-     */
     @NonNull
     @ColumnInfo(name = "designation")
     private String designation;
 
-    /*
-    @Ignore
-    private List<Exercise> exercises = new ArrayList<>();
-
-
-     */
     @NonNull
     public int getProfileImageId() {
         return profileImageId;
@@ -66,7 +35,6 @@ public class MuscleGroup {
     @NonNull
     @ColumnInfo(name = "profile_image_id")
     private int profileImageId;
-
 
     @NonNull
     @ColumnInfo(name = "created")

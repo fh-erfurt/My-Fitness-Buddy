@@ -29,11 +29,7 @@ import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ExerciseDetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ExerciseDetailsFragment extends BaseFragment implements View.OnClickListener{
 
     public static final String ARG_EXERCISE_ID = "exerciseId";
@@ -56,47 +52,14 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, k:mm:ss ", Locale.GERMAN);
     private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-
-
     public ExerciseDetailsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TrainingList_TrainingDetails.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ExerciseDetailsFragment newInstance(String param1, String param2) {
-        ExerciseDetailsFragment fragment = new ExerciseDetailsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
     }
 
     @Override
@@ -177,8 +140,6 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
             }
         });
-
-        /////////////Baustelle Ende/////////////////
 
 
         return root;

@@ -15,25 +15,11 @@ import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
 @Entity
 public class Exercise {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "exerciseId")
     private long exerciseId;
 
-    /*
-    public long getMuscleGroupId() {
-        return muscleGroupId;
-    }
-
-    public void setMuscleGroupId(long muscleGroupId) {
-        this.muscleGroupId = muscleGroupId;
-    }
-
-    @NonNull
-    @ColumnInfo(name = "muscleGroupId")
-    private long muscleGroupId;
-
-
-     */
     @Ignore
     private boolean isSelected = false;
 
@@ -52,10 +38,6 @@ public class Exercise {
 
     public void setProfileImageId(@NonNull int muscleGroup) {
         this.profileImageId = muscleGroup;
-    }
-
-    public void setProfileImageUrlByString(String muscleGroup) {
-        this.profileImageId = checkImgAndGetId(muscleGroup);
     }
 
     @NonNull
@@ -123,15 +105,6 @@ public class Exercise {
         this.designation = designation;
     }
 
- /*   @NonNull
-    public MuscleGroup getMuscleGroup() {
-        return muscleGroup;
-    }
-
-    public void setMuscleGroup(@NonNull MuscleGroup muscleGroup) {
-        this.muscleGroup = muscleGroup;
-    }
-*/
     public long getCreated() {
         return created;
     }
@@ -179,12 +152,7 @@ public class Exercise {
                 id = R.drawable.info;
                 break;
         }
-
         return id;
-
     }
-
-
-
 
 }

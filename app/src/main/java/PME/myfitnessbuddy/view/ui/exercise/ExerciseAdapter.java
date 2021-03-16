@@ -22,6 +22,7 @@ import java.util.List;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
 public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, ExerciseAdapter.ExerciseViewHolder> {
+
     public interface ExerciseClickListener {
         void onClick(long contactId);
     }
@@ -33,6 +34,7 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
         private long currentExerciseId = -1;
 
         private ExerciseViewHolder(View itemView, ExerciseClickListener exerciseClickListener) {
+
             super(itemView);
             this.exerciseName = itemView.findViewById(R.id.list_item_exercise_name);
             this.imageView =itemView.findViewById(R.id.list_item_exercise_image);
@@ -40,9 +42,11 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
             itemView.setOnClickListener( v -> {
                 exerciseClickListener.onClick( this.currentExerciseId);
             });
+
         }
 
         public ItemDetailsLookup.ItemDetails<Long> getItemDetails() {
+
             return new ItemDetailsLookup.ItemDetails<Long>() {
                 @Override
                 public int getPosition() {
@@ -55,19 +59,27 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
                     return getItemId();
                 }
             };
+
         }
+
     }
 
     private final LayoutInflater inflater;
+
     private List<ExerciseWithMuscleGroup> exerciseList;
+
     private final ExerciseClickListener exerciseClickListener;    // Our listener for item taps
+
     private SelectionTracker<Long> selectionTracker;            // A helper to track selected items
 
+
     public ExerciseAdapter(Context context, ExerciseClickListener exerciseClickListener) {
+
         super(new ExerciseListDiffCallback());
         this.inflater = LayoutInflater.from(context);
         this.exerciseClickListener = exerciseClickListener;
         this.setHasStableIds( true );
+
     }
 
     public void setSelectionTracker(SelectionTracker<Long> selectionTracker) {
@@ -114,8 +126,10 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
     }
 
     public void setExercises(List<ExerciseWithMuscleGroup> exerciseList){
+
         this.exerciseList = exerciseList;
         notifyDataSetChanged();
+
     }
 
 

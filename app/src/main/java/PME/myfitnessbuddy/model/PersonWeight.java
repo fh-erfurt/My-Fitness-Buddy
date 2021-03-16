@@ -11,11 +11,9 @@ public class PersonWeight {
     @ColumnInfo(name = "id")
     private int id;
 
-
     @NonNull
     @ColumnInfo(name = "weight")
     private double  weight;
-
 
     @NonNull
     @ColumnInfo(name = "created")
@@ -72,4 +70,5 @@ public class PersonWeight {
     public void setVersion(int version) {
         this.version = version;
     }
+
 }

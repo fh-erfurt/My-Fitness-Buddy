@@ -16,6 +16,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
 public class MuscleGroupRepository {
+
     public static final String LOG_TAG = "MuscleGroupRepository";
 
     private MuscleGroupDao muscleGroupDao;
@@ -53,27 +54,6 @@ public class MuscleGroupRepository {
     {
         return this.query( () -> this.muscleGroupDao.getMuscleGroups() );
     }
-/*
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public LiveData<List<MuscleGroup>> getMuscleGroupLiveData()
-    {
-        if( this.allMuscleGroups == null )
-            this.allMuscleGroups = Transformations.map(
-                    this.queryLiveData(this.muscleGroupDao::getMuscleGroupsWithExercises),
-                    input -> input
-                            .stream()
-                            .map( MuscleGroupWithExercise::merge )
-                            .collect(Collectors.toList())
-            );
-
-
-        return this.allMuscleGroups;
-    }
-
-
-
- */
-
 
     private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
     {
@@ -137,20 +117,4 @@ public class MuscleGroupRepository {
         MyFitnessBuddyDatabase.execute( () -> this.muscleGroupRepositoryId = muscleGroupDao.insertMuscleGroup( muscleGroup ) );
     }
 
-/*
-    public long insertAndWait( MuscleGroup muscleGroup ) {
-
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> muscleGroupDao.insertMuscleGroupWithExercises( muscleGroup ) );
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
-
-
- */
 }

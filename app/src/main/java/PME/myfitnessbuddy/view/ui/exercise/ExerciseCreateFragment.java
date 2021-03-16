@@ -25,11 +25,6 @@ import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
-/**
-
- * create an instance of this fragment.
- *
- */
 public class ExerciseCreateFragment extends BaseFragment implements View.OnClickListener {
 
     View root;
@@ -46,17 +41,14 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
     List <String> muscleGroupList = new ArrayList();
 
 
-
     public ExerciseCreateFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
+        super.onCreate(savedInstanceState);
 
     }
 
@@ -95,8 +87,8 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
                                       int before, int count) {
 
             }
-        });
 
+        });
 
 
         exerciseDescription.addTextChangedListener(new TextWatcher() {
@@ -134,18 +126,6 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
 
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
-
-        Faker faker = Faker.instance();
-
-/*
-        MuscleGroup muscleGroup = new MuscleGroup(muscleGroupString);
-        muscleGroup.setCreated( System.currentTimeMillis() );
-        muscleGroup.setProfileImageUrl( muscleGroupString );
-        muscleGroup.setModified( muscleGroup.getCreated() );
-        muscleGroup.setVersion( 1 );
-*/
-
-
         Exercise exercise = new Exercise(name,description,0);
         exercise.setCreated( System.currentTimeMillis() );
         exercise.setProfileImageId( exercise.checkImgAndGetId(pictureName) );
@@ -153,6 +133,7 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         exercise.setVersion( 1 );
 
         long exerciseId = exerciseViewModel.insertExercise(exercise);
+
         long muscleGroupId;
 
         for (int i = 0; i<muscleGroupList.size(); i++){
@@ -162,7 +143,6 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
 
             ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef = new ExerciseMuscleGroupCrossRef(exerciseId, muscleGroupId);
             exerciseMuscleGroupCrossRef.setCreated( System.currentTimeMillis() );
-            //exercise.setProfileImageUrl( faker.avatar().image() );
             exerciseMuscleGroupCrossRef.setModified( exerciseMuscleGroupCrossRef.getCreated() );
             exerciseMuscleGroupCrossRef.setVersion( 1 );
             exerciseViewModel.insertExerciseCrossRef(exerciseMuscleGroupCrossRef);
@@ -170,74 +150,89 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
         }
 
         Navigation.findNavController(v).navigate(R.id.action_createExerciseFragment_to_fragment_exercise);
+
     }
 
     public void onCheckboxClicked(View view) {
+
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
-
         // Check which checkbox was clicked
         switch(view.getId()) {
+
             case R.id.checkboxBizeps:
                 if (checked) {
+
                     if (!muscleGroupList.contains("Bizeps")) {
                         muscleGroupList.add("Bizeps");
                     }
+
                 }
+                else{
 
-                 else {
-                        if (muscleGroupList.contains("Bizeps")) {
-
-                            muscleGroupList.remove("Bizeps");
-                        }
+                    if (muscleGroupList.contains("Bizeps")) {
+                        muscleGroupList.remove("Bizeps");
                     }
-                break;
+
+                }
+                 break;
+
             case R.id.checkboxBack:
                 if (checked) {
+
                     if (!muscleGroupList.contains("Rücken")) {
                         muscleGroupList.add("Rücken");
                     }
-                }
-                    else {
-                    if (muscleGroupList.contains("Rücken")) {
 
+                }
+                else {
+
+                    if (muscleGroupList.contains("Rücken")) {
                         muscleGroupList.remove("Rücken");
                     }
+
                 }
                 break;
+
             case R.id.checkboxLegs:
+
                 if (checked) {
+
                     if (!muscleGroupList.contains("Beine")) {
                         muscleGroupList.add("Beine");
                     }
+
                 }
+                else {
 
-                    else {
                     if (muscleGroupList.contains("Beine")) {
-
                         muscleGroupList.remove("Beine");
                     }
+
                 }
                 break;
+
             case R.id.checkboxChest:
+
                 if (checked) {
+
                     if (!muscleGroupList.contains("Brust")) {
                         muscleGroupList.add("Brust");
                     }
+
                 }
+                else {
 
-                    else {
                     if (muscleGroupList.contains("Brust")) {
-
                         muscleGroupList.remove("Brust");
                     }
+
                 }
                 break;
 
-        }
-    }
+        }//switch
 
-
+    }//function
 
 }

@@ -45,11 +45,7 @@ import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.view.MainActivity;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ExerciseFragment} factory method to
- * create an instance of this fragment.
- */
+
 public class ExerciseFragment extends BaseFragment {
 
     private ExerciseViewModel exerciseViewModel;
@@ -65,6 +61,7 @@ public class ExerciseFragment extends BaseFragment {
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragment_exercise_to_createExerciseFragment, null));
 
         RecyclerView exerciseListView = root.findViewById(R.id.exercises);
+
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
                 exerciseId -> {
                     Bundle args = new Bundle();
@@ -94,10 +91,12 @@ public class ExerciseFragment extends BaseFragment {
         exerciseViewModel.getExercises().observe(this.requireActivity(), exercises -> {
 
             adapter.submitList( exercises );
+
         });
 
         return root;
-    }
+
+    } //onCreateView()
 
     private class ExerciseSelectionObserver extends SelectionTracker.SelectionObserver<Long> {
 
@@ -122,7 +121,6 @@ public class ExerciseFragment extends BaseFragment {
                 public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                     MenuInflater inflater = mode.getMenuInflater();
                     inflater.inflate(R.menu.list_action_mode_menu, menu);
-                    setActionBar(false);
                     return true;
                 }
 
@@ -148,8 +146,10 @@ public class ExerciseFragment extends BaseFragment {
                 public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
                     return false;
                 }
-            });
-        }
+
+            });//mode
+
+        }//onSelectionChanged()
 
         @Override
         protected void onSelectionCleared() {
@@ -168,15 +168,7 @@ public class ExerciseFragment extends BaseFragment {
 
             return selectedContacts;
         }
-    }
 
-    public void setActionBar(boolean flag){
-        ActionBar actionBar = this.getActivity().getActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(flag);
-            actionBar.setDisplayHomeAsUpEnabled(flag);
-            actionBar.setDisplayShowHomeEnabled(flag);
-        }
-    }
+    } // class ExerciseSelectionObserver
 
 }

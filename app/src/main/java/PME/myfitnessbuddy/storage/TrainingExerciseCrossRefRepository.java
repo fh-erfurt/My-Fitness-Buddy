@@ -46,13 +46,7 @@ public class TrainingExerciseCrossRefRepository {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
         this.trainingExerciseCrossRefDao = db.trainingExerciseCrossRefDao();
     }
-    /*
-        public List<ExerciseMuscleGroupCrossRef> getExercisesWithMuscleGroupCrossRef()
-        {
-            return this.query( () -> this.exerciseCrossRefDao.getExerciseLiveData() );
-        }
 
-    */
     public LiveData<List<TrainingExerciseCrossRef>> getTrainingLiveData()
     {
         if( this.allTrainingExerciseCrossRefs == null ) {
@@ -61,7 +55,6 @@ public class TrainingExerciseCrossRefRepository {
 
         return this.allTrainingExerciseCrossRefs;
     }
-
 
     public void deleteByTrainingId( long id )
     {
@@ -85,19 +78,7 @@ public class TrainingExerciseCrossRefRepository {
 
         return new ArrayList<>();
     }
-    /*
-        public Exercise getLastExercise() {
-            try {
-                return MyFitnessBuddyDatabase.executeWithReturn( this.exerciseDao::getLastEntry );
-            }
-            catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            // Well, is this a reasonable default return value?
-            return new Exercise("");
-        }
-    */
     public void update(TrainingExerciseCrossRef trainingExerciseCrossRef) {
         trainingExerciseCrossRef.setVersion((int) System.currentTimeMillis());
         trainingExerciseCrossRef.setVersion( trainingExerciseCrossRef.getVersion() + 1 );
@@ -112,7 +93,6 @@ public class TrainingExerciseCrossRefRepository {
 
         MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef( trainingExerciseCrossRef ) );
     }
-
 
        private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
         try {

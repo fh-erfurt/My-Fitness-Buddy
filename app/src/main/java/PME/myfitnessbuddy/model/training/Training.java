@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Training {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "trainingId")
     private int trainingId;
@@ -30,12 +31,6 @@ public class Training {
     @NonNull
     @ColumnInfo(name = "version")
     private int version = 0;
-
-    /*
-    @NonNull
-    @ColumnInfo(name = "profile_image_url")
-    private String profileImageUrl;
-    */
 
     public Training(@NonNull String designation, @NonNull String category) {
         this.designation = designation;
@@ -92,14 +87,4 @@ public class Training {
         this.version = version;
     }
 
-
-
-    /*@NonNull
-    public String getProfileImageUrl() {
-        return profileImageUrl;
-    }
-
-    public void setProfileImageUrl(@NonNull String profileImageUrl) {
-        this.profileImageUrl = profileImageUrl;
-    }*/
 }

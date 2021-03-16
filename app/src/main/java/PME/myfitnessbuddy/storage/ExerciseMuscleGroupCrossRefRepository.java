@@ -15,6 +15,7 @@ import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 
 public class ExerciseMuscleGroupCrossRefRepository {
+
     public static final String LOG_TAG = "ExerciseCrossRefRepository";
 
     private ExerciseCrossRefDao exerciseCrossRefDao;
@@ -41,12 +42,7 @@ public class ExerciseMuscleGroupCrossRefRepository {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
         this.exerciseCrossRefDao = db.exerciseMuscleGroupCrossRefDao();
     }
-/*
-    public List<ExerciseMuscleGroupCrossRef> getExercisesWithMuscleGroupCrossRef()
-    {
-        return this.query( () -> this.exerciseCrossRefDao.getExerciseLiveData() );
-    }
-*/
+
     public LiveData<List<ExerciseMuscleGroupCrossRef>> getExerciseLiveData()
     {
         if( this.allExerciseMuscleGroupCrossRefs == null ) {
@@ -55,10 +51,6 @@ public class ExerciseMuscleGroupCrossRefRepository {
 
         return this.allExerciseMuscleGroupCrossRefs;
     }
-
-
-
-
 
     private List<ExerciseMuscleGroupCrossRef> query( Callable<List<ExerciseMuscleGroupCrossRef>> query )
     {
@@ -71,19 +63,7 @@ public class ExerciseMuscleGroupCrossRefRepository {
 
         return new ArrayList<>();
     }
-/*
-    public Exercise getLastExercise() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.exerciseDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        // Well, is this a reasonable default return value?
-        return new Exercise("");
-    }
-*/
     public void update(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
         exerciseMuscleGroupCrossRef.setVersion((int) System.currentTimeMillis());
         exerciseMuscleGroupCrossRef.setVersion( exerciseMuscleGroupCrossRef.getVersion() + 1 );
@@ -99,39 +79,6 @@ public class ExerciseMuscleGroupCrossRefRepository {
         MyFitnessBuddyDatabase.execute( () -> exerciseCrossRefDao.insertExerciseCrossRef( exerciseMuscleGroupCrossRef ) );
     }
 
-/*
-    public long insertAndWait( Exercise exercise ) {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> exerciseDao.insertExerciseWithMuscleGroups( exercise ) );
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
-    public LiveData<Exercise> getExerciseByIdAsLiveData(long exerciseId )
-    {
-        return this.queryLiveData(() -> this.exerciseDao.getExerciseById(exerciseId) );
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public LiveData<List<Exercise>> getExerciseLiveData()
-    {
-        if( this.allExerciseMuscleGroupCrossRefs == null )
-            this.allExerciseMuscleGroupCrossRefs = Transformations.map(
-                    this.queryLiveData(this.exerciseCrossRefDao::getExercisesWithMuscleGroups),
-                    input -> input
-                            .stream()
-                            .map( ExerciseWithMuscleGroup::merge )
-                            .collect(Collectors.toList())
-            );
-
-
-        return this.allExercises;
-    }
-*/
     private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn(query);
@@ -139,7 +86,6 @@ public class ExerciseMuscleGroupCrossRefRepository {
             e.printStackTrace();
         }
 
-        // Well, is this a reasonable default return value?
         return new MutableLiveData<>();
     }
 }

@@ -29,17 +29,6 @@ public class MuscleGroupWithExercise {
 
     )
 
-
     public List<Exercise> exercises;
-/*
-    public MuscleGroup merge()
-    {
-        this.muscleGroup.setExercises( this.exercises );
-
-        return this.muscleGroup;
-    }
-
-
- */
 
 }

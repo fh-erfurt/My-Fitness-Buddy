@@ -27,7 +27,6 @@ import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 public class EvaluationFragment extends BaseFragment {
 
-
     private PersonWeightViewModel viewModel;
     private List<PersonWeight> weightLogs;
     private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
