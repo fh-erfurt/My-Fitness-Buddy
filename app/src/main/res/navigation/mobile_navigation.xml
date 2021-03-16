@@ -32,8 +32,8 @@
             android:id="@+id/action_nav_home_to_fragment_settings"
             app:destination="@id/fragment_settings" />
         <action
-            android:id="@+id/action_nav_home_to_firstAppStartFragment"
-            app:destination="@id/firstAppStartFragment" />
+            android:id="@+id/action_nav_home_to_firstStartActivity"
+            app:destination="@id/firstStartActivity" />
     </fragment>
 
 
@@ -143,8 +143,8 @@
         android:name="PME.myfitnessbuddy.view.ui.evaluation.EvaluationFragment"
         android:label="Analyse"
         tools:layout="@layout/fragment_evaluation"/>
-    <fragment
-        android:id="@+id/firstAppStartFragment"
-        android:name="PME.myfitnessbuddy.view.ui.person.FirstAppStartFragment"
-        android:label="FirstAppStartFragment" />
+    <activity
+        android:id="@+id/firstStartActivity"
+        android:name="PME.myfitnessbuddy.view.FirstStartActivity"
+        android:label="FirstStartActivity" />
 </navigation>

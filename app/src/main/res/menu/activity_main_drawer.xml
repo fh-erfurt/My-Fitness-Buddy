@@ -24,7 +24,7 @@
             android:title="@string/home_profile" />
 
         <item
-        android:id="@+id/fragment_userinput"
+        android:id="@+id/firstStartActivity"
         android:icon="@drawable/icon_profile_placeholder"
         android:title="Fürs erstellen Userinput" />
     </group>
