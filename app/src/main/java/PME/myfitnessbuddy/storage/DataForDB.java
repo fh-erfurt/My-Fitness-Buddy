@@ -26,7 +26,7 @@ public class DataForDB {
    public void generateDBData (PersonDao daoPerson, PersonWeightDao daoPersonWeight, TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
 
         // Insert Test Person -> later via first start in App
-        Person person1 = new Person("Arni","30.07.1990",1,188.0,115);
+        /*Person person1 = new Person("Arni","30.07.1990",1,188.0,115);
         person1.setCreated( System.currentTimeMillis() );
         person1.setModified( person1.getCreated() );
         person1.setVersion( 1 );
@@ -48,7 +48,7 @@ public class DataForDB {
         personWeight3.setCreated( System.currentTimeMillis() );
         personWeight3.setModified( person1.getCreated() );
         personWeight3.setVersion( 1 );
-        daoPersonWeight.insertPersonWeight(personWeight3);
+        daoPersonWeight.insertPersonWeight(personWeight3);*/
 
         // muscle group standards
         MuscleGroup muscleGroup1 = new MuscleGroup("Schultern");

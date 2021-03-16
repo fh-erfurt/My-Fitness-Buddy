@@ -98,7 +98,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
 
             bmi=view.findViewById(R.id.fragment_profile_bmi_textview);
-            bmi.setText(calculateBmi(personweights.get(personweights.size()-1).getWeight(),person.getHeight()));
+           bmi.setText(calculateBmi(personweights.get(personweights.size()-1).getWeight(),person.getHeight()));
         }
 
 
@@ -155,16 +155,12 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     }
 
 
-
-
     public int getAge(String birthday) {
 
         DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yy"));
         return new DateTime().year().get() - birth.year().get();
 
     }
-
-
 
     @Override
     public void onClick(View v) {

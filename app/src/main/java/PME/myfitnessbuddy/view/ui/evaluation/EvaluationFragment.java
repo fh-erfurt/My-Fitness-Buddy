@@ -47,14 +47,9 @@ public class EvaluationFragment extends BaseFragment {
         viewModel = this.getViewModel(PersonWeightViewModel.class);
 
         weightLogs = viewModel.getLastWeights();
-        Log.i("tag","WEIGHT!!!"+weightLogs.get(0).getWeight());
-
         this.evaluationBodyweight = (TextView) root.findViewById((R.id.evaluation_bodyweight_textview)) ;
         setWeightLog(root);
         this.evaluationBodyweight.setText(this.weightLog);
-
-
-
 
 
         return root;

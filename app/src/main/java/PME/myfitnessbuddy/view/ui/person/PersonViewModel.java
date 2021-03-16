@@ -62,5 +62,9 @@ public class PersonViewModel extends AndroidViewModel {
         return person;
     }
 
+    public Person getPersonByName(String name){
+        return personRepository.getPersonFromNickname(name);
+    }
+
     public List<PersonWeight> getAllPersonWeights() { return allPersonWeights; }
 }
