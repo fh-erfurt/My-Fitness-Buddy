@@ -31,36 +31,21 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 public class TrainingUpdateFragment extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 
     private SharedViewModel viewModel;
-    // counter for training without name
-    static int counter = 1;
+
     public static final String ARG_UPDATE_TRAINING_ID = "trainingId";
 
     private   SelectableAdapter   adapter;
     List<Exercise> selectedExercises;
     ExerciseViewModel exerciseViewModel;
-    String designation,category;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private long mParam1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            mParam1 = bundle.getLong(ARG_UPDATE_TRAINING_ID);
-        }
     }
-
-
 
     public TrainingUpdateFragment() {
         // Required empty public constructor
     }
-
-    // TODO: Rename and change types and number of parameters
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,20 +56,19 @@ public class TrainingUpdateFragment extends BaseFragment implements SelectableVi
 
         RecyclerView recyclerView =  root.findViewById(R.id.selection_list);
 
-
         List<Exercise> selectableExercises = generateListFromAllExercises();
         adapter = new SelectableAdapter(this.requireActivity(), this,selectableExercises,false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 
         viewModel = ViewModelProviders.of(getActivity()).get(SharedViewModel.class);
+
         viewModel.getTrainingsName().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
             @Override
             public void onChanged(@Nullable CharSequence charSequence) {
 
             }
         });
-
 
         viewModel.getCategory().observe(getViewLifecycleOwner(), new Observer<CharSequence>() {
             @Override
@@ -98,7 +82,6 @@ public class TrainingUpdateFragment extends BaseFragment implements SelectableVi
 
         return root;
     }
-
 
     @Override
     public void onItemSelected(Exercise selectableItem) {

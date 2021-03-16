@@ -25,7 +25,6 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 import java.util.List;
 
 public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, TrainingListAdapter.TrainingViewHolder> {
-    static int counter = 0;
 
     public interface TrainingClickListener {
         void onClick(long trainingId);
@@ -37,7 +36,6 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
         private final TextView trainingName;
         private final TextView trainingCategory;
         private final TextView countedExercises;
-        private final ImageView trainingListIcon;
         private long currentTrainingId = -1;
 
         private TrainingViewHolder(View itemView, TrainingClickListener trainingClickListener) {
@@ -46,7 +44,6 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
             this.trainingName = itemView.findViewById(R.id.list_item_training_name);
             this.trainingCategory = itemView.findViewById(R.id.list_item_training_category);
             this.countedExercises =itemView.findViewById(R.id.list_item_counted_exercises);
-            this.trainingListIcon = itemView.findViewById(R.id.TrainingListIcon);
 
             itemView.setOnClickListener( v -> {
                 trainingClickListener.onClick( this.currentTrainingId);
@@ -99,21 +96,16 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
 
         holder.currentTrainingId = current.getTrainingId();
 
-           // TrainingWithExercise current = this.trainingList.get(position);
             holder.trainingName.setText(String.format("%s", current.getTraining().getDesignation()));
             holder.trainingCategory.setText(String.format("%s", current.getTraining().getCategory()));
             holder.countedExercises.setText(String.format("%s" ,current.exercises.size()));
-            //holder.currentTrainingId = current.getTraining().getTrainingId();
-
-
 
         // Check if the item is selected - if so mark it
         if( !selectionTracker.isSelected( (long)position ) ){
-            //holder.trainingListIcon.setImageResource(R.drawable.dumbell);
 
         }
         else{
-           // holder.trainingListIcon.setImageResource( R.drawable.ic_baseline_check_24 );
+
         }
 
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml

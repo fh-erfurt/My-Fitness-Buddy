@@ -9,6 +9,7 @@ import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 
 public class TrainingListDiffCallback extends DiffUtil.ItemCallback<TrainingWithExercise>{
+
     @Override
     public boolean areItemsTheSame(@NonNull TrainingWithExercise oldItem, @NonNull TrainingWithExercise newItem) {
         return oldItem.getTraining().getTrainingId() == newItem.getTraining().getTrainingId();

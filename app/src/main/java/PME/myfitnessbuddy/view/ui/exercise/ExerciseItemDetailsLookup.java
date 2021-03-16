@@ -33,5 +33,4 @@ public class ExerciseItemDetailsLookup extends ItemDetailsLookup<Long>{
         return null;
     }
 
-
 }

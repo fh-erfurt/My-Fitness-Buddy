@@ -6,7 +6,6 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
@@ -19,8 +18,6 @@ import java.util.concurrent.ExecutionException;
 
 public class ExerciseRepository {
 
-    public static final String LOG_TAG = "ExerciseRepository";
-
     private ExerciseDao exerciseDao;
 
     public long getRepositoryExerciseId() {
@@ -30,9 +27,6 @@ public class ExerciseRepository {
     private long repositoryExerciseId;
 
     private static ExerciseRepository INSTANCE;
-
-    private LiveData<List<Exercise>> allExercises;
-
 
     public static ExerciseRepository getRepository( Application application )
     {
@@ -62,12 +56,6 @@ public class ExerciseRepository {
         return this.query( () -> this.exerciseDao.getAllExercisesWhichAreNotTraining(trainingId) );
     }
 
-    public List<ExerciseWithMuscleGroup> allExercises()
-    {
-        return this.query2( () -> this.exerciseDao.getAllExercises( ) );
-    }
-
-
     private List<Exercise> query( Callable<List<Exercise>> query )
     {
         try {
@@ -80,7 +68,7 @@ public class ExerciseRepository {
         return new ArrayList<>();
     }
 
-    private List<ExerciseWithMuscleGroup> query2( Callable<List<ExerciseWithMuscleGroup>> query )
+    private List<ExerciseWithTrainingsLog> query2(Callable<List<ExerciseWithTrainingsLog>> query )
     {
         try {
             return MyFitnessBuddyDatabase.executeWithReturn( query );
@@ -90,30 +78,6 @@ public class ExerciseRepository {
         }
 
         return new ArrayList<>();
-    }
-
-    private List<ExerciseWithTrainingsLog> query3( Callable<List<ExerciseWithTrainingsLog>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList<>();
-    }
-
-    public Exercise getLastExercise() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.exerciseDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new Exercise("", "",0);
     }
 
     public void update(Exercise exercise) {
@@ -178,7 +142,7 @@ public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
 
     public List<ExerciseWithTrainingsLog> getExerciseWithTrainingsLogLiveDataByExerciseId(long exerciseId)
     {
-        return this.query3(() -> this.exerciseDao.getExercisesWithTrainingsLogById(exerciseId) );
+        return this.query2(() -> this.exerciseDao.getExercisesWithTrainingsLogById(exerciseId) );
     }
 
 }

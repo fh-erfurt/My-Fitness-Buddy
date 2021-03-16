@@ -20,12 +20,11 @@ import PME.myfitnessbuddy.storage.TrainingsLogRepository;
 import java.util.List;
 
 public class ExerciseViewModel extends AndroidViewModel {
+
     private final ExerciseRepository exerciseRepository;
     private final MuscleGroupRepository muscleGroupRepository;
     private final ExerciseMuscleGroupCrossRefRepository exerciseMuscleGroupCrossRefRepository;
     private final TrainingsLogRepository trainingsLogRepository;
-
-    private MutableLiveData<String> mText;
 
     public ExerciseViewModel(Application application) {
         super(application);
@@ -33,25 +32,13 @@ public class ExerciseViewModel extends AndroidViewModel {
         this.muscleGroupRepository = MuscleGroupRepository.getRepository(application);
         this.exerciseMuscleGroupCrossRefRepository = ExerciseMuscleGroupCrossRefRepository.getRepository(application);
         this.trainingsLogRepository = TrainingsLogRepository.getRepository(application);
-        mText = new MutableLiveData<>();
-        mText.setValue("This is exercise fragment");
+
     }
-    /*
-        @RequiresApi(api = Build.VERSION_CODES.N)
-        public LiveData<List<Exercise>> getExercises() {
-            return this.exerciseRepository.getExerciseLiveData();
-        }
-     */
+
     public long insertExercise(Exercise exercise) {
 
         this.exerciseRepository.insert(exercise);
         return  exerciseRepository.getRepositoryExerciseId();
-    }
-
-    public long insertMuscleGroup(MuscleGroup muscleGroup) {
-
-        this.muscleGroupRepository.insert(muscleGroup);
-        return  muscleGroupRepository.getMuscleGroupRepositoryId();
     }
 
     public void insertExerciseCrossRef(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
@@ -69,14 +56,9 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.getExerciseLiveData();
     }
 
-    public List<ExerciseWithMuscleGroup> getAllExercises() {
-        return this.exerciseRepository.allExercises();
-    }
-
     public LiveData<List<ExerciseWithMuscleGroup>> getExercisesFromTraining(Integer trainingId){
         return this.exerciseRepository.getExerciseFromTraining(trainingId);
     }
-
 
     public List<Exercise> getExercisesFromRepo() {
         return this.exerciseRepository.getExercises();
@@ -86,22 +68,8 @@ public class ExerciseViewModel extends AndroidViewModel {
         return this.exerciseRepository.getExercisesWhichAreNotInTraining(trainingId);
     }
 
-
     public List<MuscleGroup> getMuscleGroupForDesignation(String search){
         return this.muscleGroupRepository.getMuscleGroupsForDesignation(search);
-    }
-
-    /*
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public LiveData<List<MuscleGroup>> getMuscleGroups() {
-        return this.muscleGroupRepository.getMuscleGroupLiveData();
-    }
- */
-
-
-    ////////////NEU//////////////
-    public LiveData<String> getText() {
-        return mText;
     }
 
     public void deleteExercises( List<ExerciseWithMuscleGroup> exercises )
@@ -111,7 +79,5 @@ public class ExerciseViewModel extends AndroidViewModel {
         }
 
     }
-
-
 
 }

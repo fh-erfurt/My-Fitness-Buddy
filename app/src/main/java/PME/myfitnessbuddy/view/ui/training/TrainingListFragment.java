@@ -37,6 +37,7 @@ import PME.myfitnessbuddy.view.ui.core.BaseFragment;
  * create an instance of this fragment.
  */
 public class TrainingListFragment extends BaseFragment  {
+
     private TrainingListViewModel trainingListViewModel;
 
     @Override
@@ -61,7 +62,6 @@ public class TrainingListFragment extends BaseFragment  {
 
         trainingListView.setAdapter( adapter );
 
-
         SelectionTracker<Long> tracker = new SelectionTracker.Builder<>(
                 "mySelectionId",
                 trainingListView,
@@ -78,8 +78,6 @@ public class TrainingListFragment extends BaseFragment  {
 
 
         trainingListView.setLayoutManager( new LinearLayoutManager(this.requireActivity()));
-
-        //trainingListViewModel.getTrainings().observe(this.requireActivity(), adapter::setTrainings);
 
         trainingListViewModel.getTrainings().observe(this.requireActivity(), trainings -> {
 

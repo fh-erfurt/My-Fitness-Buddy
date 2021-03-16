@@ -16,14 +16,9 @@ import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 
 public class ExerciseMuscleGroupCrossRefRepository {
 
-    public static final String LOG_TAG = "ExerciseCrossRefRepository";
-
     private ExerciseCrossRefDao exerciseCrossRefDao;
 
     private static ExerciseMuscleGroupCrossRefRepository INSTANCE;
-
-    private LiveData<List<ExerciseMuscleGroupCrossRef>> allExerciseMuscleGroupCrossRefs;
-
 
     public static ExerciseMuscleGroupCrossRefRepository getRepository(Application application )
     {
@@ -43,27 +38,6 @@ public class ExerciseMuscleGroupCrossRefRepository {
         this.exerciseCrossRefDao = db.exerciseMuscleGroupCrossRefDao();
     }
 
-    public LiveData<List<ExerciseMuscleGroupCrossRef>> getExerciseLiveData()
-    {
-        if( this.allExerciseMuscleGroupCrossRefs == null ) {
-            this.allExerciseMuscleGroupCrossRefs = this.queryLiveData(this.exerciseCrossRefDao::getExerciseLiveData);
-        }
-
-        return this.allExerciseMuscleGroupCrossRefs;
-    }
-
-    private List<ExerciseMuscleGroupCrossRef> query( Callable<List<ExerciseMuscleGroupCrossRef>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList<>();
-    }
-
     public void update(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
         exerciseMuscleGroupCrossRef.setVersion((int) System.currentTimeMillis());
         exerciseMuscleGroupCrossRef.setVersion( exerciseMuscleGroupCrossRef.getVersion() + 1 );
@@ -79,13 +53,4 @@ public class ExerciseMuscleGroupCrossRefRepository {
         MyFitnessBuddyDatabase.execute( () -> exerciseCrossRefDao.insertExerciseCrossRef( exerciseMuscleGroupCrossRef ) );
     }
 
-    private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn(query);
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new MutableLiveData<>();
-    }
 }

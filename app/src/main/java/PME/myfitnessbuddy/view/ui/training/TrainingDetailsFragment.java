@@ -49,29 +49,31 @@ public class TrainingDetailsFragment extends BaseFragment {
 
     public static final String ARG_TRAINING_ID = "trainingId";
     public static final String ARG_UPDATED_TRAINING_ID="updatedTrainingId";
-    public long updateTrainingId;
+
     private TrainingDetailsViewModel trainingDetailsViewModel;
     private LiveData<Training> trainingLiveData;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         assert getArguments() != null;
         long trainingId = getArguments().getLong(ARG_TRAINING_ID);
         if(trainingId == 0){
             trainingId = getArguments().getLong(ARG_UPDATED_TRAINING_ID);
         }
+
         View root = inflater.inflate(R.layout.fragment_trainingdetails, container, false);
         trainingDetailsViewModel = this.getViewModel( TrainingDetailsViewModel.class );
         ExerciseViewModel exerciseViewModel = this.getViewModel(ExerciseViewModel.class);
 
         FloatingActionButton button = (FloatingActionButton) root.findViewById(R.id.btnAddExercise);
+
         Bundle args = new Bundle();
         args.putLong("trainingId", trainingId);
+
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.trainingUpdateFragment, args));
+
         RecyclerView exerciseListView = root.findViewById(R.id.exercises);
 
         final ExerciseAdapter adapter = new ExerciseAdapter(this.requireActivity(),
@@ -207,7 +209,6 @@ public class TrainingDetailsFragment extends BaseFragment {
 
         this.trainingLiveData.removeObservers(requireActivity());
 
-        Log.i("EventCallbacks", "Stopped observing Detail Contact");
     }
 
 

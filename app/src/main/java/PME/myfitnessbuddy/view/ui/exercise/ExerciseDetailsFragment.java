@@ -2,12 +2,10 @@ package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,18 +37,15 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     private List<TrainingsLog> sortedTrainingsLogs;
     private String lastLog = "";
     private String actualLog = "";
-    private String lastLogDay = "";
     private int actualLogNumberOfSets = 0;
 
-    private TextView textViewLastLog;
     private TextView textViewActualLog;
 
     EditText editTextRepetitions;
     EditText editTextWeight;
 
     private String actualDate;
-    private SimpleDateFormat dateFormatDDMMYYYY_HHMM = new SimpleDateFormat("dd.MM.yyyy, k:mm:ss ", Locale.GERMAN);
-    private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
+    private final SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
     public ExerciseDetailsFragment() {
         // Required empty public constructor
@@ -65,11 +60,11 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View root = inflater.inflate(R.layout.fragment_exercisedetail, container, false);
         viewModel = this.getViewModel( ExerciseDetailsViewModel.class );
 
-        this.textViewLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
+        TextView textViewLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_textview);
         this.textViewActualLog = (TextView) root.findViewById(R.id.exercisedetail_today_log_textview);
 
         this.editTextRepetitions = (EditText) root.findViewById(R.id.exercisedetail_reps_input);
@@ -88,7 +83,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         this.actualDate = dateFormatDDMMYYYY.format(dateObject);
 
         setLogEntrys(root);
-        this.textViewLastLog.setText(this.lastLog);
+        textViewLastLog.setText(this.lastLog);
         this.textViewActualLog.setText(this.actualLog);
 
 
@@ -154,17 +149,12 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         this.exerciseLiveData = this.viewModel.getExercise( exerciseId );
         this.exerciseLiveData.observe( requireActivity(), this::updateView);
 
-        Log.i("EventCallbacks", "Observing Detail Contact");
-
     }
 
     private void updateView(Exercise exercise) {
 
-        Log.i("EventCallbacks", "Update Detail View with Training: " + exercise);
-
         assert getView() != null;
 
-        //ToDo Fragment
         TextView nameView = getView().findViewById( R.id.fragment_exercise_id );
 
         nameView.setText(String.format("%s %s", exercise.getDesignation(), "  "));
@@ -173,13 +163,9 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
     @Override
     public void onPause() {
         super.onPause();
-
         this.exerciseLiveData.removeObservers(requireActivity());
-
-        Log.i("EventCallbacks", "Stopped observing Detail Contact");
     }
 
-    //////////////Benjamin///////////////
     @Override
     public void onClick(View v) {
 
@@ -221,9 +207,21 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
 
         case R.id.exercisedetail_finish_set_button:
+
+            saveTrainingLog();
+
+        break;
+
+            default:
+                break;
+        }
+    }
+
+    public void saveTrainingLog(){
+
         String repetition = this.editTextRepetitions.getText().toString();
         String weight = this.editTextWeight.getText().toString();
-        String alternativeText = ""; //////////////TODO/////////////
+        String alternativeText = "";
 
         assert getArguments() != null;
         long exerciseId = getArguments().getLong(ARG_EXERCISE_ID);
@@ -245,28 +243,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         this.actualLog += addLog(newLine(this.actualLog), trainingsLog, this.actualLogNumberOfSets+1);
         this.actualLogNumberOfSets++;
         this.textViewActualLog.setText(actualLog);
-        break;
-
-            default:
-                break;
-        }
     }
-
-    public void createTrainingLog(){
-        ///////////TODO
-    }
-
-    public void setTextViewsAfterEndTrainingSet(){
-        ///////////TODO
-    }
-
-    public void setRecordToday(){
-        ////////Todo
-    }
-
-
-
-
 
     private void setLogEntrys(View root){
 
@@ -282,6 +259,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
                 this.actualLogNumberOfSets = i+1;
                 continue;
             }
+
             for(int j = i; j < this.sortedTrainingsLogs.size(); j++){
 
                 String logEntryDate2 = this.dateFormatDDMMYYYY.format(this.sortedTrainingsLogs.get(j).getCreated());
@@ -296,25 +274,18 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
             break;
         }
 
-        setLogLogTitles(oldDay, root);
+        setLogTextViews(oldDay, root);
         this.lastLog = createLog(oldDay);
         this.actualLog = createLog(actualDay);
         
     }
-/*
-    public String addLog(String firstRound, int logIndex, int numberOfSet){
-        this.actualLogNumberOfSets = numberOfSet;
-        return firstRound+numberOfSet+". "+this.dateFormatDDMMYYYY_HHMM.format(this.sortedTrainingsLogs.get(logIndex).getCreated()) + " Uhr"
-                + "\nrepetitions: "+this.sortedTrainingsLogs.get(logIndex).getRepetitions()
-                +", weight: "+this.sortedTrainingsLogs.get(logIndex).getWeight()+", text:"+this.sortedTrainingsLogs.get(logIndex).getAlternativeText();
-    }
-
- */
 
     private String addLog(String newLine, TrainingsLog trainingsLog, int numberOfSet){
-        return newLine+numberOfSet+". Satz | "/*+this.dateFormatDDMMYYYY_HHMM.format(trainingsLog.getCreated()) + " Uhr"*/
+
+        return newLine+numberOfSet+". Satz | "
                 + " Wiederholungen: "+trainingsLog.getRepetitions() +" | "
-                +"Gewicht: "+trainingsLog.getWeight()+"Kg"/*+", text:"+trainingsLog.getTrainingsLogId()*/;
+                + "Gewicht: "+trainingsLog.getWeight()+"Kg";
+
     }
 
     private String createLog(List<TrainingsLog> trainingsLogList) {
@@ -338,7 +309,7 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    private void setLogLogTitles(List<TrainingsLog> trainingsLogList, View root) {
+    private void setLogTextViews(List<TrainingsLog> trainingsLogList, View root) {
         if (!trainingsLogList.isEmpty()) {
 
             TextView titleLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_label_textview);
@@ -349,9 +320,5 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
         }
     }
-
-
-    ///////////////////////////////////////////////
-
 
 }

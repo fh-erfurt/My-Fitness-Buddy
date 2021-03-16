@@ -16,23 +16,14 @@ import PME.myfitnessbuddy.storage.TrainingsLogRepository;
 public class ExerciseDetailsViewModel extends AndroidViewModel {
     private final ExerciseRepository exerciseRepository;
 
-    private final TrainingsLogRepository trainingsLogRepository;
-
-
     public ExerciseDetailsViewModel(Application application) {
         super(application);
         this.exerciseRepository = ExerciseRepository.getRepository(application);
-        this.trainingsLogRepository = TrainingsLogRepository.getRepository(application);
     }
 
     public LiveData<Exercise> getExercise(long exerciseId ) {
         return this.exerciseRepository.getExerciseByIdAsLiveData( exerciseId );
     }
-
-    public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData( ) {
-        return this.exerciseRepository.getExerciseLiveData();
-    }
-
 
     public List<ExerciseWithTrainingsLog> getExerciseWithTrainingsLogLiveDataByExerciseId(long exerciseId) {
         return this.exerciseRepository.getExerciseWithTrainingsLogLiveDataByExerciseId(exerciseId);

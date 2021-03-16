@@ -69,17 +69,6 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
             }
         });
 
-
-        /*
-        final TrainingCreateAdapter adapter = new TrainingCreateAdapter(this.requireActivity(),
-                trainingId -> {
-                    Bundle args = new Bundle();
-                    args.putLong("trainingId", trainingId);
-                    NavController nc = NavHostFragment.findNavController( this );
-                    nc.navigate( R.id.action_fragment_traininglist_to_fragment_trainingdetails, args );
-                });
-*/
-
         trainingDesignation = (EditText) root.findViewById(R.id.createTrainingDesignation);
         trainingCategory = (Spinner) root.findViewById(R.id.createTrainingType);
 
@@ -105,7 +94,6 @@ public class TrainingCreateFragment1 extends BaseFragment implements View.OnClic
 
         Button button = (Button) root.findViewById(R.id.btnCreateTrainingNext);
         button.setOnClickListener(this::onClick);
-        // Inflate the layout for this fragment
 
         return root;
     }

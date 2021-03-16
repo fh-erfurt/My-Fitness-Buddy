@@ -25,13 +25,10 @@ public class TrainingListViewModel extends AndroidViewModel {
     private final TrainingRepository trainingRepository;
     private final TrainingExerciseCrossRefRepository trainingExerciseCrossRefRepository;
 
-    private MutableLiveData<String> mText;
     public TrainingListViewModel(Application application) {
 
         super(application);
         this.trainingRepository = TrainingRepository.getRepository(application);
-        mText = new MutableLiveData<>();
-        mText.setValue("This is exercise fragment");
             this.trainingExerciseCrossRefRepository = TrainingExerciseCrossRefRepository.getRepository(application);
         }
 
@@ -48,12 +45,6 @@ public class TrainingListViewModel extends AndroidViewModel {
     public void insertExerciseCrossRef(TrainingExerciseCrossRef trainingExerciseCrossRef) {
 
         this.trainingExerciseCrossRefRepository.insert(trainingExerciseCrossRef);
-    }
-
-    ////////////NEU//////////////
-
-    public LiveData<String> getText() {
-        return mText;
     }
 
     public void deleteTrainings( List<TrainingWithExercise> trainings )

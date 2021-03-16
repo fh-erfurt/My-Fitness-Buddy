@@ -17,8 +17,6 @@ import java.util.concurrent.ExecutionException;
 
 public class PersonRepository {
 
-    public static final String LOG_TAG = "PersonRepository";
-
     private PersonDao personDao;
 
     private static PersonRepository INSTANCE;

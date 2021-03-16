@@ -15,6 +15,7 @@ import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
 import PME.myfitnessbuddy.storage.TrainingRepository;
 
 public class TrainingDetailsViewModel extends AndroidViewModel {
+
     private final TrainingRepository trainingRepository;
     private final TrainingExerciseCrossRefRepository trainingExerciseCrossRefRepository;
 

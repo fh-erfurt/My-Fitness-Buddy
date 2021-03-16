@@ -17,20 +17,11 @@ import java.util.concurrent.ExecutionException;
 
 public class MuscleGroupRepository {
 
-    public static final String LOG_TAG = "MuscleGroupRepository";
-
     private MuscleGroupDao muscleGroupDao;
 
     private static MuscleGroupRepository INSTANCE;
 
-    public long getMuscleGroupRepositoryId() {
-        return muscleGroupRepositoryId;
-    }
-
     long muscleGroupRepositoryId;
-
-    private LiveData<List<MuscleGroup>> allMuscleGroups;
-
 
     public static MuscleGroupRepository getRepository( Application application )
     {
@@ -50,32 +41,9 @@ public class MuscleGroupRepository {
         this.muscleGroupDao = db.muscleGroupDao();
     }
 
-    public List<MuscleGroup> getMuscleGroups()
-    {
-        return this.query( () -> this.muscleGroupDao.getMuscleGroups() );
-    }
-
-    private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new MutableLiveData<>();
-    }
-
     public List<MuscleGroup> getMuscleGroupsForDesignation(String search )
     {
         return this.query( () -> this.muscleGroupDao.getMuscleGroupForDesignation( search ) );
-    }
-
-    public List<MuscleGroup> getMuscleGroupsSortedByDesignation()
-    {
-        return this.query( () -> this.muscleGroupDao.getMuscleGroupSortedByDesignation() );
     }
 
     private List<MuscleGroup> query( Callable<List<MuscleGroup>> query )
@@ -88,18 +56,6 @@ public class MuscleGroupRepository {
         }
 
         return new ArrayList<>();
-    }
-
-    public MuscleGroup getLastMuscleGroup() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.muscleGroupDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new MuscleGroup("");
     }
 
     public void update(MuscleGroup muscleGroup) {

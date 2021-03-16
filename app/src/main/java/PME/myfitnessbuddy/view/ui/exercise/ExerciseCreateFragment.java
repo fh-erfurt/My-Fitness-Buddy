@@ -40,7 +40,6 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
 
     List <String> muscleGroupList = new ArrayList();
 
-
     public ExerciseCreateFragment() {
         // Required empty public constructor
     }

@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
     CardView cardViewExercise;
     CardView cardViewAnalyse;
     CardView cardViewSettings;
-    NavHostFragment navHostFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +118,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         }
 
     }
+
     private void replaceFragment(Fragment newFragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

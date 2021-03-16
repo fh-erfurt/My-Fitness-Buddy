@@ -27,7 +27,6 @@ public class SelectableAdapter extends RecyclerView.Adapter implements Selectabl
         this.exerciseSelectedListener = exerciseSelectedListener;
         this.isMultiSelectionEnabled = true;
 
-
         exercises = new ArrayList<>();
         for (Exercise item : items) {
             exercises.add(item);
@@ -117,4 +116,5 @@ public class SelectableAdapter extends RecyclerView.Adapter implements Selectabl
         this.exercises = exerciseList;
         notifyDataSetChanged();
     }
+
 }

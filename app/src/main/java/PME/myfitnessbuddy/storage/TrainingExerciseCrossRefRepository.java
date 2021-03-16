@@ -20,8 +20,6 @@ import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
 public class TrainingExerciseCrossRefRepository {
 
-    public static final String LOG_TAG = "TrainingExerciseCrossRefRepository";
-
     private TrainingExerciseCrossRefDao trainingExerciseCrossRefDao;
 
     private static TrainingExerciseCrossRefRepository INSTANCE;
@@ -47,15 +45,6 @@ public class TrainingExerciseCrossRefRepository {
         this.trainingExerciseCrossRefDao = db.trainingExerciseCrossRefDao();
     }
 
-    public LiveData<List<TrainingExerciseCrossRef>> getTrainingLiveData()
-    {
-        if( this.allTrainingExerciseCrossRefs == null ) {
-            this.allTrainingExerciseCrossRefs = this.queryLiveData(this.trainingExerciseCrossRefDao::getTrainingLiveData);
-        }
-
-        return this.allTrainingExerciseCrossRefs;
-    }
-
     public void deleteByTrainingId( long id )
     {
         MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.deleteByTrainingsId( id ) );
@@ -64,19 +53,6 @@ public class TrainingExerciseCrossRefRepository {
     public void deleteByTrainingIdAndExerciseId( long trainingId, long exerciseId )
     {
         MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.deleteByTrainingsIdAndExerciseId( trainingId, exerciseId) );
-    }
-
-
-    private List<TrainingExerciseCrossRef> query( Callable<List<TrainingExerciseCrossRef>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList<>();
     }
 
     public void update(TrainingExerciseCrossRef trainingExerciseCrossRef) {
@@ -92,17 +68,6 @@ public class TrainingExerciseCrossRefRepository {
         trainingExerciseCrossRef.setVersion( 1 );
 
         MyFitnessBuddyDatabase.execute( () -> trainingExerciseCrossRefDao.insertTrainingExerciseCrossRef( trainingExerciseCrossRef ) );
-    }
-
-       private <T> LiveData<T> queryLiveData( Callable<LiveData<T>> query ) {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn(query);
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new MutableLiveData<>();
     }
 
 }
