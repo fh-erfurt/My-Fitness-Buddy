@@ -23,9 +23,5 @@
             android:icon="@drawable/icon_profile_placeholder"
             android:title="@string/home_profile" />
 
-        <item
-        android:id="@+id/firstStartActivity"
-        android:icon="@drawable/icon_profile_placeholder"
-        android:title="Fürs erstellen Userinput" />
     </group>
 </menu>

@@ -31,9 +31,6 @@
         <action
             android:id="@+id/action_nav_home_to_fragment_settings"
             app:destination="@id/fragment_settings" />
-        <action
-            android:id="@+id/action_nav_home_to_firstStartActivity"
-            app:destination="@id/firstStartActivity" />
     </fragment>
 
 

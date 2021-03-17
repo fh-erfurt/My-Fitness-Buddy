@@ -35,7 +35,8 @@
 
         <activity android:name="PME.myfitnessbuddy.view.FirstStartActivity"
             android:theme="@style/Theme.MyFitnessBuddy.NoActionBar"
-            android:parentActivityName="PME.myfitnessbuddy.view.MainActivity">
+            android:parentActivityName="PME.myfitnessbuddy.view.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PME.myfitnessbuddy.view.MainActivity" />
