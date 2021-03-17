@@ -12,7 +12,6 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 <summary> Project description </summary>
 <br>
 
-## project scope
 During the 5th semester, an Andorid app was developed as part of the PME course.
 There were the following requirements for the project:
 - Minimum Android version: Marshmallow 6.0 (API level 23) - higher version also welcome
@@ -64,7 +63,7 @@ Our app offers the following content:
 - weight history
 - dark mode
 
-##further development
+## further development
 The app is not final and will be further developed for private use.
 Construction sites would be here:
 - expand analysis (BMI, Gender, etc. )
