@@ -128,9 +128,9 @@ public class FirstStartActivity extends AppCompatActivity {
             personViewModel.insert(firstWeight);
         }
 
-//Change FirstStartActivity to Mainactivity
-        Intent changeActivity = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(changeActivity);
+//Change FirstStartActivity to MainActivity
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
 
     }
 
