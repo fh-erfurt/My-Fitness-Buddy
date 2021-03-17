@@ -3,10 +3,15 @@
 # My-Fitness-Buddy
 For the <b>mobile device programming</b> module, our team is developing a fitness app for the creation and use of individual training plans.
 
-### project team
+<details>
+<summary><b>project team</b> </summary>
+<br>
+
 * **Benjamin Swarovsky** - [Profil](https://github.com/BenjaminS01)
 * **Christian König** - [Profil](https://github.com/christiankoenig)
 * **Marco Petzold** - [Profil](https://github.com/monschey)
+
+</details>
 
 <details>
 <summary> <b>project description </b></summary>
