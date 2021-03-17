@@ -100,7 +100,7 @@
 
             <EditText
                 android:id="@+id/firststart_age_input"
-                android:layout_width="135dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
@@ -116,7 +116,7 @@
 
             <EditText
                 android:id="@+id/firststart_username_input"
-                android:layout_width="135dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
@@ -132,7 +132,7 @@
 
             <EditText
                 android:id="@+id/firststart_height_input"
-                android:layout_width="135dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
@@ -148,7 +148,7 @@
 
             <EditText
                 android:id="@+id/firststart_gender_input"
-                android:layout_width="135dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
@@ -164,7 +164,7 @@
 
             <EditText
                 android:id="@+id/firststart_bodyweight_input"
-                android:layout_width="135dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
