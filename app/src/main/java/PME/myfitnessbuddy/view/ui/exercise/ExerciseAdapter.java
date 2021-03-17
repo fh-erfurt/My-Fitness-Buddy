@@ -28,6 +28,7 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
     }
 
     static class ExerciseViewHolder extends RecyclerView.ViewHolder {
+
         private final TextView exerciseName;
         private final ImageView imageView;
 
@@ -68,9 +69,10 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
 
     private List<ExerciseWithMuscleGroup> exerciseList;
 
-    private final ExerciseClickListener exerciseClickListener;    // Our listener for item taps
+    private final ExerciseClickListener exerciseClickListener;
 
-    private SelectionTracker<Long> selectionTracker;            // A helper to track selected items
+    // A helper to track selected items
+    private SelectionTracker<Long> selectionTracker;
 
 
     public ExerciseAdapter(Context context, ExerciseClickListener exerciseClickListener) {
@@ -100,15 +102,6 @@ public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, Exerci
         holder.currentExerciseId = current.getExerciseId();
         holder.exerciseName.setText(String.format("%s", current.getExercise().getDesignation()));
         holder.imageView.setImageResource(current.getExercise().getProfileImageId());
-
-        // Check if the item is selected - if so mark it
-        if( !selectionTracker.isSelected( (long)position ) ){
-            // holder.imageView.setImageResource(current.getExercise().getProfileImageId());
-
-        }
-        else{
-            //  holder.imageView.setImageResource( R.drawable.ic_baseline_check_24 );
-        }
 
         // Set Activated will trigger a different background color - see drawable/list_item_background.xml
         holder.itemView.setActivated( selectionTracker.isSelected( (long)position ) );
