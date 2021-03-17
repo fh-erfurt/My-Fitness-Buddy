@@ -25,7 +25,7 @@ public class ExerciseWithTrainingsLog {
     public Exercise exercise;
 
     /**
-     * sorted by creation date, from the youngest to the oldest log entry
+     * sorted by creation date in descending order
      */
     public void sortTrainingsLog() {
         Collections.sort(this.trainingsLog);

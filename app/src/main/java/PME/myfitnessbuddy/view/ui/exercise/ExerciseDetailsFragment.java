@@ -31,10 +31,13 @@ import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 public class ExerciseDetailsFragment extends BaseFragment implements View.OnClickListener{
 
     public static final String ARG_EXERCISE_ID = "exerciseId";
+
     private ExerciseDetailsViewModel viewModel;
     private LiveData<Exercise> exerciseLiveData;
 
+    //Trainingslogs are sorted by creation date, in descending order to quickly find the latest entries
     private List<TrainingsLog> sortedTrainingsLogs;
+
     private String lastLog = "";
     private String actualLog = "";
     private int actualLogNumberOfSets = 0;
@@ -240,11 +243,18 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
         sortedTrainingsLogs = exerciseWithTrainingsLogs.get(0).getTrainingsLog();
 
-        this.actualLog += addLog(newLine(this.actualLog), trainingsLog, this.actualLogNumberOfSets+1);
+        this.actualLog += addLogEntry(newLine(this.actualLog), trainingsLog, this.actualLogNumberOfSets+1);
         this.actualLogNumberOfSets++;
         this.textViewActualLog.setText(actualLog);
     }
 
+    /**
+     * Ensures that the saved log entries are correctly listed when entering the fragment.
+     *
+     * sets the Dates for the log labels
+     * sets the member variables lastLog and actualLog
+     * @param root (to change text views)
+     */
     private void setLogEntrys(View root){
 
         List<TrainingsLog> actualDay = new ArrayList<>();
@@ -274,13 +284,13 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
             break;
         }
 
-        setLogTextViews(oldDay, root);
+        setDatesForLogLabels(oldDay, root);
         this.lastLog = createLog(oldDay);
         this.actualLog = createLog(actualDay);
         
     }
 
-    private String addLog(String newLine, TrainingsLog trainingsLog, int numberOfSet){
+    private String addLogEntry(String newLine, TrainingsLog trainingsLog, int numberOfSet){
 
         return newLine+numberOfSet+". Satz | "
                 + " Wiederholungen: "+trainingsLog.getRepetitions() +" | "
@@ -288,18 +298,26 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
 
     }
 
+    /**
+     *
+     * The log is created in ascending order according to the creation date
+     */
     private String createLog(List<TrainingsLog> trainingsLogList) {
 
         Collections.reverse(trainingsLogList);
         String log = "";
 
         for (int i = 0; i<trainingsLogList.size(); i++){
-            log += addLog(newLine(log), trainingsLogList.get(i) ,i+1);
+            log += addLogEntry(newLine(log), trainingsLogList.get(i) ,i+1);
         }
 
         return log;
     }
 
+    /**
+     * After a log entry there are 2 line breaks.
+     * There is no blank line before the first and after the last log entry.
+     */
     private String newLine(String log){
 
         if(log.equals("")){
@@ -309,14 +327,20 @@ public class ExerciseDetailsFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    private void setLogTextViews(List<TrainingsLog> trainingsLogList, View root) {
-        if (!trainingsLogList.isEmpty()) {
+    /**
+     *
+     *The labels for the logs are given the correct dates
+     * ("last record", "record today")
+     *
+     */
+    private void setDatesForLogLabels(List<TrainingsLog> oldDayLogEntry, View root) {
+        if (!oldDayLogEntry.isEmpty()) {
 
-            TextView titleLastLog = (TextView) root.findViewById(R.id.exercisedetail_last_log_label_textview);
-            titleLastLog.append("\n"+this.dateFormatDDMMYYYY.format(trainingsLogList.get(0).getCreated()));
+            TextView titleLastRecord = (TextView) root.findViewById(R.id.exercisedetail_last_log_label_textview);
+            titleLastRecord.append("\n"+this.dateFormatDDMMYYYY.format(oldDayLogEntry.get(0).getCreated()));
 
-            TextView titleActualLog = (TextView) root.findViewById(R.id.exercisedetail_today_log_label_textview);
-            titleActualLog.append("\n"+this.actualDate);
+            TextView titleRecordToday = (TextView) root.findViewById(R.id.exercisedetail_today_log_label_textview);
+            titleRecordToday.append("\n"+this.actualDate);
 
         }
     }
