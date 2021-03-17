@@ -78,6 +78,7 @@ Construction sites would be here:
 <details>
 <summary> development environment </summary>
 <br>
+
 Android
 * android version 6.0
 * minSDKVersion 23
