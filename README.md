@@ -11,6 +11,7 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 <details>
 <summary> Project description </summary>
 <br>
+
 ## project scope
 During the 5th semester, an Andorid app was developed as part of the PME course.
 There were the following requirements for the project:
@@ -36,11 +37,12 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 <details>
 <summary> App scope </summary>
 <br>
+
 ## start
 When the app is first launched, the user creates a profile, based on which weight history is saved and BMI is calculated.
 
 ## areas
-our app offers the following content:
+Our app offers the following content:
 - home
 - profile
 - training plans
