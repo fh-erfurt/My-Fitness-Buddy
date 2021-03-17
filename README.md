@@ -34,7 +34,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 </details>
 
 <details>
-<summary> app scope </summary>
+<summary> <b>app scope</b> </summary>
 <br>
 
 ## start
@@ -76,7 +76,7 @@ Construction sites would be here:
 </details>
 
 <details>
-<summary> development environment </summary>
+<summary> <b>development environment</b> </summary>
 <br>
 
 ## Android
@@ -95,7 +95,7 @@ Construction sites would be here:
 </details>
 
 <details>
-<summary> used programs </summary>
+<summary><b>used programs</b> </summary>
 <br>
 
 * [Android Studio](https://developer.android.com/studio) - IDE for JAVA/Kotlin
