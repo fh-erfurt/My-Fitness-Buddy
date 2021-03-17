@@ -133,18 +133,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
             }
         }
 
-    /*
-    public void replaceFragment(Fragment someFragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.setReorderingAllowed(true);
-        transaction.add(R.id.nav_host_fragment, someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
 
-
-    }
-    */
 
 
     @Override

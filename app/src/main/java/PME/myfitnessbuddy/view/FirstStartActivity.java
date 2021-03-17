@@ -1,5 +1,7 @@
 package PME.myfitnessbuddy.view;
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.myfitnessbuddy.R;
@@ -23,6 +27,7 @@ import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
 import PME.myfitnessbuddy.view.ui.evaluation.PersonWeightViewModel;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
+import PME.myfitnessbuddy.view.ui.home.HomeFragment;
 import PME.myfitnessbuddy.view.ui.person.PersonViewModel;
 
 public class FirstStartActivity extends AppCompatActivity {
@@ -123,6 +128,10 @@ public class FirstStartActivity extends AppCompatActivity {
             personViewModel.insert(firstWeight);
         }
 
+//Change FirstStartActivity to Mainactivity
+        Intent changeActivity = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(changeActivity);
+
     }
 
 
@@ -137,5 +146,6 @@ public class FirstStartActivity extends AppCompatActivity {
 
         return convertDate;
     }
+
 
 }
