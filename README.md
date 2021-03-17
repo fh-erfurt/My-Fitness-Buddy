@@ -9,7 +9,7 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 * **Marco Petzold** - [Profil](https://github.com/monschey)
 
 <details>
-<summary> project description </summary>
+<summary> ### project description </summary>
 <br>
 
 During the 5th semester, an Andorid app was developed as part of the PME course.
@@ -34,7 +34,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 </details>
 
 <details>
-<summary> app scope </summary>
+<summary> ### app scope </summary>
 <br>
 
 ## start
@@ -76,18 +76,18 @@ Construction sites would be here:
 </details>
 
 <details>
-<summary> development environment </summary>
+<summary> ### development environment </summary>
 <br>
 
-Android
+## Android
 * android version 6.0
 * minSDKVersion 23
 * compileSDKVersion 30
 
-Database
+## Database
 * room version 2.2.5
 
-AVD
+## AVD
 * Google Pixel 3a
 * resolution 1080 * 2220: 440dpi
 * target version: Android 11.0
@@ -95,7 +95,7 @@ AVD
 </details>
 
 <details>
-<summary> used programs </summary>
+<summary> ### used programs </summary>
 <br>
 
 * [Android Studio](https://developer.android.com/studio) - IDE for JAVA/Kotlin
