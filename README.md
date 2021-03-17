@@ -9,7 +9,7 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 * **Marco Petzold** - [Profil](https://github.com/monschey)
 
 <details>
-<summary> Project description </summary>
+<summary> project description </summary>
 <br>
 
 During the 5th semester, an Andorid app was developed as part of the PME course.
@@ -34,7 +34,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 </details>
 
 <details>
-<summary> App scope </summary>
+<summary> app scope </summary>
 <br>
 
 ## start
@@ -62,6 +62,7 @@ Our app offers the following content:
 - update weight and read BMI
 - weight history
 - dark mode
+- all views with landscape mode
 
 ## further development
 The app is not final and will be further developed for private use.
@@ -74,6 +75,23 @@ Construction sites would be here:
 
 </details>
 
+<details>
+<summary> development environment </summary>
+<br>
+Android
+* android version 6.0
+* minSDKVersion 23
+* compileSDKVersion 30
+
+Database
+* room version 2.2.5
+
+AVD
+* Google Pixel 3a
+* resolution 1080 * 2220: 440dpi
+* target version: Android 11.0
+
+</details>
 
 <details>
 <summary> used programs </summary>

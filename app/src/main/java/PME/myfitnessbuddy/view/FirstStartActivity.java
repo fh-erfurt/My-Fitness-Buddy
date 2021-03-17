@@ -70,6 +70,8 @@ public class FirstStartActivity extends AppCompatActivity {
         PersonViewModel personViewModel = new ViewModelProvider(this).get(PersonViewModel.class);
         PersonWeightViewModel personWeightViewModel  = new ViewModelProvider(this).get(PersonWeightViewModel.class);
 
+
+        // validation for profil data
         if (editTextPersonName.getText().toString().matches("")){
             //editTextPersonName.setText("");
             Toast.makeText(FirstStartActivity.this, "Bitte gib deinen Namen ein", Toast.LENGTH_SHORT).show();
@@ -116,7 +118,8 @@ public class FirstStartActivity extends AppCompatActivity {
         personHeight = Integer.parseInt(editTextPersonHeight.getText().toString());
         bodyWeight = Integer.parseInt(editTextBodyWeight.getText().toString());
 
-        Person checkPerson = personViewModel.getPersonByName(personName);
+        // just one user allowed, check if one exists otherwise create new one
+        Person checkPerson = personViewModel.getPerson();
         if(checkPerson == null) {
             Person firstPerson = new Person(personName, dateOfBirthString, 1, personHeight, bodyWeight);
             firstPerson.setCreated(System.currentTimeMillis());
@@ -135,6 +138,7 @@ public class FirstStartActivity extends AppCompatActivity {
     }
 
 
+    // method to calculate date of birth with the age
     public String convertDate (int age){
 
         Date dateObject = new Date();
