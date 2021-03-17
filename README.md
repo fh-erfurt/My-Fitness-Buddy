@@ -3,7 +3,7 @@
 # My-Fitness-Buddy
 For the <b>mobile device programming</b> module, our team is developing a fitness app for the creation and use of individual training plans.
 
-### Project Team
+### project team
 * **Benjamin Swarovsky** - [Profil](https://github.com/BenjaminS01)
 * **Christian König** - [Profil](https://github.com/christiankoenig)
 * **Marco Petzold** - [Profil](https://github.com/monschey)
@@ -49,6 +49,20 @@ Our app offers the following content:
 - exercises
 - analysis
 - settings
+
+## functions
+- create/modify/delete exercises
+    * name
+    * description
+    * muscle group
+    * Icon selection
+- create/modify/delete training plans
+    * name
+    * type
+- logging of repetitions and weights in the exercises
+- update weight and read BMI
+- weight history
+- dark mode
 
 </details>
 
