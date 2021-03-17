@@ -29,7 +29,7 @@ There were the following requirements for the project:
   * Code documentation in English not forgotten!
   * Optional: Unit Test / Automated UI Tests
 
--Classic example for above criteria: Contact management
+* Classic example for above criteria: Contact management
 
 Until 20.03.2021 the app was developed by our team and will be used and developed privately afterwards.
 </details>
