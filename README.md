@@ -64,6 +64,15 @@ Our app offers the following content:
 - weight history
 - dark mode
 
+##further development
+The app is not final and will be further developed for private use.
+Construction sites would be here:
+- expand analysis (BMI, Gender, etc. )
+- more training categories (Running training, etc. )
+- extend database to allow more functions
+- Interface to icon selection page
+- presentation of the description for optimal exercise flow
+
 </details>
 
 
