@@ -12,7 +12,33 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 <summary> Project description </summary>
 <br>
 
+## project scope
+During the 5th semester, an Andorid app was developed as part of the PME course.
+There were the following requirements for the project:
+* Minimum Android version: Marshmallow 6.0 (API level 23) - higher version also welcome
+* Use of AndroidX / Jetpack strongly recommended
+* Focus UI / User Interaction
+* Required content:
+** Activity + Fragments
+** Navigation menu (e.g. Drawer, Dashboard, Swipe or ...)
+** List view (keyword: Recycler View)
+** Detail view for element of the list view
+** Options menu (e.g. for multiple selection in the list view or actions for the detail view)
+** Form/Input Screen
+** Can be used in portrait as well as in landscape mode
+** Code documentation in English not forgotten!
+** Optional: Unit Test / Automated UI Tests
+*Classic example for above criteria: Contact management
+
+Translated with www.DeepL.com/Translator (free version)
 </details>
+
+<details>
+<summary> App scope </summary>
+<br>
+
+</details>
+
 
 <details>
 <summary> used programs </summary>
