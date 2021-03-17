@@ -9,7 +9,7 @@ For the <b>mobile device programming</b> module, our team is developing a fitnes
 * **Marco Petzold** - [Profil](https://github.com/monschey)
 
 <details>
-<summary> ### project description </summary>
+<summary> <b>project description </b></summary>
 <br>
 
 During the 5th semester, an Andorid app was developed as part of the PME course.
@@ -34,7 +34,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 </details>
 
 <details>
-<summary> ### app scope </summary>
+<summary> app scope </summary>
 <br>
 
 ## start
@@ -76,7 +76,7 @@ Construction sites would be here:
 </details>
 
 <details>
-<summary> ### development environment </summary>
+<summary> development environment </summary>
 <br>
 
 ## Android
@@ -95,7 +95,7 @@ Construction sites would be here:
 </details>
 
 <details>
-<summary> ### used programs </summary>
+<summary> used programs </summary>
 <br>
 
 * [Android Studio](https://developer.android.com/studio) - IDE for JAVA/Kotlin
