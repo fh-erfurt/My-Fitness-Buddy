@@ -28,14 +28,27 @@ There were the following requirements for the project:
   * Can be used in portrait as well as in landscape mode
   * Code documentation in English not forgotten!
   * Optional: Unit Test / Automated UI Tests
+
 -Classic example for above criteria: Contact management
 
-Translated with www.DeepL.com/Translator (free version)
+Until 20.03.2021 the app was developed by our team and will be used and developed privately afterwards.
 </details>
 
 <details>
 <summary> App scope </summary>
 <br>
+
+##start
+When the app is first launched, the user creates a profile, based on which weight history is saved and BMI is calculated.
+
+##areas
+our app offers the following content:
+- home
+- profile
+- training plans
+- exercises
+- analysis
+- settings
 
 </details>
 
