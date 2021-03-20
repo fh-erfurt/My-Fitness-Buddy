@@ -20,7 +20,7 @@ import PME.myfitnessbuddy.storage.TrainingsLogRepository;
 import java.util.List;
 
 /**
- * Exercise ViewModel class fetches the information for the detail,list and create views
+ * ExerciseViewModel class tracks all exercises and uses exerciseRepository
  * */
 
 public class ExerciseViewModel extends AndroidViewModel {

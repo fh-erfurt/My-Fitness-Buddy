@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.DiffUtil;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
-
+/**
+ * Exercise List Callback
+ * for delete selected trainings
+ * */
 
 class ExerciseListDiffCallback extends DiffUtil.ItemCallback<ExerciseWithMuscleGroup> {
 

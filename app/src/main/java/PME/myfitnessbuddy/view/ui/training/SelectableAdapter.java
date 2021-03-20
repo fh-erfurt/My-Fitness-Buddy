@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
@@ -14,6 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
+
+/**
+ * Selectable Adapter
+ * for delete training
+ * check if training is selected
+ * */
 
 public class SelectableAdapter extends RecyclerView.Adapter implements SelectableViewHolder.OnItemSelectedListener {
 

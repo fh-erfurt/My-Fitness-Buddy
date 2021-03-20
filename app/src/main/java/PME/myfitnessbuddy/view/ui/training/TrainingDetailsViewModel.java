@@ -12,6 +12,10 @@ import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
 import PME.myfitnessbuddy.storage.TrainingRepository;
 
+/**
+ * TrainingeDetails ViewModel class fetches the information from one training from the database
+ * */
+
 public class TrainingDetailsViewModel extends AndroidViewModel {
 
     private final TrainingRepository trainingRepository;

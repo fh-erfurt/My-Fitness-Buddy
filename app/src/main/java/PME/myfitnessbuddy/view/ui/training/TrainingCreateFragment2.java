@@ -26,6 +26,11 @@ import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
+/**
+ * second fragment to create a new training
+ * Recycler View of exercises
+ * user input necessary data ( exercises )
+ * */
 
 public class TrainingCreateFragment2 extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 

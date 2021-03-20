@@ -11,6 +11,11 @@ import com.myfitnessbuddy.R;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
+/**
+ * Selectable View Holder
+ * describes the selectable view and metadata about its place within the RecyclerView.
+ * */
+
 public class SelectableViewHolder extends RecyclerView.ViewHolder {
 
     public static final int MULTI_SELECTION = 2;

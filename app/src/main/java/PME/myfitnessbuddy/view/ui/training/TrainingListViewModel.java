@@ -13,6 +13,10 @@ import PME.myfitnessbuddy.storage.TrainingRepository;
 
 import java.util.List;
 
+/**
+ * TrainingListViewModel class tracks all trainings and uses trainingRepository
+ * */
+
 public class TrainingListViewModel extends AndroidViewModel {
 
     private final TrainingRepository trainingRepository;

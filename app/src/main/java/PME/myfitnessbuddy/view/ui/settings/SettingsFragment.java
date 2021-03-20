@@ -7,6 +7,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.myfitnessbuddy.R;
 
+/**
+ * setting View implementation class
+ * is used to enable/disable dark mode
+ * */
+
 public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override

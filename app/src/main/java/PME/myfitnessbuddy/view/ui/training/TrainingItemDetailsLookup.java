@@ -8,6 +8,10 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * RecyclerView of exercises for Training Details
+ * */
+
 public class TrainingItemDetailsLookup extends ItemDetailsLookup<Long>{
 
     private final RecyclerView recyclerView;

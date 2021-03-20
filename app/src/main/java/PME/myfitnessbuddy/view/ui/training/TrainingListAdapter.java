@@ -20,6 +20,10 @@ import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 
 import java.util.List;
 
+/**
+ * Training list Adapter for RecyclerView
+ * */
+
 public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, TrainingListAdapter.TrainingViewHolder> {
 
     public interface TrainingClickListener {

@@ -36,6 +36,10 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseItemDetailsLookup;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
+/**
+ * training detail fragment shows the details from an clicked training
+ * */
+
 public class TrainingDetailsFragment extends BaseFragment {
 
     public static final String ARG_TRAINING_ID = "trainingId";

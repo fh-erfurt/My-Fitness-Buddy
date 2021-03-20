@@ -4,6 +4,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * Create Training View implementation
+ * */
+
 public class SharedViewModel extends ViewModel {
 
     private MutableLiveData<CharSequence> trainingsName = new MutableLiveData<>();

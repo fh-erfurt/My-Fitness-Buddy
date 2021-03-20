@@ -24,6 +24,10 @@ import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
+/**
+ * training update fragment shows the unused exercises and let them add to selected training
+ * */
+
 public class TrainingUpdateFragment extends BaseFragment implements SelectableViewHolder.OnItemSelectedListener ,View.OnClickListener {
 
     private SharedViewModel viewModel;

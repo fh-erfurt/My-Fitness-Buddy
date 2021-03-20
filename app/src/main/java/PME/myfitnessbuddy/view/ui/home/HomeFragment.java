@@ -28,6 +28,12 @@ import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
 import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 import PME.myfitnessbuddy.view.ui.training.TrainingListFragment;
 
+/**
+ * home view implementation
+ * show all sites for navigation
+ * */
+
+
 public class HomeFragment extends Fragment  implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
@@ -75,6 +81,8 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
 
     }
 
+
+    //check which icon is clicked to navigate to the right view
     @Override
     public void onClick(View v) {
         Fragment fragment = null;
@@ -121,8 +129,6 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
             transaction.show(newFragment);
             }
         }
-
-
 
 
     @Override

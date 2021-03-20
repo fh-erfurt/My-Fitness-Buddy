@@ -30,6 +30,12 @@ import java.util.List;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * training Recylce View implementation
+ * show all training from database
+ * used to add training oder choose on training for detail view
+ * */
+
 public class TrainingListFragment extends BaseFragment  {
 
     private TrainingListViewModel trainingListViewModel;

@@ -20,9 +20,10 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
-/*
- * Exercise recyclerView show class
- * is used to list all the exercises of the database
+/**
+ * Exercise Adapter
+ * for Recycler View
+ * check if exercise is selected
  * */
 
 public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, ExerciseAdapter.ExerciseViewHolder> {

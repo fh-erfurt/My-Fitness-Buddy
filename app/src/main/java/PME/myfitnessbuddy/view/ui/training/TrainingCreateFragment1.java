@@ -20,6 +20,12 @@ import com.myfitnessbuddy.R;
 
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+
+/**
+ * first fragment to create a new training
+ * user input necessary data ( title, type )
+ * */
+
 public class TrainingCreateFragment1 extends BaseFragment implements View.OnClickListener{
 
     View root;
