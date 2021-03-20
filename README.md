@@ -43,6 +43,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 <summary> <b>database schema</b> </summary>
 <br>
 
+## database scheme for room db
 ![DatabaseSchema](docs/DBSchema.PNG)
 
 </details>
