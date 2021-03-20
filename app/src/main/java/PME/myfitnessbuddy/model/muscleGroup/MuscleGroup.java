@@ -7,6 +7,10 @@ import androidx.room.PrimaryKey;
 
 import com.myfitnessbuddy.R;
 
+/**
+ * Entity class MuscleGroup stores all information to the muscleGroup object
+ *
+ * */
 
 @Entity
 public class MuscleGroup {
@@ -67,10 +71,6 @@ public class MuscleGroup {
         return designation;
     }
 
-    public void setDesignation(@NonNull String designation) {
-        this.designation = designation;
-    }
-
     public long getCreated() {
         return created;
     }
@@ -94,6 +94,10 @@ public class MuscleGroup {
     public void setVersion(int version) {
         this.version = version;
     }
+
+    /**
+     * assigns images to the muscleGroups
+     */
 
     private int checkImgAndGetId(String profileImageName) {
 

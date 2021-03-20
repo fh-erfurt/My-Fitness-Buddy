@@ -5,6 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity class Person stores all information to the person object
+ *
+ * */
+
 @Entity
 public class Person {
 

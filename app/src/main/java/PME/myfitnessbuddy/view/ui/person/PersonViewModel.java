@@ -12,6 +12,10 @@ import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.storage.PersonRepository;
 import PME.myfitnessbuddy.storage.PersonWeightRepository;
 
+/**
+ * PersonViewModel class fetches the person and his properties from the database
+ * */
+
 public class PersonViewModel extends AndroidViewModel {
 
     private PersonRepository personRepository;

@@ -16,6 +16,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Uses exerciseDao and manages the access to it
+ * */
+
 public class ExerciseRepository {
 
     private ExerciseDao exerciseDao;

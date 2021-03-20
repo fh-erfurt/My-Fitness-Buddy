@@ -9,8 +9,11 @@ import PME.myfitnessbuddy.storage.Dao.PersonDao;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-
 public class PersonRepository {
+
+    /**
+     * Uses personDao and manages the access to it
+     * */
 
     private PersonDao personDao;
 

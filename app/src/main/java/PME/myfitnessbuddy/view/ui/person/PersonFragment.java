@@ -22,6 +22,12 @@ import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * Person profile View implementation class
+ * is used to show all properties of the person
+ *
+ * */
+
 public class PersonFragment extends BaseFragment implements View.OnClickListener {
 
     private PersonViewModel personViewModel;
@@ -72,6 +78,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         person = this.personViewModel.getPerson();
         personweights = this.personViewModel.getAllPersonWeights();
 
+        // show all properties from person on view if they exist
         if(person!=null && personweights!=null){
 
             TextView age = view.findViewById(R.id.fragment_profile_age_textview);
@@ -99,7 +106,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         return view;
     }
 
-
+    // standard formula for calculating the BMI
     private String calculateBmi(double bodyweight, double height)
     {
         double heightInMeter= height/100;
@@ -111,7 +118,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         return nf.format(bmi);
     }
 
-
+    // get Age from date of Birth
     public int getAge(String birthday) {
 
         DateTime birth = DateTime.parse(birthday, DateTimeFormat.forPattern("dd.MM.yy"));
@@ -124,6 +131,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         updateActualBodyweight();
     }
 
+    // instant update from BMI if weight is changed
     private void updateActualBodyweight(){
 
                 double weight;

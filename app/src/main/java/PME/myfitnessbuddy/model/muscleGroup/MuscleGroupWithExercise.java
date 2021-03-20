@@ -9,6 +9,10 @@ import java.util.List;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 
+/**
+ * Entity class MuscleGroupWithExercises stores all information to the muscleGroupWithExercises object
+ */
+
 public class MuscleGroupWithExercise {
 
     @Embedded

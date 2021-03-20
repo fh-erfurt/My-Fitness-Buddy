@@ -19,7 +19,7 @@ import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
+import PME.myfitnessbuddy.storage.Dao.ExerciseMuscleGroupCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
 import PME.myfitnessbuddy.storage.Dao.MuscleGroupDao;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
@@ -33,6 +33,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+/**
+ * room database for data storage and retrieval
+ * */
 
 @Database( entities = {Person.class, PersonWeight.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class, TrainingsLog.class}, version = 7    )
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
@@ -49,7 +53,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     public abstract MuscleGroupDao muscleGroupDao();
 
-    public abstract ExerciseCrossRefDao exerciseMuscleGroupCrossRefDao();
+    public abstract ExerciseMuscleGroupCrossRefDao exerciseMuscleGroupCrossRefDao();
 
     public abstract TrainingExerciseCrossRefDao trainingExerciseCrossRefDao();
 
@@ -134,8 +138,8 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
                 MuscleGroupDao daoMuscleGroup = INSTANCE.muscleGroupDao();
                 daoMuscleGroup.deleteAll();
 
-                ExerciseCrossRefDao exerciseCrossRefDao = INSTANCE.exerciseMuscleGroupCrossRefDao();
-                exerciseCrossRefDao.deleteAll();
+                ExerciseMuscleGroupCrossRefDao exerciseMuscleGroupCrossRefDao = INSTANCE.exerciseMuscleGroupCrossRefDao();
+                exerciseMuscleGroupCrossRefDao.deleteAll();
 
                 TrainingExerciseCrossRefDao trainingExerciseCrossRefDao = INSTANCE.trainingExerciseCrossRefDao();
                 trainingExerciseCrossRefDao.deleteAll();
@@ -145,7 +149,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                 //Insert example data in the database
                 DataForDB DBDataForDB = new DataForDB();
-                DBDataForDB.generateDBData(daoTraining,daoExercise,daoMuscleGroup,exerciseCrossRefDao,trainingExerciseCrossRefDao, trainingsLogDao);
+                DBDataForDB.generateDBData(daoTraining,daoExercise,daoMuscleGroup, exerciseMuscleGroupCrossRefDao,trainingExerciseCrossRefDao, trainingsLogDao);
 
             });
         }

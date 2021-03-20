@@ -20,8 +20,13 @@ import java.util.Locale;
 
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.PersonWeight;
-import PME.myfitnessbuddy.view.ui.evaluation.PersonWeightViewModel;
 import PME.myfitnessbuddy.view.ui.person.PersonViewModel;
+
+/**
+ * FirstStartActivity for MyFitnessBuddy
+ * only works if app never used before
+ * storage person for profile and analysis
+ * */
 
 public class FirstStartActivity extends AppCompatActivity {
 
@@ -101,7 +106,7 @@ public class FirstStartActivity extends AppCompatActivity {
         personName = editTextPersonName.getText().toString();
         age = Integer.parseInt(editTextAge.getText().toString());
 
-        dateOfBirthString = convertDate(age);
+        dateOfBirthString = convertAndCalculateDate(age);
 
         gender = editTextGender.getText().toString();
         personHeight = Integer.parseInt(editTextPersonHeight.getText().toString());
@@ -128,7 +133,7 @@ public class FirstStartActivity extends AppCompatActivity {
 
 
     // method to calculate date of birth with the age
-    public String convertDate (int age){
+    public String convertAndCalculateDate (int age){
 
         Date dateObject = new Date();
         Calendar cal = Calendar.getInstance();

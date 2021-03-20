@@ -10,8 +10,12 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 
+/**
+ * Defines all sql operations needed to manage the exerciseMuscleGroupCrossRefs
+ * */
+
 @Dao
-public interface ExerciseCrossRefDao {
+public interface ExerciseMuscleGroupCrossRefDao {
     @Insert
     long insertExerciseCrossRef(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef);
 

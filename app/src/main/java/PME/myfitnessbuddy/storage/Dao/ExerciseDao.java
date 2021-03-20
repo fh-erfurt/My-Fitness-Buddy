@@ -14,6 +14,11 @@ import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 
 import java.util.List;
+
+/**
+ * Defines all sql operations needed to manage the exercise
+ * */
+
 @Dao
 public interface ExerciseDao {
 

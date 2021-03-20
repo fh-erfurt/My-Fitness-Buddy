@@ -8,6 +8,10 @@ import androidx.room.Update;
 
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
+/**
+ * Defines all sql operations needed to manage the trainingExerciseCrossRef
+ * */
+
 @Dao
 public interface TrainingExerciseCrossRefDao {
 

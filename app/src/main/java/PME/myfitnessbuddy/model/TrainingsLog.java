@@ -5,6 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity class TrainingsLog stores all information to the trainingsLog object
+ *
+ * */
+
 @Entity
 public class TrainingsLog implements Comparable<TrainingsLog> {
 

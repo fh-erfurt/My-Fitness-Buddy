@@ -8,6 +8,11 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.TrainingsLog;
 
+/**
+ * Entity class ExerciseWithTrainingsLog stores all information to the exerciseWithTrainingsLog object
+ *
+ * */
+
 public class ExerciseWithTrainingsLog {
 
     public Exercise getExercise() {

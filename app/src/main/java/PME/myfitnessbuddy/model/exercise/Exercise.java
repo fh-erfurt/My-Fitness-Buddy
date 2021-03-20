@@ -13,6 +13,12 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
+/**
+ * Entity class Exercise stores all information to the exercise object
+ *
+ * */
+
+
 @Entity
 public class Exercise {
 
@@ -53,21 +59,12 @@ public class Exercise {
         return description;
     }
 
-    public void setDescription(@NonNull String description) {
-        this.description = description;
-    }
-
     @NonNull
     @ColumnInfo(name = "description")
     private String description;
 
-    public void setMuscleGroups(List<MuscleGroup> muscleGroups) {
-        this.muscleGroups = muscleGroups;
-    }
-
     @Ignore
     private List<MuscleGroup> muscleGroups = new ArrayList<>();
-
 
     @NonNull
     @ColumnInfo(name = "created")
@@ -101,10 +98,6 @@ public class Exercise {
         return designation;
     }
 
-    public void setDesignation(@NonNull String designation) {
-        this.designation = designation;
-    }
-
     public long getCreated() {
         return created;
     }
@@ -130,6 +123,9 @@ public class Exercise {
     }
 
 
+    /**
+     * assigns images to the exercises
+     */
 
     public int checkImgAndGetId(String profileImageName) {
 

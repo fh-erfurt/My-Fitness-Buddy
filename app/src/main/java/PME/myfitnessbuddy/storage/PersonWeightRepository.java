@@ -11,6 +11,11 @@ import java.util.concurrent.ExecutionException;
 import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.storage.Dao.PersonWeightDao;
 
+
+/**
+ * Uses personWeightDao and manages the access to it
+ * */
+
 public class PersonWeightRepository {
 
 

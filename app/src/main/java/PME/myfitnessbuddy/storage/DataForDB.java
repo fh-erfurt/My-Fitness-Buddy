@@ -8,19 +8,22 @@ import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
-import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
+import PME.myfitnessbuddy.storage.Dao.ExerciseMuscleGroupCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
 import PME.myfitnessbuddy.storage.Dao.MuscleGroupDao;
-import PME.myfitnessbuddy.storage.Dao.PersonDao;
-import PME.myfitnessbuddy.storage.Dao.PersonWeightDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 
+/**
+ *  fills the database with necessary data for the use of the app
+ *  includes exercises,trainings and muscleGroups and their relationships
+ * */
+
 public class DataForDB {
 
      // method for insert example data in DB
-   public void generateDBData (TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
+   public void generateDBData (TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseMuscleGroupCrossRefDao exerciseMuscleGroupCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
 
         // muscle group standards
         MuscleGroup muscleGroup1 = new MuscleGroup("Schultern");
@@ -135,61 +138,61 @@ public class DataForDB {
         exerciseMuscleGroupCrossRef1.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef1.setModified( exerciseMuscleGroupCrossRef1.getCreated() );
         exerciseMuscleGroupCrossRef1.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef1);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef1);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef2 = new ExerciseMuscleGroupCrossRef(2, 4);
         exerciseMuscleGroupCrossRef2.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef2.setModified( exerciseMuscleGroupCrossRef2.getCreated() );
         exerciseMuscleGroupCrossRef2.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef2);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef2);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef3 = new ExerciseMuscleGroupCrossRef(3, 2);
         exerciseMuscleGroupCrossRef3.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef3.setModified( exerciseMuscleGroupCrossRef3.getCreated() );
         exerciseMuscleGroupCrossRef3.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef3);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef3);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef4 = new ExerciseMuscleGroupCrossRef(4, 4);
         exerciseMuscleGroupCrossRef4.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef4.setModified( exerciseMuscleGroupCrossRef4.getCreated() );
         exerciseMuscleGroupCrossRef4.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef4);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef4);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef5 = new ExerciseMuscleGroupCrossRef(5, 5);
         exerciseMuscleGroupCrossRef5.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef5.setModified( exerciseMuscleGroupCrossRef5.getCreated() );
         exerciseMuscleGroupCrossRef5.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef5);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef5);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef6 = new ExerciseMuscleGroupCrossRef(6, 2);
         exerciseMuscleGroupCrossRef6.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef6.setModified( exerciseMuscleGroupCrossRef6.getCreated() );
         exerciseMuscleGroupCrossRef6.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef6);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef6);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef7 = new ExerciseMuscleGroupCrossRef(7, 2);
         exerciseMuscleGroupCrossRef7.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef7.setModified( exerciseMuscleGroupCrossRef7.getCreated() );
         exerciseMuscleGroupCrossRef7.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef7);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef7);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef8 = new ExerciseMuscleGroupCrossRef(8, 1);
         exerciseMuscleGroupCrossRef8.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef8.setModified( exerciseMuscleGroupCrossRef8.getCreated() );
         exerciseMuscleGroupCrossRef8.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef8);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef8);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef9 = new ExerciseMuscleGroupCrossRef(9, 2);
         exerciseMuscleGroupCrossRef9.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef9.setModified( exerciseMuscleGroupCrossRef9.getCreated() );
         exerciseMuscleGroupCrossRef9.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef9);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef9);
 
         ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef10 = new ExerciseMuscleGroupCrossRef(10, 4);
         exerciseMuscleGroupCrossRef10.setCreated( System.currentTimeMillis() );
         exerciseMuscleGroupCrossRef10.setModified( exerciseMuscleGroupCrossRef10.getCreated() );
         exerciseMuscleGroupCrossRef10.setVersion( 1 );
-        exerciseCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef10);
+        exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef(exerciseMuscleGroupCrossRef10);
 
         //example Training
         Training back = new Training("Brust", "push");

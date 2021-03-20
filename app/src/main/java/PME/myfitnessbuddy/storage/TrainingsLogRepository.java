@@ -17,6 +17,10 @@ import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 
+/**
+ * Uses trainingLogDao and manages the access to it
+ * */
+
 public class TrainingsLogRepository {
 
     private long repositoryTrainingsLogId;

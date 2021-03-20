@@ -13,6 +13,10 @@ import com.myfitnessbuddy.R;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * LoadingActivity for MyFitnessBuddy
+ * */
+
 public class LoadingActivity extends AppCompatActivity {
 
     @Override

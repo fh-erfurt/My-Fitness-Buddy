@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Uses muscleGroupDao and manages the access to it
+ * */
+
 public class MuscleGroupRepository {
 
     private MuscleGroupDao muscleGroupDao;

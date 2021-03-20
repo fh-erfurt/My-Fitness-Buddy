@@ -10,6 +10,11 @@ import androidx.room.Update;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 
 import java.util.List;
+
+/**
+ * Defines all sql operations needed to manage the muscleGroup
+ * */
+
 @Dao
 public interface
 

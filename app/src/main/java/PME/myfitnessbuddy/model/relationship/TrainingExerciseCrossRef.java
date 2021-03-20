@@ -4,6 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 
+/**
+ * Entity class TrainingExerciseGroupCrossRef stores all information to the trainingExerciseGroupCrossRef object
+ * is the realtion class between exercise and training
+ *
+ * */
+
 @Entity(primaryKeys = {"trainingId", "exerciseId"})
 public class TrainingExerciseCrossRef {
 

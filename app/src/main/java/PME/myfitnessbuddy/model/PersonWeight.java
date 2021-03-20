@@ -5,6 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity class PersonWeight stores all information to the personWeight object
+ *
+ * */
+
 @Entity
 public class PersonWeight {
     @PrimaryKey(autoGenerate = true)

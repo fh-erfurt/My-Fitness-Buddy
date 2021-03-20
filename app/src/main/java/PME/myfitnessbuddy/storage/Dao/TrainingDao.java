@@ -12,6 +12,11 @@ import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 
 import java.util.List;
+
+/**
+ * Defines all sql operations needed to manage the training
+ * */
+
 @Dao
 public interface TrainingDao {
     @Insert

@@ -8,6 +8,10 @@ import androidx.room.Update;
 
 import PME.myfitnessbuddy.model.TrainingsLog;
 
+/**
+ * Defines all sql operations needed to manage the trainingsLog
+ * */
+
 @Dao
 public interface TrainingsLogDao {
     @Insert

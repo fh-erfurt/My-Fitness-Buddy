@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 
+/**
+ * SettingsActivity for MyFitnessBuddy
+ * */
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override

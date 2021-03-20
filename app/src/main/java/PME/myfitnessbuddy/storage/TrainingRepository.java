@@ -15,6 +15,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Uses trainingDao and manages the access to it
+ * */
+
 public class TrainingRepository {
 
     public long getRepositoryTrainingId() {

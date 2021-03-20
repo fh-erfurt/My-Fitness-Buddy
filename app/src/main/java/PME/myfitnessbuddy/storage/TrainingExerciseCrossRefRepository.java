@@ -6,6 +6,11 @@ import android.content.Context;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
+
+/**
+ * Uses trainingExerciseCrossRefDao and manages the access to it
+ * */
+
 public class TrainingExerciseCrossRefRepository {
 
     private TrainingExerciseCrossRefDao trainingExerciseCrossRefDao;

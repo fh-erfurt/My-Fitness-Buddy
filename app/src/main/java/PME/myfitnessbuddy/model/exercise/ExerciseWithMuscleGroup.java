@@ -9,6 +9,11 @@ import java.util.List;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 
+/**
+ * Entity class ExerciseWithMuscleGroup stores all information to the exerciseWithMuscleGroup object
+ *
+ * */
+
 public class ExerciseWithMuscleGroup {
 
     public Exercise getExercise() {

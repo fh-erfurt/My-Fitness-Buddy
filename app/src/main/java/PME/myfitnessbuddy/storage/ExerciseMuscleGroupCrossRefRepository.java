@@ -4,11 +4,15 @@ import android.app.Application;
 import android.content.Context;
 
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
-import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
+import PME.myfitnessbuddy.storage.Dao.ExerciseMuscleGroupCrossRefDao;
+
+/**
+ * Uses exerciseMuscleGroupCrossRefDao and manages the access to it
+ * */
 
 public class ExerciseMuscleGroupCrossRefRepository {
 
-    private ExerciseCrossRefDao exerciseCrossRefDao;
+    private ExerciseMuscleGroupCrossRefDao exerciseMuscleGroupCrossRefDao;
 
     private static ExerciseMuscleGroupCrossRefRepository INSTANCE;
 
@@ -27,14 +31,14 @@ public class ExerciseMuscleGroupCrossRefRepository {
 
     public ExerciseMuscleGroupCrossRefRepository(Context context) {
         MyFitnessBuddyDatabase db = MyFitnessBuddyDatabase.getDatabase( context );
-        this.exerciseCrossRefDao = db.exerciseMuscleGroupCrossRefDao();
+        this.exerciseMuscleGroupCrossRefDao = db.exerciseMuscleGroupCrossRefDao();
     }
 
     public void update(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
         exerciseMuscleGroupCrossRef.setVersion((int) System.currentTimeMillis());
         exerciseMuscleGroupCrossRef.setVersion( exerciseMuscleGroupCrossRef.getVersion() + 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> exerciseCrossRefDao.update( exerciseMuscleGroupCrossRef) );
+        MyFitnessBuddyDatabase.execute( () -> exerciseMuscleGroupCrossRefDao.update( exerciseMuscleGroupCrossRef) );
     }
 
     public void insert(ExerciseMuscleGroupCrossRef exerciseMuscleGroupCrossRef) {
@@ -42,7 +46,7 @@ public class ExerciseMuscleGroupCrossRefRepository {
         exerciseMuscleGroupCrossRef.setModified( exerciseMuscleGroupCrossRef.getCreated() );
         exerciseMuscleGroupCrossRef.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> exerciseCrossRefDao.insertExerciseCrossRef( exerciseMuscleGroupCrossRef ) );
+        MyFitnessBuddyDatabase.execute( () -> exerciseMuscleGroupCrossRefDao.insertExerciseCrossRef( exerciseMuscleGroupCrossRef ) );
     }
 
 }

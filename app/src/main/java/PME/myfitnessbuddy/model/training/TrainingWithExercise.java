@@ -9,6 +9,11 @@ import java.util.List;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
+/**
+ * Entity class TrainingWithExercise stores all information to the trainingWithExercise object
+ *
+ * */
+
 public class TrainingWithExercise {
 
     public Training getTraining() {

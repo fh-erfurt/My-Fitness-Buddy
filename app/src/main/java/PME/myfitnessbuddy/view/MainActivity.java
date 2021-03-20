@@ -29,6 +29,11 @@ import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
 import PME.myfitnessbuddy.storage.PersonRepository;
 import PME.myfitnessbuddy.view.ui.core.Constants;
 
+
+/**
+ * MainActivity for MyFitnessBuddy
+ * */
+
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
     private AppBarConfiguration mAppBarConfiguration;
@@ -100,6 +105,8 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
                 || super.onSupportNavigateUp();
     }
 
+
+    // initial first start if app never used before
     private void showFirstAppStartFragment(){
         Intent intent = new Intent(this, FirstStartActivity.class);
         startActivity(intent);

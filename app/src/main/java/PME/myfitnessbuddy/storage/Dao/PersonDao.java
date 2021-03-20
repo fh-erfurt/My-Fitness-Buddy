@@ -11,6 +11,10 @@ import PME.myfitnessbuddy.model.Person;
 
 import java.util.List;
 
+/**
+ * Defines all sql operations needed to manage the person
+ * */
+
 @Dao
 public interface PersonDao {
 

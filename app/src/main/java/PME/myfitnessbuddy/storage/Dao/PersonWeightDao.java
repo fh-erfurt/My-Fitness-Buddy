@@ -11,6 +11,10 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.PersonWeight;
 
+/**
+ * Defines all sql operations needed to manage the personWeight
+ * */
+
 @Dao
 public interface PersonWeightDao {
 

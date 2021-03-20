@@ -5,6 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Entity class Training stores all information to the training object
+ *
+ * */
+
 @Entity
 public class Training {
 
