@@ -59,10 +59,6 @@ public class Training {
         return category;
     }
 
-    public void setCategory(@NonNull String category) {
-        this.category = category;
-    }
-
     public long getCreated() {
         return created;
     }

@@ -67,25 +67,14 @@ public class Person {
         return nickname;
     }
 
-    public void setNickname(@NonNull String nickname) {
-        this.nickname = nickname;
-    }
 
     @NonNull
     public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(@NonNull String birthday) {
-        this.birthday = birthday;
-    }
-
     public int getGender() {
         return gender;
-    }
-
-    public void setGender(int gender) {
-        this.gender = gender;
     }
 
     public double getHeight() {
@@ -98,10 +87,6 @@ public class Person {
 
     public double  getWeight() {
         return weight;
-    }
-
-    public void setWeight(double  weight) {
-        this.weight = weight;
     }
 
     public long getModified() {

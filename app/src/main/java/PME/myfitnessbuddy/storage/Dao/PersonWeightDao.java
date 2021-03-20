@@ -1,6 +1,6 @@
 package PME.myfitnessbuddy.storage.Dao;
 
-import androidx.lifecycle.LiveData;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -9,13 +9,11 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.PersonWeight;
 
 @Dao
 public interface PersonWeightDao {
-    @Insert
-    long insertPersonWeight(PersonWeight personWeight);
+
 
     @Insert
     List<Long> insert(PersonWeight... personWeights);

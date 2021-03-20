@@ -86,26 +86,14 @@ public class TrainingsLog implements Comparable<TrainingsLog> {
         return repetitions;
     }
 
-    public void setRepetitions(@NonNull String repetitions) {
-        this.repetitions = repetitions;
-    }
-
     @NonNull
     public String getWeight() {
         return weight;
     }
 
-    public void setWeight(@NonNull String weight) {
-        this.weight = weight;
-    }
-
     @NonNull
     public String getAlternativeText() {
         return alternativeText;
-    }
-
-    public void setAlternativeText(@NonNull String alternativeText) {
-        this.alternativeText = alternativeText;
     }
 
     public long getTrainingId() {
@@ -118,10 +106,6 @@ public class TrainingsLog implements Comparable<TrainingsLog> {
 
     public long getExerciseCreatorId() {
         return exerciseCreatorId;
-    }
-
-    public void setExerciseCreatorId(long exerciseCreatorId) {
-        this.exerciseCreatorId = exerciseCreatorId;
     }
 
     /**

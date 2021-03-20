@@ -1,6 +1,5 @@
 package PME.myfitnessbuddy.storage.Dao;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -30,9 +29,6 @@ public interface ExerciseCrossRefDao {
 
     @Query("SELECT * from ExerciseMuscleGroupCrossRef")
     List<ExerciseMuscleGroupCrossRef> getExercises();
-
-    @Query("SELECT * from ExerciseMuscleGroupCrossRef")
-    LiveData<List<ExerciseMuscleGroupCrossRef>> getExerciseLiveData();
 
     @Query("SELECT * from ExerciseMuscleGroupCrossRef ORDER BY exerciseId DESC LIMIT 1")
     ExerciseMuscleGroupCrossRef getLastEntry();

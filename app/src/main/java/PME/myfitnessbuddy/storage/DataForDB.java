@@ -2,14 +2,11 @@ package PME.myfitnessbuddy.storage;
 
 import com.myfitnessbuddy.R;
 
-import PME.myfitnessbuddy.model.Person;
-import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
-import PME.myfitnessbuddy.model.training.Category;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.ExerciseDao;
@@ -23,32 +20,7 @@ import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 public class DataForDB {
 
      // method for insert example data in DB
-   public void generateDBData (PersonDao daoPerson, PersonWeightDao daoPersonWeight, TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
-
-        // Insert Test Person -> later via first start in App
-        /*Person person1 = new Person("Arni","30.07.1990",1,188.0,115);
-        person1.setCreated( System.currentTimeMillis() );
-        person1.setModified( person1.getCreated() );
-        person1.setVersion( 1 );
-        daoPerson.insertPerson(person1);
-
-        PersonWeight personWeight1 = new PersonWeight(150);
-        personWeight1.setCreated( System.currentTimeMillis() );
-        personWeight1.setModified( person1.getCreated() );
-        personWeight1.setVersion( 1 );
-        daoPersonWeight.insertPersonWeight(personWeight1);
-
-        PersonWeight personWeight2 = new PersonWeight(140);
-        personWeight2.setCreated( System.currentTimeMillis() );
-        personWeight2.setModified( person1.getCreated() );
-        personWeight2.setVersion( 1 );
-        daoPersonWeight.insertPersonWeight(personWeight2);
-
-        PersonWeight personWeight3 = new PersonWeight(130);
-        personWeight3.setCreated( System.currentTimeMillis() );
-        personWeight3.setModified( person1.getCreated() );
-        personWeight3.setVersion( 1 );
-        daoPersonWeight.insertPersonWeight(personWeight3);*/
+   public void generateDBData (TrainingDao daoTraining, ExerciseDao daoExercise, MuscleGroupDao daoMuscleGroup, ExerciseCrossRefDao exerciseCrossRefDao, TrainingExerciseCrossRefDao trainingExerciseCrossRefDao, TrainingsLogDao daoTrainingsLog){
 
         // muscle group standards
         MuscleGroup muscleGroup1 = new MuscleGroup("Schultern");
@@ -335,7 +307,6 @@ public class DataForDB {
         trainingsLog5.setVersion( 1 );
         daoTrainingsLog.insertTrainingsLog(trainingsLog5);
 
-    };
-
+    }
 
 }

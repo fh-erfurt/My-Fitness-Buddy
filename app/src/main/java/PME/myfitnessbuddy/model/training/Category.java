@@ -11,7 +11,4 @@ public enum Category {
         this.category = category;
     }
 
-    public int getCategory() {
-        return category;
     }
-}

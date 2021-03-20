@@ -3,19 +3,7 @@ package PME.myfitnessbuddy.storage;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-
-import PME.myfitnessbuddy.model.Person;
-import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
-import PME.myfitnessbuddy.model.training.Training;
-import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
 import PME.myfitnessbuddy.storage.Dao.TrainingExerciseCrossRefDao;
 
 public class TrainingExerciseCrossRefRepository {
@@ -23,9 +11,6 @@ public class TrainingExerciseCrossRefRepository {
     private TrainingExerciseCrossRefDao trainingExerciseCrossRefDao;
 
     private static TrainingExerciseCrossRefRepository INSTANCE;
-
-    private LiveData<List<TrainingExerciseCrossRef>> allTrainingExerciseCrossRefs;
-
 
     public static TrainingExerciseCrossRefRepository getRepository(Application application )
     {

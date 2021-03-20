@@ -22,15 +22,7 @@ public class ExerciseWithMuscleGroup {
     @Embedded
     public Exercise exercise;
 
-    public List<MuscleGroup> getMuscleGroups() {
-        return muscleGroups;
-    }
-
-    public void setMuscleGroups(List<MuscleGroup> muscleGroups) {
-        this.muscleGroups = muscleGroups;
-    }
-
-    @Relation(
+   @Relation(
             parentColumn = "exerciseId",
             entityColumn = "muscleGroupId",
             associateBy = @Junction(ExerciseMuscleGroupCrossRef.class)

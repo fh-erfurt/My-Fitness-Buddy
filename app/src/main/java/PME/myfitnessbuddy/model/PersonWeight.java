@@ -43,10 +43,6 @@ public class PersonWeight {
         return weight;
     }
 
-    public void setWeight(double  weight) {
-        this.weight = weight;
-    }
-
     public long getCreated() {
         return created;
     }

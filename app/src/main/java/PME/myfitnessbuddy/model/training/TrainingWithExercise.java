@@ -7,8 +7,6 @@ import androidx.room.Relation;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
 public class TrainingWithExercise {

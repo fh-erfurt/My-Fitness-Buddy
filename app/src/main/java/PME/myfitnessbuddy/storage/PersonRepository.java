@@ -4,14 +4,9 @@ import android.app.Application;
 import android.content.Context;
 
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.storage.Dao.PersonDao;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
@@ -63,20 +58,6 @@ public class PersonRepository {
         return null;
     }
 
-    private <T> LiveData<T> queryLiveData(Callable<LiveData<T>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new MutableLiveData<>();
-    }
-
-
     public void update(Person person) {
         person.setModified( System.currentTimeMillis() );
         person.setVersion( person.getVersion() + 1 );
@@ -92,21 +73,5 @@ public class PersonRepository {
         MyFitnessBuddyDatabase.execute( () -> personDao.insert( person ) );
     }
 
-
-    public long insertAndWait( Person contact ) {
-        contact.setCreated( System.currentTimeMillis() );
-        contact.setModified( contact.getCreated() );
-        contact.setVersion( 1 );
-
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( () -> personDao.insertPerson( contact ) );
-        }
-        catch (ExecutionException | InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
 
 }

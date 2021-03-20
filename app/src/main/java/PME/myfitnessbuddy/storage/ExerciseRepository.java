@@ -118,7 +118,6 @@ public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
         e.printStackTrace();
     }
 
-    // Well, is this a reasonable default return value?
     return null;
 }
 
@@ -131,7 +130,6 @@ public LiveData<List<ExerciseWithMuscleGroup>> getExerciseLiveData() {
             e.printStackTrace();
         }
 
-        // Well, is this a reasonable default return value?
         return new MutableLiveData<>();
     }
 

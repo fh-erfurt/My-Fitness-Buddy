@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import PME.myfitnessbuddy.model.PersonWeight;
@@ -18,7 +17,6 @@ import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 
 
-import PME.myfitnessbuddy.model.training.CategoryConverter;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.storage.Dao.ExerciseCrossRefDao;
@@ -37,7 +35,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Database( entities = {Person.class, PersonWeight.class, Training.class, MuscleGroup.class, Exercise.class, ExerciseMuscleGroupCrossRef.class, TrainingExerciseCrossRef.class, TrainingsLog.class}, version = 7    )
-@TypeConverters({CategoryConverter.class})
 public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     private static final String LOG_TAG_DB = "MyFitnessBuddyDB";
@@ -152,7 +149,7 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
                 //Insert example data in the database
                 DataForDB DBDataForDB = new DataForDB();
-                DBDataForDB.generateDBData(daoPerson,daoPersonWeight , daoTraining,daoExercise,daoMuscleGroup,exerciseCrossRefDao,trainingExerciseCrossRefDao, trainingsLogDao);
+                DBDataForDB.generateDBData(daoTraining,daoExercise,daoMuscleGroup,exerciseCrossRefDao,trainingExerciseCrossRefDao, trainingsLogDao);
 
             });
         }

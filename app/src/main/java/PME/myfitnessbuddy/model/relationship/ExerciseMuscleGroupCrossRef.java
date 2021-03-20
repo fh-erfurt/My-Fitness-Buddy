@@ -23,15 +23,6 @@ public class ExerciseMuscleGroupCrossRef {
 
     public long exerciseId;
 
-    public long getMuscleGroupId() {
-        return muscleGroupId;
-    }
-
-    public void setMuscleGroupId(long muscleGroupId) {
-        this.muscleGroupId = muscleGroupId;
-    }
-
-
     public long muscleGroupId;
 
     public long getCreated() {

@@ -7,12 +7,10 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.Dao.TrainingDao;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -58,18 +56,6 @@ public class TrainingRepository {
         return null;
     }
 
-    private List<Training> query( Callable<List<Training>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList<>();
-    }
-
     public void update(Training training) {
         training.setModified( System.currentTimeMillis() );
         training.setVersion( training.getVersion() + 1 );
@@ -104,7 +90,6 @@ public class TrainingRepository {
             e.printStackTrace();
         }
 
-        // Well, is this a reasonable default return value?
         return new MutableLiveData<>();
     }
 }

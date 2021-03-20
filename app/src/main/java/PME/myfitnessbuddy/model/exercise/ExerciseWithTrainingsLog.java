@@ -1,15 +1,12 @@
 package PME.myfitnessbuddy.model.exercise;
 
 import androidx.room.Embedded;
-import androidx.room.Junction;
 import androidx.room.Relation;
 
 import java.util.Collections;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.TrainingsLog;
-import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
-import PME.myfitnessbuddy.model.training.Training;
 
 public class ExerciseWithTrainingsLog {
 

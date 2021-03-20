@@ -20,7 +20,6 @@ import PME.myfitnessbuddy.storage.Dao.TrainingsLogDao;
 public class TrainingsLogRepository {
 
     private long repositoryTrainingsLogId;
-
     private TrainingsLogDao trainingsLogDao;
 
     private static TrainingsLogRepository INSTANCE;
@@ -55,7 +54,7 @@ public class TrainingsLogRepository {
         trainingsLog.setModified( trainingsLog.getCreated() );
         trainingsLog.setVersion( 1 );
 
-        MyFitnessBuddyDatabase.execute( () -> this.repositoryTrainingsLogId = trainingsLogDao.insertTrainingsLog( trainingsLog ) );
+        MyFitnessBuddyDatabase.execute( () -> repositoryTrainingsLogId = trainingsLogDao.insertTrainingsLog( trainingsLog ) );
     }
 
 }

@@ -3,24 +3,18 @@ package PME.myfitnessbuddy.storage;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
-import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.PersonWeight;
-import PME.myfitnessbuddy.storage.Dao.PersonDao;
 import PME.myfitnessbuddy.storage.Dao.PersonWeightDao;
 
 public class PersonWeightRepository {
-    public static final String LOG_TAG = "PersonWeightRepository";
+
 
     private PersonWeightDao personWeightDao;
-
     private static PersonWeightRepository INSTANCE;
 
     public static PersonWeightRepository getRepository( Application application )
@@ -61,31 +55,6 @@ public class PersonWeightRepository {
         }
 
         return new ArrayList<>();
-    }
-
-    private <T> LiveData<T> queryLiveData(Callable<LiveData<T>> query )
-    {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( query );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new MutableLiveData<>();
-    }
-
-    public PersonWeight getLastPersonWeight() {
-        try {
-            return MyFitnessBuddyDatabase.executeWithReturn( this.personWeightDao::getLastEntry );
-        }
-        catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Well, is this a reasonable default return value?
-        return new PersonWeight(0);
     }
 
     public void update(PersonWeight personWeight) {

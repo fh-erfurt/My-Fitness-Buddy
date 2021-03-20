@@ -1,6 +1,5 @@
 package PME.myfitnessbuddy.storage.Dao;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -31,12 +30,6 @@ public interface PersonDao {
 
     @Query("SELECT count(*) FROM Person")
     int count();
-
-    @Query("SELECT * from Person")
-   LiveData <List<Person>> getPersons();
-
-    @Query("SELECT * from Person ORDER BY nickname ASC")
-    List<Person> getPersonSortedByNickname();
 
     @Query("SELECT * from Person ORDER BY id DESC LIMIT 1")
     List <Person> getLastEntry();
