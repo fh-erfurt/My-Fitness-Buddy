@@ -8,6 +8,10 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * list all exerciseDetails from an exercise if they exist
+ * split in recording today and last
+ * */
 
 public class ExerciseItemDetailsLookup extends ItemDetailsLookup<Long>{
 

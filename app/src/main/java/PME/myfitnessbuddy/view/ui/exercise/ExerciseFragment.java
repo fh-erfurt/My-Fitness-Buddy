@@ -35,6 +35,11 @@ import java.util.List;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * exercise Recylce View implementation
+ * show all exercises from database
+ * used to add exercise to training oder choose on exercise for detail view
+ * */
 
 public class ExerciseFragment extends BaseFragment {
 

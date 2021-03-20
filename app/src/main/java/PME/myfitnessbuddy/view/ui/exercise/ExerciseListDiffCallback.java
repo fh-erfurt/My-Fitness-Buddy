@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
+
+
 class ExerciseListDiffCallback extends DiffUtil.ItemCallback<ExerciseWithMuscleGroup> {
 
     @Override

@@ -11,6 +11,10 @@ import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.storage.ExerciseRepository;
 
+/**
+ * ExerciseDetails ViewModel class fetches the information from one exercise from the database
+ * */
+
 public class ExerciseDetailsViewModel extends AndroidViewModel {
     private final ExerciseRepository exerciseRepository;
 

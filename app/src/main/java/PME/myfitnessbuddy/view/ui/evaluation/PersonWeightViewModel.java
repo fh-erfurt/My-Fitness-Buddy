@@ -9,6 +9,10 @@ import java.util.List;
 import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.storage.PersonWeightRepository;
 
+/**
+ * PersonWeight ViewModel class fetches the personWeight from the database
+ * */
+
 public class PersonWeightViewModel  extends AndroidViewModel {
 
     public final PersonWeightRepository personWeightRepository;

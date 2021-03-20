@@ -24,6 +24,11 @@ import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * fragment to create a new exercise
+ * user input necessary data
+ * */
+
 public class ExerciseCreateFragment extends BaseFragment implements View.OnClickListener {
 
     View root;
@@ -161,7 +166,6 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
     }
 
     /**
-     *
      * which muscle groups belong to the exercise
      */
     public void onCheckboxClicked(View view) {

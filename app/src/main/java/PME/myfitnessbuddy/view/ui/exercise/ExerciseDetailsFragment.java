@@ -27,6 +27,9 @@ import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * exercise detail fragment shows the details from an clicked exercise
+ * */
 
 public class ExerciseDetailsFragment extends BaseFragment implements View.OnClickListener{
 

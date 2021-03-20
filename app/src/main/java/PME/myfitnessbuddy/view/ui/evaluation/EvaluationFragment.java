@@ -17,6 +17,10 @@ import java.util.Locale;
 import PME.myfitnessbuddy.model.PersonWeight;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
+/**
+ * evaluation fragment shows the weight log
+ * */
+
 public class EvaluationFragment extends BaseFragment {
 
     private PersonWeightViewModel viewModel;

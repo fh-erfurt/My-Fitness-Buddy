@@ -12,6 +12,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.Objects;
 
+/**
+ * standard fragment implementation from which is inherited
+ *
+ * */
+
 public class BaseFragment extends Fragment {
 
     /*
