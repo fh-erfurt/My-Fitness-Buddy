@@ -2,6 +2,7 @@
 
     <!--Appname-->
     <string name="app_name">My Fitness Buddy</string>
+    <string name="loading_slogan">Dein Partner rund um dein Training</string>
     <!--Sitemenue-->
     <string name="home_training">Trainingspläne</string>
     <string name="home_excersise">Übungen</string>

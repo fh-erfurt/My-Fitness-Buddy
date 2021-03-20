@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/activity_loading_textview"
-        android:layout_width="359dp"
-        android:layout_height="54dp"
+        android:layout_width="357dp"
+        android:layout_height="63dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="31dp"
-        android:text="Dein Partner rund um's Training"
+        android:text="@string/loading_slogan"
         android:textAlignment="center"
         android:textColor="@color/accent"
         android:textSize="24sp"
