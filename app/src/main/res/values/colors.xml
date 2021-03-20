@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--primary colors-->
     <color name="primaryDark">#FF000000</color>
     <color name="primary">#333333</color>
     <color name="white">#FFFFFFFF</color>
@@ -7,7 +8,7 @@
     <color name="primaryTransparent">#99333333</color>
 
 
-
+    <!--accent colors for delete-->
     <color name="primaryLightColor">#84A5D5</color>
     <color name="primaryColor">#33FFC107</color>
 
