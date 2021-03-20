@@ -110,3 +110,16 @@ Construction sites would be here:
 * [Discord](https://discord.com/) - Means of communication
 
 </details>
+
+<details>
+<summary><b>lessons learneds</b> </summary>
+<br>
+
+* good detailed planning pays off
+* weekly meetings online only but harder than expected
+* together with android java is even more fun
+* goals initially set too high, too much for the project
+* android is very intuitive and the design of the views very pleasant
+* variable and method names are soooo important
+
+</details>
