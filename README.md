@@ -43,7 +43,7 @@ Until 20.03.2021 the app was developed by our team and will be used and develope
 <summary> <b>database schema</b> </summary>
 <br>
 
-![DatabaseSchema](docs/db schema.png)
+![DatabaseSchema](docs/DBSchema.PNG)
 
 </details>
 
