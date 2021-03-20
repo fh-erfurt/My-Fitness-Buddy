@@ -38,6 +38,15 @@ There were the following requirements for the project:
 Until 20.03.2021 the app was developed by our team and will be used and developed privately afterwards.
 </details>
 
+
+<details>
+<summary> <b>database schema</b> </summary>
+<br>
+
+![DatabaseSchema](docs/db schema.png)
+
+</details>
+
 <details>
 <summary> <b>app scope</b> </summary>
 <br>
