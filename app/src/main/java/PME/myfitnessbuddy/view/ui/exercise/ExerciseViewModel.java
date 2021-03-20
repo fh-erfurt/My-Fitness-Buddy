@@ -32,7 +32,6 @@ public class ExerciseViewModel extends AndroidViewModel {
         this.muscleGroupRepository = MuscleGroupRepository.getRepository(application);
         this.exerciseMuscleGroupCrossRefRepository = ExerciseMuscleGroupCrossRefRepository.getRepository(application);
         this.trainingsLogRepository = TrainingsLogRepository.getRepository(application);
-
     }
 
     public long insertExercise(Exercise exercise) {

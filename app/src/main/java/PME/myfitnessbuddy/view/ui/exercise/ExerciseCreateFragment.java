@@ -14,7 +14,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.github.javafaker.Faker;
 import com.myfitnessbuddy.R;
 
 import java.util.ArrayList;
@@ -23,10 +22,7 @@ import java.util.List;
 import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.muscleGroup.MuscleGroup;
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
-import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
-import PME.myfitnessbuddy.view.ui.training.TrainingListViewModel;
 
 public class ExerciseCreateFragment extends BaseFragment implements View.OnClickListener {
 
@@ -228,8 +224,8 @@ public class ExerciseCreateFragment extends BaseFragment implements View.OnClick
                 }
                 break;
 
-        }//switch()
+        }
 
-    }//onCheckboxClicked()
+    }
 
 }

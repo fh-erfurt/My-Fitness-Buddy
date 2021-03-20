@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
-
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
@@ -24,7 +23,7 @@ import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 public class ExerciseAdapter extends ListAdapter<ExerciseWithMuscleGroup, ExerciseAdapter.ExerciseViewHolder> {
 
     public interface ExerciseClickListener {
-        void onClick(long contactId);
+        void onClick(long exerciseId);
     }
 
     static class ExerciseViewHolder extends RecyclerView.ViewHolder {

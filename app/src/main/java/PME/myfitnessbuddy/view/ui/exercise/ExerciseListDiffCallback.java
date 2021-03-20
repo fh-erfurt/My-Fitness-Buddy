@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 
 class ExerciseListDiffCallback extends DiffUtil.ItemCallback<ExerciseWithMuscleGroup> {

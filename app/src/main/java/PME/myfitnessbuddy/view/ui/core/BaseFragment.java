@@ -26,20 +26,4 @@ public class BaseFragment extends Fragment {
                 )).get(tClass);
     }
 
-    /*
-        Helper method to hide the keyboard, for example when submitting a form.
-     */
-    public void hideKeyboard(Context context, View view) {
-        InputMethodManager imm = (InputMethodManager)context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
-
-
-    protected void hideBackButton() {
-        // Hide Back Button
-        Objects.requireNonNull(
-                ((AppCompatActivity) requireActivity()).getSupportActionBar()
-        ).setDisplayHomeAsUpEnabled(false);
-    }
-
 }

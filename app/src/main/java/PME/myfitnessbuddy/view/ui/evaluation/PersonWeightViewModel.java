@@ -18,10 +18,6 @@ public class PersonWeightViewModel  extends AndroidViewModel {
         this.personWeightRepository = PersonWeightRepository.getRepository(application);
     }
 
-    public List<PersonWeight> getWeights () {
-        return this.personWeightRepository.getPersonWeights();
-    }
-
     public List<PersonWeight> getLastWeights () {
         return this.personWeightRepository.getLastPersonWeights();
     }

@@ -1,28 +1,20 @@
 package PME.myfitnessbuddy.view.ui.evaluation;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.annotation.Nullable;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 
 import com.myfitnessbuddy.R;
 
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
 import PME.myfitnessbuddy.model.PersonWeight;
-import PME.myfitnessbuddy.model.TrainingsLog;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 public class EvaluationFragment extends BaseFragment {
@@ -48,17 +40,14 @@ public class EvaluationFragment extends BaseFragment {
 
         weightLogs = viewModel.getLastWeights();
         this.evaluationBodyweight = (TextView) root.findViewById((R.id.evaluation_bodyweight_textview)) ;
-        setWeightLog(root);
+        setWeightLog();
         this.evaluationBodyweight.setText(this.weightLog);
-
-
         return root;
     }
 
-    private void setWeightLog(View root){
+    private void setWeightLog(){
 
         List<PersonWeight> weightLogList =new ArrayList<>();
-
         weightLogList.addAll(this.weightLogs);
         this.weightLog = createWeightLog(weightLogList);
     }
@@ -80,15 +69,11 @@ public class EvaluationFragment extends BaseFragment {
 
     private String createWeightLog(List <PersonWeight> weightLogList){
 
-
         String weightLog ="";
-
         for(int i = 0; i< weightLogList.size(); i++) {
 
             weightLog += addWeightLog(newLine(weightLog), weightLogList.get(i) ,i+1);
         }
-
-
         return weightLog;
     }
 

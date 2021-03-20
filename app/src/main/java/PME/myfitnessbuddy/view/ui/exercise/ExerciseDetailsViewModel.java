@@ -8,10 +8,8 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithTrainingsLog;
 import PME.myfitnessbuddy.storage.ExerciseRepository;
-import PME.myfitnessbuddy.storage.TrainingsLogRepository;
 
 public class ExerciseDetailsViewModel extends AndroidViewModel {
     private final ExerciseRepository exerciseRepository;

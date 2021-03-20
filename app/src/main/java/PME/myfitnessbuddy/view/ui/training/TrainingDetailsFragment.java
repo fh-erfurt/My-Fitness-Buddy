@@ -3,9 +3,7 @@ package PME.myfitnessbuddy.view.ui.training;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -16,7 +14,6 @@ import androidx.recyclerview.selection.StorageStrategy;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,15 +33,9 @@ import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseItemDetailsLookup;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TrainingDetailsFragment#} factory method to
- * create an instance of this fragment.
- */
 public class TrainingDetailsFragment extends BaseFragment {
 
     public static final String ARG_TRAINING_ID = "trainingId";
@@ -169,15 +160,15 @@ public class TrainingDetailsFragment extends BaseFragment {
         }
 
         private List<ExerciseWithMuscleGroup> getSelectedExercises() {
-            List<ExerciseWithMuscleGroup> selectedContacts = new ArrayList<>(tracker.getSelection().size());
+            List<ExerciseWithMuscleGroup> selectedExercisesWithMuscleGroup = new ArrayList<>(tracker.getSelection().size());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 tracker.getSelection().iterator().forEachRemaining(aLong -> {
-                    selectedContacts.add(adapter.getExercise(aLong.intValue()));
+                    selectedExercisesWithMuscleGroup.add(adapter.getExercise(aLong.intValue()));
                 });
             }
 
-            return selectedContacts;
+            return selectedExercisesWithMuscleGroup;
         }
     }
 

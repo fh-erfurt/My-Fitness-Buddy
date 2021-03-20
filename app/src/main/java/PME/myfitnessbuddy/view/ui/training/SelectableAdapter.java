@@ -22,8 +22,8 @@ public class SelectableAdapter extends RecyclerView.Adapter implements Selectabl
     SelectableViewHolder.OnItemSelectedListener exerciseSelectedListener;
 
 
-    public SelectableAdapter(FragmentActivity itemView, SelectableViewHolder.OnItemSelectedListener exerciseSelectedListener,
-                             List<Exercise> items, boolean isMultiSelectionEnabled) {
+    public SelectableAdapter(SelectableViewHolder.OnItemSelectedListener exerciseSelectedListener,
+                             List<Exercise> items) {
         this.exerciseSelectedListener = exerciseSelectedListener;
         this.isMultiSelectionEnabled = true;
 

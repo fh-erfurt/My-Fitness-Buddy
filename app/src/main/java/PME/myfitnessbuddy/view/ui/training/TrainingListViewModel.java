@@ -4,17 +4,10 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.relationship.ExerciseMuscleGroupCrossRef;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
-import PME.myfitnessbuddy.storage.ExerciseMuscleGroupCrossRefRepository;
-import PME.myfitnessbuddy.storage.ExerciseRepository;
-import PME.myfitnessbuddy.storage.MuscleGroupRepository;
 import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
 import PME.myfitnessbuddy.storage.TrainingRepository;
 

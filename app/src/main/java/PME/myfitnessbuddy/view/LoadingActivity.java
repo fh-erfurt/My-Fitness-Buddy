@@ -13,8 +13,6 @@ import com.myfitnessbuddy.R;
 import java.util.Objects;
 import java.util.Random;
 
-import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
-
 public class LoadingActivity extends AppCompatActivity {
 
     @Override

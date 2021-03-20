@@ -1,16 +1,13 @@
 package PME.myfitnessbuddy.view.ui.training;
 
-import android.animation.ArgbEvaluator;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
@@ -24,7 +21,6 @@ import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
-import PME.myfitnessbuddy.model.training.Training;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
 
@@ -57,7 +53,7 @@ public class TrainingUpdateFragment extends BaseFragment implements SelectableVi
         RecyclerView recyclerView =  root.findViewById(R.id.selection_list);
 
         List<Exercise> selectableExercises = generateListFromAllExercises();
-        adapter = new SelectableAdapter(this.requireActivity(), this,selectableExercises,false);
+        adapter = new SelectableAdapter( this,selectableExercises);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 

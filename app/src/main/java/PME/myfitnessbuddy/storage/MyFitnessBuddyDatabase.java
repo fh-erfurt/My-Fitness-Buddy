@@ -39,10 +39,6 @@ public abstract class MyFitnessBuddyDatabase extends RoomDatabase {
 
     private static final String LOG_TAG_DB = "MyFitnessBuddyDB";
 
-    /*
-        Contact DAO reference, will be filled by Android
-     */
-
     public abstract PersonDao personDao();
 
     public abstract PersonWeightDao personWeightDao();

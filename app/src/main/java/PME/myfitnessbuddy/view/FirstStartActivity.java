@@ -1,9 +1,7 @@
 package PME.myfitnessbuddy.view;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,8 +9,6 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.myfitnessbuddy.R;
@@ -24,15 +20,11 @@ import java.util.Locale;
 
 import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.model.PersonWeight;
-import PME.myfitnessbuddy.storage.Dao.PersonDao;
 import PME.myfitnessbuddy.view.ui.evaluation.PersonWeightViewModel;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseViewModel;
-import PME.myfitnessbuddy.view.ui.home.HomeFragment;
 import PME.myfitnessbuddy.view.ui.person.PersonViewModel;
 
 public class FirstStartActivity extends AppCompatActivity {
 
-    PersonDao daoPerson;
     String personName;
     int age;
     String dateOfBirthString;
@@ -40,7 +32,6 @@ public class FirstStartActivity extends AppCompatActivity {
     int personHeight;
     int bodyWeight;
 
-    private String actualDate;
     private SimpleDateFormat dateFormatDDMMYYYY = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
     EditText editTextPersonName;
@@ -68,12 +59,10 @@ public class FirstStartActivity extends AppCompatActivity {
         this.editTextBodyWeight = (EditText) findViewById(R.id.firststart_bodyweight_input);
 
         PersonViewModel personViewModel = new ViewModelProvider(this).get(PersonViewModel.class);
-        PersonWeightViewModel personWeightViewModel  = new ViewModelProvider(this).get(PersonWeightViewModel.class);
 
 
-        // validation for profil data
+        // validation for profile data
         if (editTextPersonName.getText().toString().matches("")){
-            //editTextPersonName.setText("");
             Toast.makeText(FirstStartActivity.this, "Bitte gib deinen Namen ein", Toast.LENGTH_SHORT).show();
             return;
         }

@@ -1,25 +1,18 @@
 package PME.myfitnessbuddy.view.ui.exercise;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.selection.SelectionPredicates;
 import androidx.recyclerview.selection.SelectionTracker;
 import androidx.recyclerview.selection.StableIdKeyProvider;
 import androidx.recyclerview.selection.StorageStrategy;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,11 +31,8 @@ import com.myfitnessbuddy.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.view.MainActivity;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
 
@@ -96,7 +86,7 @@ public class ExerciseFragment extends BaseFragment {
 
         return root;
 
-    } //onCreateView()
+    }
 
     private class ExerciseSelectionObserver extends SelectionTracker.SelectionObserver<Long> {
 
@@ -147,9 +137,9 @@ public class ExerciseFragment extends BaseFragment {
                     return false;
                 }
 
-            });//mode
+            });
 
-        }//onSelectionChanged()
+        }
 
         @Override
         protected void onSelectionCleared() {
@@ -158,17 +148,17 @@ public class ExerciseFragment extends BaseFragment {
         }
 
         private List<ExerciseWithMuscleGroup> getSelectedExercises() {
-            List<ExerciseWithMuscleGroup> selectedContacts = new ArrayList<>(tracker.getSelection().size());
+            List<ExerciseWithMuscleGroup> selectedCExercisesWithMuscleGroup = new ArrayList<>(tracker.getSelection().size());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 tracker.getSelection().iterator().forEachRemaining(aLong -> {
-                    selectedContacts.add(adapter.getExercise(aLong.intValue()));
+                    selectedCExercisesWithMuscleGroup.add(adapter.getExercise(aLong.intValue()));
                 });
             }
 
-            return selectedContacts;
+            return selectedCExercisesWithMuscleGroup;
         }
 
-    } // class ExerciseSelectionObserver
+    }
 
 }

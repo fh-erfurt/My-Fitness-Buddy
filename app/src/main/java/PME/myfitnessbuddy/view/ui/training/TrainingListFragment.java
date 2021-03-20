@@ -3,7 +3,6 @@ package PME.myfitnessbuddy.view.ui.training;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -31,11 +30,6 @@ import java.util.List;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TrainingListFragment} factory method to
- * create an instance of this fragment.
- */
 public class TrainingListFragment extends BaseFragment  {
 
     private TrainingListViewModel trainingListViewModel;
@@ -146,15 +140,15 @@ public class TrainingListFragment extends BaseFragment  {
         }
 
         private List<TrainingWithExercise> getSelectedTrainings() {
-            List<TrainingWithExercise> selectedContacts = new ArrayList<>(tracker.getSelection().size());
+            List<TrainingWithExercise> selectedTrainingsWithExercises = new ArrayList<>(tracker.getSelection().size());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 tracker.getSelection().iterator().forEachRemaining(aLong -> {
-                    selectedContacts.add(adapter.getTraining(aLong.intValue()));
+                    selectedTrainingsWithExercises.add(adapter.getTraining(aLong.intValue()));
                 });
             }
 
-            return selectedContacts;
+            return selectedTrainingsWithExercises;
         }
     }
 

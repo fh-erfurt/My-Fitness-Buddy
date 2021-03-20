@@ -18,14 +18,8 @@ import androidx.navigation.Navigation;
 
 import com.myfitnessbuddy.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import PME.myfitnessbuddy.view.ui.core.BaseFragment;
 
-/**
-
- */
 public class TrainingCreateFragment1 extends BaseFragment implements View.OnClickListener{
 
     View root;

@@ -2,12 +2,9 @@ package PME.myfitnessbuddy.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +12,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -30,17 +24,10 @@ import com.myfitnessbuddy.R;
 
 import com.google.android.material.navigation.NavigationView;
 
-
-import java.util.zip.Inflater;
-
-import PME.myfitnessbuddy.model.Person;
 import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase;
 
-import PME.myfitnessbuddy.storage.MyFitnessBuddyDatabase_Impl;
 import PME.myfitnessbuddy.storage.PersonRepository;
 import PME.myfitnessbuddy.view.ui.core.Constants;
-import PME.myfitnessbuddy.view.ui.person.PersonFragment;
-import PME.myfitnessbuddy.view.ui.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
@@ -84,10 +71,7 @@ public static RoomDatabase.Builder<MyFitnessBuddyDatabase> database;
         AppCompatDelegate.setDefaultNightMode(
                 darkModeEnabled?AppCompatDelegate.MODE_NIGHT_YES:AppCompatDelegate.MODE_NIGHT_NO
         );
-
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

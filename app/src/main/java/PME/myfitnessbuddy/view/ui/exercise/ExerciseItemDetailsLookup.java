@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
-import PME.myfitnessbuddy.model.exercise.Exercise;
 
 public class ExerciseItemDetailsLookup extends ItemDetailsLookup<Long>{
 

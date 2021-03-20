@@ -1,21 +1,14 @@
 package PME.myfitnessbuddy.view.ui.person;
 
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 
 import com.myfitnessbuddy.R;
 
@@ -107,42 +100,6 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
     }
 
 
-
-/*
-    private void updateViewPerson(Person person) {
-
-        assert getView() != null;
-        assert person != null;
-
-            TextView age = getView().findViewById(R.id.fragment_profile_age_textview);
-            age.setText(Integer.toString(getAge(person.getBirthday())));
-
-            TextView nickname=getView().findViewById(R.id.fragment_profile_profilename_textview);
-            nickname.setText(person.getNickname());
-
-            TextView height=getView().findViewById(R.id.fragment_profile_height_textview);
-            height.setText(Integer.toString((int) person.getHeight()) + " cm" );
-
-            TextView gender=getView().findViewById(R.id.fragment_profile_gender_textview);
-            gender.setText((person.getGender()==1) ? "männlich" : "weiblich");
-
-
-
-    }
-
-    private void updateViewPersonWeights(List<PersonWeight> personWeights) {
-
-       assert getView() != null;
-        assert personWeights != null;
-        if(!personWeights.isEmpty()) {
-
-            TextView bodyweight=getView().findViewById(R.id.fragment_profile_bodyweight_textview);
-            bodyweight.setText(Double.toString((double)personWeights.get(personWeights.size()-1).getWeight())+ " KG" );
-
-        }
-
-    }
-*/
     private String calculateBmi(double bodyweight, double height)
     {
         double heightInMeter= height/100;

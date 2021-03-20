@@ -63,7 +63,7 @@ public class TrainingCreateFragment2 extends BaseFragment implements SelectableV
 
         List<Exercise> selectableExercises = generateListFromAllExercises();
 
-        adapter = new SelectableAdapter(this.requireActivity(), this,selectableExercises,false);
+        adapter = new SelectableAdapter( this,selectableExercises);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.requireActivity()));
 

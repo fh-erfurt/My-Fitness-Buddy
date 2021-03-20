@@ -1,11 +1,9 @@
 package PME.myfitnessbuddy.view.ui.training;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,9 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myfitnessbuddy.R;
 
-import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
 import PME.myfitnessbuddy.model.training.TrainingWithExercise;
-import PME.myfitnessbuddy.view.ui.exercise.ExerciseAdapter;
 
 
 import java.util.List;
@@ -29,7 +25,6 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
     public interface TrainingClickListener {
         void onClick(long trainingId);
     }
-
 
     static class TrainingViewHolder extends RecyclerView.ViewHolder {
 
@@ -66,7 +61,7 @@ public class TrainingListAdapter extends ListAdapter<TrainingWithExercise, Train
         }
     }
     private final LayoutInflater inflater;
-    private List<TrainingWithExercise> trainingList; // Cached Copy of Contacts
+    private List<TrainingWithExercise> trainingList;
     private final TrainingClickListener trainingClickListener;
     private SelectionTracker<Long> selectionTracker;
 

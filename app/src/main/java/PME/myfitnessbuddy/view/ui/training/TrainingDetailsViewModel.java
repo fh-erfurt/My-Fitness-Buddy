@@ -8,9 +8,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import PME.myfitnessbuddy.model.exercise.ExerciseWithMuscleGroup;
-import PME.myfitnessbuddy.model.relationship.TrainingExerciseCrossRef;
 import PME.myfitnessbuddy.model.training.Training;
-import PME.myfitnessbuddy.model.training.TrainingWithExercise;
 import PME.myfitnessbuddy.storage.TrainingExerciseCrossRefRepository;
 import PME.myfitnessbuddy.storage.TrainingRepository;
 
